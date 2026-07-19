@@ -1,0 +1,58 @@
+# ============================
+# Sensitive (NEVER commit)
+# ============================
+.env
+.env.*
+**/.env
+**/.env.*
+*.key
+*token*
+*secret*
+*credentials*
+
+# ============================
+# OS / Editor
+# ============================
+.DS_Store
+**/.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# ============================
+# Python
+# ============================
+__pycache__/
+**/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+venv/
+.venv/
+
+# ============================
+# Node (preventive)
+# ============================
+node_modules/
+
+# ============================
+# Logs
+# ============================
+*.log
+
+# ============================
+# Local Claude agent state (workspace-specific)
+# ============================
+.claude/
+
+# ============================
+# Large binaries (kept locally only)
+# ============================
+*.zip
+bracelet images/
+rosary images/
+
+# AI-generated ad creative images (regeneratable, large)
+output/ads/higgsfield/
+output/ads/higgsfield-v2/

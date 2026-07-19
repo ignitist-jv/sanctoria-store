@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact Us | Sanctoria</title>
+<meta name="description" content="Reach the Sanctoria team. We answer every message within one business day. Email support@sanctoriastore.com for orders, returns, and shipping.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#F7F3EC;
+    --cream-2:#F1EADD;
+    --card:#FFFFFF;
+    --ink:#2B2620;
+    --ink-soft:#5A5145;
+    --bronze:#9A7B4F;
+    --bronze-deep:#7A5E38;
+    --gold:#F2C230;
+    --gold-2:#E8B923;
+    --gold-deep:#C99A16;
+    --line:#E6DDCC;
+    --shadow:0 10px 30px rgba(70,55,30,.10);
+    --shadow-lg:0 20px 50px rgba(70,55,30,.16);
+    --radius:18px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Inter',system-ui,-apple-system,sans-serif;
+    background:var(--cream);
+    color:var(--ink);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,.serif{font-family:'Fraunces',Georgia,serif;font-weight:600;line-height:1.15;letter-spacing:-.01em}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 22px}
+
+  /* Buttons */
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:.5em;
+    background:linear-gradient(180deg,var(--gold) 0%,var(--gold-2) 100%);
+    color:#3a2f14;font-weight:700;font-size:16px;letter-spacing:.01em;
+    padding:16px 30px;border-radius:999px;border:1px solid var(--gold-deep);
+    box-shadow:0 8px 22px rgba(201,154,22,.35);cursor:pointer;
+    transition:transform .15s ease, box-shadow .15s ease;text-align:center;
+  }
+  .btn:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(201,154,22,.45)}
+  .btn.small{padding:12px 20px;font-size:14px}
+
+  /* Nav */
+  nav.sticky{
+    position:sticky;top:0;z-index:50;background:rgba(247,243,236,.92);
+    backdrop-filter:blur(10px);border-bottom:1px solid var(--line);
+  }
+  .navrow{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+  .brand{display:flex;flex-direction:column;line-height:1}
+  .brand .name{font-family:'Fraunces';font-weight:600;font-size:23px;letter-spacing:.06em}
+  .brand .sub{font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--bronze);margin-top:3px}
+
+  /* Contact */
+  .contact{padding:64px 0 80px}
+  .contact-head{text-align:center;max-width:640px;margin:0 auto 40px}
+  .contact-head .eyebrow{
+    font-family:'Inter';font-size:12px;font-weight:600;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--bronze);
+  }
+  .contact-head h1{font-size:clamp(30px,4.4vw,46px);margin:12px 0 14px}
+  .contact-head p{font-size:18px;color:var(--ink-soft)}
+
+  .contact-card{
+    max-width:640px;margin:0 auto;background:var(--card);border:1px solid var(--line);
+    border-radius:var(--radius);padding:44px 46px;box-shadow:var(--shadow-lg);text-align:center;
+  }
+  .contact-card .mail-label{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--bronze);font-weight:600}
+  .contact-card .mail{
+    display:inline-block;font-family:'Fraunces';font-size:clamp(22px,3.4vw,30px);font-weight:600;
+    color:var(--bronze-deep);margin:10px 0 4px;border-bottom:2px solid var(--gold-2);padding-bottom:4px;
+  }
+  .contact-card .mail:hover{color:var(--gold-deep)}
+  .contact-card .reply{font-size:15px;color:var(--ink-soft);margin-top:14px}
+  .contact-card .mailbtn{margin-top:24px}
+
+  .notes{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:900px;margin:34px auto 0}
+  .note{
+    background:var(--card);border:1px solid var(--line);border-left:4px solid var(--gold-2);
+    border-radius:14px;padding:24px 22px;box-shadow:var(--shadow);text-align:left;
+  }
+  .note .ic{font-size:26px;line-height:1;margin-bottom:12px}
+  .note h3{font-family:'Fraunces';font-size:18px;margin-bottom:8px}
+  .note p{color:var(--ink-soft);font-size:15px}
+  .note a.inline{color:var(--bronze-deep);font-weight:600;border-bottom:1px solid var(--line)}
+  .note a.inline:hover{color:var(--gold-deep)}
+
+  /* Footer */
+  footer{background:var(--cream-2);border-top:1px solid var(--line);padding:52px 0 40px;text-align:center}
+  footer .wm{font-family:'Fraunces';font-size:26px;letter-spacing:.06em;font-weight:600}
+  footer .flinks{display:flex;gap:26px;justify-content:center;margin:20px 0;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--bronze-deep);flex-wrap:wrap}
+  footer .cprt{font-size:13px;color:var(--ink-soft);margin-bottom:24px}
+  footer .disc{max-width:820px;margin:0 auto;font-size:11.5px;color:var(--bronze);line-height:1.6}
+
+  @media(max-width:900px){
+    .notes{grid-template-columns:1fr;max-width:640px}
+  }
+  @media(max-width:560px){
+    .contact{padding:44px 0 56px}
+    .contact-card{padding:32px 24px}
+  }
+</style>
+</head>
+<body>
+
+<!-- Sticky nav -->
+<nav class="sticky">
+  <div class="wrap navrow">
+    <a href="index.html" class="brand">
+      <span class="name">SANCTORIA</span>
+      <span class="sub">Blessed Devotionals</span>
+    </a>
+    <a href="index.html#pricing" class="btn small">Reserve Yours</a>
+  </div>
+</nav>
+
+<!-- Contact content -->
+<main class="contact">
+  <div class="wrap">
+    <div class="contact-head">
+      <span class="eyebrow">We Are Here For You</span>
+      <h1>Contact Us</h1>
+      <p>Whether it is a question about your order, your return, or your delivery, a real person on our team is ready to help. We answer every message within one business day.</p>
+    </div>
+
+    <div class="contact-card">
+      <div class="mail-label">Email Our Team</div>
+      <a class="mail" href="mailto:support@sanctoriastore.com">support@sanctoriastore.com</a>
+      <p class="reply">We answer every message within one business day.</p>
+      <a class="btn mailbtn" href="mailto:support@sanctoriastore.com">Send Us a Message →</a>
+    </div>
+
+    <div class="notes">
+      <div class="note">
+        <div class="ic">📦</div>
+        <h3>Order Questions</h3>
+        <p>Checking on an order you placed? Please include your order number from your ClickBank receipt so we can find it quickly and help you right away.</p>
+      </div>
+      <div class="note">
+        <div class="ic">🛡️</div>
+        <h3>Returns</h3>
+        <p>Not at peace with your bracelet? Our 30-Day Promise gives you a full refund, shipping included. Email us and we will guide you through every step.</p>
+      </div>
+      <div class="note">
+        <div class="ic">🚚</div>
+        <h3>Shipping Questions</h3>
+        <p>We dispatch within 24 hours, and most US orders arrive in 5 to 7 days with free shipping. Write to us any time for an update on your delivery.</p>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- Footer -->
+<footer>
+  <div class="wrap">
+    <div class="wm">SANCTORIA</div>
+    <div class="flinks">
+      <a href="contact.html">Contact</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </div>
+    <div class="cprt">Copyright 2026 Sanctoria. Made and blessed for the Circle.</div>
+    <div class="disc">ClickBank is the retailer of products on this site. CLICKBANK® is a registered trademark of Click Sales Inc., a Delaware corporation located at 1444 S. Entertainment Ave., Suite 410 Boise, ID 83709, USA and used by permission. ClickBank's role as retailer does not constitute an endorsement, approval or review of these products or any claim, statement or opinion used in promotion of these products.</div>
+  </div>
+</footer>
+
+</body>
+</html>
