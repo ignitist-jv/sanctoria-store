@@ -98,6 +98,13 @@ Updated continuously. Claude reads this at the start of every session in this fo
   4. **SerpentCrusher** (A/B) — carries the 4.97x spiritual-warfare winner, reframed via Our Lady of Guadalupe crushing the serpent. Hyp: warfare angle ports to the Marian rosary.
   5. **OfferingNotPrice** (single) — objection reframe disarming distrust-of-gurus, leans on the page "offering" positioning. Hyp: trust opener beats benefit opener on skeptics.
   A/B = Version A competitor-hot (generational curse only here) vs B Catholic-safe. **Pre-launch:** confirm test purchase tracks end-to-end before spend (prior DGG 18.71% CTR / 0 purchases incident). **REVIEW DUE after 72hrs of spend.**
+- **2026-07-20: Sanctoria relaunch 5-ads, `https://sanctoriastore.com/bracelet/` (new domain + new ad account).** 5 angles, all pointing at the bracelet direct-sale page (Single $37 / Family 2-Pack $47 / Household 3-Pack $57). Migrated proven winners rebuilt compliant (peace/protection/blessing vocabulary only, no banned fear terms) for the new Sanctoria domain, the bracelet SKU, and the new ad account. ANGLE names (PascalCase, trace back here):
+  1. **PatternEndsWithYou** (single): generational cycle-breaker, "it stops with me". The strongest migrated winner (peaked 6.6x on bracelet Pattern 5). Hyp: still leads with fear vocabulary stripped.
+  2. **InheritedByDaughters** (single): mother-to-daughter heirloom, pushes Family 2-Pack / Household 3-Pack. Hyp: legacy framing lifts pack mix + AOV; congruent with page "Worn by Mothers. Inherited by Daughters."
+  3. **ArchMichaelCenturion** (single): first-person archangel witness on the proven Centurion face (up to 9.24x). New designed static presenting the bracelet. Hyp: witness angle + Centurion face carries to bracelet static.
+  4. **MaryNeverStoppedPraying** (single): Marian mother-intercession, "she never stopped praying" (first Mother Mary winner 4.68x). Hyp: Marian lane carries to bracelet for the grandmother praying years for a drifting child.
+  5. **QuietSignsChecklist** (single): the historic 8.75x diagnostic-checklist mechanism rebuilt fully compliant as "quiet signs a home has lost its peace", third-person/community framing only ("many Catholic homes", "some Catholic mothers notice"), NO second-person state assertions. Hyp: checklist self-recognition still drives clicks when rebuilt clean.
+  Spec: `output/ads/2026-07-20-sanctoria-relaunch-5-ads.md`. **Pre-launch:** confirm a test purchase tracks end-to-end on the new domain + new pixel + fresh ClickMagick ID before scaling (prior DGG high-CTR/zero-purchase attribution incident; trust ClickBank actuals over Meta/ClickMagick). **REVIEW after 72hrs of spend:** ROAS, CPA, CTR, pack-mix/AOV, comment sentiment.
 - *(add tests here as launched)*
 
 ---
@@ -149,6 +156,27 @@ Updated continuously. Claude reads this at the start of every session in this fo
 
 ---
 
+### The Benedict Pair Necklace (LOCKED 2026-08-31)
+
+**Form factor:** Necklace. Double-strand flat snake chain (two parallel smooth ~2mm strands of EQUAL length lying together as one pair), gathered into slim polished gold end caps meeting a lobster clasp with a round jump ring. Sits at the center of the chest, high enough to disappear under a collar.
+
+**Metal:** Warm yellow GOLD tone, polished, 18K gold plated over stainless steel. NEVER silver, NEVER rose gold, NEVER antique or oxidized brass.
+
+**Pendants (both hang from ONE shared larger gold ring, on small round jump rings):**
+1. **Plain Latin cross**, smooth polished rounded-square section arms tapering slightly, ~35mm tall. NO Christ figure. It is a CROSS, not a crucifix. No engraving, no texture. Hangs lower and slightly in front.
+2. **Round Saint Benedict medal**, flat disc ~18mm, raised relief of Saint Benedict standing with a staff and a book, letters ringing the rim, PLAIN POLISHED GOLD EDGE. Absolutely NO black enamel, NO black bezel, NO dark outline ring. Sits beside the cross, slightly overlapping and slightly behind.
+3. The medal is clearly SMALLER than the cross.
+
+**Ships with:** a printed Saint Benedict prayer card (Latin prayer plus English translation).
+
+**Image-prompt rules (three failure modes that got renders rejected on 2026-08-31):**
+- **Layered chains.** The model defaults to a stack of 2 to 3 necklaces at different lengths with the pendants split across them. Every prompt must say ONE SINGLE NECKLACE, two strands of the SAME length, both pendants on ONE shared ring, and negative-prompt layered necklaces.
+- **Floating necklace.** Lifestyle scenes rendered the necklace detached and oversized in the foreground. State that it is worn on the body at realistic jewelry scale and negative-prompt floating/giant/detached jewelry.
+- **Readable text.** Never allow a prayer card, book title, or packaging with words in a generated frame; describe the medal rim letters as "tiny softly abstracted indistinct letterforms that are not legible".
+- Attaching a clean generated product render as a SECOND reference alongside the supplier photo fixed the chain geometry immediately. Do that for any further shots.
+
+**Angle:** `HandToHeart` (see CLAUDE.md). Format code for ad naming: use the standard codes, e.g. `HandToHeart_PHOTO_YYYY-MM-DD`.
+
 ## Update Log
 
 > Quick changelog so we can see velocity.
@@ -174,3 +202,6 @@ Updated continuously. Claude reads this at the start of every session in this fo
 - 2026-06-30: /scale-or-kill. SCALE x3: Pattern 5 (120246534503760135) breakout 6.6x 7/14/30d, 4-5 sales, freq 1.3 -> raise $12 to $15; AS4 (120245116749090135) 1.67/1.58/1.57x, 12 sales -> ladder $14 to $18; Old Ads 4 (120245963291750135) 1.30/3.89/3.89x, 5 sales, CTR 24% -> nudge $7 to $9. Old Ads 2 New Page (120245963291600135): CORRECTED after double-check -> NOT a kill. Bulk pull glitch had shown 14d=0 sales; isolated pull confirms 14d=30d=2.09x/4 sales (ad set only started Jun 16, ~14d old, so 14d/30d are the same window). All 4 sales in its first week (Jun 16-22); last 7d dry (0 sales/$37.53) but no fatigue (freq 1.4, CTR 18%). Verdict WATCH at $5/day, recheck Jul 3; kill only if dry spend passes ~$55-60 with still no sales + ClickBank confirms none. Lesson: verify a kill on an isolated per-adset pull; the bulk multi-adset pull can return "Not available" for a window that actually has sales. TOO EARLY: 6 ArchMichael video ad sets launched today at $5/day (Centurion/Radiant/Desert x2 each), recheck Jul 3; flagged possible accidental duplicate pairs. Pattern angle now compounding across AS4 + Pattern 5 + Archangel videos. ClickBank not reconciled (offline). Raw: output/ads/_data/2026-06-30-rawpull.json.
 - 2026-06-29: Produced 6 Archangel Michael talking-head videos for the PatternEndsWithYou angle (3 faces + 3 vestments x Rosary + Bracelet). Michael chosen as the winning angel from the Jun-19 Witness batch (TheWitnessGuard = only ad with a sale; GuardWorn = highest CTR 19.55%). Files in output/ads/videos/Michael_Pattern_*.mp4 (+srt); avatars _avatar_michael_v1/2/3. Voice: HeyGen William Prescott Broadcaster (deep authoritative), 4:5, ~46-49s. Scripts: output/ads/2026-06-29-archangel-PatternEndsWithYou-scripts.md. To launch into AS4 / bracelet Pattern ad set (TS does manually).
 - 2026-06-29: /scale-playbook started for AS4 "The Pattern Ends With You" (120245116749090135). Entered active scaling at $14/day. Vertical ladder $14 -> $18 -> $22 -> $27 -> $33/day (+~25% every 2-3d, hold if ROAS dips below 1.2 or freq > 3). Horizontal: LAL1% (seed page viewers/ATC, purchase pixel thin at 11 sales), then LAL2-3%, LAL4-10%, Broad/Advantage+, interest stack (Catholic/Rosary/Prayer), Reels-only — one at a time, each must hold >=1.2x for 3d before next. Refresh bench = Pattern5 (v5 same angle, 3.16x). Scaling deliberately due to thin margin (1.47x vs 1.2 break-even).
+- 2026-07-20: Produced 5 relaunch ads (Phase 3 /generate-ads) for Sanctoria bracelet on new domain sanctoriastore.com/bracelet/ + new ad account. Angles: PatternEndsWithYou, InheritedByDaughters, ArchMichaelCenturion, MaryNeverStoppedPraying, QuietSignsChecklist (8.75x checklist mechanism rebuilt compliant, third-person framing). Spec: output/ads/2026-07-20-sanctoria-relaunch-5-ads.md.
+
+- 2026-07-30: /scale-or-kill + /generate-ads run. Live winners: AQuietDevotion (120255189519530051) 2.98x / 2 sales, Chiaroscuro (120255292457450051) 2.74x / 1 sale ($50.68 higher-tier). Recently paused (cooldown to ~2026-09-27): EveryDetailHasMeaning, CarryYourFaith, Minimalist (kill-pending), BoldEditorial, PassItDown, HandcraftedWithDevotion, AGiftOfFaith, PrayerYouWear, WhyIWearItDaily; SacredHeritage took 1 sale (2.76x) before pausing. Built /bracelet-v2/ (rebranded exact replica of the DGG original page) + /go/ 50/50 rotator, deployed live 2026-07-30 for a landing-page split test vs the current /bracelet/ advertorial (same pixel, ClickMagick, and order-2/cbfid checkout). Generated a new HERITAGE/MEANING cold batch (5 ads): TheManBehindTheMedal, WhatTheLettersMean, WhyTheMonksNeverTookItOff, NotTheDrawerMedal, WhereThisMedalHasBeen. Spec: output/ads/2026-07-30-heritage-meaning-batch.md. All point at /go/.

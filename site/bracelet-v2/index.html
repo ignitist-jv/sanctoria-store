@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>The St Benedict Marian Bracelet | Sanctoria</title>
+
+<!-- ClickMagick Tracker -->
+<script>
+    window.clickmagick_cmc = {
+        uid: '92654',
+        hid: '1214314307',
+        cmc_project: 'Sanctoria Store',
+        vid_info: 'on',
+        utm_source: 'organic',
+    }
+</script>
+<script src='//cdn.clkmc.com/cmc.js'></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #F5F0E8;
+    --paper: #FFFFFF;
+    --paper-soft: #FBF7EF;
+    --ink: #2A1F1A;
+    --ink-soft: #5B4A40;
+    --muted: #968878;
+    --dark: #3D2A24;
+    --dark-deep: #2A1A14;
+    --accent: #B8860B;
+    --accent-soft: #D4AF37;
+    --line: #E2D9CA;
+    --line-dark: #4D3830;
+    --strike: #C9B8A8;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',-apple-system,system-ui,sans-serif;background:var(--bg);color:var(--ink);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}
+  img{max-width:100%;height:auto;display:block}
+
+  .container{max-width:520px;margin:0 auto;padding:0 20px}
+
+  /* Top urgency strip */
+  .strip{background:var(--dark-deep);color:#F5F0E8;text-align:center;padding:10px 16px;font-family:'Inter',sans-serif;font-weight:600;font-size:12px;letter-spacing:0.4px}
+  .strip strong{color:var(--accent-soft)}
+
+  /* HERO */
+  .hero{padding:32px 0 24px;text-align:center}
+  .eyebrow{font-family:'Inter',sans-serif;font-weight:700;font-size:10px;letter-spacing:2.5px;color:var(--accent);text-transform:uppercase;margin-bottom:14px}
+  .hero h1{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(28px,5.5vw,38px);line-height:1.1;letter-spacing:-0.4px;color:var(--ink);margin-bottom:12px}
+  .hero h1 em{font-style:italic;color:var(--accent);font-weight:500}
+  .hero-sub{font-family:'Inter',sans-serif;font-size:14px;color:var(--ink-soft);max-width:380px;margin:0 auto 24px;line-height:1.5}
+  .hero-image{margin:0 auto 8px;max-width:440px}
+  .hero-slideshow{position:relative;width:100%;aspect-ratio:1/1;overflow:hidden;border-radius:8px;background:var(--paper-soft)}
+  .hero-slide{position:absolute;inset:0;opacity:0;transition:opacity 1s ease}
+  .hero-slide.active{opacity:1}
+  .hero-slide img{width:100%;height:100%;object-fit:cover;display:block;border-radius:8px}
+  .hero-dots{display:flex;justify-content:center;gap:7px;margin-top:14px}
+  .hero-dot{width:8px;height:8px;border-radius:50%;background:var(--line);border:none;padding:0;cursor:pointer;transition:all 0.25s;flex-shrink:0}
+  .hero-dot:hover{background:var(--muted)}
+  .hero-dot.active{background:var(--accent);width:24px;border-radius:4px}
+
+  /* Batch tracker */
+  .batch-wrap{padding:24px 0}
+  .batch-card{background:var(--paper-soft);border:1px solid var(--line);border-radius:12px;padding:22px;max-width:480px;margin:0 auto}
+  .batch-title{font-family:'Inter',sans-serif;font-weight:800;font-size:18px;letter-spacing:0.2px;color:var(--ink);margin-bottom:10px;text-transform:uppercase;text-align:center}
+  .batch-desc{font-family:'Inter',sans-serif;font-size:14px;color:var(--ink-soft);line-height:1.5;margin-bottom:18px;text-align:center}
+  .batch-row{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-radius:6px;margin-bottom:8px;font-family:'Inter',sans-serif;font-weight:700;font-size:13px;letter-spacing:1.2px;text-transform:uppercase}
+  .batch-row.past{background:#E8E0D2;color:var(--muted)}
+  .batch-row.past .batch-status{text-decoration:line-through}
+  .batch-row.now{background:var(--dark);color:#F5F0E8}
+  .batch-row.now .batch-status{color:var(--accent-soft)}
+  .batch-row.next{background:#EBE3D2;color:var(--muted)}
+
+  /* Section divider with text */
+  .divider{display:flex;align-items:center;justify-content:center;max-width:480px;margin:24px auto 16px;gap:14px}
+  .divider::before,.divider::after{content:"";flex:1;height:1px;background:var(--line)}
+  .divider-text{font-family:'Inter',sans-serif;font-weight:700;font-size:13px;letter-spacing:2.5px;color:var(--ink);text-transform:uppercase}
+
+  /* Pricing tiers - Gleetoria-inspired big cards */
+  .tiers{max-width:480px;margin:0 auto;padding:0 0 24px}
+  .tier{display:block;background:var(--paper-soft);border:2px solid var(--line);border-radius:12px;padding:20px 22px;margin-bottom:14px;cursor:pointer;transition:all 0.2s;position:relative}
+  .tier:hover{border-color:var(--accent-soft)}
+  .tier input{position:absolute;opacity:0;pointer-events:none}
+  .tier-row{display:flex;align-items:center;gap:14px}
+  .tier-radio{width:24px;height:24px;border:2px solid var(--line);border-radius:50%;flex-shrink:0;position:relative;background:var(--paper)}
+  .tier input:checked ~ .tier-row .tier-radio{border-color:var(--accent);border-width:6px}
+  .tier-info{flex:1;min-width:0}
+  .tier-name{font-family:'Inter',sans-serif;font-weight:700;font-size:18px;color:var(--ink);line-height:1.2}
+  .tier-save{font-family:'Inter',sans-serif;font-size:13px;color:var(--ink-soft);margin-top:2px}
+  .tier-price{font-family:'Inter',sans-serif;font-weight:700;font-size:22px;color:var(--ink);flex-shrink:0;text-align:right}
+  .tier-price-was{display:block;font-size:14px;color:var(--strike);text-decoration:line-through;font-weight:500;margin-top:2px}
+
+  /* Bracelet thumbnail row inside each tier - collapsed by default, expands when tier is selected */
+  .tier-bracelets{display:flex;align-items:center;justify-content:flex-start;gap:6px;flex-wrap:wrap;max-height:0;overflow:hidden;opacity:0;margin-top:0;transition:max-height 0.35s ease,opacity 0.25s ease,margin-top 0.25s ease}
+  .tier:has(input:checked) .tier-bracelets{max-height:120px;opacity:1;margin-top:10px}
+  .tier-bracelets img{width:54px;height:54px;object-fit:contain;background:rgba(184,134,11,0.06);border-radius:6px;border:1px solid var(--line);padding:3px}
+  .per-bracelet{margin-left:auto;align-self:center;font-family:'Inter',sans-serif;font-weight:700;font-size:12px;letter-spacing:0.5px;color:var(--accent);background:rgba(184,134,11,0.08);padding:6px 10px;border-radius:4px;text-transform:uppercase;white-space:nowrap}
+  @media (max-width:380px){.tier-bracelets img{width:46px;height:46px}.per-bracelet{font-size:11px;padding:5px 8px}}
+
+  /* Selected tier - dark inverted */
+  .tier:has(input:checked){background:var(--paper);border-color:var(--dark);box-shadow:0 8px 22px rgba(42,31,26,0.12)}
+  .tier-tag{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--dark);color:#F5F0E8;font-family:'Inter',sans-serif;font-weight:700;font-size:10.5px;letter-spacing:1.6px;padding:5px 16px;border-radius:4px;text-transform:uppercase;white-space:nowrap}
+  .tier-tag.gold{background:var(--accent);color:#FFFFFF;box-shadow:0 4px 12px rgba(184,134,11,0.35)}
+
+  /* Bonus stack inside selected tier */
+  .tier-bonuses{margin-top:0;max-height:0;overflow:hidden;opacity:0;transition:max-height 0.35s ease,opacity 0.25s ease,margin-top 0.25s ease}
+  .tier:has(input:checked) .tier-bonuses{max-height:600px;opacity:1;margin-top:16px}
+  .tier-bonus-list{background:var(--dark);border-radius:8px;overflow:hidden}
+  .bonus-row{display:flex;align-items:center;gap:12px;padding:14px 16px;border-bottom:1px solid var(--line-dark);color:#F5F0E8}
+  .bonus-row:last-child{border-bottom:none}
+  .bonus-thumb{width:42px;height:42px;background:rgba(255,255,255,0.08);border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-size:18px;color:var(--accent-soft);flex-shrink:0}
+  .bonus-name{flex:1;font-family:'Inter',sans-serif;font-weight:600;font-size:13.5px;line-height:1.3}
+  .bonus-name .free{color:var(--accent-soft);font-weight:700}
+  .bonus-price{font-family:'Inter',sans-serif;font-size:13px;color:var(--strike);text-decoration:line-through;flex-shrink:0;font-weight:500}
+
+  /* Per-tier inline checkout button - hidden until that tier is selected */
+  .tier-checkout{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:18px 20px;background:var(--accent);color:#FFFFFF;border-radius:8px;font-family:'Inter',sans-serif;font-weight:700;font-size:14px;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;box-shadow:0 6px 16px rgba(184,134,11,0.35);max-height:0;overflow:hidden;opacity:0;margin-top:0;padding-top:0;padding-bottom:0;transition:max-height 0.35s ease,opacity 0.25s ease,margin-top 0.25s ease,padding 0.25s ease,background 0.2s,transform 0.2s,box-shadow 0.2s}
+  .tier:has(input:checked) .tier-checkout{max-height:80px;opacity:1;margin-top:14px;padding-top:18px;padding-bottom:18px}
+  .tier-checkout:hover{background:var(--dark);transform:translateY(-1px);box-shadow:0 10px 22px rgba(42,31,26,0.3)}
+  .tier-checkout .arrow{font-size:18px;flex-shrink:0}
+  .tier-checkout .tc-was{text-decoration:line-through;opacity:0.6;font-weight:600;margin-right:4px;letter-spacing:0.5px}
+
+  /* Free shipping pill */
+  .shipping-pill{display:inline-block;background:var(--paper-soft);color:var(--ink);font-family:'Inter',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.8px;padding:4px 12px;border-radius:20px;margin-top:8px;border:1px solid var(--line)}
+  .tier:has(input:checked) .shipping-pill{background:#F5F0E8;color:var(--ink);border-color:var(--accent-soft)}
+
+  /* Main CTA */
+  .cta-wrap{max-width:480px;margin:8px auto 0;padding:0 0 24px}
+  .main-cta{display:block;background:var(--dark);color:#F5F0E8;font-family:'Inter',sans-serif;font-weight:700;font-size:14px;letter-spacing:1.6px;text-transform:uppercase;text-align:center;text-decoration:none;padding:20px 24px;border-radius:8px;transition:all 0.2s;box-shadow:0 10px 24px rgba(42,31,26,0.18)}
+  .main-cta:hover{background:var(--dark-deep);transform:translateY(-1px);box-shadow:0 14px 30px rgba(42,31,26,0.25)}
+  .cta-meta{text-align:center;font-family:'Inter',sans-serif;font-size:11px;letter-spacing:1.4px;color:var(--muted);text-transform:uppercase;margin-top:12px}
+
+  /* Trust quote */
+  .quote-wrap{padding:24px 0 36px}
+  .quote{max-width:460px;margin:0 auto;text-align:center}
+  .quote blockquote{font-family:'Fraunces',serif;font-style:italic;font-weight:400;font-size:17px;line-height:1.5;color:var(--ink);margin-bottom:10px}
+  .quote cite{font-family:'Inter',sans-serif;font-weight:600;font-size:11px;letter-spacing:1.2px;color:var(--accent);text-transform:uppercase;font-style:normal}
+
+  /* Guarantee */
+  .guarantee{background:var(--paper-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:24px 20px;text-align:center}
+  .guarantee-row{display:flex;align-items:center;justify-content:center;gap:14px;max-width:440px;margin:0 auto}
+  .guarantee-icon{font-family:'Fraunces',serif;font-size:32px;color:var(--accent);line-height:1}
+  .guarantee-text{text-align:left;flex:1}
+  .guarantee-title{font-family:'Inter',sans-serif;font-weight:700;font-size:13.5px;color:var(--ink);letter-spacing:0.3px;margin-bottom:2px}
+  .guarantee-desc{font-family:'Inter',sans-serif;font-size:12.5px;color:var(--ink-soft);line-height:1.4}
+
+  /* IMAGE WIREFRAME placeholders */
+  .img-wire{display:flex;align-items:center;justify-content:center;background:repeating-linear-gradient(45deg,#EEE7D6,#EEE7D6 10px,#E5DCC5 10px,#E5DCC5 20px);border:2px dashed #B8A480;border-radius:8px;color:#5B4A40;font-family:'Inter',sans-serif;font-weight:600;text-align:center;padding:14px;position:relative}
+  .img-wire-label{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:#8B6F4A;line-height:1.4}
+  .img-wire-spec{display:block;font-family:'Inter',sans-serif;font-weight:400;font-size:10px;color:#A68B65;letter-spacing:0.5px;margin-top:4px;text-transform:none;font-style:italic}
+  .img-wire-icon{font-size:24px;color:#B8A480;margin-bottom:6px;display:block}
+
+  .img-hero{aspect-ratio:1/1;max-width:340px;margin:0 auto}
+  .img-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;max-width:480px;margin:24px auto}
+  .img-gallery .img-wire{aspect-ratio:1/1}
+  .img-medal{aspect-ratio:16/9;max-width:480px;margin:0 auto}
+  .img-bonus-thumb{width:42px;height:42px;flex-shrink:0;border-radius:6px;padding:0;background:repeating-linear-gradient(45deg,rgba(255,255,255,0.05),rgba(255,255,255,0.05) 4px,rgba(255,255,255,0.12) 4px,rgba(255,255,255,0.12) 8px);border:1.5px dashed rgba(201,169,97,0.55)}
+  .img-bonus-thumb .img-wire-label{font-size:8px;color:rgba(245,240,232,0.65);letter-spacing:0.5px;line-height:1.1}
+  .img-testimonial{width:60px;height:60px;border-radius:50%;margin:0 auto 12px}
+  .img-seal{width:54px;height:54px;border-radius:50%;flex-shrink:0}
+
+  /* Gallery section */
+  .gallery-section{padding:0 0 12px}
+
+  /* Marquee (auto-scrolling family/customer band) */
+  .marquee-section{background:var(--dark);padding:32px 0;overflow:hidden;position:relative}
+  .marquee-head{text-align:center;margin-bottom:20px;padding:0 20px}
+  .marquee-eyebrow{font-family:'Inter',sans-serif;font-weight:700;font-size:10.5px;letter-spacing:3px;color:var(--accent-soft);text-transform:uppercase;margin-bottom:8px}
+  .marquee-title{font-family:'Fraunces',serif;font-weight:500;font-size:22px;color:#FFFFFF;line-height:1.2;letter-spacing:-0.2px}
+  .marquee-title em{font-style:italic;color:var(--accent-soft)}
+  .marquee{overflow:hidden;width:100%;position:relative;mask-image:linear-gradient(to right,transparent 0,#000 8%,#000 92%,transparent 100%);-webkit-mask-image:linear-gradient(to right,transparent 0,#000 8%,#000 92%,transparent 100%)}
+  .marquee-track{display:flex;width:max-content;animation:marquee 40s linear infinite;gap:14px;padding:4px 7px}
+  .marquee-track:hover{animation-play-state:paused}
+  .marquee-track img{width:170px;height:170px;object-fit:cover;border-radius:10px;flex-shrink:0;border:2px solid rgba(201,169,97,0.25);display:block}
+  @keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+  @media (max-width:600px){.marquee-track img{width:130px;height:130px}}
+
+  /* Loox-style reviews section */
+  .reviews-section{background:var(--paper);border-top:1px solid var(--line);padding:36px 0 28px}
+  .reviews-summary{max-width:480px;margin:0 auto;text-align:center;padding:0 20px 24px;border-bottom:1px solid var(--line)}
+  .reviews-avg{font-family:'Fraunces',serif;font-weight:500;font-size:48px;color:var(--ink);line-height:1;margin-bottom:6px}
+  .reviews-stars{font-size:18px;color:var(--accent);letter-spacing:3px;margin-bottom:6px;line-height:1}
+  .reviews-count{font-family:'Inter',sans-serif;font-size:13px;color:var(--ink-soft);margin-bottom:18px;font-weight:500}
+  .reviews-breakdown{max-width:300px;margin:0 auto}
+  .breakdown-row{display:flex;align-items:center;gap:10px;margin-bottom:5px;font-family:'Inter',sans-serif;font-size:11.5px;color:var(--ink-soft)}
+  .breakdown-stars{width:42px;font-weight:600;flex-shrink:0;text-align:right}
+  .breakdown-bar{flex:1;height:6px;background:var(--line);border-radius:3px;overflow:hidden}
+  .breakdown-fill{height:100%;background:var(--accent);border-radius:3px}
+  .breakdown-pct{width:36px;font-size:11px;color:var(--muted);flex-shrink:0;text-align:left}
+  .reviews-photos{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;margin:20px auto 0;max-width:480px;padding:0 20px}
+  .review-photo-thumb{width:54px;height:54px;border-radius:4px;object-fit:cover;border:1px solid var(--line)}
+  .reviews-grid{max-width:880px;margin:24px auto 0;padding:0 20px;display:grid;grid-template-columns:1fr;gap:14px}
+  @media (min-width:680px){.reviews-grid{grid-template-columns:1fr 1fr;gap:18px}}
+  .review-card{background:var(--paper-soft);border:1px solid var(--line);border-radius:8px;padding:18px}
+  .review-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;gap:10px;flex-wrap:wrap}
+  .review-stars{color:var(--accent);font-size:13px;letter-spacing:2px;line-height:1}
+  .review-date{font-family:'Inter',sans-serif;font-size:11px;color:var(--muted)}
+  .review-title{font-family:'Inter',sans-serif;font-weight:700;font-size:14px;color:var(--ink);margin-bottom:6px;line-height:1.3}
+  .review-body{font-family:'Fraunces',serif;font-style:italic;font-size:14.5px;color:var(--ink-soft);line-height:1.55;margin-bottom:12px}
+  .review-meta{display:flex;align-items:center;gap:8px;font-family:'Inter',sans-serif;font-size:12px}
+  .review-avatar{width:30px;height:30px;border-radius:50%;background:var(--accent);color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:11px;flex-shrink:0;letter-spacing:0.5px}
+  .review-author{color:var(--ink);font-weight:600}
+  .review-verified{color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:0.5px}
+  .review-img{width:100%;max-width:120px;height:120px;object-fit:cover;border-radius:6px;margin-bottom:10px;border:1px solid var(--line)}
+  .reviews-pagination{display:flex;align-items:center;justify-content:center;gap:8px;max-width:480px;margin:24px auto 0;padding:0 20px;font-family:'Inter',sans-serif;flex-wrap:wrap}
+  .page-btn{min-width:38px;height:38px;padding:0 12px;background:var(--paper);color:var(--ink);font-family:'Inter',sans-serif;font-weight:600;font-size:13px;border:1.5px solid var(--line);border-radius:6px;cursor:pointer;transition:all 0.15s;display:inline-flex;align-items:center;justify-content:center}
+  .page-btn:hover:not(:disabled){border-color:var(--ink);background:var(--paper-soft)}
+  .page-btn:disabled{opacity:0.35;cursor:not-allowed}
+  .page-num{min-width:38px;height:38px;background:var(--paper);color:var(--ink);font-family:'Inter',sans-serif;font-weight:600;font-size:13px;border:1.5px solid var(--line);border-radius:6px;cursor:pointer;transition:all 0.15s;display:inline-flex;align-items:center;justify-content:center}
+  .page-num:hover{border-color:var(--ink)}
+  .page-num.active{background:var(--ink);color:#FFFFFF;border-color:var(--ink)}
+  .page-info{font-size:12px;color:var(--muted);letter-spacing:0.3px;margin:0 4px}
+
+  /* Offering note (positioning block) */
+  .offering-note{background:var(--paper);border:1px solid var(--line);border-top:3px solid var(--accent);border-radius:6px;padding:20px 22px;max-width:480px;margin:0 auto 16px;text-align:center}
+  .offering-note-label{font-family:'Inter',sans-serif;font-weight:700;font-size:10px;letter-spacing:1.8px;color:var(--accent);text-transform:uppercase;margin-bottom:10px}
+  .offering-note-text{font-family:'Fraunces',serif;font-style:italic;font-size:15px;color:var(--ink-soft);line-height:1.55;max-width:380px;margin:0 auto}
+  .offering-note-text strong{font-style:normal;color:var(--ink);font-weight:500}
+
+  footer{padding:20px 16px;background:var(--dark-deep);color:rgba(245,240,232,0.5);text-align:center}
+  footer .links{font-family:'Inter',sans-serif;font-size:10px;letter-spacing:1.2px;text-transform:uppercase;margin-bottom:6px}
+  footer .links a{color:rgba(245,240,232,0.55);text-decoration:none;margin:0 6px}
+  footer .copyright{font-size:11px;font-style:italic}
+  footer .cb-disclaimer{max-width:760px;margin:16px auto 0;padding:14px 18px 0;border-top:1px solid rgba(245,240,232,0.12);font-family:'Inter',sans-serif;font-size:10.5px;line-height:1.55;color:rgba(245,240,232,0.45);text-align:left;font-style:normal}
+</style>
+</head>
+<body>
+
+<div class="strip">
+  Blessed Batch · <strong>23 Reservations Remaining</strong> · Ships Fast
+</div>
+
+<!-- HERO (compact) -->
+<section class="hero">
+  <div class="container">
+    <div class="eyebrow">A Marian Devotion · Worn Daily</div>
+    <h1>Blessed in Rome.<br>Worn by Mothers.<br><em>Inherited by Daughters.</em></h1>
+    <p class="hero-sub">Ebony wood beads. Antique brass Saint Benedict medal. The bracelet your grandmother almost gave you, hand-knotted at the abbey, blessed by the chaplain.</p>
+    <div class="hero-image">
+      <div class="hero-slideshow" id="hero-slideshow">
+        <div class="hero-slide active"><img fetchpriority="high" decoding="async" src="/images/Hero.jpg" alt="St Benedict Marian Bracelet, candlelit Bible scene"></div>
+        <div class="hero-slide"><img loading="lazy" decoding="async" src="/images/wrist.jpg" alt="Bracelet worn on wrist"></div>
+        <div class="hero-slide"><img loading="lazy" decoding="async" src="/images/closeup.jpg" alt="Antique brass Saint Benedict medal close-up"></div>
+        <div class="hero-slide"><img loading="lazy" decoding="async" src="/images/blessing-1.jpg" alt="Bracelet in cream velvet gift pouch"></div>
+        <div class="hero-slide"><img loading="lazy" decoding="async" src="/images/lifestyle.jpg" alt="Bracelet worn in daily prayer"></div>
+      </div>
+      <div class="hero-dots" id="hero-dots">
+        <button class="hero-dot active" data-i="0" aria-label="Slide 1"></button>
+        <button class="hero-dot" data-i="1" aria-label="Slide 2"></button>
+        <button class="hero-dot" data-i="2" aria-label="Slide 3"></button>
+        <button class="hero-dot" data-i="3" aria-label="Slide 4"></button>
+        <button class="hero-dot" data-i="4" aria-label="Slide 5"></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3-IMAGE LIFESTYLE GALLERY (matches Gleetoria image cadence) -->
+<section class="gallery-section">
+  <div class="container">
+    <div class="img-gallery">
+      <img loading="lazy" decoding="async" src="/images/wrist.jpg" alt="St Benedict bracelet on woman's wrist" style="aspect-ratio:1/1;object-fit:cover;border-radius:8px;width:100%">
+      <img loading="lazy" decoding="async" src="/images/closeup.jpg" alt="Antique brass Saint Benedict medal close-up" style="aspect-ratio:1/1;object-fit:cover;border-radius:8px;width:100%">
+      <img loading="lazy" decoding="async" src="/images/blessing-1.jpg" alt="St Benedict bracelet in cream velvet pouch, gift-ready" style="aspect-ratio:1/1;object-fit:cover;border-radius:8px;width:100%">
+    </div>
+  </div>
+</section>
+
+<!-- BATCH TRACKER (Gleetoria-inspired) -->
+<section class="batch-wrap">
+  <div class="container">
+    <div class="batch-card">
+      <div class="batch-title">Next Batch Shipping Soon</div>
+      <p class="batch-desc">Reserve your St Benedict Marian Bracelet before we sell out again. Save up to 35% today.</p>
+      <div class="batch-row past">
+        <span id="batch-date-past">May 7</span>
+        <span class="batch-status">Sold Out</span>
+      </div>
+      <div class="batch-row now">
+        <span id="batch-date-now">May 27</span>
+        <span class="batch-status" id="batch-reserve-pct">94% Reserved</span>
+      </div>
+      <div class="batch-row next">
+        <span id="batch-date-next">June 16</span>
+        <span class="batch-status">Upcoming</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIVIDER -->
+<div class="divider">
+  <span class="divider-text">✚ Limited Blessing Batch ✚</span>
+</div>
+
+<!-- OFFERING POSITIONING NOTE (bridges price into Catholic frame) -->
+<div class="container">
+  <div class="offering-note">
+    <div class="offering-note-label">★ Why "Offering" And Not "Price"</div>
+    <p class="offering-note-text">Catholic sacramentals cannot be sold. The bracelet itself is the gift. Your <strong>offering</strong> covers the materials, the chaplain's blessing, the velvet pouch, and shipping to your door. Anything beyond supports the abbey's mission.</p>
+  </div>
+</div>
+
+<!-- PRICING TIERS (Gleetoria-style, with bonus expansion in selected) -->
+<section class="tiers">
+  <div class="container">
+
+    <label class="tier">
+      <input type="radio" name="pack" value="single">
+      <div class="tier-row">
+        <span class="tier-radio"></span>
+        <div class="tier-info">
+          <div class="tier-name">Single</div>
+          <div class="tier-save">One St Benedict Marian Bracelet</div>
+          <div class="tier-bracelets">
+            <img loading="lazy" decoding="async" src="/images/bracelet.png" alt="">
+            <span class="per-bracelet">$37 each</span>
+          </div>
+          <span class="shipping-pill">Free Shipping</span>
+        </div>
+        <div class="tier-price">
+          $37
+          <span class="tier-price-was">$42</span>
+        </div>
+      </div>
+      <div class="tier-bonuses">
+        <div class="tier-bonus-list">
+          <div class="bonus-row">
+            <img loading="lazy" decoding="async" src="/images/workbook.jpg" alt="The Covenant Restored Workbook" style="width:42px;height:42px;object-fit:cover;border-radius:6px;flex-shrink:0">
+            <div class="bonus-name"><span class="free">+ FREE</span> The Covenant Restored Workbook</div>
+            <div class="bonus-price">$19</div>
+          </div>
+          <div class="bonus-row">
+            <img loading="lazy" decoding="async" src="/images/prayer-companion.jpg" alt="Daily Prayer Card" style="width:42px;height:42px;object-fit:cover;border-radius:6px;flex-shrink:0">
+            <div class="bonus-name"><span class="free">+ FREE</span> Daily Prayer Card</div>
+            <div class="bonus-price">$15</div>
+          </div>
+        </div>
+      </div>
+      <a href="https://karmacc.pay.clickbank.net/?cbitems=bracelet-1&template=order-2&cbfid=63684&vtid=[cmc_vid]" class="tier-checkout"><span>Reserve Single · <span class="tc-was">$76</span> $37</span><span class="arrow">→</span></a>
+    </label>
+
+    <label class="tier">
+      <span class="tier-tag">★ Protect Your Whole Family</span>
+      <input type="radio" name="pack" value="family" checked>
+      <div class="tier-row">
+        <span class="tier-radio"></span>
+        <div class="tier-info">
+          <div class="tier-name">Family Reservation</div>
+          <div class="tier-save">2 Bracelets. One to keep. One to give.</div>
+          <div class="tier-bracelets">
+            <img loading="lazy" decoding="async" src="/images/bracelet.png" alt="">
+            <img loading="lazy" decoding="async" src="/images/bracelet.png" alt="">
+            <span class="per-bracelet">$23.50 each</span>
+          </div>
+          <span class="shipping-pill">Free Shipping</span>
+        </div>
+        <div class="tier-price">
+          $47
+          <span class="tier-price-was">$84</span>
+        </div>
+      </div>
+      <div class="tier-bonuses">
+        <div class="tier-bonus-list">
+          <div class="bonus-row">
+            <img loading="lazy" decoding="async" src="/images/workbook.jpg" alt="The Covenant Restored Workbook" style="width:42px;height:42px;object-fit:cover;border-radius:6px;flex-shrink:0">
+            <div class="bonus-name"><span class="free">+ FREE</span> The Covenant Restored Workbook</div>
+            <div class="bonus-price">$19</div>
+          </div>
+          <div class="bonus-row">
+            <img loading="lazy" decoding="async" src="/images/prayer-companion.jpg" alt="Daily Prayer Card" style="width:42px;height:42px;object-fit:cover;border-radius:6px;flex-shrink:0">
+            <div class="bonus-name"><span class="free">+ FREE</span> Daily Prayer Card</div>
+            <div class="bonus-price">$15</div>
+          </div>
+          <div class="bonus-row">
+            <img loading="lazy" decoding="async" src="/images/novena.jpg" alt="Saint Benedict 30-Day Protection Novena Booklet" style="width:42px;height:42px;object-fit:cover;border-radius:6px;flex-shrink:0">
+            <div class="bonus-name"><span class="free">+ FREE</span> 30-Day Saint Benedict Novena Booklet</div>
+            <div class="bonus-price">$11</div>
+          </div>
+        </div>
+      </div>
+      <a href="https://karmacc.pay.clickbank.net/?cbitems=bracelet-2&template=order-2&cbfid=63684&vtid=[cmc_vid]" class="tier-checkout"><span>Reserve Family · <span class="tc-was">$129</span> $47</span><span class="arrow">→</span></a>
+    </label>
+
+    <label class="tier">
+      <span class="tier-tag gold">★ Most Value</span>
+      <input type="radio" name="pack" value="household">
+      <div class="tier-row">
+        <span class="tier-radio"></span>
+        <div class="tier-info">
+          <div class="tier-name">Household</div>
+          <div class="tier-save">3 Bracelets. Three generations.</div>
+          <div class="tier-bracelets">
+            <img loading="lazy" decoding="async" src="/images/bracelet.png" alt="">
+            <img loading="lazy" decoding="async" src="/images/bracelet.png" alt="">
+            <img loading="lazy" decoding="async" src="/images/bracelet.png" alt="">
+            <span class="per-bracelet">$19.00 each</span>
+          </div>
+          <span class="shipping-pill">Free Shipping</span>
+        </div>
+        <div class="tier-price">
+          $57
+          <span class="tier-price-was">$126</span>
+        </div>
+      </div>
+      <div class="tier-bonuses">
+        <div class="tier-bonus-list">
+          <div class="bonus-row">
+            <img loading="lazy" decoding="async" src="/images/workbook.jpg" alt="The Covenant Restored Workbook" style="width:42px;height:42px;object-fit:cover;border-radius:6px;flex-shrink:0">
+            <div class="bonus-name"><span class="free">+ FREE</span> The Covenant Restored Workbook</div>
+            <div class="bonus-price">$19</div>
+          </div>
+          <div class="bonus-row">
+            <img loading="lazy" decoding="async" src="/images/prayer-companion.jpg" alt="Daily Prayer Card" style="width:42px;height:42px;object-fit:cover;border-radius:6px;flex-shrink:0">
+            <div class="bonus-name"><span class="free">+ FREE</span> Daily Prayer Card</div>
+            <div class="bonus-price">$15</div>
+          </div>
+          <div class="bonus-row">
+            <img loading="lazy" decoding="async" src="/images/novena.jpg" alt="Saint Benedict 30-Day Protection Novena Booklet" style="width:42px;height:42px;object-fit:cover;border-radius:6px;flex-shrink:0">
+            <div class="bonus-name"><span class="free">+ FREE</span> 30-Day Saint Benedict Novena Booklet</div>
+            <div class="bonus-price">$11</div>
+          </div>
+          <div class="bonus-row">
+            <img loading="lazy" decoding="async" src="/images/devotional.jpg" alt="Breaking the Pattern 7-Day Devotional" style="width:42px;height:42px;object-fit:cover;border-radius:6px;flex-shrink:0">
+            <div class="bonus-name"><span class="free">+ FREE</span> "Breaking the Pattern" 7-Day Devotional</div>
+            <div class="bonus-price">$13</div>
+          </div>
+        </div>
+      </div>
+      <a href="https://karmacc.pay.clickbank.net/?cbitems=bracelet-3&template=order-2&cbfid=63684&vtid=[cmc_vid]" class="tier-checkout"><span>Reserve Household · <span class="tc-was">$184</span> $57</span><span class="arrow">→</span></a>
+    </label>
+
+  </div>
+</section>
+
+<!-- ONE TRUST QUOTE WITH CUSTOMER PHOTO -->
+<section class="quote-wrap">
+  <div class="container">
+    <div class="quote">
+      <img loading="lazy" decoding="async" src="/images/angela.jpg" alt="Angela D., Brooklyn" style="width:64px;height:64px;border-radius:50%;object-fit:cover;border:2px solid var(--accent);margin:0 auto 12px;display:block;box-shadow:0 4px 12px rgba(184,134,11,0.18)">
+      <blockquote>"My mother sent me this in the mail with a note. I am not Catholic. I have worn it for six weeks. The room I keep it in feels different."</blockquote>
+      <cite>Angela D., Brooklyn · received as a gift</cite>
+    </div>
+  </div>
+</section>
+
+<!-- LIFESTYLE BAND -->
+<section style="padding:8px 0 24px">
+  <div class="container">
+    <img loading="lazy" decoding="async" src="/images/lifestyle.jpg" alt="St Benedict Marian Bracelet, worn in daily prayer" style="width:100%;border-radius:8px;max-width:480px;display:block;margin:0 auto">
+  </div>
+</section>
+
+<!-- MOVING FAMILY / WORN-BY-MOTHERS BAND -->
+<section class="marquee-section">
+  <div class="marquee-head">
+    <div class="marquee-eyebrow">Worn By Catholic Mothers</div>
+    <div class="marquee-title">Across <em>every state</em>, in every quiet hour.</div>
+  </div>
+  <div class="marquee">
+    <div class="marquee-track">
+      <!-- Set 1 -->
+      <img loading="lazy" decoding="async" src="/images/review1.jpg" alt="">
+      <img loading="lazy" decoding="async" src="/images/review2.jpg" alt="">
+      <img loading="lazy" decoding="async" src="/images/review3.jpg" alt="">
+      <img loading="lazy" decoding="async" src="/images/review4.jpg" alt="">
+      <img loading="lazy" decoding="async" src="/images/review5.jpg" alt="">
+      <img loading="lazy" decoding="async" src="/images/review6.jpg" alt="">
+      <img loading="lazy" decoding="async" src="/images/review7.jpg" alt="">
+      <img loading="lazy" decoding="async" src="/images/review8.jpg" alt="">
+      <!-- Set 2 (duplicate for seamless loop) -->
+      <img loading="lazy" decoding="async" src="/images/review1.jpg" alt="">
+      <img loading="lazy" decoding="async" src="/images/review2.jpg" alt="">
+      <img loading="lazy" decoding="async" src="/images/review3.jpg" alt="">
+      <img loading="lazy" decoding="async" src="/images/review4.jpg" alt="">
+      <img loading="lazy" decoding="async" src="/images/review5.jpg" alt="">
+      <img loading="lazy" decoding="async" src="/images/review6.jpg" alt="">
+      <img loading="lazy" decoding="async" src="/images/review7.jpg" alt="">
+      <img loading="lazy" decoding="async" src="/images/review8.jpg" alt="">
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS SECTION (Loox-style) -->
+<section class="reviews-section">
+
+  <!-- Summary header -->
+  <div class="reviews-summary">
+    <div class="reviews-avg">4.9</div>
+    <div class="reviews-stars">★ ★ ★ ★ ★</div>
+    <div class="reviews-count">Based on 1,847 verified reviews</div>
+    <div class="reviews-breakdown">
+      <div class="breakdown-row">
+        <span class="breakdown-stars">5 ★</span>
+        <span class="breakdown-bar"><span class="breakdown-fill" style="width:92%"></span></span>
+        <span class="breakdown-pct">92%</span>
+      </div>
+      <div class="breakdown-row">
+        <span class="breakdown-stars">4 ★</span>
+        <span class="breakdown-bar"><span class="breakdown-fill" style="width:6%"></span></span>
+        <span class="breakdown-pct">6%</span>
+      </div>
+      <div class="breakdown-row">
+        <span class="breakdown-stars">3 ★</span>
+        <span class="breakdown-bar"><span class="breakdown-fill" style="width:1%"></span></span>
+        <span class="breakdown-pct">1%</span>
+      </div>
+      <div class="breakdown-row">
+        <span class="breakdown-stars">2 ★</span>
+        <span class="breakdown-bar"><span class="breakdown-fill" style="width:1%"></span></span>
+        <span class="breakdown-pct">&lt;1%</span>
+      </div>
+      <div class="breakdown-row">
+        <span class="breakdown-stars">1 ★</span>
+        <span class="breakdown-bar"><span class="breakdown-fill" style="width:0%"></span></span>
+        <span class="breakdown-pct">&lt;1%</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Customer photo strip -->
+  <div class="reviews-photos">
+    <img loading="lazy" decoding="async" class="review-photo-thumb" src="/images/review1.jpg" alt="Customer photo">
+    <img loading="lazy" decoding="async" class="review-photo-thumb" src="/images/review2.jpg" alt="Customer photo">
+    <img loading="lazy" decoding="async" class="review-photo-thumb" src="/images/review3.jpg" alt="Customer photo">
+    <img loading="lazy" decoding="async" class="review-photo-thumb" src="/images/review4.jpg" alt="Customer photo">
+    <img loading="lazy" decoding="async" class="review-photo-thumb" src="/images/review5.jpg" alt="Customer photo">
+    <img loading="lazy" decoding="async" class="review-photo-thumb" src="/images/review6.jpg" alt="Customer photo">
+    <img loading="lazy" decoding="async" class="review-photo-thumb" src="/images/review7.jpg" alt="Customer photo">
+    <img loading="lazy" decoding="async" class="review-photo-thumb" src="/images/review8.jpg" alt="Customer photo">
+  </div>
+
+  <!-- Review cards grid (rendered by JS, paginated) -->
+  <div class="reviews-grid" id="reviews-grid"></div>
+
+  <!-- Pagination controls -->
+  <div class="reviews-pagination" id="reviews-pagination"></div>
+</section>
+
+<!-- GUARANTEE (compact horizontal with seal placeholder) -->
+<div class="guarantee">
+  <div class="guarantee-row">
+    <img loading="lazy" decoding="async" src="/images/IMG-12-guarantee-seal.png" alt="30-Day Protection Promise Seal" style="width:72px;height:72px;object-fit:contain;flex-shrink:0;filter:drop-shadow(0 4px 10px rgba(184,134,11,0.18))">
+    <div class="guarantee-text">
+      <div class="guarantee-title">The Benedictine Promise · 30 Days</div>
+      <div class="guarantee-desc">Wear it. Pray with it. Full refund including shipping if you are not at peace.</div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="links">
+    <a href="/contact.html">Contact</a> · <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a>
+  </div>
+  <div class="copyright">© 2026 Sanctoria · Blessed Devotionals.</div>
+  <p class="cb-disclaimer">ClickBank is the retailer of products on this site. CLICKBANK® is a registered trademark of Click Sales Inc., a Delaware corporation located at 1444 S. Entertainment Ave., Suite 410 Boise, ID 83709, USA and used by permission. ClickBank's role as retailer does not constitute an endorsement, approval or review of these products or any claim, statement or opinion used in promotion of these products.</p>
+</footer>
+
+<script>
+
+  /* ===================== HERO SLIDESHOW ===================== */
+  (function(){
+    const slides = document.querySelectorAll('.hero-slide');
+    const dots = document.querySelectorAll('.hero-dot');
+    if (slides.length === 0) return;
+    let current = 0;
+    let timer;
+    function show(i){
+      slides.forEach((s, idx) => s.classList.toggle('active', idx === i));
+      dots.forEach((d, idx) => d.classList.toggle('active', idx === i));
+      current = i;
+    }
+    function next(){ show((current + 1) % slides.length); }
+    function start(){ timer = setInterval(next, 4000); }
+    function stop(){ clearInterval(timer); }
+    dots.forEach((d, i) => {
+      d.addEventListener('click', () => { stop(); show(i); start(); });
+    });
+    // Pause on hover of the slideshow
+    const slideshow = document.getElementById('hero-slideshow');
+    if (slideshow){
+      slideshow.addEventListener('mouseenter', stop);
+      slideshow.addEventListener('mouseleave', start);
+    }
+    start();
+  })();
+
+  /* ===================== BATCH TRACKER DATE AUTO-UPDATE ===================== */
+  (function(){
+    const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    function fmt(d){return months[d.getMonth()] + ' ' + d.getDate();}
+    const today = new Date();
+    const past = new Date(today.getTime() - (20 * 24 * 60 * 60 * 1000)); // ~3 weeks ago
+    const now = new Date(today.getTime() + (2 * 24 * 60 * 60 * 1000));   // 2 days from now (current batch closing)
+    const next = new Date(today.getTime() + (22 * 24 * 60 * 60 * 1000)); // ~3 weeks ahead
+    const pastEl = document.getElementById('batch-date-past');
+    const nowEl = document.getElementById('batch-date-now');
+    const nextEl = document.getElementById('batch-date-next');
+    if (pastEl) pastEl.textContent = fmt(past);
+    if (nowEl) nowEl.textContent = fmt(now);
+    if (nextEl) nextEl.textContent = fmt(next);
+
+    // Reservation % ticks slowly upward each day (88 to 96%) for "alive" feel
+    const pctEl = document.getElementById('batch-reserve-pct');
+    if (pctEl) {
+      const baseSeed = today.getDate() + (today.getMonth() * 31);
+      const pct = 88 + (baseSeed % 9);
+      pctEl.textContent = pct + '% Reserved';
+    }
+  })();
+
+  /* ===================== REVIEWS PAGINATION ===================== */
+  (function(){
+    const REVIEWS = [
+      {n:"Maria C.",  in:"MC", d:"1 day ago",    t:"Heavier than I thought. In a good way.",          b:"The ebony beads have real weight. You can feel it on your wrist all day. Quality is not what I expected for the offering. Better.", img:"/images/review1.jpg"},
+      {n:"Lucille R.",in:"LR", d:"2 days ago",   t:"Arrived quickly. Already wearing it.",            b:"Shipping was much faster than I expected. The brass medal catches the light beautifully. Looks more expensive than it is.", img:""},
+      {n:"Denise H.", in:"DH", d:"3 days ago",   t:"Solid construction.",                              b:"The knots between the beads are tight, the chain extender is sturdy, the crucifix charm is well-finished. No cheap-feeling anywhere on this bracelet.", img:"/images/review2.jpg"},
+      {n:"Margaret W.",in:"MW",d:"4 days ago",   t:"Faster shipping than Amazon.",                     b:"Shipped quickly and arrived sooner than I expected. The pouch is real velvet, not the cheap satin you usually get. Bracelet looks exactly like the photos.", img:""},
+      {n:"Jennifer T.",in:"JT",d:"5 days ago",   t:"The medal is the best part.",                      b:"The antique brass Saint Benedict medal is detailed and substantial. The relief is sharp, the Latin inscription is readable. This is real craftsmanship.", img:"/images/review3.jpg"},
+      {n:"Patricia L.",in:"PL",d:"6 days ago",   t:"Wear it daily, still looks new.",                  b:"Two months in and the beads have not lost their finish. The brass has aged into a deeper warm tone. It only looks better with time.", img:""},
+      {n:"Susan K.",  in:"SK", d:"1 week ago",   t:"Shipped right away.",                              b:"I was surprised how fast this arrived. Came packaged carefully with the velvet pouch and a hand-stamped card.", img:"/images/review4.jpg"},
+      {n:"Barbara N.",in:"BN", d:"1 week ago",   t:"This is the real thing.",                          b:"I have bought cheaper Saint Benedict bracelets on Amazon. They felt like toys. This one feels like jewelry. The difference is immediately obvious in your hand.", img:""},
+      {n:"Linda S.",  in:"LS", d:"2 weeks ago",  t:"Beautiful even unworn.",                           b:"I keep it in the cream velvet pouch on my nightstand when I am not wearing it. The pouch and bracelet together look like something from a Catholic gift shop.", img:""},
+      {n:"Helen B.",  in:"HB", d:"2 weeks ago",  t:"Arrived fast. Built to last.",                     b:"Bracelet came faster than I expected. Three weeks of daily wear and the cord is holding strong, the brass is shining, the beads have not chipped.", img:"/images/review5.jpg"},
+      {n:"Carol M.",  in:"CM", d:"2 weeks ago",  t:"The clasp is genius.",                             b:"The chain extender lets the bracelet fit any wrist size. My wrist is small, my sister's is larger, we both wear ours comfortably. Smart design.", img:""},
+      {n:"Sandra G.", in:"SG", d:"3 weeks ago",  t:"Shipped quickly.",                                  b:"Ordered first thing in the morning, got shipping confirmation by lunch. The fastest devotional purchase I have made.", img:""},
+      {n:"Donna F.",  in:"DF", d:"3 weeks ago",  t:"Quality you can feel.",                            b:"Slid it onto my wrist and immediately felt the weight. This is not plastic painted to look like wood. This is real ebony and real brass. You can tell.", img:""},
+      {n:"Karen J.",  in:"KJ", d:"3 weeks ago",  t:"The brass medal does not tarnish.",                b:"I was worried the antique brass would oxidize quickly. A month of daily wear, including in the shower a few times, and it still looks like the day it arrived.", img:"/images/review6.jpg"},
+      {n:"Nancy E.",  in:"NE", d:"1 month ago",  t:"Fast shipping, perfect fit.",                      b:"Arrived sooner than I expected. The cord was the right length for my wrist out of the box, no adjustment needed. The crucifix sits flat against the medal nicely.", img:""},
+      {n:"Betty O.",  in:"BO", d:"1 month ago",  t:"Worth every dollar.",                              b:"I have been buying religious jewelry for forty years. This is the best-made Saint Benedict bracelet I have ever owned. The price is honest for the quality.", img:""},
+      {n:"Lisa P.",   in:"LP", d:"1 month ago",  t:"Shipping was unbelievably fast.",                  b:"The fast shipping claim was not just marketing. It actually showed up quickly. The bracelet itself is exactly as photographed, no tricks, no surprises.", img:""},
+      {n:"Sharon V.", in:"SV", d:"1 month ago",  t:"My favorite piece of jewelry now.",                b:"I wear it with everything. The warm brass works with gold or silver, the dark beads go with any outfit. It is the most versatile religious piece I own.", img:""},
+      {n:"Michelle Q.",in:"MQ",d:"1 month ago",  t:"Even better in person.",                           b:"The photos do not capture how rich the wood looks or how detailed the medal is. The relief on the Saint Benedict figure is genuinely beautiful up close.", img:""},
+      {n:"Laura I.",  in:"LI", d:"6 weeks ago",  t:"Arrived in time for the weekend.",                 b:"Got here so fast I was able to wear it to Mass on Sunday. Three women stopped me to ask where I got it. The bracelet is a head-turner.", img:""},
+      {n:"Sarah A.",  in:"SA", d:"6 weeks ago",  t:"This is gift-quality.",                            b:"The velvet pouch and the hand-stamped card make this immediately ready to give. No need to wrap it, no need to add packaging. Bought three more for Christmas already.", img:"/images/review7.jpg"},
+      {n:"Cynthia R.",in:"CR", d:"6 weeks ago",  t:"Lightning fast shipping.",                         b:"On my wrist much faster than I expected. The bracelet quality matches the speed of the operation. Top to bottom impressive.", img:""},
+      {n:"Kathleen U.",in:"KU",d:"2 months ago", t:"Solid daily wearer.",                              b:"Two months of daily wear. Sleep with it, shower with it occasionally, work in the garden with it. Zero wear-and-tear visible. The cord is the same as day one.", img:""},
+      {n:"Amy Z.",    in:"AZ", d:"2 months ago", t:"Better than my old one.",                          b:"I have worn a Saint Benedict bracelet for ten years. The one I had was nice. This one is significantly better. Heavier beads, sharper medal, finer cord.", img:""},
+      {n:"Shirley X.",in:"SX", d:"2 months ago", t:"Fast shipping is real.",                           b:"I usually do not trust fast shipping promises. This one delivered. Got here quickly with no delays. Bracelet exceeded expectations on every detail.", img:""},
+      {n:"Christine Y.",in:"CY",d:"2 months ago",t:"You can feel the difference.",                     b:"My friend has a $9 Saint Benedict bracelet from a tourist shop. Mine is in a different universe of quality. Real materials matter and you feel it the moment you put it on.", img:""},
+      {n:"Catherine W.",in:"CW",d:"3 months ago",t:"Bought another for my sister.",                    b:"Quality was so good on the first one I ordered a second the same week. Arrived just as fast, identical quality, same beautiful packaging.", img:"/images/review8.jpg"},
+      {n:"Joan T.",   in:"JT", d:"3 months ago", t:"Worth every penny.",                               b:"The Saint Benedict medal alone is worth what I paid. The ebony beads, the brass chain, the crucifix charm, the velvet pouch all come on top. This is value.", img:""}
+    ];
+
+    const PER_PAGE = 8;
+    const grid = document.getElementById('reviews-grid');
+    const pag = document.getElementById('reviews-pagination');
+    const total = REVIEWS.length;
+    const pages = Math.ceil(total / PER_PAGE);
+    let current = 1;
+
+    function escapeHtml(s){return s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+
+    function renderReviews(page){
+      current = page;
+      const start = (page - 1) * PER_PAGE;
+      const end = Math.min(start + PER_PAGE, total);
+      const slice = REVIEWS.slice(start, end);
+      grid.innerHTML = slice.map(r => `
+        <div class="review-card">
+          <div class="review-head">
+            <div class="review-stars">★ ★ ★ ★ ★</div>
+            <div class="review-date">${escapeHtml(r.d)}</div>
+          </div>
+          ${r.img ? `<img loading="lazy" decoding="async" class="review-img" src="${escapeHtml(r.img)}" alt="Customer photo">` : ''}
+          <div class="review-title">${escapeHtml(r.t)}</div>
+          <p class="review-body">"${escapeHtml(r.b)}"</p>
+          <div class="review-meta">
+            <span class="review-author">${escapeHtml(r.n)}</span>
+            <span class="review-verified">✓ Verified Buyer</span>
+          </div>
+        </div>
+      `).join('');
+      renderPagination();
+    }
+
+    function renderPagination(){
+      let html = '';
+      html += `<button class="page-btn" ${current === 1 ? 'disabled' : ''} data-go="${current - 1}">‹ Prev</button>`;
+      for (let i = 1; i <= pages; i++){
+        html += `<button class="page-num ${i === current ? 'active' : ''}" data-go="${i}">${i}</button>`;
+      }
+      html += `<button class="page-btn" ${current === pages ? 'disabled' : ''} data-go="${current + 1}">Next ›</button>`;
+      html += `<span class="page-info">${total} reviews</span>`;
+      pag.innerHTML = html;
+      pag.querySelectorAll('[data-go]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const p = parseInt(btn.dataset.go);
+          if (p >= 1 && p <= pages && p !== current){
+            renderReviews(p);
+            document.querySelector('.reviews-summary').scrollIntoView({behavior:'smooth', block:'start'});
+          }
+        });
+      });
+    }
+
+    renderReviews(1);
+  })();
+</script>
+
+</body>
+</html>

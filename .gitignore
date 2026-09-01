@@ -56,3 +56,7 @@ rosary images/
 # AI-generated ad creative images (regeneratable, large)
 output/ads/higgsfield/
 output/ads/higgsfield-v2/
+
+# ClickBank INS bridge secrets (server config, never commit)
+site/ins/config.php
+site/ins/log.txt
