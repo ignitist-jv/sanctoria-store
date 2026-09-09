@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Your Blessed Gifts Are Ready | Sanctoria</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#F7F3EC; --cream-2:#F1EADD; --card:#FFFFFF;
+    --ink:#2B2620; --ink-soft:#5A5145; --muted:#8A8072;
+    --bronze:#9A7B4F; --bronze-deep:#7A5E38;
+    --gold:#F2C230; --gold-2:#E8B923; --gold-deep:#C99A16;
+    --line:#E6DDCC;
+    --shadow:0 10px 30px rgba(70,55,30,.10);
+    --shadow-lg:0 20px 50px rgba(70,55,30,.16);
+    --radius:18px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Inter',system-ui,-apple-system,sans-serif;
+    background:var(--cream); color:var(--ink);
+    line-height:1.6; -webkit-font-smoothing:antialiased; overflow-x:hidden;
+  }
+  h1,h2,h3,.serif{font-family:'Fraunces',Georgia,serif;font-weight:600;line-height:1.15;letter-spacing:-.01em}
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:520px;margin:0 auto;padding:0 22px}
+
+  /* Header / brand */
+  .top{padding:34px 0 0;text-align:center}
+  .brand-logo{height:56px;width:auto;display:inline-block}
+  .eyebrow{
+    font-family:'Inter';font-size:12px;font-weight:600;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--bronze);
+  }
+  .rule{display:flex;align-items:center;justify-content:center;gap:14px;margin:26px auto 22px;max-width:280px;color:var(--gold-deep)}
+  .rule::before,.rule::after{content:"";flex:1;height:1px;background:var(--line)}
+  .rule span{font-size:14px}
+  .cross{text-align:center;color:var(--bronze);font-size:26px;line-height:1;margin-bottom:14px}
+
+  /* Hero copy */
+  .hero{text-align:center;padding:8px 0 8px}
+  .badge-pill{
+    display:inline-block;background:var(--ink);color:var(--gold);font-size:11px;font-weight:700;
+    letter-spacing:.14em;text-transform:uppercase;padding:7px 16px;border-radius:999px;
+    border:1px solid var(--gold-2);margin-bottom:16px;
+  }
+  .hero h1{font-size:clamp(30px,6vw,46px);margin:6px 0 14px;color:var(--ink)}
+  .hero h1 em{font-style:italic;color:var(--bronze-deep)}
+  .lede{font-size:17px;color:var(--ink-soft);max-width:34em;margin:0 auto}
+
+  section{padding:34px 0}
+
+  /* Order confirmed banner */
+  .confirmed{
+    background:var(--card);border:1px solid var(--line);border-left:4px solid var(--gold-2);
+    border-radius:14px;padding:22px 24px;box-shadow:var(--shadow);margin-top:30px;
+  }
+  .confirmed h2{font-size:20px;margin-bottom:8px}
+  .confirmed p{color:var(--ink-soft);font-size:15.5px;margin-bottom:8px}
+  .confirmed p:last-child{margin-bottom:0}
+  .confirmed strong{color:var(--ink)}
+
+  /* Soft note panel */
+  .note{
+    background:var(--cream-2);border:1px solid var(--line);border-radius:14px;
+    padding:24px 26px;box-shadow:var(--shadow);
+  }
+  .note .eyebrow{display:block;margin-bottom:12px}
+  .note p{color:var(--ink-soft);font-size:16px;margin-bottom:10px}
+  .note p:last-child{margin-bottom:0}
+  .note strong{color:var(--ink)}
+
+  /* Section heading */
+  .shead{text-align:center;margin-bottom:26px}
+  .shead h2{font-size:clamp(24px,4.4vw,32px);margin-top:10px}
+  .shead p{color:var(--ink-soft);font-size:16px;margin-top:10px}
+
+  /* Gift cards */
+  .cards{display:grid;gap:20px}
+  .card{
+    background:var(--card);border:1px solid var(--line);border-left:4px solid var(--gold-2);
+    border-radius:var(--radius);padding:28px 26px;box-shadow:var(--shadow);
+  }
+  .card-head{display:flex;align-items:flex-start;gap:18px;margin-bottom:16px}
+  .card-num{
+    flex:none;width:48px;height:48px;border-radius:50%;background:var(--ink);color:var(--gold);
+    display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;
+    font-weight:600;font-size:19px;box-shadow:0 0 0 3px var(--cream),0 0 0 4px var(--gold-2);
+  }
+  .card-titles{flex:1;min-width:0}
+  .card-kicker{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--bronze);margin-bottom:5px}
+  .card-title{font-family:'Fraunces',serif;font-weight:600;font-size:22px;line-height:1.2;color:var(--ink)}
+  .card-meta{font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-top:6px;font-weight:600}
+  .card-meta b{color:var(--bronze-deep)}
+  .card-body{font-size:15.5px;color:var(--ink-soft);margin-bottom:22px}
+  .card-body strong{color:var(--ink);font-weight:600}
+  .btn{
+    display:flex;width:100%;align-items:center;justify-content:center;gap:.5em;
+    background:linear-gradient(180deg,var(--gold) 0%,var(--gold-2) 100%);
+    color:#3a2f14;font-weight:700;font-size:15px;letter-spacing:.01em;
+    padding:15px 26px;border-radius:999px;border:1px solid var(--gold-deep);
+    box-shadow:0 8px 22px rgba(201,154,22,.35);cursor:pointer;text-align:center;
+    transition:transform .15s ease,box-shadow .15s ease,background .15s ease,color .15s ease;
+  }
+  .btn:hover{
+    transform:translateY(-2px);
+    background:linear-gradient(180deg,#2E9E4F 0%,#257F3F 100%);
+    color:#FBFDF9;border-color:#1E6B34;box-shadow:0 12px 30px rgba(37,127,63,.42);
+  }
+
+  /* Wearing guidance list */
+  .wear-list{display:grid;gap:14px;margin-top:18px}
+  .wear-row{display:flex;gap:14px;align-items:flex-start}
+  .wear-icon{flex:none;width:34px;height:34px;border-radius:50%;background:var(--card);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:16px}
+  .wear-name{font-weight:700;font-size:14px;color:var(--ink);margin-bottom:2px}
+  .wear-desc{font-size:14.5px;color:var(--ink-soft);line-height:1.55}
+
+  /* Upgrade block (dark) */
+  .upsell{
+    background:var(--ink);color:#F3E9D4;border-radius:var(--radius);
+    padding:40px 34px;text-align:center;position:relative;overflow:hidden;box-shadow:var(--shadow-lg);
+  }
+  .upsell::before{content:"✚";position:absolute;top:20px;right:26px;color:var(--gold-2);font-size:20px;opacity:.7}
+  .upsell .eyebrow{color:var(--gold-2)}
+  .upsell h2{font-size:clamp(23px,4.2vw,30px);color:#FBF3E0;margin:12px 0 14px;line-height:1.25}
+  .upsell h2 em{font-style:italic;color:var(--gold)}
+  .upsell p{font-size:16px;color:#D9CDB4;max-width:34em;margin:0 auto 16px}
+  .upsell p strong{color:var(--gold);font-weight:600}
+  .upsell .prices{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin:20px 0 24px}
+  .upsell .ptile{
+    background:rgba(255,255,255,.05);border:1px solid rgba(242,194,48,.35);border-radius:12px;
+    padding:14px 18px;min-width:150px;
+  }
+  .upsell .ptile .pname{font-family:'Fraunces',serif;font-size:16px;color:#FBF3E0;font-weight:600}
+  .upsell .ptile .padd{font-size:12.5px;color:var(--gold-2);font-weight:600;margin-top:4px;letter-spacing:.03em}
+  .upsell .ptile .pdesc{font-size:12.5px;color:#C7BBA2;margin-top:6px;line-height:1.4}
+  .btn-ghost{
+    display:inline-flex;align-items:center;justify-content:center;gap:.5em;
+    background:transparent;color:var(--gold);font-weight:700;font-size:14px;letter-spacing:.02em;
+    padding:13px 26px;border-radius:999px;border:1px solid var(--gold-2);transition:all .15s ease;
+  }
+  .btn-ghost:hover{background:var(--gold);color:#3a2f14}
+
+  /* Support strip */
+  .support{text-align:center;padding-top:6px}
+  .support p{font-size:15px;color:var(--ink-soft)}
+  .support a{color:var(--bronze-deep);font-weight:600;text-decoration:underline}
+
+  /* Footer */
+  footer{background:var(--cream-2);border-top:1px solid var(--line);padding:42px 0 34px;text-align:center;margin-top:34px}
+  footer .wm{font-family:'Fraunces';font-size:24px;letter-spacing:.06em;font-weight:600}
+  footer .tag{font-family:'Fraunces';font-style:italic;font-size:15px;color:var(--ink-soft);margin-top:6px}
+  footer .flinks{display:flex;gap:22px;justify-content:center;margin:18px 0 14px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--bronze-deep);flex-wrap:wrap}
+  footer .cprt{font-size:12.5px;color:var(--muted)}
+
+  @media(max-width:560px){
+    .card{padding:24px 20px}
+    .upsell{padding:32px 22px}
+    .note{padding:20px 20px}
+    .upsell .ptile{min-width:0;flex:1}
+  }
+</style>
+<!-- Microsoft Clarity -->
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "ydd7lw8hiu");
+</script>
+</head>
+<body>
+
+<div class="top">
+  <img src="../../images/logo.png" alt="Sanctoria · Blessed Devotionals" class="brand-logo">
+</div>
+
+<div class="wrap">
+
+  <div class="rule"><span>✦</span></div>
+  <div class="cross">✝</div>
+
+  <div class="hero">
+    <span class="badge-pill">Keep One, Send One · Order Confirmed</span>
+    <h1>Your Blessed Gifts<br><em>Are Ready</em></h1>
+    <p class="lede">Thank you for reserving your two necklaces. They are being prepared to ship, and your three free prayer companions are ready to download right now, below.</p>
+  </div>
+
+  <div class="confirmed">
+    <h2>What happens next</h2>
+    <p><strong>Your necklaces.</strong> They ship within 24 hours, hand-blessed and ready to wear. Most orders in the US arrive in 5 to 7 days, with free shipping. A confirmation email with your order details is on its way to your inbox.</p>
+    <p><strong>Your free companions.</strong> They are digital, so there is no waiting. Download them below and keep them close at hand.</p>
+  </div>
+
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="shead">
+      <span class="eyebrow">Included With Your Order</span>
+      <h2>Your Three Free Prayer Companions</h2>
+    </div>
+
+    <div class="note">
+      <span class="eyebrow">A note before you begin</span>
+      <p>Your <strong>Daily Prayer Card</strong> is the starting point of a simple daily devotion. Print it on heavy paper, fold or laminate it if you wish, and keep it where your morning begins.</p>
+      <p>Begin tomorrow morning. A quiet minute at sunrise is all it takes.</p>
+    </div>
+
+    <div class="cards" style="margin-top:26px">
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-num">I</div>
+          <div class="card-titles">
+            <div class="card-kicker">Gift One · Workbook</div>
+            <div class="card-title">The Covenant Restored Workbook</div>
+            <div class="card-meta">Printable Guide · <b>$19 Value</b> · Included Free</div>
+          </div>
+        </div>
+        <div class="card-body">
+          A gentle, step-by-step workbook for anyone who carries their family in prayer. It walks you through renewing your covenant of faith at home, praying for the ones you love by name, and building a steady daily rhythm of devotion around your Double Protection Necklace.
+        </div>
+        <a href="../downloads/covenant-restored-workbook.pdf" class="btn" download>Download the Workbook →</a>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-num">II</div>
+          <div class="card-titles">
+            <div class="card-kicker">Gift Two · Prayer Card</div>
+            <div class="card-title">Daily Prayer Card</div>
+            <div class="card-meta">Printable · 5×7 Inches · <b>$15 Value</b> · Included Free</div>
+          </div>
+        </div>
+        <div class="card-body">
+          Your morning quick-reference. It carries a short daily prayer of protection for the people you love, written so you can pray it in under a minute before the house wakes up. Print it on cardstock, laminate it if you wish, and keep it where you will see it first thing.
+        </div>
+        <a href="../downloads/daily-prayer-card.pdf" class="btn" download>Download the Prayer Card →</a>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-num">III</div>
+          <div class="card-titles">
+            <div class="card-kicker">Gift Three · 30-Day Novena</div>
+            <div class="card-title">30-Day Saint Benedict Novena</div>
+            <div class="card-meta">30-Day Plan · <b>$11 Value</b> · Included Free</div>
+          </div>
+        </div>
+        <div class="card-body">
+          A complete thirty-day plan of prayer for your family and your home. Each day offers a theme, an intention, an opening prayer, a Scripture passage, a short meditation, the Saint Benedict blessing, and a closing declaration of faith. By Day 30, every corner of your family life has been lifted up in prayer.
+        </div>
+        <a href="../downloads/30-day-saint-benedict-novena.pdf" class="btn" download>Download the Novena →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="shead">
+      <span class="eyebrow">When It Arrives</span>
+      <h2>Made To Stay On</h2>
+    </div>
+
+    <div class="note">
+      <p>Your Double Protection Necklace is a plain gold Latin cross and a Saint Benedict medal hanging together from one ring, on a double-strand flat snake chain. 18K gold plated over stainless steel. It is made to be worn, not kept in a drawer.</p>
+      <div class="wear-list">
+        <div class="wear-row">
+          <div class="wear-icon">💧</div>
+          <div>
+            <div class="wear-name">You never have to take it off</div>
+            <div class="wear-desc">It is waterproof and tarnish resistant. The shower, the sink, the rain and a full night of sleep are all fine, so nothing in an ordinary day becomes a reason to set it down.</div>
+          </div>
+        </div>
+        <div class="wear-row">
+          <div class="wear-icon">✦</div>
+          <div>
+            <div class="wear-name">It sits exactly where your hand goes</div>
+            <div class="wear-desc">The double-strand chain is made to rest the cross and the medal at the center of your chest, high enough to disappear under a collar or a blouse. It fastens with a lobster clasp.</div>
+          </div>
+        </div>
+        <div class="wear-row">
+          <div class="wear-icon">🕊️</div>
+          <div>
+            <div class="wear-name">It arrives already blessed</div>
+            <div class="wear-desc">Hand-blessed in the Benedictine tradition before it ships, so you can simply put it on. The blessing is with you from the first morning you wear it.</div>
+          </div>
+        </div>
+        <div class="wear-row">
+          <div class="wear-icon">📜</div>
+          <div>
+            <div class="wear-name">A printed prayer card comes with it</div>
+            <div class="wear-desc">It carries the traditional Latin prayer of Saint Benedict together with its English translation, so you can always explain what the letters around the medal mean.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="upsell">
+      <span class="eyebrow">Would You Like To Add More?</span>
+      <h2>One more prayer companion is reserved<br><em>for the Household set.</em></h2>
+      <p>You have two necklaces on the way. Families who take the Household set send the third to a parent, a grandchild, or keep one on hand as a gift.</p>
+      <div class="prices">
+        <div class="ptile">
+          <div class="pname">The Household Set</div>
+          <div class="padd">Just $10 More</div>
+          <div class="pdesc">A third necklace, plus the "Breaking the Pattern" 7-Day Devotional.</div>
+        </div>
+      </div>
+      <p>If you would like to add another necklace to your order, write to us and we will take care of it personally, with your free bonuses included.</p>
+      <a href="mailto:support@sanctoriastore.com?subject=I%27d%20like%20to%20add%20another%20Benedict%20Pair" class="btn-ghost">Contact Support →</a>
+    </div>
+  </div>
+</section>
+
+<section class="support">
+  <div class="wrap">
+    <p>Questions about your order? Write to <a href="mailto:support@sanctoriastore.com">support@sanctoriastore.com</a> and a real person will help you.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="wm">SANCTORIA</div>
+    <div class="tag">Blessed Devotionals</div>
+    <div class="flinks">
+      <a href="../../contact.html">Contact</a>
+      <a href="../../privacy.html">Privacy</a>
+      <a href="../../terms.html">Terms</a>
+    </div>
+    <div class="cprt">Copyright 2026 Sanctoria. Made and blessed for the Circle.</div>
+  </div>
+</footer>
+
+</body>
+</html>

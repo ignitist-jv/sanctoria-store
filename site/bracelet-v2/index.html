@@ -21,6 +21,21 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
+
+  /* Sticky buy bar */
+  .buybar{position:fixed;left:0;right:0;bottom:0;z-index:90;background:rgba(255,255,255,0.96);backdrop-filter:blur(10px);border-top:1px solid var(--line);box-shadow:0 -6px 24px rgba(42,31,26,0.12);transform:translateY(110%);transition:transform 0.35s cubic-bezier(.34,1.2,.64,1);padding:10px 0 calc(10px + env(safe-area-inset-bottom))}
+  .buybar.show{transform:translateY(0)}
+  .buybar-inner{max-width:520px;margin:0 auto;padding:0 16px;display:flex;align-items:center;justify-content:space-between;gap:14px}
+  .buybar-left{display:flex;align-items:center;gap:12px;min-width:0}
+  .buybar-thumb{width:46px;height:46px;border-radius:8px;object-fit:cover;flex-shrink:0;border:1px solid var(--line);background:var(--paper-soft)}
+  .buybar-info{display:flex;flex-direction:column;line-height:1.2;min-width:0}
+  .buybar-info .bn{font-family:'Fraunces',serif;font-size:15px;font-weight:600;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .buybar-info .bp{font-family:'Inter',sans-serif;font-size:12.5px;color:var(--ink-soft);font-weight:600}
+  .buybar-info .bp .bw{text-decoration:line-through;color:var(--strike);margin-left:5px;font-weight:500}
+  .buybar-cta{flex-shrink:0;display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#FFFFFF;border:1px solid var(--accent);font-family:'Inter',sans-serif;font-weight:800;font-size:13.5px;letter-spacing:0.8px;text-transform:uppercase;text-decoration:none;padding:14px 22px;border-radius:9px;box-shadow:0 6px 16px rgba(184,134,11,0.34);transition:transform 0.2s cubic-bezier(.34,1.56,.64,1),background 0.2s ease}
+  .buybar-cta:hover{background:var(--dark);transform:translateY(-1px)}
+  @media (max-width:420px){.buybar-cta{padding:13px 16px;font-size:12.5px;letter-spacing:0.4px}.buybar-thumb{width:40px;height:40px}}
+
   :root {
     --bg: #F5F0E8;
     --paper: #FFFFFF;
@@ -119,10 +134,12 @@
 
   /* Per-tier inline checkout button - hidden until that tier is selected */
   .tier-checkout{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:18px 20px;background:var(--accent);color:#FFFFFF;border-radius:8px;font-family:'Inter',sans-serif;font-weight:700;font-size:14px;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;box-shadow:0 6px 16px rgba(184,134,11,0.35);max-height:0;overflow:hidden;opacity:0;margin-top:0;padding-top:0;padding-bottom:0;transition:max-height 0.35s ease,opacity 0.25s ease,margin-top 0.25s ease,padding 0.25s ease,background 0.2s,transform 0.2s,box-shadow 0.2s}
-  .tier:has(input:checked) .tier-checkout{max-height:80px;opacity:1;margin-top:14px;padding-top:18px;padding-bottom:18px}
+  .tier:has(input:checked) .tier-checkout{max-height:120px;opacity:1;margin-top:14px;padding-top:16px;padding-bottom:16px}
   .tier-checkout:hover{background:var(--dark);transform:translateY(-1px);box-shadow:0 10px 22px rgba(42,31,26,0.3)}
   .tier-checkout .arrow{font-size:18px;flex-shrink:0}
   .tier-checkout .tc-was{text-decoration:line-through;opacity:0.6;font-weight:600;margin-right:4px;letter-spacing:0.5px}
+  .tier-checkout .tc-save{display:block;margin-top:5px;font-size:11.5px;font-weight:800;letter-spacing:1px;color:#FFF3C4}
+  @media (max-width:380px){.tier-checkout{font-size:12.5px;letter-spacing:0.8px;padding-left:16px;padding-right:16px}.tier-checkout .tc-save{font-size:10.5px;letter-spacing:0.6px}}
 
   /* Free shipping pill */
   .shipping-pill{display:inline-block;background:var(--paper-soft);color:var(--ink);font-family:'Inter',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.8px;padding:4px 12px;border-radius:20px;margin-top:8px;border:1px solid var(--line)}
@@ -227,6 +244,14 @@
   footer .copyright{font-size:11px;font-style:italic}
   footer .cb-disclaimer{max-width:760px;margin:16px auto 0;padding:14px 18px 0;border-top:1px solid rgba(245,240,232,0.12);font-family:'Inter',sans-serif;font-size:10.5px;line-height:1.55;color:rgba(245,240,232,0.45);text-align:left;font-style:normal}
 </style>
+<!-- Microsoft Clarity -->
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "ydd7lw8hiu");
+</script>
 </head>
 <body>
 
@@ -237,9 +262,19 @@
 <!-- HERO (compact) -->
 <section class="hero">
   <div class="container">
-    <div class="eyebrow">A Marian Devotion · Worn Daily</div>
-    <h1>Blessed in Rome.<br>Worn by Mothers.<br><em>Inherited by Daughters.</em></h1>
-    <p class="hero-sub">Ebony wood beads. Antique brass Saint Benedict medal. The bracelet your grandmother almost gave you, hand-knotted at the abbey, blessed by the chaplain.</p>
+    <!-- HERO TEST 2026-09-09: Option A "It Stops With You" (PatternEndsWithYou lineage,
+         peaked 6.6x on this SKU). Control, live until today, kept here for a one-step revert:
+           eyebrow:  A Marian Devotion · Worn Daily
+           h1:       Blessed in Rome.<br>Worn by Mothers.<br><em>Inherited by Daughters.</em>
+           hero-sub: Ebony wood beads. Antique brass Saint Benedict medal. The bracelet your
+                     grandmother almost gave you, hand-knotted at the abbey, blessed by the chaplain.
+         First A subhead (2026-09-09, replaced same day, kept for reference):
+           Ebony wood beads. An antique Saint Benedict medal, hand-knotted at the abbey and
+           blessed in Rome. Worn by the woman in the family who decided she would be the one who prays.
+         See LEARNINGS.md for the test entry. -->
+    <div class="eyebrow">Three Generations · One Decision</div>
+    <h1>Worry runs in families.<br>So does devotion.<br><em>It stops with you.</em></h1>
+    <p class="hero-sub">A blessed medal in a dish. A rosary in a drawer. In most Catholic homes they stopped being carried. This one is hand-knotted in ebony to stay on, blessed in Rome.</p>
     <div class="hero-image">
       <div class="hero-slideshow" id="hero-slideshow">
         <div class="hero-slide active"><img fetchpriority="high" decoding="async" src="/images/Hero.jpg" alt="St Benedict Marian Bracelet, candlelit Bible scene"></div>
@@ -275,7 +310,7 @@
   <div class="container">
     <div class="batch-card">
       <div class="batch-title">Next Batch Shipping Soon</div>
-      <p class="batch-desc">Reserve your St Benedict Marian Bracelet before we sell out again. Save up to 35% today.</p>
+      <p class="batch-desc">Reserve your St Benedict Marian Bracelet before we sell out again. Save up to 55% today.</p>
       <div class="batch-row past">
         <span id="batch-date-past">May 7</span>
         <span class="batch-status">Sold Out</span>
@@ -306,7 +341,7 @@
 </div>
 
 <!-- PRICING TIERS (Gleetoria-style, with bonus expansion in selected) -->
-<section class="tiers">
+<section class="tiers" id="pricing">
   <div class="container">
 
     <label class="tier">
@@ -341,7 +376,7 @@
           </div>
         </div>
       </div>
-      <a href="https://karmacc.pay.clickbank.net/?cbitems=bracelet-1&template=order-2&cbfid=63684&vtid=[cmc_vid]" class="tier-checkout"><span>Reserve Single · <span class="tc-was">$76</span> $37</span><span class="arrow">→</span></a>
+      <a href="https://karmacc.pay.clickbank.net/?cbitems=bracelet-1&template=order-2&cbfid=63684&vtid=[cmc_vid]" class="tier-checkout"><span>Reserve Single · <span class="tc-was">$42</span> $37<span class="tc-save">You Save 12% Today</span></span><span class="arrow">→</span></a>
     </label>
 
     <label class="tier">
@@ -383,7 +418,7 @@
           </div>
         </div>
       </div>
-      <a href="https://karmacc.pay.clickbank.net/?cbitems=bracelet-2&template=order-2&cbfid=63684&vtid=[cmc_vid]" class="tier-checkout"><span>Reserve Family · <span class="tc-was">$129</span> $47</span><span class="arrow">→</span></a>
+      <a href="https://karmacc.pay.clickbank.net/?cbitems=bracelet-2&template=order-2&cbfid=63684&vtid=[cmc_vid]" class="tier-checkout"><span>Reserve Family · <span class="tc-was">$84</span> $47<span class="tc-save">You Save 44% Today</span></span><span class="arrow">→</span></a>
     </label>
 
     <label class="tier">
@@ -431,7 +466,7 @@
           </div>
         </div>
       </div>
-      <a href="https://karmacc.pay.clickbank.net/?cbitems=bracelet-3&template=order-2&cbfid=63684&vtid=[cmc_vid]" class="tier-checkout"><span>Reserve Household · <span class="tc-was">$184</span> $57</span><span class="arrow">→</span></a>
+      <a href="https://karmacc.pay.clickbank.net/?cbitems=bracelet-3&template=order-2&cbfid=63684&vtid=[cmc_vid]" class="tier-checkout"><span>Reserve Household · <span class="tc-was">$126</span> $57<span class="tc-save">You Save 55% Today</span></span><span class="arrow">→</span></a>
     </label>
 
   </div>
@@ -702,5 +737,52 @@
   })();
 </script>
 
+
+<script>
+  /* ===================== STICKY BUY BAR =====================
+     Appears once the hero is scrolled past, hides while the pricing
+     tiers are on screen so it never covers the real buttons. */
+  (function(){
+    const bar = document.getElementById('buybar');
+    // Appears once the "Next Batch Shipping Soon" card has scrolled past.
+    // Hides only while the open tier's real checkout button is on screen,
+    // so the bar can never sit on top of the button it duplicates.
+    const trigger = document.querySelector('.batch-wrap') || document.querySelector('section.hero');
+    if (!bar || !trigger) return;
+    function realButtonOnScreen(){
+      const btns = document.querySelectorAll('.tier-checkout');
+      for (const b of btns){
+        if (b.offsetHeight < 10) continue;      // collapsed tier, not visible
+        const r = b.getBoundingClientRect();
+        if (r.bottom > 0 && r.top < window.innerHeight) return true;
+      }
+      return false;
+    }
+    function update(){
+      const passed = trigger.getBoundingClientRect().bottom < 0;
+      bar.classList.toggle('show', passed && !realButtonOnScreen());
+    }
+    window.addEventListener('scroll', update, {passive:true});
+    window.addEventListener('resize', update, {passive:true});
+    // a tier change opens a different button, so re-check without waiting for a scroll
+    document.querySelectorAll('.tier input[type=radio]').forEach(function(i){
+      i.addEventListener('change', function(){ setTimeout(update, 400); });
+    });
+    update();
+  })();
+</script>
+<!-- Sticky buy bar -->
+<div class="buybar" id="buybar">
+  <div class="buybar-inner">
+    <div class="buybar-left">
+      <img class="buybar-thumb" src="/images/closeup.jpg" alt="The St Benedict Marian Bracelet" loading="lazy" decoding="async">
+      <div class="buybar-info">
+        <span class="bn">St Benedict Bracelet</span>
+        <span class="bp">From $37 <span class="bw">$42</span> &middot; Save up to 55%</span>
+      </div>
+    </div>
+    <a href="#pricing" class="buybar-cta">Reserve Yours &rarr;</a>
+  </div>
+</div>
 </body>
 </html>

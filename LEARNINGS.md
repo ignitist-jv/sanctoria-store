@@ -88,26 +88,52 @@ Updated continuously. Claude reads this at the start of every session in this fo
 
 ## Active Tests
 
-> What's currently in market. Date-stamped.
+### 2026-09-09 - /bracelet-v2/ hero + offer-clarity test  [OPEN, REVIEW 2026-09-12]
 
-- **2026-05-30 — Bracelet Wave 1 (3 ads × A/B), `bracelet.divinegracegift.com`.** Reverse-engineered from Gleetoria competitor set. AD1: POV Wrist × Heavy Seasons copy. AD2: Testimonial Card × Maria T copy. AD3: 5-In-1 Burst × 5-in-1 copy. Each runs Version A (competitor language: demons/generational curses) vs Version B (Catholic-coded safe: intercession/family tree healing) in same ad set. Spec: `output/ads/2026-05-30-bracelet-wave1-production-ready.md`. Hypothesis: A wins CTR, B wins ROAS + comment sentiment. Review after 72hrs: ROAS, CPA, CTR, comment sentiment. **REVIEW DUE 2026-06-02.**
-- **2026-06-03 — Rosary NEW PAGE 5-top-ads, `https://divinegracegift.com/new-rosary/`.** 5 fresh angles for the relaunched rosary direct-sale page (Single $37 / Family $67 / Household $87, Judge.me reviews, ClickBank karmacc template=Divine2). Spec: `output/ads/2026-06-03-rosary-newpage-5-top-ads.md`. ANGLE names (PascalCase, trace back here):
-  1. **EvilBadLuckChecklist** (A/B) — rebuilds the 8.75x bad-luck/evil mechanism as a diagnostic checklist. Hyp: cold self-diagnoses "spiritual not bad luck" and reaches for sacramental.
-  2. **ThreeAMMother** (single) — peace-first / nervous-system angle, holding the rosary to settle. Hyp: calm lane beats protection lane for this audience.
-  3. **InheritedByDaughters** (A/B) — legacy/heirloom gift, drives Family + Household tiers. Hyp: gift framing lifts AOV/pack mix.
-  4. **SerpentCrusher** (A/B) — carries the 4.97x spiritual-warfare winner, reframed via Our Lady of Guadalupe crushing the serpent. Hyp: warfare angle ports to the Marian rosary.
-  5. **OfferingNotPrice** (single) — objection reframe disarming distrust-of-gurus, leans on the page "offering" positioning. Hyp: trust opener beats benefit opener on skeptics.
-  A/B = Version A competitor-hot (generational curse only here) vs B Catholic-safe. **Pre-launch:** confirm test purchase tracks end-to-end before spend (prior DGG 18.71% CTR / 0 purchases incident). **REVIEW DUE after 72hrs of spend.**
-- **2026-07-20: Sanctoria relaunch 5-ads, `https://sanctoriastore.com/bracelet/` (new domain + new ad account).** 5 angles, all pointing at the bracelet direct-sale page (Single $37 / Family 2-Pack $47 / Household 3-Pack $57). Migrated proven winners rebuilt compliant (peace/protection/blessing vocabulary only, no banned fear terms) for the new Sanctoria domain, the bracelet SKU, and the new ad account. ANGLE names (PascalCase, trace back here):
-  1. **PatternEndsWithYou** (single): generational cycle-breaker, "it stops with me". The strongest migrated winner (peaked 6.6x on bracelet Pattern 5). Hyp: still leads with fear vocabulary stripped.
-  2. **InheritedByDaughters** (single): mother-to-daughter heirloom, pushes Family 2-Pack / Household 3-Pack. Hyp: legacy framing lifts pack mix + AOV; congruent with page "Worn by Mothers. Inherited by Daughters."
-  3. **ArchMichaelCenturion** (single): first-person archangel witness on the proven Centurion face (up to 9.24x). New designed static presenting the bracelet. Hyp: witness angle + Centurion face carries to bracelet static.
-  4. **MaryNeverStoppedPraying** (single): Marian mother-intercession, "she never stopped praying" (first Mother Mary winner 4.68x). Hyp: Marian lane carries to bracelet for the grandmother praying years for a drifting child.
-  5. **QuietSignsChecklist** (single): the historic 8.75x diagnostic-checklist mechanism rebuilt fully compliant as "quiet signs a home has lost its peace", third-person/community framing only ("many Catholic homes", "some Catholic mothers notice"), NO second-person state assertions. Hyp: checklist self-recognition still drives clicks when rebuilt clean.
-  Spec: `output/ads/2026-07-20-sanctoria-relaunch-5-ads.md`. **Pre-launch:** confirm a test purchase tracks end-to-end on the new domain + new pixel + fresh ClickMagick ID before scaling (prior DGG high-CTR/zero-purchase attribution incident; trust ClickBank actuals over Meta/ClickMagick). **REVIEW after 72hrs of spend:** ROAS, CPA, CTR, pack-mix/AOV, comment sentiment.
-- *(add tests here as launched)*
+**Page:** https://sanctoriastore.com/bracelet-v2/ . This is the ONLY page taking paid traffic and it produced 38 of 39 front-end sales between Aug 10 and Sep 7. Note ads point at /bracelet-v2/, not /bracelet/; CLAUDE.md was stale on this.
 
----
+**FIVE changes shipped the same day. A lift is the sum of all five, not the hero alone.**
+
+1. Hero rebuilt on the PatternEndsWithYou angle (peaked 6.6x on this SKU, then 1.50x steady over 9 sales).
+   - eyebrow: `Three Generations - One Decision`
+   - h1: `Worry runs in families. / So does devotion. / It stops with you.`
+   - sub: `A blessed medal in a dish. A rosary in a drawer. In most Catholic homes they stopped being carried. This one is hand-knotted in ebony to stay on, blessed in Rome.`
+   - Thesis: the control sold provenance and bequest; every angle that has won for this offer sells intervening for someone struggling NOW. The sub supplies the missing bridge, the drawer mechanism, so "stops with you" has a physical answer.
+   - Control and the first sub draft are both preserved in an HTML comment above the hero for a one-step revert.
+2. Checkout-button anchors aligned to the tier cards. Buttons had shown $76/$129/$184 while the cards showed $42/$84/$126, a visible contradiction at the click.
+3. "Save up to 35%" corrected to 55%, the real maximum against those anchors.
+4. Per-tier savings added to the CTAs: `You Save 12% / 44% / 55% Today`.
+5. Sticky buy bar added, appearing once the batch card scrolls past, hiding while the open tier's real button is on screen. The page previously had no persistent CTA.
+
+**BASELINE TO BEAT** (Aug 10 to Sep 7, Meta acct 462874384767571, ClickBank nickname karmacc):
+
+| Metric | Baseline |
+|---|---|
+| Spend | $2,839.35 |
+| Link clicks | 2,730 at $1.04 CPC |
+| Purchases | 43 at $66.03 CPA |
+| Meta ROAS | 0.67 |
+| ClickBank product revenue | $2,828.41 |
+| Product revenue per link click | $1.04, i.e. exact break-even before the rebill |
+| Front-end AOV | $49.91 |
+| AOV per order | $62.85 |
+| Pack mix | single 44.7% / pair 39.5% / household 15.8% |
+| Upsell take | 10.3% of front-end |
+| Downsell take | 5.7% of decliners |
+| Order-bump attach | 15.4% |
+
+**WHAT TO CHECK ON REVIEW**
+- ROAS and CPA against the table above.
+- **Pack mix, not just ROAS.** The replaced hero was built on the logged `InheritedByDaughters` angle, explicitly aimed at driving the Family and Household tiers, and those tiers are 55% of sales. If Option A lifts conversion but shifts buyers to the single, you can win CVR and lose revenue. Option A argues three generations, so household share is the specific number to watch.
+- CTR, and whether the anchor and savings changes moved the pair-versus-household split.
+- Landing page views are NOT reliable on this account (CAPI only, browser pixel deliberately removed 2026-07-20). Meta showed 2,730 link clicks against 203 landing page views for the baseline window, which is almost certainly a measurement gap rather than a 93% bounce. Trust ClickBank actuals. Microsoft Clarity would settle it, but the Clarity MCP is currently authenticated against a different property (getbirthcode.com); the Sanctoria project is `ydd7lw8hiu` and needs its own Data Export token connected.
+- `cb_get_orders` caps at 100 rows, so pull a narrow window and aggregate SALE rows yourself. The `cb_get_sales` summary undercounts badly.
+
+**KNOWN CONFOUNDS AND OPEN ISSUES ON THIS PAGE**
+- Fabricated proof still live and untouched by choice: "4.9", "1,847 verified reviews", "Angela D., Brooklyn", "94% Reserved", "23 Reservations Remaining". These are the same class of figures deliberately excluded from the Triptych and rosary pages.
+- Metal named inconsistently across the site: "brass" 12 times on /bracelet-v2/, "bronze" 29 times on /bracelet/, same physical product. Unresolved.
+- "Blessed in Rome" and "blessed by the chaplain" here versus "hand-blessed in the Benedictine tradition" on the other three product pages. User confirmed 2026-09-09 that the Rome claim is accurate, so it was kept, but the pages do not match each other.
+- The $17/month `bump-blessing` rebill carries the account's entire margin ($813.64 across 41 active subs in the baseline window, 22% of revenue) and also generated 3 of the 4 refunds and chargebacks in that window. Making its terms explicit at the point of consent is the highest-value fix outside the page itself.
 
 ## Key Data Points
 
@@ -121,6 +147,21 @@ Updated continuously. Claude reads this at the start of every session in this fo
 ## Locked Product Specifications
 
 > Use these exact specs in every image prompt, ad image brief, photographer brief, and sales page description. Do not improvise. Do not substitute.
+
+### ⚠️ SUPERSEDED FOR THE 2026-09 ROSARY: read this first
+
+The spec immediately below (lava stone beads, Our Lady of Guadalupe centerpiece, silver + gunmetal, "never gold") describes the OLD DGG rosary and is **wrong for the rosary now selling at /rosary-necklace/**. Do not use it for image prompts or ad briefs for that product.
+
+**The Saint Benedict Cord Rosary (LOCKED 2026-09-03), the current product:**
+- **Beads:** black matte WOOD, round, sanded not polished. NOT lava stone, NOT porous, NOT glossy.
+- **Stringing:** black braided CORD, knotted on both sides of every bead. NOT a metal chain.
+- **Our Father beads:** a few pale/white beads at the head of each decade.
+- **Medals:** silver-tone SAINT BENEDICT medals spaced along the whole length, plus one larger OVAL Saint Benedict centerpiece at the join. There is NO Guadalupe medallion on this product.
+- **Crucifix:** BLACK WOOD, silver Christ corpus, INRI plaque, and a small silver Saint Benedict medal inset where the beams cross.
+- **Palette:** matte black + silver only. Rustic and monastic, never ornate or shiny.
+- **Ships with:** drawstring pouch + printed Saint Benedict prayer card.
+
+---
 
 ### St Benedict Rosary Necklace (LOCKED 2026-05-27)
 
@@ -156,7 +197,51 @@ Updated continuously. Claude reads this at the start of every session in this fo
 
 ---
 
-### The Benedict Pair Necklace (LOCKED 2026-08-31)
+### The Benedict Double Protection Necklace: CORRECTED FROM REAL PHOTOS 2026-09-09
+
+The spec below SUPERSEDES the 2026-08-31 lock. Real supplier photographs arrived on 2026-09-09
+(archived at images-originals/necklace-real/) and the shipped images were materially wrong.
+All 11 page images were regenerated against those photos and replaced.
+
+TRUE GEOMETRY, from the photographs:
+- CHAIN: a FINE ROUND SNAKE CHAIN, about 1.2mm, TWO strands. Delicate, drapes softly.
+  It is NOT a flat snake band, NOT a woven mesh rope, NOT a herringbone ribbon.
+- FRONT JUNCTION: both strands terminate at the FRONT. Exactly TWO slim tapered end caps,
+  ONE small lobster clasp, a few 4mm jump rings. There is NO large O-ring. The cross hangs
+  from one ring and the medal from an adjacent ring.
+- CROSS: slim Latin cross about 34mm, FLAT-FACED bars, softly rounded edges and tips.
+  Not chunky, not puffy, not tubular. No corpus.
+- MEDAL: round, about 17mm, plain flat rim, no beading, no bezel, small integrated loop bail.
+- RATIOS: cross about 2x the medal's height. Medal about 14x one chain strand's thickness.
+- FINISH: warm satin yellow gold, darker in the medal's recesses. Not mirror chrome.
+
+WHAT WAS WRONG ON THE LIVE PAGE BEFORE THIS FIX:
+1. pair-hero1 rendered the chain as a THICK WOVEN MESH ROPE, staged coiled at bracelet scale.
+2. pair-worn, pair-collar and pair-everyday rendered it as a WIDE FLAT HERRINGBONE RIBBON
+   hanging from a single large O-ring, with no end caps and no clasp.
+3. pair-3 showed the supplier's card with "SPIRITUAL JEWELRY COLLECTION" legible on it,
+   a third party brand name sitting on our own sales page.
+Root cause: the chain and the junction were left to the model to invent, so it fell back on
+generic stock jewellery shapes every time.
+
+THE FIX THAT WORKED, reusable for any product:
+- Attach the real product photos as generation references. Without them the model will never
+  guess an unusual construction like a front-mounted clasp junction.
+- NEVER specify a dimension in millimetres. An image model has no absolute scale, so "1.2mm"
+  is ignored. Anchor every dimension to something else IN THE FRAME instead:
+     "each chain strand is one fourteenth the diameter of the medal"
+     "if the medal is drawn 140 pixels wide, each strand is about 10 pixels"
+     "each strand is one sixth the width of the cross's vertical bar"
+  The first pass used millimetres and came back at roughly twice the true thickness.
+  The ratio wording cut the error by more than half in a single retry.
+- Add a self-check the model can see: "because the chain is so fine, the end caps look
+  noticeably wider than the chain they finish".
+- State a direction to err in: "err on the side of too thin", and "if the chain looks
+  substantial or ropey it is WRONG".
+- Keep a STRICT HARDWARE COUNT naming the specific phantom part to exclude, by name.
+  "NO large O-ring" was necessary; a generic "no extra hardware" had not worked.
+
+### The Benedict Double Protection Necklace (LOCKED 2026-08-31, renamed from "The Benedict Pair" 2026-09-05)
 
 **Form factor:** Necklace. Double-strand flat snake chain (two parallel smooth ~2mm strands of EQUAL length lying together as one pair), gathered into slim polished gold end caps meeting a lobster clasp with a round jump ring. Sits at the center of the chest, high enough to disappear under a collar.
 
@@ -164,8 +249,17 @@ Updated continuously. Claude reads this at the start of every session in this fo
 
 **Pendants (both hang from ONE shared larger gold ring, on small round jump rings):**
 1. **Plain Latin cross**, smooth polished rounded-square section arms tapering slightly, ~35mm tall. NO Christ figure. It is a CROSS, not a crucifix. No engraving, no texture. Hangs lower and slightly in front.
-2. **Round Saint Benedict medal**, flat disc ~18mm, raised relief of Saint Benedict standing with a staff and a book, letters ringing the rim, PLAIN POLISHED GOLD EDGE. Absolutely NO black enamel, NO black bezel, NO dark outline ring. Sits beside the cross, slightly overlapping and slightly behind.
+2. **Round Saint Benedict medal**, flat disc 16mm (1.6cm / 0.63in, confirmed from a supplier dimension diagram), raised relief of Saint Benedict standing with a staff and a book, letters ringing the rim, PLAIN POLISHED GOLD EDGE. Absolutely NO black enamel, NO black bezel, NO dark outline ring. Sits beside the cross, slightly overlapping and slightly behind.
 3. The medal is clearly SMALLER than the cross.
+
+**THE FRONT JUNCTION (corrected 2026-08-31 after a supplier macro; earlier renders got this wrong):**
+The closure is at the FRONT CENTER as a visible design feature, immediately beside the pendants. It is NOT hidden at the back of the neck and it is NOT a single plain ring. Render all four parts:
+1. Each doubled chain strand terminates in a LONG SLIM TAPERED POLISHED GOLD END CAP, an elongated cone roughly 12mm long narrowing to a point where the chain enters. Not a short stubby ferrule.
+2. The LEFT end cap connects to a small round jump ring. From that small ring the two pendants hang, EACH ON ITS OWN SEPARATE SMALL JUMP RING (not both on one shared ring).
+3. A POLISHED GOLD LOBSTER CLASP lies roughly horizontally at that same junction.
+4. The RIGHT end cap connects to a LARGE THICK ROUND OPEN GOLD RING about 11mm across with a visibly round cross-section. The lobster clasp hooks INTO that large ring.
+
+**Chain texture:** each strand is a flat woven chain about 2.5mm wide with a fine flat WOVEN MESH weave showing a close crosshatch texture. It is not a smooth mirror ribbon and not a beaded or cable chain.
 
 **Ships with:** a printed Saint Benedict prayer card (Latin prayer plus English translation).
 
@@ -174,6 +268,11 @@ Updated continuously. Claude reads this at the start of every session in this fo
 - **Floating necklace.** Lifestyle scenes rendered the necklace detached and oversized in the foreground. State that it is worn on the body at realistic jewelry scale and negative-prompt floating/giant/detached jewelry.
 - **Readable text.** Never allow a prayer card, book title, or packaging with words in a generated frame; describe the medal rim letters as "tiny softly abstracted indistinct letterforms that are not legible".
 - Attaching a clean generated product render as a SECOND reference alongside the supplier photo fixed the chain geometry immediately. Do that for any further shots.
+
+**Two more junction failure modes (found 2026-09-01, cost three regeneration passes):**
+- **Chain renders as a thick mesh rope.** Asking for a "woven mesh" chain makes the model produce a chunky bracelet-weight band and merge the two strands. Fix: state the chain is DELICATE, that the strands are SEPARATE with a visible gap, and give a proportion rule ("the cross is about fourteen times wider than a single chain strand"). Negative-prompt thick chain, chunky mesh rope, wide band, strands merged.
+- **A phantom third end cap appears.** Once the prompt describes tapered end caps, the model often renders a spare one floating in frame. Fix: state "HARDWARE COUNT IS STRICT: exactly TWO tapered end caps in the whole image, one per chain end, no third cap and no spare floating fitting", and negative-prompt third end cap / duplicate hardware.
+- **Cheapest reliable macro:** do not generate the junction macro separately. Crop it out of the approved 2048px hero render. It is guaranteed consistent with the hero and costs nothing.
 
 **Angle:** `HandToHeart` (see CLAUDE.md). Format code for ad naming: use the standard codes, e.g. `HandToHeart_PHOTO_YYYY-MM-DD`.
 
@@ -205,3 +304,40 @@ Updated continuously. Claude reads this at the start of every session in this fo
 - 2026-07-20: Produced 5 relaunch ads (Phase 3 /generate-ads) for Sanctoria bracelet on new domain sanctoriastore.com/bracelet/ + new ad account. Angles: PatternEndsWithYou, InheritedByDaughters, ArchMichaelCenturion, MaryNeverStoppedPraying, QuietSignsChecklist (8.75x checklist mechanism rebuilt compliant, third-person framing). Spec: output/ads/2026-07-20-sanctoria-relaunch-5-ads.md.
 
 - 2026-07-30: /scale-or-kill + /generate-ads run. Live winners: AQuietDevotion (120255189519530051) 2.98x / 2 sales, Chiaroscuro (120255292457450051) 2.74x / 1 sale ($50.68 higher-tier). Recently paused (cooldown to ~2026-09-27): EveryDetailHasMeaning, CarryYourFaith, Minimalist (kill-pending), BoldEditorial, PassItDown, HandcraftedWithDevotion, AGiftOfFaith, PrayerYouWear, WhyIWearItDaily; SacredHeritage took 1 sale (2.76x) before pausing. Built /bracelet-v2/ (rebranded exact replica of the DGG original page) + /go/ 50/50 rotator, deployed live 2026-07-30 for a landing-page split test vs the current /bracelet/ advertorial (same pixel, ClickMagick, and order-2/cbfid checkout). Generated a new HERITAGE/MEANING cold batch (5 ads): TheManBehindTheMedal, WhatTheLettersMean, WhyTheMonksNeverTookItOff, NotTheDrawerMedal, WhereThisMedalHasBeen. Spec: output/ads/2026-07-30-heritage-meaning-batch.md. All point at /go/.
+
+## Cloning a proven page: what a static HTML audit will NOT catch (2026-09-03)
+
+Cloning `divinegracegift.com/new-rosary/` for `/rosary-necklace/` dragged in contamination at three
+depths. The first two are visible to a grep of the HTML. The third is not, and it is the dangerous one.
+
+1. **Visible in HTML** (caught immediately): `template=Divine2&cbfid=62440` on every checkout link,
+   which would have routed Sanctoria buyers into the banned domain's upsell flow. A Judge.me block
+   carrying the Shopify domain and PUBLIC_TOKEN. Fabricated stars, "2,000+ Blessed Families",
+   "23 Reservations Remaining", "94% Reserved".
+
+2. **Visible but easy to miss**: UGC review photos identified only by `alt="Customer..."`, and a
+   testimonial in a `<blockquote>`. A regex written to kill these also clobbered the legitimate bonus
+   PDF thumbnails; those had to be restored by matching alt text.
+
+3. **NOT visible in the HTML at all.** Two separate items, both injected by JavaScript at runtime:
+   - A date-seeded fake scarcity function computing `88 + (seed % 9)` and writing `"<pct>% Reserved"`
+     into `#batch-reserve-pct`, silently OVERWRITING the honest "Now Reserving" label after load.
+   - A 9.5KB `REVIEWS` array of **28 fabricated named reviewers** with "✓ Verified Buyer" badges and
+     a pagination renderer. The reviews *section* had been stripped from the HTML, so the code was
+     dead and nothing rendered, but it sat in the deployed source one `<div id="reviews-grid">` away
+     from going live, and was readable by anyone viewing source.
+
+**Rule: after cloning any page, audit the rendered DOM, not the source.** A grep for `4.9`,
+`Verified`, `% Reserved` or `alt="Customer` passed clean on this file while both items above were
+still present. What caught them was reading the `<script>` blocks and checking `document.body.innerText`
+in a browser. Specifically:
+  - Extract every `<script>` block and read it. Look for `textContent =` / `innerHTML =` writes.
+  - Check whether the DOM ids the JS targets still exist. If they do not, the code is dead: delete it,
+    do not leave it deployed.
+  - Test `/(Verified Buyer|% Reserved|\d\.\d stars)/.test(document.body.innerText)` in the live page.
+  - Diff the orphaned CSS too. 28 rules for `.review-*` / `.hero-rating` / `.breakdown-*` survived the
+    HTML strip; removing the dead JS plus that CSS cut the file 46.5KB -> 33.9KB.
+
+Same fake-percentage JS is also present in `site/guard/index.html` (hardcoded "92% Reserved") and
+`site/bracelet-v2/index.html` ("94% Reserved"), both live and both pre-existing. Left alone pending
+TS's decision; flagged, not changed.

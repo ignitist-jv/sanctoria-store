@@ -372,3 +372,38 @@ Campaign HeritageDevotion_ILLUS_2026-08-28, format ILLUS, 1 ad/adset, $5/day, PA
 - 02_TheSaintOnTheShelf: painterly modern woman praying at home in lamplight, bracelet on wrist, a bronze St Benedict statue + votive on the shelf behind. Headline "The Prayer The Monks Never Set Down."
 - 03_OldestPrayer: painterly still life, bracelet resting on an open illuminated medieval prayer book (Madonna illumination) on a modern nightstand beside a lamp. Headline "Fifteen Centuries Old. On Your Nightstand."
 All painterly illustration (not photo), overlay = light bottom gradient + Fraunces headline + gold CTA. Compliant: no efficacy/fear/pricing, real bracelet, no dashes. Images generated + posted to Discord.
+
+## 2026-09-01 : NEW STRUGGLE ANGLES (from VOC research 2026-08-31)
+Three net-new angles mining the STRUGGLE (dryness, loneliness, grief) rather than the product, grounded in real voice-of-customer research. Painterly illustration. Fully compliant (peace/devotion/hope/comfort; no protection/evil/warfare/efficacy). Campaign NewStruggleAngles_ILLUS_2026-09-01, format ILLUS, 1 ad/adset, $5/day, PAUSED, -> /bracelet/.
+- 01_DrySeason: painterly weary woman at a grey dawn window with a mug, bracelet on wrist, "showing up anyway" mood. Headline "Faith For The Days You Feel Nothing." (Pain: spiritual dryness, "I feel nothing when I pray.")
+- 02_NotAlone: painterly mother praying at a lamplit table beside a framed photo of her grown son, bracelet on wrist. Headline "You're Not The Only One Praying For Them." (Pain: the lonely praying mother + St Monica perseverance.)
+- 03_WhenWordsFail: painterly close-up of an elderly woman clutching the bracelet to her chest, eyes closed, soft window light. Headline "For The Days You Have No Words." (Pain: comfort in grief/hard seasons, something to hold.)
+All painterly illustration (not photo), overlay = light bottom gradient + Fraunces headline + gold CTA. Images generated + posted to Discord. Research + quote bank: output/ads/2026-08-31-angle-research.md.
+
+## 2026-09-01 : STRUGGLE ANGLES ROUND 2 (VOC research) - faith carried into hard moments
+Three more net-new angles from the 2026-08-31 VOC research. Painterly illustration. Compliant (peace/devotion/comfort/love; no protection/evil/warfare/efficacy). Campaign StruggleAngles2_ILLUS_2026-09-01, format ILLUS, 1 ad/adset, $5/day, PAUSED, -> /bracelet/.
+- 01_APrayerYouCanCarry: painterly woman in a hospital waiting room, coat/scarf, hands folded with bracelet, calm amid worry. Headline "A Prayer You Can Carry With You." (Pain: faith into the scary places / portable devotion.)
+- 02_CantBeThere: painterly older mother's hands placing the bracelet into her grown child's open hands at a sunlit doorway. Headline "For The One You Can't Be With." (Pain: comfort-by-proxy, the distance ache; gift framed as prayed-for not keeps-safe.)
+- 03_MindWontSettle: painterly woman awake at night on the edge of the bed by lamplight, holding the bracelet beads, eyes closed, finding calm. Headline "For The Days Your Mind Won't Be Still." (Pain: anxiety / racing mind, tactile grounding; peace not "treats anxiety".)
+All painterly illustration, overlay = bottom gradient + Fraunces headline + gold CTA. Images generated + posted to Discord.
+
+## 2026-09-01 : NEW SKU - The Benedict Triptych (/guard/) - WornNotStored angle, first ad batch
+First ads for the SECOND offer (three-medal St Benedict band at /guard/, medal-1/2/3 $37/$47/$57). DIFFERENT product + funnel from the bead bracelet. Angle WornNotStored: the blessed medal that sits forgotten in a drawer; wear this one instead. UNGENDERED, imagery skews male (opens a Catholic-men audience). Built from REAL product/lifestyle photos on disk + local Chrome overlay (Higgsfield offline). Format PHOTO. Compliant devotion/wear-your-faith lane, no evil/curse/warfare/efficacy, "protection" avoided in copy. Campaign WornNotStored_PHOTO_2026-09-01, 1 ad/adset, $5/day, PAUSED, -> /guard/.
+- 01_InTheDrawer: guard-2, a working man's flannel arm at a tool-strewn workbench wearing the Triptych. Headline "The Blessed Medal In Your Drawer."
+- 02_EveryDay: guard-5b, weathered hands on an old truck steering wheel in golden light, Triptych on wrist. Headline "Faith You Wear, Not Faith You Store."
+- 03_ThreeMedals: guard-5a, warm macro of the three joined St Benedict medals. Headline "Three Medals. One Band."
+Overlay = bottom scrim + Fraunces headline + gold CTA, kicker "The Benedict Triptych". Images posted to Discord.
+
+## 2026-09-01 : TRIPTYCH (/guard/) x PROVEN WINNING ANGLES (ported from the bead bracelet)
+Ported the bracelet's proven winners onto the Triptych SKU using real Triptych product photos + local Chrome overlay (Higgsfield offline). Format PHOTO. Compliant (authenticity/devotion/heritage; no evil/curse/warfare/efficacy; "protection" avoided). Campaign TriptychWinners_PHOTO_2026-09-01, 1 ad/adset, $5/day, PAUSED, -> /guard/. Left out grandmother/female-praying winners (mismatch the male-leaning Triptych imagery).
+- 01_TheRealOne (authenticity, bracelet winner): guard-1 clean product hero. Headline "The Real One. Three Times Over."
+- 02_KeepFaithClose (AQuietDevotion/devotion, bracelet winner): guard-band arm out a truck window at a porch. Headline "Keep Your Faith Close."
+- 03_WhyTheMonks (heritage/1500 years, bracelet's most-proven): guard-5c Triptych beside an open Bible + rosary by lamplight. Headline "Worn By The Faithful For 1,500 Years."
+Overlay = bottom scrim + Fraunces headline + gold CTA, kicker "The Benedict Triptych". Images posted to Discord.
+
+## 2026-09-03 — REFRESH (revive) of AQuietDevotion (fatigued anchor)
+Reviving the anchor devotion winner (ad set 120255440341590051) after scale-or-kill showed it below line on all windows (7d 0.92x/14d 1.09x/28d 1.04x, freq 1.50), the original "One Bead At A Time" creative is worn out. Kept the proven soul: quiet daily ritual of the beads, calm/stillness, a few still minutes with God, claim-free, real ebony+bronze bracelet. Refreshed in PHOTO (illustration was tried for this angle via QuietDevotion ILLUS and did NOT convert / was paused). 3 fresh hooks + fresh photo scenes, none repeating prior AQuietDevotion executions (beads-macro, candlelit chiaroscuro, vintage-film, flatlay-Bible, painterly illustration). Campaign AQuietDevotion_PHOTO_2026-09-03, 1 ad/adset, PAUSED, -> /bracelet/. Compliant (calm/devotion lane, no personal-attributes/distress). Brief: output/ads/2026-09-03-refresh-AQuietDevotion.md.
+- 01_FirstFiveMinutes: woman by a sunlit morning window with tea, eyes closed, bracelet on wrist. Headline "Start The Day In Stillness."
+- 02_QuietMinute: close on hands resting in lap, thumb on one bead, soft daylight. Headline "A Quiet Minute With God."
+- 03_SmallMoments: woman seated serenely in a sunlit armchair by a window, hands folded, bracelet on wrist. Headline "Faith Is Kept In Small Moments."
+IMAGES GENERATED 2026-09-05 (Higgsfield reconnected): gpt_image_2 photographic renders (real bracelet ref) + Chrome overlay, in Downloads/Sanctoria-AQuietDevotion-Refresh-2026-09-05 + output/ads/2026-09-05-images. Posted to Discord.

@@ -73,6 +73,21 @@
   }
   .announce span{white-space:nowrap}
 
+
+  /* Sticky buy bar */
+  .buybar{position:fixed;left:0;right:0;bottom:0;z-index:90;background:rgba(255,255,255,0.96);backdrop-filter:blur(10px);border-top:1px solid var(--line);box-shadow:0 -6px 24px rgba(42,31,26,0.12);transform:translateY(110%);transition:transform 0.35s cubic-bezier(.34,1.2,.64,1);padding:10px 0 calc(10px + env(safe-area-inset-bottom))}
+  .buybar.show{transform:translateY(0)}
+  .buybar-inner{max-width:820px;margin:0 auto;padding:0 16px;display:flex;align-items:center;justify-content:space-between;gap:14px}
+  .buybar-left{display:flex;align-items:center;gap:12px;min-width:0}
+  .buybar-thumb{width:46px;height:46px;border-radius:8px;object-fit:cover;flex-shrink:0;border:1px solid var(--line);background:var(--cream-2)}
+  .buybar-info{display:flex;flex-direction:column;line-height:1.2;min-width:0}
+  .buybar-info .bn{font-family:'Fraunces',serif;font-size:15px;font-weight:600;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .buybar-info .bp{font-family:'Inter',sans-serif;font-size:12.5px;color:var(--ink-soft);font-weight:600}
+  .buybar-info .bp .bw{text-decoration:line-through;opacity:.55;margin-left:5px;font-weight:500}
+  .buybar-cta{flex-shrink:0;display:inline-flex;align-items:center;gap:8px;background:#FFD814;color:#2A1F1A;border:1px solid #E5A400;font-family:'Inter',sans-serif;font-weight:800;font-size:13.5px;letter-spacing:0.8px;text-transform:uppercase;text-decoration:none;padding:14px 22px;border-radius:9px;box-shadow:0 6px 16px rgba(229,164,0,0.34);transition:transform 0.2s cubic-bezier(.34,1.56,.64,1),background 0.2s ease}
+  .buybar-cta:hover{transform:translateY(-1px)}
+  @media (max-width:420px){.buybar-cta{padding:13px 16px;font-size:12.5px;letter-spacing:0.4px}.buybar-thumb{width:40px;height:40px}}
+
   /* Nav */
   nav.sticky{
     position:sticky;top:0;z-index:50;background:rgba(247,243,236,.92);
@@ -306,6 +321,14 @@ window.clickmagick_cmc = {
 }
 </script>
 <script src='//cdn.clkmc.com/cmc.js'></script>
+<!-- Microsoft Clarity -->
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "ydd7lw8hiu");
+</script>
 </head>
 <body>
 
@@ -367,9 +390,9 @@ window.clickmagick_cmc = {
       <p class="em">This is that bracelet, hand-blessed and ready for your family.</p>
     </div>
     <div class="strip">
-      <img src="/images/wrist.jpg" alt="Bracelet worn on the wrist">
-      <img src="/images/closeup.jpg" alt="Close-up of the antique bronze medal">
-      <img src="/images/lifestyle.jpg" alt="Bracelet resting at home in warm light">
+      <img loading="lazy" decoding="async" src="/images/wrist.jpg" alt="Bracelet worn on the wrist">
+      <img loading="lazy" decoding="async" src="/images/closeup.jpg" alt="Close-up of the antique bronze medal">
+      <img loading="lazy" decoding="async" src="/images/lifestyle.jpg" alt="Bracelet resting at home in warm light">
     </div>
   </div>
 </section>
@@ -383,7 +406,7 @@ window.clickmagick_cmc = {
         <h2>A Prayer Of Protection 1,500 Years Old</h2>
         <p>The letters on the medal are not decoration. They are a 1,500-year-old Latin prayer of protection: Vade Retro Satana, "Begone Satan," and Crux Sacra Sit Mihi Lux, "May the Holy Cross be my light." The Church has long blessed this medal for the protection of the home, the body, and the family.</p>
       </div>
-      <img src="/images/closeup.jpg" alt="Detail of the antique bronze Saint Benedict medal">
+      <img loading="lazy" decoding="async" src="/images/closeup.jpg" alt="Detail of the antique bronze Saint Benedict medal">
     </div>
   </div>
 </section>
@@ -398,17 +421,17 @@ window.clickmagick_cmc = {
     </div>
     <div class="batch">
       <div class="pill">
-        <div class="date">JUN 29</div>
-        <div class="stat">Sold Out</div>
+        <div class="date">Set Out</div>
+        <div class="stat">The batch is laid out together</div>
       </div>
       <div class="pill hot">
-        <span class="badge">✚ Limited Blessing Batch ✚</span>
-        <div class="date">JUL 21</div>
-        <div class="stat">95% Reserved</div>
+        <span class="badge">&#10010; Blessed Before It Ships &#10010;</span>
+        <div class="date">Prayed Over</div>
+        <div class="stat">By hand, before any are released</div>
       </div>
       <div class="pill">
-        <div class="date">AUG 10</div>
-        <div class="stat">Upcoming</div>
+        <div class="date">Sent</div>
+        <div class="stat">Yours was blessed before the box was sealed</div>
       </div>
     </div>
   </div>
@@ -637,6 +660,20 @@ window.clickmagick_cmc = {
   </div>
 </section>
 
+<!-- Sticky buy bar -->
+<div class="buybar" id="buybar">
+  <div class="buybar-inner">
+    <div class="buybar-left">
+      <img class="buybar-thumb" src="/images/closeup.jpg" alt="The St Benedict Marian Bracelet" loading="lazy" decoding="async">
+      <div class="buybar-info">
+        <span class="bn">St Benedict Bracelet</span>
+        <span class="bp">From $37 <span class="bw">$42</span></span>
+      </div>
+    </div>
+    <a href="#pricing" class="buybar-cta">Reserve Yours &rarr;</a>
+  </div>
+</div>
+
 <!-- 15. Footer -->
 <footer>
   <div class="wrap">
@@ -677,6 +714,29 @@ window.clickmagick_cmc = {
         tier.classList.add('open');
       });
     });
+  })();
+</script>
+<script>
+  /* ===================== STICKY BUY BAR =====================
+     Shows once the hero has scrolled past, hides again while the
+     pricing block is on screen so it never covers the real buttons. */
+  (function(){
+    const bar = document.getElementById('buybar');
+    const hero = document.querySelector('header.hero');
+    const pricing = document.getElementById('pricing');
+    if (!bar || !hero) return;
+    function update(){
+      const heroBottom = hero.getBoundingClientRect().bottom;
+      let pricingVisible = false;
+      if (pricing){
+        const r = pricing.getBoundingClientRect();
+        pricingVisible = r.top < window.innerHeight * 0.85 && r.bottom > 0;
+      }
+      bar.classList.toggle('show', heroBottom < 0 && !pricingVisible);
+    }
+    window.addEventListener('scroll', update, {passive:true});
+    window.addEventListener('resize', update, {passive:true});
+    update();
   })();
 </script>
 </body>
