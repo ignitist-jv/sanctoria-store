@@ -22,6 +22,56 @@ Updated continuously. Claude reads this at the start of every session in this fo
 - **"The Pattern Ends With You" / `AS4`** (Ad Set `120245116749090135`, Ad `120245116749100135`, campaign `120245116592460135`) — **ROAS 1.50x (28d) / 1.48x (14d) / 1.76x (7d), 9 sales, $168 spend, CTR ~5.4%, freq ~2.0.** Established, consistent profit over the meaningful window. Generational "pattern ends with you" angle. Scale candidate. (Confirmed 2026-06-25.)
 - **Old Ads 2 New Page / "New Rosary - 2"** (Ad Set `120245963291600135`) — **ROAS 3.27x (14d/28d), 4 sales**, repointed legacy ad on the new page. 7d dipped to 0.82x on a 2-sale sample (variance, low freq 1.33, not fatigue); kept, not killed, because 14d/28d are well above the line.
 
+### Sanctoria account `462874384767571` (2026-09)
+
+**CORRECTED 2026-09-28. THE MECHANISM IS AQUIETDEVOTION, NOT FAMILY MULTI-PACK.**
+
+The 09-17 finding below was wrong and cost about ten days of misdirected creative. The claim was
+that "a woman buying for female relatives, always a multi-pack" was the winning mechanism. By
+end of September the family angles had all faded (SistersThreePack killed at 1.10x, DaughterPack
+killed at 1.08x) while **AQuietDevotion, a SOLO-wearer angle, became the account's franchise:
+9+ sales across four campaigns, and the only consistently above-line performer.**
+
+The real mechanism: **a small, private, ordinary moment that already exists in her day, plus an
+object that gives her hands something to do in it.** Not gifting. Not family. The stolen ten
+minutes. Winning scenes: before the house wakes, the school car park, the driveway.
+Its refresh `BeforeTheHouseWakes` `120256381145120051` ran 2.83x on 14d/28d.
+
+**Why I got it wrong:** the family angles converted first and loudly (2 to 3 sales each in a
+short window), which looked like a mechanism. They were early-sample noise on a thin-margin
+account. See the kill-threshold statistics under Dead Angles: at $15 per test this account
+cannot distinguish an average ad from a bad one, so early wins and early losses both mislead.
+
+**Superseded (2026-09-17, kept for the record):** "every ad set that has ever converted runs one
+mechanism: a woman buying for the other women in her family, with the multi-pack as the thing
+that makes it easy." True of the first 8 sales. Did not hold.
+
+**UNEXPLOITED (found 2026-09-27):** the VOC file's pain point #10 is *"Asking God directly and
+feeling unheard. Catholic women hit this wall and start looking for intercession (Mary,
+saints)."* The product is the St Benedict **Marian** Bracelet and carries the **Miraculous
+Medal**. Across ~40 ads written for this account, **exactly one headline has referenced Mary,
+Mother, intercession or novena.** The Vocabulary Map DO-USE list names all four. This is the
+largest untested fit in the account. First test built 2026-09-27: `01_AskingHisMother`
+ad `120256503429940051`, paused.
+
+- **SistersThreePack** (Ad Set `120256241056110051`, Ad `01_SistersThreeStates` `120256241056050051`)
+  — **2.30x all-in, 2.52x 14d/28d, 2 sales on $36.78, CTR 7.6%, freq 1.18.** Best ROAS in the
+  account. Three sisters in three states, ordered the 3-pack, posted them with no note.
+  **⚠️ THE AD SET IS MISLABELLED** `T1_MF_35-65+_StoppedHidingIt_UGC_ParkingLot`, a name reused
+  from the paused video batch. It does NOT run StoppedHidingIt. `utm_term` has been writing the
+  wrong angle to ClickMagick since launch. Rename recommended 5 times, not yet done.
+- **DaughterPack** (Ad Set `120256178585970051`, Ad `04_DaughterTwoPack` `120256178585990051`)
+  — **2.11x all-in, 2.11x 14d/28d, 3 sales on $88.37, CTR 14.55%, freq 1.25.** Highest absolute
+  profit in the account ($186.03 returned). Mother gives one to her adult daughter, 2-pack.
+  Originally produced the account's best AOV at $76.50.
+- **ThreeGenerations** (Ad Set `120256276845670051`, Rosary funnel) — **1.38x all-in, 1.43x
+  14d/28d, 1 sale on $23.97, CTR 9.24%.** The ONLY ad set on any of the three new funnels
+  (Triptych, Necklace, Rosary) that has ever converted. Grandmother / mother / daughter, 3-pack.
+- **AQuietDevotion_PHOTO_Quiet** (Ad Set `120256136639870051`) — **1.41x all-in, 1.45x 14d/28d,
+  2 sales on $69.90, CTR 5.30%.** The one solo-wearer winner, and the weakest of the four.
+  Declining steadily every check: 2.15x, 1.91x, 1.75x, 1.61x, 1.41x. Treat as the control, not
+  a seam to multiply.
+
 ---
 
 ## Dead Angles (don't repeat)
@@ -29,6 +79,55 @@ Updated continuously. Claude reads this at the start of every session in this fo
 > What flopped. Save future time by not retrying these.
 
 - 2026-07-10: **TheStreakThatWontBreak `120247196159960135`** (Jul-8 bracelet spinoff cohort) KILLED. ~$15.7 spent, 0 sales, CTR 3.06% (weakest of its cohort), freq 1.64. Failure = **audience/offer problem, not hook** — its sibling ad set `120247196162630135` runs the same "Streak" angle at 11.3% CTR and stays live. Don't retry this exact audience/placement mix for the Streak angle.
+
+### ⚠️ THE $15 KILL THRESHOLD CANNOT PRODUCE A VALID VERDICT (funnel audit, 2026-09-23)
+
+Unit economics measured on **outbound clicks**, not raw clicks: **$1.27 cost per outbound
+click, 3.07% site conversion, $50.24 AOV**, giving $1.54 revenue per click against $1.27 cost.
+Real but very thin.
+
+**$15 of spend buys about 12 outbound clicks. At the account's own 3.07% CVR, an ad performing
+exactly at average shows ZERO sales 69% of the time.** The kill rule has therefore been
+discarding roughly two thirds of average ads as failures. Roughly 90% confidence needs about
+**75 outbound clicks, or $95 per test**. Judge at the mechanism level by pooling 3 ads, or raise
+the per-ad threshold to $30. Do not read a single $15 test as a verdict.
+
+**Also corrected by that audit:** reported CTR is inflated. Only **31 to 51%** of Meta's counted
+clicks are outbound; the rest are photo expands and "see more" taps on long copy. True link CTR
+is 3 to 7%, not the 10 to 20% previously reported. **Long line-broken primary text is the cause**,
+and it is a real cost problem: `UGCEveryday_DaughterPack` lost 69% of its clicks that way and
+paid $1.96 per outbound click against the $1.27 blend, which is what killed it despite an
+above-average 3.4% CVR.
+
+### Sanctoria `462874384767571` (2026-09): the funnel, not the creative
+
+**THE PATTERN: every single kill in this account has good CTR and no sale.** Across roughly
+20 killed ad sets the CTRs run 5% to 20%, against a 1 to 2% Meta norm. Not one kill has ever
+been a creative problem. The hooks work; the pages do not convert the clicks. `/funnel-audit`
+has been recommended on 7 consecutive checks and never run. **Stop diagnosing creative.**
+
+- 2026-09-17: **The Triptych funnel `/guard/` is 0 for 3.** `TheDrawerOne_DrawerDish`
+  `120256276845770051` ($16.86, CTR 14.98%), `MenWhoWearIt_EngineGrease` `120256276845780051`
+  ($16.70, CTR 12.88%), `KeepOneGiveOne_TwoWrists` `120256276845790051` ($16.49, CTR 10.90%).
+  Three angles, $50, zero sales, CTRs up to 15%. **Audience/offer problem. The page is the
+  suspect, not the angles.** Do not rework Triptych creative before auditing `/guard/`.
+- 2026-09-17: **Rosary funnel 1 for 3.** `InheritedByDaughters_GloveBox` `120256276845650051`
+  ($17.53, CTR 15.55%) and `NeverLearnedItProperly_LostMyPlace` `120256276845660051` ($17.72,
+  CTR 16.26%) both killed dry. Only the 3-pack angle (ThreeGenerations) converted, which is the
+  mechanism finding again.
+- 2026-09-17: **The whole AQuietDevotion_UGC trio died together**, all audience/offer:
+  `Couch` `120256150053270051` (0.87x final, $48.74, CTR 14.58%), `Cardigan` `120256150053240051`
+  (0.92x, $50.55, CTR 12.81%), `Kitchen` `120256150053250051` (1.07x, $47.90, CTR 11.61%).
+  Three solo-wearer angles, ~$147 spent, 3 sales total. Solo angles underperform family angles
+  roughly two to one on this account.
+- 2026-09-14: **Five of six gifting angles died at the page.** `BoughtOneForMyself`
+  `120256241056150051`, `MyDadWearsIt` `120256241056140051`, `ForMySonLeavingHome`
+  `120256241056120051`, and the ad set labelled `MenWhoPray` `120256241056130051` (which
+  actually ran TheGodmotherGift). All $8 to $11, zero sales, CTRs 5.33% to 14.77%. The only
+  survivor was the 3-pack sisters angle. **Male-recipient and solo gifting angles have never
+  converted here; female-relative multi-pack angles have.**
+- **Necklace funnel `/necklace/` is untested.** Three ad sets got $15.10 of partial delivery on
+  2026-09-16 and were stopped mid-test. No verdict earned. Do not record as dead.
 
 ---
 
@@ -280,6 +379,9 @@ The closure is at the FRONT CENTER as a visible design feature, immediately besi
 
 > Quick changelog so we can see velocity.
 
+- 2026-10-01: **30-day converting-ad inventory + proven-angle refresh built.** Pulled ad-level data for 09-01 to 10-01: **9 ads produced 16 sales on $572.02 for $715.96, blended 1.25x.** Only three angle families clear the 1.2 line: **AQuietDevotion (3 ads, 7 sales, $200.70, 1.45x)**, **MenWhoPray PHOTO (1 ad, 1 sale, $15.27, 3.63x)** and **NovemberNames (1 ad, 1 sale, $17.28, 1.91x)**. The family multi-pack angles have the volume and lose money: DaughterPack 4 sales at 0.97x, SistersThreePack 2 at 1.10x, ThreeGenerations 1 at 0.92x. **Two corrections to this file.** (1) **Men's angles are not dead, the UGC FORMAT is.** `01_QuietMansFaith` `120256163362400051` (MenWhoPray_PHOTO, father's hands) is **the highest-ROAS ad in account history at 3.63x** and has been sitting paused, never refreshed. Every men's angle recorded in Dead Angles died in UGC; the one PHOTO version converted. The variable is format, not audience. Sample is 1 sale on 29 outbound clicks, so this is a lead to test, not a proven finding. (2) **The AQuietDevotion mechanism travels across products.** `02_ParkedAndEarlyRosary` `120256490331090051`, the 09-26 port of the angle from the bracelet to the rosary funnel, returned **2.74x**. It is not bracelet-specific. Built: campaign `ProvenRefresh_PHOTO_2026-10-01` `120256577692480051` set to PAUSED, 5 ad sets at $5/day, start 2026-10-03T03:00 SGT, 1 ad each, 2 AQuietDevotion + 2 MenWhoPray PHOTO + 1 NovemberNames. All 10 entities returned `active_errors: []`. **TWO NEW API LESSONS, both cost a full rebuild.** (1) **`ads_creative_upload_image` is dead on this account** ("Authorization Error", 6 tries; `ads_creative_upload_media` and `ads_creative_upload_local_image` both answer "gradually rolling out"; media-buyer `propose_upload_image` is classifier-blocked). **The workaround: pass `image_url` straight to `ads_create_creative`** and Meta ingests the image and mints a hash itself. (2) **But a creative built from `image_url` cannot publish** because link_data then carries both `picture` and `image_hash`, which trips `ObjectStorySpecRedundant` (error 1443051) at publish time. **The correct two-step: create a throwaway creative with `image_url` to mint the hash, read the hash back via `ads_get_creatives` with field `image_hash`, then build the real creative with `image_hash`.** (3) **Never call `ads_update_entity` mid-chain on an MCP draft.** Pausing the campaign before the ad sets and ads existed silently destroyed the whole draft (campaign `120256577277040051` and its 5 ad sets became unresolvable). Build campaign to ad sets to ads in one uninterrupted pass, pause only at the end. Also note `ads_create_campaign` accepts no `status` argument, so every MCP draft specs ACTIVE and must be paused after the chain completes; the 2-day scheduled start is what keeps that safe. Images rendered, product-verified and CDN-hosted. One image discarded pre-build (`01_BeforeIGetDressed`, bare legs in a dim bedroom, adult-content rejection risk) and replaced with a clothed staircase scene. ClickBank `karmacc` still unreconciled (13th consecutive session). Copy: output/ads/2026-10-01-proven-refresh/COPY_ProvenRefresh.md.
+- 2026-09-28: /scale-or-kill run. 4 active, blended 1.35x on $353.40. **Two major corrections written into this file.** (1) **The 09-17 "family multi-pack" mechanism finding was WRONG.** Both family angles are now dead (SistersThreePack killed 09-27 at 1.10x final, DaughterPack killed today at 1.08x) while the solo AQuietDevotion angle became the franchise at 9+ sales. Real mechanism: a small private moment plus something for her hands. (2) **The $15 kill threshold cannot produce a valid verdict** on this account's economics: it buys ~12 outbound clicks, and an average ad goes dry 69% of the time at that sample. Also recorded: reported CTR is inflated 2 to 3x because only 31-51% of clicks are outbound, and long line-broken copy is the cause. Today: 1 KILL (UGCEveryday `120256178585970051`, below line on 14d and 28d, diagnosed as a CPC problem at $1.96 per outbound click, not a CVR or angle problem), 3 WATCH, 0 scale. TS executed yesterday's Sisters kill and the BeforeTheHouseWakes scale to $6.50. **Largest unexploited opportunity identified 09-27: Mary and intercession**, named in the VOC file as pain point #10 and in the DO-USE vocabulary, referenced in exactly one headline out of ~40. ClickBank still unreconciled. Raw pull: output/ads/_data/2026-09-28-rawpull.json.
+- 2026-09-19: /scale-or-kill run (Sanctoria `462874384767571`, profit line 1.2x). 4 active ad sets, blended 1.84x on $219.02. **Backfilled 2026-09-13 to 2026-09-17, which had not been logged.** Added the Sanctoria winners block (SistersThreePack 2.30x, DaughterPack 2.11x, ThreeGenerations 1.43x, AQuietDevotion_PHOTO 1.41x) and **the mechanism finding: every converting ad set is a woman buying for female relatives, always a multi-pack.** Added Dead Angles block covering ~13 kills from 09-14 and 09-17 (Triptych 0 for 3 at $50, Rosary 1 for 3, AQuietDevotion UGC trio, five of six gifting angles) with the cross-cutting pattern that **every kill in account history has good CTR and no sale, so it is audience/offer, never creative.** Today: 1 SCALE (Sisters $5 to $6.50, recommended 4 checks running and still not applied), 1 REDUCE (AQuietDevotion_PHOTO $5 to $4, five straight checks of decline), 2 WATCH. No kills. 2026-09-18 was a zero-sale day across all four. **ClickBank NOT reconciled for the sixth consecutive day** (`cb_get_orders` only has `wealthapa`, returns 401; `karmacc` not configured) so all ROAS above is Meta CAPI only. Unresolved: the SistersThreePack ad set is still mislabelled `StoppedHidingIt_UGC_ParkingLot`, corrupting `utm_term`. Raw pull: output/ads/_data/2026-09-19-rawpull.json.
 - 2026-05-27: LEARNINGS.md initialized
 - 2026-05-27: Added top 10 verbatim phrases and top 10 pain points under Customer Language, sourced from outputs/wealth-manifestation/findings-2026-05-12-general-reddit.md and findings-2026-05-26-reddit-ancestral.md. Added vocabulary map (do/don't word list) at end of Customer Language section.
 - 2026-05-27: Added Locked Product Specifications section. St Benedict Rosary Necklace spec locked: lava stone beads, polished silver + gunmetal chain, Our Lady of Guadalupe centerpiece, multiple Saint Benedict medal accents through chain, ornate silver crucifix, Y-drop necklace format. Image-prompt rules: no CTA buttons rendered into image, foreground Guadalupe, silver palette only (no brass/gold). Replaces incorrect spec used in image-prompts v1 (which assumed ebony wood + antique brass + Saint Benedict centerpiece).

@@ -60,3 +60,7 @@ output/ads/higgsfield-v2/
 # ClickBank INS bridge secrets (server config, never commit)
 site/ins/config.php
 site/ins/log.txt
+
+# Prayer Song back end: server config and any buyer data (never commit, never upload from here)
+site/prayer-song/api/config.php
+site/prayer-song/api/data/

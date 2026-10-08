@@ -5,7 +5,7 @@ Reads credentials from the repo-root .env (FTP_HOST, FTP_PORT, FTP_USER,
 FTP_PASS, FTP_REMOTE_DIR). Uploads every file under site/ preserving the
 directory structure. Uses only the Python standard library.
 
-    python3 deploy/deploy.py [--dry-run]
+    python3 deploy/deploy.py [--dry-run] [--only <folder under site/>]
 """
 
 import posixpath
@@ -37,6 +37,8 @@ def load_env(path: Path) -> dict:
 
 def main() -> None:
     dry_run = "--dry-run" in sys.argv
+    # --only prayer-song : upload just that folder of site/, leaving every other page on the server untouched
+    only = sys.argv[sys.argv.index("--only") + 1].strip("/") if "--only" in sys.argv else None
 
     env = load_env(ENV_FILE)
     missing = [k for k in ("FTP_HOST", "FTP_USER", "FTP_PASS", "FTP_REMOTE_DIR") if not env.get(k)]
@@ -66,9 +68,21 @@ def main() -> None:
     if not SITE_DIR.is_dir():
         sys.exit(f"ERROR: {SITE_DIR} not found.")
 
+    # A folder holding a file named HOLD is not uploaded. It marks work that TS has not said "ship" for yet
+    # (delete the HOLD file to release it). The server's own config and buyer data are never uploaded either.
+    held = sorted({h.parent for h in SITE_DIR.rglob("HOLD")})
+    def blocked(path: Path) -> bool:
+        if any(h == path.parent or h in path.parents for h in held):
+            return True
+        rel = path.relative_to(SITE_DIR).as_posix()
+        return rel == "prayer-song/api/config.php" or rel.startswith("prayer-song/api/data/")
+    for h in held:
+        print(f"HELD, not uploading: site/{h.relative_to(SITE_DIR)}/  (remove its HOLD file to release)")
+
     files = sorted(
         p for p in SITE_DIR.rglob("*")
-        if p.is_file() and p.name not in SKIP_NAMES
+        if p.is_file() and p.name not in SKIP_NAMES and not blocked(p)
+        and (only is None or p.relative_to(SITE_DIR).as_posix().startswith(only + "/"))
     )
     if not files:
         sys.exit("ERROR: no files found under site/.")

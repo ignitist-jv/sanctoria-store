@@ -1,0 +1,305 @@
+{
+ "page": {
+  "making": {
+   "eyebrow": "Your order is received",
+   "h": "{name}'s prayer song is being made",
+   "p": [
+    "Thank you. Your answers are with us, and the prayer for {intention_phrase} is being written and set to music now.",
+    "This page updates by itself. The words appear here first, and the song follows.",
+    "There is no need to wait here. An email with this same link is sent when the song is ready, within 24 hours of your order."
+   ],
+   "email_h": "Watch for our email",
+   "email_p": "Watch for an email from Sanctoria, sent from {from}, with the subject \"{subject}\". If it is not in the inbox, it is worth looking in the spam or promotions folder.",
+   "keep": "This page is yours to keep. The song will appear here, so you may leave it open or save the address.",
+   "status": "Being written and set to music",
+   "lyrics_h": "The words of {name}'s prayer"
+  },
+  "thanks": {
+   "eyebrow": "Your order is received",
+   "h": "Thank you. Your prayer song is on its way.",
+   "p": [
+    "Your payment went through ClickBank, our retailer, and your prayer song is being prepared. This page cannot show your order details just yet.",
+    "Your private link is emailed to the address used at checkout, within 24 hours, from {from}. The subject ends with \"prayer song is ready\". Not in the inbox? Look in spam or promotions.",
+    "If we still need the name and the prayer, that email or page asks in a short form. If nothing arrives within 24 hours, write to support@sanctoriastore.com with the email address used to order."
+   ],
+   "find": "Send my link again"
+  },
+  "ready": {
+   "eyebrow": "Your prayer song is ready",
+   "h": "{title}",
+   "sub": "A prayer for {intention_phrase}, sung over {name} by name. Each time it plays, and someone listens and means it, the prayer for {name} is prayed again.",
+   "download": "Download The Song",
+   "download_note": "It is yours to keep. An MP3 file that plays on any phone or computer.",
+   "lyrics_h": "Every word, to pray along with",
+   "share_h": "Share it with the family",
+   "share_p": "Anyone with this private link can listen. Send it to the people who pray for {name} too, so the same prayer is prayed in more than one house.",
+   "copy": "Copy Private Link",
+   "copied": "Link Copied",
+   "bonus_h": "Three things to keep beside it",
+   "bonus_p": "The Keepsake Lyric Sheet, the Nine Day Prayer Companion and the Daily Prayer Card are below, ready to print.",
+   "remake_h": "If the name is not sung right",
+   "remake_p": "Reply to the email we sent, or write to support@sanctoriastore.com, and tell us how {name} should sound. We will remake the song at no charge.",
+   "another_h": "Someone else in your prayers",
+   "another_p": "When there is another name to carry, a prayer song can be made for them too.",
+   "another_button": "Begin Another Song"
+  },
+  "feedback": {
+   "h": "Tell us about your prayer song",
+   "p": "When you have listened, we would be glad to hear what this prayer song meant, in your own honest words. A sentence is enough, and there is no right answer.",
+   "stars_label": "Your rating of the song",
+   "text_label": "In your own words",
+   "text_hint": "Where it was first played, or what stayed with you afterwards. Whatever is true.",
+   "name_label": "Name to show with your words",
+   "name_hint": "Anne, Ohio",
+   "share": "Sanctoria may show my words and the name above on its website and in its advertising. Left unticked, my words stay private and are read only by Sanctoria.",
+   "button": "Send My Words",
+   "thanks_h": "Thank you for telling us",
+   "thanks_p": "Your words have reached us and will be read with care. If you would like to add to them or change them later, you can do that here.",
+   "edit": "Change my words",
+   "error_stars": "Please choose a number of stars before sending.",
+   "error": "That did not send. Your words are still here, so please try again."
+  },
+  "reviews_public": {
+   "nav_track": "Find My Song",
+   "nav_reviews": "Reviews",
+   "title": "Reviews Of Your Prayer Song",
+   "h": "What buyers have said, in their own words",
+   "p": "Every review here was written by someone who had a prayer song made. Each is shown with permission, under the name its writer chose.",
+   "empty_h": "There are no reviews here yet",
+   "empty_p": "The first prayer songs are only now being made, so there is nothing to show here yet. We would rather leave this page empty than fill it ourselves. As buyers give permission, their own words will appear here. Until then, the sample songs can be heard, and a song can be begun.",
+   "how_h": "How a review gets here",
+   "how_p": "Only someone who has ordered a prayer song can leave a review, from their own private song page. It appears here only with their permission, under the name they chose, after we have read it. Nothing is given in exchange. Reviews are never edited, though a long one may be shortened, and can be changed or withdrawn at any time.",
+   "samples": "Hear The Sample Songs",
+   "cta": "Begin My Prayer Song",
+   "date_prefix": "Shared"
+  },
+  "receipt": {
+   "order": "Order {receipt}",
+   "statement": "This purchase will appear on your card or bank statement as CLKBANK*COM.",
+   "help": "Questions about your order: support@sanctoriastore.com"
+  },
+  "review": {
+   "h": "{name}'s song is taking longer",
+   "p": [
+    "Every song is checked before it is sent, to be sure the name is sung and the words are whole. This one did not pass that check, so it is being made again.",
+    "Nothing is wrong with your order, and there is nothing you need to do. The song will still be here, and in your email, within 24 hours of your order."
+   ]
+  },
+  "needs": {
+   "h": "One thing is still needed",
+   "p": [
+    "Your order is safe with us. We do not yet have the name and the prayer the song should carry.",
+    "It is a short form of four steps and takes about a minute. The song is sent within 24 hours of the form being finished."
+   ],
+   "button": "Tell Us Who It Is For"
+  },
+  "notfound": {
+   "h": "We could not find that song page",
+   "p": [
+    "The link may be incomplete. Try opening it again from the email we sent, or copy the whole link into the address bar.",
+    "If it still does not open, write to support@sanctoriastore.com from the email address used for the order and we will send the link again."
+   ],
+   "find": "Send my link again"
+  },
+  "find": {
+   "h": "Send the song link again",
+   "p": [
+    "Enter the email address used for the order, and we will send the private link to that inbox again."
+   ],
+   "placeholder": "Email address used to order",
+   "button": "Send My Link",
+   "done": "Thank you. If there is an order for that address, the link is on its way to that inbox now. If it does not appear, please look in the spam folder, and if it is still missing, write to support@sanctoriastore.com.",
+   "error": "That does not look like an email address. Please check it and try again."
+  }
+ },
+ "email": {
+  "ready": {
+   "subject": "{name}'s prayer song is ready",
+   "preheader": "The song, the full lyrics and the printable pages are on your private page.",
+   "p": [
+    "{buyer}, {name}'s prayer song is ready.",
+    "It is called {title}. It is a prayer for {intention_phrase}, with {name} sung by name in every chorus.",
+    "Your private page has the song to play, a button to download it, and every word of the lyrics.",
+    "Play it whenever the prayer is on your heart. Each time, the prayer for {name} is prayed again."
+   ],
+   "button": "Listen To The Song",
+   "p_after": [
+    "Please keep this email. The link is private, and anyone you send it to can listen.",
+    "The Keepsake Lyric Sheet, the Nine Day Prayer Companion and the Daily Prayer Card are on the same page.",
+    "If the name is not sung right, reply to this email and tell us how it should sound. We will remake the song at no charge."
+   ],
+   "signoff": "With our prayers, Sanctoria"
+  },
+  "delay": {
+   "subject": "A short note about {name}'s prayer song",
+   "p": [
+    "{buyer}, {name}'s prayer song is taking a little longer than usual.",
+    "Nothing is wrong with your order. Every song is checked before it is sent, and this one is being made again so the name and the words are right.",
+    "It will arrive within 24 hours of your order. Your private page is here, and it updates by itself: {link}"
+   ],
+   "signoff": "With our prayers, Sanctoria"
+  }
+ },
+ "phrases": {
+  "husband": "your husband",
+  "wife": "your wife",
+  "son": "your son",
+  "daughter": "your daughter",
+  "grandchild": "your grandchild",
+  "mother": "your mother",
+  "father": "your father",
+  "friend": "your friend",
+  "myself": "yourself",
+  "passed": "the one you are remembering",
+  "healing": "healing",
+  "protection": "protection",
+  "strength": "strength",
+  "peace": "peace",
+  "return": "a return to the faith",
+  "marriage": "grace in marriage",
+  "grief": "comfort in grief",
+  "thanksgiving": "thanksgiving",
+  "hymn": "a traditional hymn",
+  "acoustic": "a gentle guitar song",
+  "gospel": "a gospel choir song",
+  "country": "a country gospel song",
+  "lullaby": "a lullaby",
+  "piano": "a piano ballad",
+  "folk": "a folk hymn",
+  "choir": "a sacred choir hymn"
+ },
+ "bonus": {
+  "companion": {
+   "cover_kicker": "Nine days of prayer, beside the song",
+   "cover_title": "The Nine Day Prayer Companion",
+   "cover_sub": "One page a day, one name, and the song at the heart of it.",
+   "intro_h": "How to pray these nine days",
+   "intro_p": [
+    "This is nine days of prayer to keep beside the prayer song. Each day asks for about ten minutes.",
+    "Choose a time that can be kept: the kitchen table before the house wakes, or the bedside at night. Read the verse and the short reflection. Pray the prayer, and at the ruled line say or write the name of the one you are praying for. If the song is for your own heart, the name is your own. If the one you are praying for has died, pray it for that soul.",
+    "Then play the song. It is the heart of each day, because it holds the name and the prayer together. Close with the prayers named at the foot of the page.",
+    "If a day is missed, nothing is lost. Pick it up again where it was left."
+   ]
+  },
+  "days": [
+   {
+    "title": "Called By Name",
+    "verse": "Fear not, for I have redeemed thee, and called thee by thy name: thou art mine.",
+    "ref": "Isaias 43:1",
+    "reflection": "Before this name was ever written down or sung in a chorus, God knew it. He knew it before anyone spoke it aloud at the font. So these nine days do not begin by telling Him something new. They begin by standing before Him and saying the name He already holds, slowly, the way it deserves to be said.",
+    "prayer": "Lord, You call each of us by name, and You do not forget one. Today I bring before You {blank}, this child of Yours, whom You have known from the beginning. I do not come with many words. I come with one name. Receive it, Lord, and receive my prayer with it, for these nine days and beyond them. Amen.",
+    "practice": "Play the song once and listen for the name. Then pray one Our Father, one Hail Mary and one Glory Be."
+   },
+   {
+    "title": "Leaning On Him",
+    "verse": "Have confidence in the Lord with all thy heart, and lean not upon thy own prudence.",
+    "ref": "Proverbs 3:5",
+    "reflection": "Most of us pray with one hand open and the other still holding on. We bring a name to God and then go on carrying it alone in the small hours. Trust is not pretending to feel calm. It is handing over what was never ours to carry by ourselves, and doing it again tomorrow when we find we have picked it back up.",
+    "prayer": "Father, I have carried this name a long way by myself. Today I place {blank} in Your hands, which are larger and gentler than mine. Where I cannot see the way, let me trust that You can. Where I want to manage everything, teach me to lean on You. Give me the faith to leave it with You. Amen.",
+    "practice": "Play the song once. Then pray one Our Father, one Hail Mary and one Glory Be."
+   },
+   {
+    "title": "Love That Stays",
+    "verse": "Beareth all things, believeth all things, hopeth all things, endureth all things.",
+    "ref": "1 Corinthians 13:7",
+    "reflection": "Saint Paul is describing charity, the love that comes from God. It is not a feeling that rises and falls with the day. It stays. To keep praying over one name, year after year, through good news and through silence, is one of the plainest ways that love bears and hopes and endures. Hardly anyone sees it. God does.",
+    "prayer": "Lord Jesus, teach me to love as You love. Let me hold {blank} before You patiently, without anxiety and without keeping count. When I am tired, let me love by praying. When I have no words left, let the song carry them. Make my heart a quiet place where this name is always welcome. Amen.",
+    "practice": "Play the song once. Then pray one Our Father, one Hail Mary and one Glory Be."
+   },
+   {
+    "title": "Do Not Grow Weary",
+    "verse": "But they that hope in the Lord shall renew their strength, they shall take wings as eagles, they shall run and not be weary, they shall walk and not faint.",
+    "ref": "Isaias 40:31",
+    "reflection": "Prayer that goes on for a long time can feel like standing still. The prophet says otherwise. Those who hope in the Lord are given new strength, not because the waiting is short, but because He meets them in it. Today is the fourth day. Coming back to the page again is itself the hoping.",
+    "prayer": "Lord, renew my strength today. I have prayed for {blank} before, and I will pray again tomorrow. Keep me from growing weary, and from measuring You by what I can see. Let me keep this small appointment with You faithfully, one day at a time, and leave the rest to You. Amen.",
+    "practice": "Play the song once. Then pray one Our Father, one Hail Mary and one Glory Be."
+   },
+   {
+    "title": "His Peace",
+    "verse": "Peace I leave with you, my peace I give unto you: not as the world giveth, do I give unto you. Let not your heart be troubled, nor let it be afraid.",
+    "ref": "John 14:27",
+    "reflection": "Our Lord spoke these words on the night before He died, to friends who were about to be very afraid. The peace He gives is not the world's kind, which depends on everything going well. It is His own, and it can rest in a heart while the questions are still open.",
+    "prayer": "Jesus, giver of peace, let Your peace rest on {blank} today, and on every heart that carries this name. Quiet what is troubled in me. Where I am afraid, stay with me. I do not ask to understand everything. I ask only to be near You, and to leave this name in Your peace. Amen.",
+    "practice": "Play the song once, and sit quietly for a minute after it ends. Then pray one Our Father, one Hail Mary and one Glory Be."
+   },
+   {
+    "title": "Behold Thy Mother",
+    "verse": "After that, he saith to the disciple: Behold thy mother. And from that hour, the disciple took her to his own.",
+    "ref": "John 19:27",
+    "reflection": "From the cross, Our Lord gave His mother to the disciple, and the Church has long seen in that disciple every one of us. Mary knows what it is to stand close to someone she loves and be able to do nothing but stay. A name brought to her is never a burden. She carries it to her Son.",
+    "prayer": "Mary, my Mother, I entrust {blank} to your care today. You stood at the cross and did not leave. Stand with me now. Take this name into your prayers and carry it to your Son, who refuses you nothing that is good. Pray for us, holy Mother of God. Amen.",
+    "practice": "Play the song once. Then pray one Our Father, three Hail Marys and one Glory Be."
+   },
+   {
+    "title": "Into His Hands",
+    "verse": "Cast thy care upon the Lord, and he shall sustain thee: he shall not suffer the just to waver for ever.",
+    "ref": "Psalm 54:23",
+    "reflection": "There is a prayer that asks, and a prayer that lets go. Both are needed. To cast a care upon the Lord is not to stop caring. It is to stop holding on as though everything depended on our own grip. Today the prayer is simple: Thy will be done, said slowly, and meant as far as we are able.",
+    "prayer": "Father, I have told You what is in my heart. Now I give You {blank} without conditions. You love this soul more than anyone on earth is able to. Whatever You will, let it be done, and give me the grace to accept it. Sustain me while I wait. I leave this care with You. Amen.",
+    "practice": "Play the song once. Then pray one Our Father, slowly, one Hail Mary and one Glory Be."
+   },
+   {
+    "title": "Hope Beyond Sorrow",
+    "verse": "And God shall wipe away all tears from their eyes: and death shall be no more, nor mourning, nor crying, nor sorrow shall be any more, for the former things are passed away.",
+    "ref": "Apocalypse 21:4",
+    "reflection": "This is where God is leading His people. Scripture closes with God Himself drying their tears. We are not there yet, and faith does not ask us to pretend that we are. It asks us to hold on to His promise while we wait, and to go on praying for one another along the way.",
+    "prayer": "Lord, You see every tear, mine and those I know nothing about. I place {blank} within Your promise today. Have mercy on us. Keep us in Your grace, and bring us at the last to the place where nothing is lost and no one is missing. Until then, keep my hope alive. Amen.",
+    "practice": "Play the song once. Then pray one Our Father, one Hail Mary and one Glory Be."
+   },
+   {
+    "title": "Give Thanks",
+    "verse": "Give praise to the Lord, for he is good: for his mercy endureth for ever.",
+    "ref": "Psalm 117:1",
+    "reflection": "The ninth day is for thanks. Not because everything has been settled, but because God is good and His mercy does not run out. Give thanks for the life of the one you have prayed for. Give thanks for nine days kept, even imperfectly. A prayer of thanks is never wasted, and it is a fitting way to finish.",
+    "prayer": "Lord, I thank You for the life of {blank}, and for every day You have given. Thank You for hearing me these nine days. Your mercy endures for ever. I do not finish this prayer today. I only set the page down. Keep this name in Your heart always, and keep me faithful in praying it. Amen.",
+    "practice": "Play the song once more. Then pray one Our Father, one Hail Mary and one Glory Be, and make the Sign of the Cross."
+   }
+  ],
+  "close": {
+   "h": "After the ninth day",
+   "p": [
+    "The nine days are finished. The prayer is not.",
+    "The song is still there, on the same private page and wherever it was saved. Play it on an ordinary morning, on a hard one, on a feast day or an anniversary. Each time it plays, and someone listens and means it, the name is lifted to God again.",
+    "No prayer book can promise an outcome. It can only help the asking go on.",
+    "Begin the nine days again whenever there is need, for the same name or for another. And keep these pages where they will be found."
+   ]
+  },
+  "card": {
+   "heading": "A Daily Prayer For {name}",
+   "heading_self": "My Daily Prayer",
+   "prayer": "Lord, today I place {name} in Your hands again. Bless {name} with Your grace, and keep {name} close to Your Sacred Heart. Give me faith to trust You, patience to keep praying, and a thankful heart for every good gift. Mary, Mother of God, pray for us. Amen.",
+   "prayer_memorial": "Merciful Father, I commend the soul of {name} to You. Grant {name} eternal rest, and let Your perpetual light shine upon this soul You love. Forgive whatever needs forgiving, and bring {name} into the peace of Your presence. Comfort those of us who remain, and keep us faithful to the end. Mary, Mother of mercy, pray for us. Amen.",
+   "prayer_self": "Lord, here I am. You know me by my name, {name}, and You have never let go of me. Take this day and everything in it. Give me grace for what I must do, peace about what I cannot change, and a thankful heart for every good gift. Stay close to me. Mary, my Mother, pray for me. Amen.",
+   "footer": "Prayed each day, beside the song."
+  },
+  "sheet": {
+   "kicker": "A prayer song for {name}",
+   "kicker_self": "A prayer song for my own heart",
+   "footer": "A prayer that is sung keeps being prayed."
+  },
+  "page": {
+   "h": "Three things to keep beside it",
+   "print": "These are PDF files. Print them at home on ordinary paper.",
+   "items": [
+    {
+     "f": "sheet",
+     "title": "The Keepsake Lyric Sheet",
+     "desc": "Every word of the song, set on a page to frame or keep.",
+     "button": "Download Lyric Sheet"
+    },
+    {
+     "f": "companion",
+     "title": "The Nine Day Prayer Companion",
+     "desc": "Nine days of prayer beside the song, one page a day.",
+     "button": "Download Companion"
+    },
+    {
+     "f": "card",
+     "title": "The Daily Prayer Card",
+     "desc": "One short prayer to print, for the fridge door or the bedside.",
+     "button": "Download Prayer Card"
+    }
+   ]
+  }
+ }
+}

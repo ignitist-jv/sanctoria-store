@@ -1,0 +1,10 @@
+# Only the public endpoints answer over the web. The library, the worker, the
+# config and any fallback data folder are never served.
+<FilesMatch "^(lib|pipeline|lyrics|worker|doctor|config|config\.sample|pdf|pdf_widths|bonus_docs)\.php$">
+  Require all denied
+</FilesMatch>
+<Files "copy.json">
+  Require all denied
+</Files>
+RedirectMatch 403 ^/prayer-song/api/data(/|$)
+Options -Indexes

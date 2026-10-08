@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Find Your Devotion | Sanctoria</title>
+<meta name="description" content="Three questions, and we will show you the one blessed devotion that fits the way you actually pray.">
+
+<!-- ClickMagick Tracker -->
+<script>
+    window.clickmagick_cmc = {
+        uid: '92654',
+        hid: '1214314307',
+        cmc_project: 'Sanctoria Store',
+        vid_info: 'on',
+        utm_source: 'organic'
+    };
+</script>
+<script src='https://cdn.clkmc.com/cmc.js'></script>
+
+<!-- Microsoft Clarity -->
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "ydd7lw8hiu");
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --bg:#F7F3EC; --paper:#FFFFFF; --paper-soft:#FBF7EF;
+    --ink:#2A1F1A; --ink-soft:#5B4A40; --muted:#968878;
+    --bronze:#9A7B4F; --green:#2E9E4F;
+    --line:#E2D9CA; --dark:#3D2A24;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:520px;margin:0 auto;padding:0 20px 36px;min-height:100vh;display:flex;flex-direction:column}
+
+  .topbar{display:flex;align-items:center;justify-content:center;padding:16px 0 8px}
+  .topbar img{height:32px;width:auto}
+
+  .progress{display:flex;gap:6px;justify-content:center;margin:4px 0 20px}
+  .dot{width:34px;height:3px;border-radius:2px;background:var(--line)}
+  .dot.on{background:var(--bronze)}
+
+  .screen{display:none;animation:fade .3s ease}
+  .screen.active{display:block}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+  .eyebrow{font-size:11.5px;letter-spacing:1.4px;text-transform:uppercase;color:var(--bronze);font-weight:700;text-align:center;margin-bottom:10px}
+  h1{font-family:'Fraunces',serif;font-size:26px;line-height:1.26;font-weight:600;text-align:center;margin:0 0 12px}
+  .sub{font-size:15.5px;line-height:1.55;color:var(--ink-soft);text-align:center;margin:0 0 22px}
+  h2{font-family:'Fraunces',serif;font-size:22px;line-height:1.32;font-weight:600;text-align:center;margin:0 0 18px}
+  .micro{font-size:12.5px;color:var(--muted);text-align:center;margin:12px 0 0}
+
+  .opt{display:block;width:100%;text-align:left;background:var(--paper);border:1px solid var(--line);border-radius:12px;
+       padding:16px 18px;margin-bottom:10px;font-family:'Inter',sans-serif;font-size:15.5px;line-height:1.4;color:var(--ink);
+       cursor:pointer;transition:border-color .15s,box-shadow .15s,transform .08s}
+  .opt:hover{border-color:var(--bronze);box-shadow:0 6px 18px rgba(154,123,79,.14)}
+  .opt:active{transform:translateY(1px)}
+  .opt small{display:block;color:var(--muted);font-size:12.5px;margin-top:3px;font-style:italic}
+
+  .btn{display:block;width:100%;text-align:center;background:var(--dark);color:#fff;border:none;border-radius:12px;
+       padding:17px 18px;font-family:'Inter',sans-serif;font-size:16px;font-weight:700;letter-spacing:.3px;cursor:pointer;
+       text-decoration:none;transition:background .15s,box-shadow .15s,transform .08s}
+  .btn:hover{background:linear-gradient(180deg,var(--green) 0%,#257F3F 100%);box-shadow:0 12px 30px rgba(37,127,63,.34)}
+  .btn:active{transform:translateY(1px)}
+
+  .skip,.back{display:block;width:100%;background:none;border:none;color:var(--muted);font-family:'Inter',sans-serif;
+        font-size:13px;padding:12px 0 0;cursor:pointer;text-align:center}
+  .skip:hover,.back:hover{color:var(--ink-soft)}
+
+  .holding{text-align:center;padding:70px 0}
+  .holding p{font-family:'Fraunces',serif;font-style:italic;font-size:18px;color:var(--bronze);margin:0}
+
+  .result-img{width:100%;max-width:208px;margin:0 auto 16px;display:block;border-radius:12px}
+
+  .pack{display:flex;align-items:center;gap:14px;background:var(--paper);border:1px solid var(--line);border-radius:12px;
+        padding:14px 16px;margin-bottom:10px;text-decoration:none;color:var(--ink);transition:border-color .15s,box-shadow .15s}
+  .pack:hover{border-color:var(--bronze);box-shadow:0 6px 18px rgba(154,123,79,.14)}
+  .pack.best{border-color:var(--bronze);background:var(--paper-soft)}
+  .pack-main{flex:1}
+  .pack-name{font-weight:700;font-size:15.5px}
+  .pack-why{font-size:12.5px;color:var(--muted);line-height:1.45;margin-top:3px}
+  .pack-price{text-align:right;white-space:nowrap}
+  .pack-now{font-family:'Fraunces',serif;font-size:21px;font-weight:600;display:block}
+  .pack-was{font-size:12px;color:var(--muted);text-decoration:line-through}
+  .tag{display:inline-block;font-size:10px;letter-spacing:.8px;text-transform:uppercase;color:var(--bronze);font-weight:700;margin-bottom:3px}
+
+  .trust{font-size:12.5px;line-height:1.65;color:var(--muted);text-align:center;margin:16px 0 0}
+  .why{font-size:15px;line-height:1.65;color:var(--ink-soft);margin:22px 0 10px;padding-top:20px;border-top:1px solid var(--line)}
+  .objdesc{font-size:13px;line-height:1.55;color:var(--muted);margin:0}
+  .others{display:block;text-align:center;font-size:13px;color:var(--bronze);margin-top:20px;cursor:pointer;background:none;border:none;width:100%;font-family:'Inter',sans-serif}
+
+  footer{margin-top:auto;padding-top:30px;text-align:center;font-size:11.5px;color:var(--muted);line-height:1.7}
+  footer a{color:var(--muted)}
+  .hidden-links{display:none}
+</style>
+</head>
+<body>
+
+<!--
+  PRE-RENDERED CHECKOUT LINKS.
+  These sit in the DOM at page load so ClickMagick's cmc.js rewrites every [cmc_vid]
+  token into the real visitor id. The result screen copies the href from here rather
+  than assembling a URL in JavaScript, which would ship the literal token and lose
+  attribution. Never hardcode a vtid value.
+-->
+<div class="hidden-links" aria-hidden="true">
+  <a id="lnk-bracelet-1" href="https://karmacc.pay.clickbank.net/?cbitems=bracelet-1&template=order-2&cbfid=63684&vtid=[cmc_vid]">1</a>
+  <a id="lnk-bracelet-2" href="https://karmacc.pay.clickbank.net/?cbitems=bracelet-2&template=order-2&cbfid=63684&vtid=[cmc_vid]">2</a>
+  <a id="lnk-bracelet-3" href="https://karmacc.pay.clickbank.net/?cbitems=bracelet-3&template=order-2&cbfid=63684&vtid=[cmc_vid]">3</a>
+  <a id="lnk-triptych-1" href="https://karmacc.pay.clickbank.net/?cbitems=medal-1&template=order-3&cbfid=63893&vtid=[cmc_vid]">1</a>
+  <a id="lnk-triptych-2" href="https://karmacc.pay.clickbank.net/?cbitems=medal-2&template=order-3&cbfid=63893&vtid=[cmc_vid]">2</a>
+  <a id="lnk-triptych-3" href="https://karmacc.pay.clickbank.net/?cbitems=medal-3&template=order-3&cbfid=63893&vtid=[cmc_vid]">3</a>
+  <a id="lnk-necklace-1" href="https://karmacc.pay.clickbank.net/?cbitems=necklace-1&template=order-4&cbfid=63921&vtid=[cmc_vid]">1</a>
+  <a id="lnk-necklace-2" href="https://karmacc.pay.clickbank.net/?cbitems=necklace-2&template=order-4&cbfid=63921&vtid=[cmc_vid]">2</a>
+  <a id="lnk-necklace-3" href="https://karmacc.pay.clickbank.net/?cbitems=necklace-3&template=order-4&cbfid=63921&vtid=[cmc_vid]">3</a>
+  <a id="lnk-rosary-1" href="https://karmacc.pay.clickbank.net/?cbitems=rosary-1&template=order-5&cbfid=63426&vtid=[cmc_vid]">1</a>
+  <a id="lnk-rosary-2" href="https://karmacc.pay.clickbank.net/?cbitems=rosary-2&template=order-5&cbfid=63426&vtid=[cmc_vid]">2</a>
+  <a id="lnk-rosary-3" href="https://karmacc.pay.clickbank.net/?cbitems=rosary-3&template=order-5&cbfid=63426&vtid=[cmc_vid]">3</a>
+</div>
+
+<div class="wrap">
+
+  <div class="topbar"><img src="/images/logo.png" alt="Sanctoria, Blessed Devotionals"></div>
+  <div class="progress" id="progress" hidden>
+    <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+  </div>
+
+  <!-- OPENING -->
+  <section class="screen active" id="s-open">
+    <h1>Three questions. Then the one that belongs in your hands.</h1>
+    <p class="sub">Four blessed devotions, and they are not interchangeable. Answer three questions and we will show you one, not four.</p>
+    <button class="btn" id="startBtn">Begin</button>
+    <p class="micro">No email. Three taps.</p>
+  </section>
+
+  <!-- QUESTIONS -->
+  <section class="screen" id="s-q">
+    <h2 id="qText"></h2>
+    <div id="qOpts"></div>
+    <button class="skip" id="skipBtn"></button>
+    <button class="back" id="backBtn">Back</button>
+  </section>
+
+  <!-- HOLDING -->
+  <section class="screen" id="s-hold">
+    <div class="holding"><p>Thank you. One moment, while we find the one that fits.</p></div>
+  </section>
+
+  <!-- RESULT -->
+  <section class="screen" id="s-result">
+    <div class="eyebrow" id="rName"></div>
+    <h2 id="rHead"></h2>
+    <img class="result-img" id="rImg" src="" alt="">
+    <div id="rPacks"></div>
+    <p class="trust" id="rTrust"></p>
+    <p class="why" id="rWhy"></p>
+    <p class="objdesc" id="rObj"></p>
+    <button class="others" id="othersBtn"></button>
+  </section>
+
+  <!-- ALL FOUR -->
+  <section class="screen" id="s-all">
+    <h2>All four devotions</h2>
+    <div id="allList"></div>
+    <button class="back" id="backToResult">Back</button>
+  </section>
+
+  <footer>
+    &copy; 2026 Sanctoria &middot; Blessed Devotionals &middot; <a href="mailto:support@sanctoriastore.com">support@sanctoriastore.com</a><br>
+    <a href="/privacy.html">Privacy</a> &middot; <a href="/terms.html">Terms</a> &middot; <a href="/contact.html">Contact</a><br>
+    ClickBank is the retailer of products on this site.
+  </footer>
+</div>
+
+<script>
+/* ============================================================
+   PRODUCT TABLE
+   Prices verified 2026-10-01 against the live pages and the real
+   ClickBank checkout. Links come from the pre-rendered anchors above.
+   ============================================================ */
+var PRODUCTS = {
+  bracelet: { img:'/images/Hero.jpg',          alt:'The St Benedict Marian Bracelet',            prices:[37,47,57], was:[42,84,126]  },
+  triptych: { img:'/images/guard-product.jpg', alt:'The Benedict Triptych, a three-medal bracelet', prices:[37,47,57], was:[42,84,126]  },
+  necklace: { img:'/images/pair-product.jpg',  alt:'The Benedict Double Protection Necklace',    prices:[47,57,67], was:[52,104,156] },
+  rosary:   { img:'/images/rosary-1.jpg',      alt:'The Saint Benedict Cord Rosary',             prices:[37,47,57], was:[57,114,171] }
+};
+
+var TRUST = 'Hand-blessed in the Benedictine tradition before it ships. Out the door within 24 hours. Free US shipping. 30-day full refund, your shipping included.';
+var OTHERS = 'Prefer to see the other three devotions?';
+var BEST_TAG = 'Matches your answer';
+
+/* Q2 carries the product. Q1 sets which pack is highlighted. Q3 overrides it. */
+var QUESTIONS = [
+  {
+    q: 'Who do you have in mind?',
+    skip: 'I am not sure yet',
+    options: [
+      { label:'Mostly myself',                   pack:1 },
+      { label:'A daughter or a granddaughter',   pack:2 },
+      { label:'Someone I pray for by name',      pack:2 },
+      { label:'The whole household',             pack:3 }
+    ]
+  },
+  {
+    q: 'What do you want it to do?',
+    skip: 'Any of them, honestly',
+    options: [
+      { label:'Steady the quiet minutes before the day starts', product:'bracelet' },
+      { label:'Stay with me when the day gets loud',            product:'triptych' },
+      { label:'Be there the moment the news lands',             product:'necklace' },
+      { label:'Be prayed with, then handed down',               product:'rosary'   }
+    ]
+  },
+  {
+    q: 'How many?',
+    skip: 'Show me the prices first',
+    options: [
+      { label:'Just the one',                 tier:1 },
+      { label:'Two. One to keep, one to send', tier:2, note:'The same blessed medal, two houses.' },
+      { label:'Three. One for each of them',   tier:3, note:'Grandmother, mother, daughter.' }
+    ]
+  }
+];
+
+var RESULTS = {
+  bracelet: {
+    name:'The St Benedict Marian Bracelet',
+    head:'You asked for the quiet part of the day. This is the one.',
+    why:'The ten minutes before the house wakes. The school car park with the engine off. The driveway, before you go in. Those minutes already exist in your day. This is simply something for your hands to hold in them. It carries the Saint Benedict medal and the Miraculous Medal together, so when the asking has gone on a long time, it can be asked through His Mother.',
+    object:'Matte black ebony wood beads, hand-knotted, with an antique bronze Saint Benedict medal and a Miraculous Medal.',
+    shortWhy:'For the quiet minutes that already exist in your day.',
+    packs:[
+      {name:'Reserve One',   why:'For your own wrist, in your own ten minutes.'},
+      {name:'Reserve Two',   why:'Keep one, send one. The same blessed medal on two wrists in two houses.'},
+      {name:'Reserve Three', why:'Three generations, or three women you name in the same breath.'}
+    ]
+  },
+  triptych: {
+    name:'The Benedict Triptych',
+    head:'You said the day gets loud. This is the one you do not have to remember.',
+    why:'The prayer gets said at the kitchen table, first cup of coffee, the names you always say. Then keys, the drive, the list, the phone, and by ten o’clock it is behind you. That is not small faith. That is a full day. This one stays on through the shower, the sink and the rain, and three Saint Benedict medals are spaced along the cord so whichever way your hand falls, one of them is facing you. Morning, noon, night.',
+    object:'Three gold-tone Saint Benedict medals in tarnish-resistant stainless steel, on a black braided cord that fits any wrist in a second, with a printed prayer card.',
+    shortWhy:'For the day that gets loud. Nothing to remember.',
+    packs:[
+      {name:'Reserve One',   why:'On at six in the morning, still on at midnight.'},
+      {name:'Reserve Two',   why:'No clasp and no size to guess, so one can be sent without asking her wrist size.'},
+      {name:'Reserve Three', why:'Morning, noon and night, on three wrists in three houses.'}
+    ]
+  },
+  necklace: {
+    name:'The Benedict Double Protection Necklace',
+    head:'You said the moment the news lands. This is the one.',
+    why:'The hand goes flat to the center of the chest before the mind catches up. Nobody is taught that, and almost always the hand finds a blouse, a cardigan, skin, nothing at all. A wrist is not where a frightened woman puts her hand. The chest is. This hangs there and stays there, through the shower and the rain and the waiting room, so the palm closes over a blessed cross and a blessed medal instead of empty cotton.',
+    object:'A plain gold Latin cross and a round Saint Benedict medal on one fine double-strand chain, 18K gold plated over stainless steel, with a printed Saint Benedict prayer card.',
+    shortWhy:'For the moment the news lands.',
+    packs:[
+      {name:'Reserve One',   why:'One, for the center of your own chest.'},
+      {name:'Reserve Two',   why:'Two, so a daughter has one at her collar too.'},
+      {name:'Reserve Three', why:'Three, for the women who hear the same news you do.'}
+    ]
+  },
+  rosary: {
+    name:'The Saint Benedict Cord Rosary',
+    head:'You said handed down. This is the one she keeps.',
+    why:'Faith does not get handed down in a conversation. It gets handed down in an object a daughter keeps. This is the kind her grandmother prayed, knotted by hand on cord so the beads stay where they are put, made to be used rather than kept nice in a drawer. And when the asking has gone on for years, many Catholic women begin asking through His Mother, one decade at a time.',
+    object:'Black matte wooden beads knotted on braided cord, silver-tone Saint Benedict medals along the length, an oval Saint Benedict centerpiece and a black wood crucifix, in a drawstring pouch with a prayer card.',
+    shortWhy:'To be prayed with, then handed down.',
+    packs:[
+      {name:'Reserve One',   why:'One to pray with now, and one day to hand on.'},
+      {name:'Reserve Two',   why:'Two, so the same beads are being prayed in two houses.'},
+      {name:'Reserve Three', why:'Three. Grandmother, mother, daughter, the same rosary in three hands.'}
+    ]
+  }
+};
+
+/* Shown when Q2 is skipped. Same product and packs as the bracelet, different opening. */
+var MIXED = {
+  head:'Then begin where it is simplest. This is the one.',
+  why:'It is the one that asks nothing of your day. It goes on your wrist in the morning and it is simply there in the minutes that already exist, before the house wakes, in the car park, in the driveway. It carries the Saint Benedict medal and the Miraculous Medal together, which is why it suits a woman who is praying for more than one person at once. Start here, and the other three will still be here.',
+  others:'Or see all four side by side.'
+};
+
+/* ============================================================
+   ENGINE
+   ============================================================ */
+var answers = [null,null,null], step = 0;
+function $(id){ return document.getElementById(id); }
+
+function show(id){
+  var s = document.querySelectorAll('.screen');
+  for (var i=0;i<s.length;i++) s[i].classList.remove('active');
+  $(id).classList.add('active');
+  window.scrollTo(0,0);
+}
+function setProgress(n){
+  $('progress').hidden = (n === 0);
+  var d = document.querySelectorAll('.dot');
+  for (var i=0;i<d.length;i++){ if (i < n) d[i].classList.add('on'); else d[i].classList.remove('on'); }
+}
+function chosenProduct(){
+  var a = answers[1];
+  return (a && a.product) ? a.product : null;    /* null means Q2 was skipped */
+}
+function chosenTier(){
+  if (answers[2] && answers[2].tier) return answers[2].tier;   /* Q3 wins when answered */
+  if (answers[2] === 'skip') return 0;                          /* nothing highlighted */
+  if (answers[0] && answers[0].pack) return answers[0].pack;    /* else Q1 sets the highlight */
+  return 0;
+}
+function packLink(product, tier){
+  var a = $('lnk-' + product + '-' + tier);
+  return a ? a.getAttribute('href') : '#';
+}
+
+function renderQuestion(){
+  var q = QUESTIONS[step];
+  $('qText').textContent = q.q;
+  var box = $('qOpts'); box.innerHTML = '';
+  for (var i=0;i<q.options.length;i++){
+    (function(opt){
+      var b = document.createElement('button');
+      b.className = 'opt';
+      b.innerHTML = opt.label + (opt.note ? '<small>' + opt.note + '</small>' : '');
+      b.onclick = function(){ answers[step] = opt; advance(); };
+      box.appendChild(b);
+    })(q.options[i]);
+  }
+  var sk = $('skipBtn');
+  sk.textContent = q.skip;
+  sk.onclick = function(){ answers[step] = 'skip'; advance(); };
+  $('backBtn').style.display = (step === 0) ? 'none' : 'block';
+  show('s-q');
+}
+function advance(){
+  step++;
+  if (step < QUESTIONS.length){ setProgress(step + 1); renderQuestion(); }
+  else { finish(); }
+}
+
+function renderResult(){
+  var product = chosenProduct();
+  var mixed = (product === null);
+  if (mixed) product = 'bracelet';
+  var c = RESULTS[product], p = PRODUCTS[product], best = chosenTier();
+
+  $('rName').textContent = c.name;
+  $('rHead').textContent = mixed ? MIXED.head : c.head;
+  $('rImg').src = p.img; $('rImg').alt = p.alt;
+
+  var box = $('rPacks'); box.innerHTML = '';
+  for (var t=1;t<=3;t++){
+    var a = document.createElement('a');
+    a.className = 'pack' + (t === best ? ' best' : '');
+    a.href = packLink(product, t);
+    a.innerHTML =
+      '<div class="pack-main">' +
+        (t === best ? '<span class="tag">' + BEST_TAG + '</span>' : '') +
+        '<div class="pack-name">' + c.packs[t-1].name + '</div>' +
+        '<div class="pack-why">' + c.packs[t-1].why + '</div>' +
+      '</div>' +
+      '<div class="pack-price"><span class="pack-now">$' + p.prices[t-1] + '</span>' +
+      '<span class="pack-was">$' + p.was[t-1] + '</span></div>';
+    box.appendChild(a);
+  }
+  $('rTrust').textContent = TRUST;
+  $('rWhy').textContent = mixed ? MIXED.why : c.why;
+  $('rObj').textContent = c.object;
+  $('othersBtn').textContent = mixed ? MIXED.others : OTHERS;
+  show('s-result');
+}
+
+function finish(){
+  setProgress(3);
+  show('s-hold');
+  setTimeout(renderResult, 1000);
+}
+
+function renderAll(){
+  var box = $('allList'); box.innerHTML = '';
+  var keys = ['bracelet','triptych','necklace','rosary'];
+  for (var i=0;i<keys.length;i++){
+    var k = keys[i], c = RESULTS[k], p = PRODUCTS[k];
+    var a = document.createElement('a');
+    a.className = 'pack';
+    a.href = packLink(k, 1);
+    a.innerHTML =
+      '<div class="pack-main"><div class="pack-name">' + c.name + '</div>' +
+      '<div class="pack-why">' + c.shortWhy + '</div></div>' +
+      '<div class="pack-price"><span class="pack-now">$' + p.prices[0] + '</span></div>';
+    box.appendChild(a);
+  }
+  show('s-all');
+}
+
+document.addEventListener('DOMContentLoaded', function(){
+  $('startBtn').onclick = function(){
+    step = 0; answers = [null,null,null]; setProgress(1); renderQuestion();
+  };
+  $('backBtn').onclick = function(){
+    if (step > 0){ step--; setProgress(step + 1); renderQuestion(); }
+  };
+  $('othersBtn').onclick = renderAll;
+  $('backToResult').onclick = renderResult;
+});
+</script>
+
+</body>
+</html>

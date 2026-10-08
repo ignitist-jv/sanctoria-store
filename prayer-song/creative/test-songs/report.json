@@ -1,0 +1,18 @@
+[
+  {
+    "id": "06_four_minute",
+    "file": "06_four_minute.mp3",
+    "song_id": "XTN3QrPsIQyfW4qhBFeJ",
+    "render_s": 26,
+    "duration_s": 234,
+    "cost_usd": 0.59,
+    "stt_model": "scribe_v2",
+    "transcript": "[slow piano music] Lord, I'm coming to You on my knees tonight. For the one who held my hand and raised me right. Siobhan, my mother, she's been tired and weak. So I bring her to You, the Healer that we seek. Lay Your hand on Siobhan. Lift her up and make her strong. You said You would restore her health. Lord, I'm holding to Your Word alone. Siobhan, You know her name. Heal her body, ease her pain. She sang over my cradle when the nights were long. Now I'm singing over her, Lord, keep her carrying on. Every morning that she wakes, let her feel You near. Every breath she takes, Lord, let her know You're here. Lay Your hand on Siobhan. Lift her up and make her strong. You said You would restore her health. Lord, I'm holding to Your Word alone. Siobhan, You know her name. Heal her body, ease her pain. [piano interlude] \"For I will restore health unto thee, and I will heal thee of thy wounds.\" That's Your promise, Lord, I believe. Siobhan is safe in Your hands. When the waiting room is quiet and the hours are slow. Sit beside her, Lord, and never let her go. Give the doctors steady hands, and give her peaceful rest. Let her wake up knowing she is held and she is blessed. Lay Your hand on Siobhan. Lift her up and make her strong. You said You would restore her health. Lord, I'm holding to Your Word alone. Siobhan, You know her name. Heal her body, ease her pain. Lay Your hand on Siobhan. Lord, we leave her in Your care. Amen. Amen. [piano fades]",
+    "name_expected": 9,
+    "name_exact": 9,
+    "name_close": 0,
+    "name_heard_as": [],
+    "lyric_recall": 0.98,
+    "pass": true
+  }
+]
