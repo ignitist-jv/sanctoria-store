@@ -1,0 +1,19 @@
+=== AD 14: Worn Holy Card (Vintage Film) ===
+
+PRIMARY TEXT:
+Everyone keeps a holy card somewhere. In a Bible, a drawer, a wallet gone soft at the corners.
+
+This is that same devotion, but one you can wear.
+
+The St Benedict Marian Bracelet keeps the saint and the prayer on your wrist, where you can reach for it any time of the day.
+
+Come look.
+
+HEADLINE: The Devotion You Can Wear
+
+NAMING:
+Campaign: AQuietDevotion_2026-08-06
+Ad Set:   T1_MF_35-65+_AQuietDevotion_V2
+Ad:       14_WornHolyCard
+
+Destination: /bracelet-v2/

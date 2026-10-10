@@ -1,0 +1,18 @@
+=== AD 10: Take The Church With You (double-exposure: cathedral) ===
+
+PRIMARY TEXT:
+You cannot be in church all day. But you can take a little of it with you.
+
+The St Benedict Marian Bracelet is that little piece of the sacred, worn on your wrist from Monday to Saturday. The medal, the crucifix, the quiet, all within reach between Sundays.
+
+A prayer you can carry, wherever the week takes you.
+
+Come look.
+
+HEADLINE: Take The Church With You
+
+NAMING:
+Campaign: PrayerYouWear_2026-08-09
+Ad Set:   T1_MF_35-65+_PrayerYouWear_DX_Cathedral
+Ad:       10_TakeTheChurch
+Destination: /bracelet-v2/

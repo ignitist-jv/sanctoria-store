@@ -1,0 +1,18 @@
+=== AD 08: When The Call Comes, It's Already There (hard phone call) ===
+
+PRIMARY TEXT:
+Bad news never calls ahead. It just calls.
+
+And when it does, your hands look for something to hold. The St Benedict Marian Bracelet is already there on your wrist, the beads under your fingers, the medal in your palm, steadying you while you find the words to pray.
+
+You do not have to reach far. It is already with you.
+
+See it here.
+
+HEADLINE: When The Call Comes, It's Already There
+
+NAMING:
+Campaign: PrayerYouWear_2026-08-06
+Ad Set:   T1_MF_35-65+_PrayerYouWear_PhoneCall
+Ad:       08_WhenTheCallComes
+Destination: /bracelet-v2/

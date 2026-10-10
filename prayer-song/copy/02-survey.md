@@ -19,7 +19,6 @@ TIP: A first name is all we need. No surname.
 LABEL_PHON: How the name is said (optional)
 PLACEHOLDER_PHON: e.g. hwah-KEEN for Joaquin
 TIP_PHON: Only needed when a name is not said the way it is spelled. It helps the name be sung correctly.
-LABEL_NAME2: A second name to be sung (optional)
 PLACEHOLDER_NAME2: First name only
 LABEL_WHO2: Who the second person is
 OPTION_WHO2_BLANK: Choose one
@@ -87,7 +86,6 @@ BUTTON: Continue To Checkout
 PRICE_BADGE: 70% off today
 PRICE_WAS: $129
 PRICE_NOW: $39
-MICRO2: One time. Nothing recurring. Sent within 24 hours, 30 day full refund.
 
 ## UI
 BACK: Back

@@ -1,0 +1,21 @@
+=== AD 10: Grandmother's Hands (Vintage Film) ===
+
+PRIMARY TEXT:
+You learned to pray watching hands like these.
+
+Older. Worn. Sure of what they were doing. The beads moving slowly, one at a time, without a word.
+
+The St Benedict Marian Bracelet carries that same quiet. Real ebony beads. The medal of Saint Benedict, worn smooth by prayer.
+
+Some things do not need to change. They just need to be passed on.
+
+Bring one home.
+
+HEADLINE: The Prayer You Grew Up Watching
+
+NAMING:
+Campaign: AQuietDevotion_2026-08-06
+Ad Set:   T1_MF_35-65+_AQuietDevotion_V2
+Ad:       10_GrandmothersHands
+
+Destination: /bracelet-v2/

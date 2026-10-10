@@ -1,0 +1,33 @@
+AD: 01_OneSharedDevotion   (angle: AGiftOfFaith)
+Image: 8_AGiftOfFaith.png
+Destination: https://sanctoriastore.com/bracelet/
+CTA button: Shop Now
+
+=== HEADLINE ===
+A Gift Of Faith For The Family
+
+=== PRIMARY TEXT ===
+Imagine your whole family wearing the same devotion.
+
+One on your wrist. One on your daughter's. One on your grandchild's.
+
+The St Benedict Marian Bracelet makes a gift that means something.
+
+Not another trinket that ends up in a drawer, but a piece of the faith you share.
+
+A birthday. A Confirmation. A Christmas morning.
+
+A way of saying, without a single word, we are in this faith together.
+
+See it here.
+
+=== DESCRIPTION (link description) ===
+Bring them into one devotion
+
+=== META NAMING ===
+Campaign: AGiftOfFaith_2026-07-20
+Ad Set:   T1_MF_45-65+_AGiftOfFaith
+Ad:       01_OneSharedDevotion
+
+=== URL PARAMETERS (paste into "URL parameters" field) ===
+utm_source={{site_source_name}}&utm_medium={{placement}}&utm_campaign={{campaign.name}}&utm_content={{ad.name}}&utm_term={{adset.name}}&cmc_adid=fb_{{ad.id}}

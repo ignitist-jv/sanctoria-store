@@ -1,0 +1,31 @@
+AD: 07_MidTaskPause   (AQuietDevotion MULTIPLY, points at V2 page)
+Image: 07_MidTaskPause.png
+Destination: https://sanctoriastore.com/bracelet-v2/   (V2 = /bracelet-v2/)
+CTA button: Shop Now
+
+=== HEADLINE ===
+A Quiet Word, Mid-Day
+
+=== PRIMARY TEXT ===
+In the middle of everything, she stops for a moment.
+
+The washing half folded. The kettle on. And still, she finds the beads on her wrist and says a quiet word to God.
+
+The St Benedict Marian Bracelet is made for exactly that. Not for special occasions. For the ordinary middle of an ordinary day.
+
+One bead. One breath. Then back to it.
+
+A little quiet, worn where you can reach it.
+
+Come look.
+
+=== DESCRIPTION (link description) ===
+For the ordinary day
+
+=== META NAMING ===
+Campaign: AQuietDevotion_2026-08-04
+Ad Set:   T1_MF_35-65+_AQuietDevotion_V2   (or run inside the winner 120255189519530051)
+Ad:       07_MidTaskPause
+
+=== URL PARAMETERS ===
+utm_source={{site_source_name}}&utm_medium={{placement}}&utm_campaign={{campaign.name}}&utm_content={{ad.name}}&utm_term={{adset.name}}&cmc_adid=fb_{{ad.id}}

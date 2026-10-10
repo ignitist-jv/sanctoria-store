@@ -1,0 +1,33 @@
+AD: 01_HoldTheBeads   (angle: AQuietDevotion)
+Image: 5_AQuietDevotion.png
+Destination: https://sanctoriastore.com/bracelet/
+CTA button: Learn More
+
+=== HEADLINE ===
+One Bead At A Time
+
+=== PRIMARY TEXT ===
+In a loud world, there is something steadying about holding the beads.
+
+One bead. Then the next. Then the next.
+
+Some of us pray this way first thing in the morning. Some at night, when the house has finally gone quiet.
+
+The St Benedict Marian Bracelet sits right there on the wrist, ready whenever the moment comes.
+
+No noise. No hurry. Just the beads, and the prayer, and you.
+
+A quiet devotion, worn close.
+
+Come look.
+
+=== DESCRIPTION (link description) ===
+A quiet daily ritual
+
+=== META NAMING ===
+Campaign: AQuietDevotion_2026-07-20
+Ad Set:   T1_MF_45-65+_AQuietDevotion
+Ad:       01_HoldTheBeads
+
+=== URL PARAMETERS (paste into "URL parameters" field) ===
+utm_source={{site_source_name}}&utm_medium={{placement}}&utm_campaign={{campaign.name}}&utm_content={{ad.name}}&utm_term={{adset.name}}&cmc_adid=fb_{{ad.id}}

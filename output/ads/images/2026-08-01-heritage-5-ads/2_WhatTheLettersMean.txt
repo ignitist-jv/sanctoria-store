@@ -1,0 +1,35 @@
+AD: 01_PaxPeace   (heritage/meaning batch)
+Image: 2_WhatTheLettersMean.png
+Destination (V1): https://sanctoriastore.com/bracelet/
+Destination (V2): https://sanctoriastore.com/bracelet-v2/
+PAGE SPLIT TEST: run this ad set twice, one per page, and tag the ad set name _V1 / _V2 (see naming below) so Meta + ClickBank attribute each page cleanly.
+CTA button: Learn More
+
+=== HEADLINE ===
+The Letters On The Medal
+
+=== PRIMARY TEXT ===
+Look closely at a Saint Benedict medal and you will see letters most people never read.
+
+Around the cross: C S P B. The Cross of our Holy Father Benedict. And down its arms, a line of Latin that means, may the Holy Cross be my light.
+
+At the very top, one word. PAX. Peace.
+
+That is what this medal has always been. Not superstition. A prayer, worn close, in words the Church has kept for 1,500 years.
+
+The St Benedict Marian Bracelet carries that full medal, real bronze, every letter intact, on real ebony beads.
+
+Now you know what it says. Wear it knowing.
+
+Come look.
+
+=== DESCRIPTION (link description) ===
+What the inscription means
+
+=== META NAMING ===
+Campaign: WhatTheLettersMean_2026-08-01
+Ad Set:   T1_MF_35-65+_WhatTheLettersMean_V1   (V1 -> /bracelet/)   |   Ad Set:   T1_MF_35-65+_WhatTheLettersMean_V2   (V2 -> /bracelet-v2/)
+Ad:       01_PaxPeace
+
+=== URL PARAMETERS ===
+utm_source={{site_source_name}}&utm_medium={{placement}}&utm_campaign={{campaign.name}}&utm_content={{ad.name}}&utm_term={{adset.name}}&cmc_adid=fb_{{ad.id}}

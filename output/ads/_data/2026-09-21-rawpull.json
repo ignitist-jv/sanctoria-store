@@ -1,0 +1,16 @@
+{
+  "pulled": "2026-09-21",
+  "account": "462874384767571",
+  "note": "Windows exclude today. TOTAL = 28d + today. No check ran 2026-09-20.",
+  "HEADLINE": "Account has spent ~$84.89 over the last 4 days (09-18 through 09-21) with ZERO revenue. Sale counts unchanged since 2026-09-17.",
+  "not_executed": ["Wave 1 NOT launched (4 new campaigns still paused)","Sisters scale 5->6.50 never applied","Quiet reduce 5->4 never applied","URL parameters presumably still not pasted on the 10 paused ads"],
+  "active": [
+    {"id":"120256241056110051","label":"T1_MF_35-65+_StoppedHidingIt_UGC_ParkingLot","actual_angle":"SistersThreePack","budget":5,"spend_28d":44.64,"spend_today":4.46,"spend_total":49.10,"rev_total":84.52,"sales":2,"roas_14d":1.89,"roas_28d":1.89,"roas_total":1.72,"spend_3d":16.02,"sales_3d":0,"ctr":8.05,"freq":1.27,"verdict":"WATCH_hold_5_scale_withdrawn","roas_trend":["3.75x 09-16","3.13x 09-17","2.30x 09-19","1.72x 09-21"]},
+    {"id":"120256178585970051","label":"T1_MF_35-65+_UGCEveryday_UGC_DaughterPack","budget":9,"spend_28d":101.51,"spend_today":10.43,"spend_total":111.94,"rev_total":186.03,"sales":3,"roas_14d":1.83,"roas_28d":1.83,"roas_total":1.66,"spend_3d":19.83,"sales_3d":0,"ctr":14.91,"freq":1.25,"verdict":"REDUCE_9_to_7"},
+    {"id":"120256276845670051","label":"T1_MF_35-65+_ThreeGenerations_UGC_ThreePouches","funnel":"Rosary","budget":5,"spend_28d":31.10,"spend_today":4.91,"spend_total":36.01,"rev_total":33.06,"sales":1,"roas_14d":1.06,"roas_28d":1.06,"roas_total":0.92,"spend_3d":11.70,"sales_3d":0,"ctr":9.16,"freq":1.37,"verdict":"KILL_below_line_14d_and_28d","reason":"audience/offer"},
+    {"id":"120256136639870051","label":"T1_MF_35-65+_AQuietDevotion_PHOTO_Quiet","budget":5,"spend_28d":76.37,"spend_today":3.96,"spend_total":80.33,"rev_total":98.30,"sales":2,"roas_14d":0.47,"roas_28d":1.29,"roas_total":1.22,"spend_3d":13.58,"sales_3d":0,"ctr":5.66,"freq":1.51,"verdict":"REDUCE_5_to_4","roas_trend":["2.15x 09-13","1.91x 09-15","1.75x 09-16","1.61x 09-17","1.41x 09-19","1.22x 09-21"]}
+  ],
+  "dry_spell": {"window":"3d plus today","spend":84.89,"revenue":0,"sales":0},
+  "portfolio": {"spend_total":277.38,"spend_today":23.76,"revenue_total":401.91,"revenue_today":0,"blended_roas":1.45},
+  "reconciliation_gap": "ClickBank karmacc still unavailable. Eighth day. A 4-day zero-revenue reading is exactly the case where iOS under-reporting matters most."
+}

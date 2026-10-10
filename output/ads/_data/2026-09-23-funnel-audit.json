@@ -1,0 +1,38 @@
+{
+  "audited": "2026-09-23",
+  "window": "last_28d",
+  "instrumentation": {
+    "events_firing": ["PageView", "Purchase"],
+    "events_missing": ["ViewContent", "AddToCart", "InitiateCheckout"],
+    "consequence": "No mid-funnel visibility. Cannot see WHERE on a page a visitor drops. Only click-in and purchase are observable.",
+    "pageviews_7d": 158,
+    "purchases_7d": 2
+  },
+  "adset_funnel_28d": [
+    {"name":"SistersThreePack (labelled StoppedHidingIt)","id":"120256241056110051","spend":54.01,"impressions":1272,"clicks":97,"outbound":44,"purchases":2,"reported_ctr":7.63,"true_link_ctr":3.46,"outbound_share_of_clicks":45,"cpc_outbound":1.23,"cvr_pct":4.55},
+    {"name":"DaughterPack","id":"120256178585970051","spend":123.64,"impressions":1291,"clicks":196,"outbound":60,"purchases":3,"reported_ctr":15.18,"true_link_ctr":4.65,"outbound_share_of_clicks":31,"cpc_outbound":2.06,"cvr_pct":5.00},
+    {"name":"ThreeGenerations (rosary)","id":"120256276845670051","spend":36.01,"impressions":1227,"clicks":111,"outbound":46,"purchases":1,"reported_ctr":9.05,"true_link_ctr":3.75,"outbound_share_of_clicks":41,"cpc_outbound":0.78,"cvr_pct":2.17},
+    {"name":"AQuietDevotion_PHOTO","id":"120256136639870051","spend":86.08,"impressions":2557,"clicks":146,"outbound":75,"purchases":2,"reported_ctr":5.71,"true_link_ctr":2.93,"outbound_share_of_clicks":51,"cpc_outbound":1.15,"cvr_pct":2.67},
+    {"name":"KeepOneGiveOne (triptych)","id":"120256276845790051","spend":16.49,"impressions":448,"clicks":43,"outbound":21,"purchases":0,"reported_ctr":9.60,"true_link_ctr":4.69,"outbound_share_of_clicks":49,"cpc_outbound":0.79,"cvr_pct":0},
+    {"name":"KeepOneSendOne (necklace)","id":"120256276845730051","spend":14.10,"impressions":219,"clicks":41,"outbound":15,"purchases":0,"reported_ctr":18.72,"true_link_ctr":6.85,"outbound_share_of_clicks":37,"cpc_outbound":0.94,"cvr_pct":0}
+  ],
+  "account_unit_economics": {
+    "total_spend":330.33,"total_outbound_clicks":261,"total_purchases":8,
+    "blended_cpc_outbound":1.27,"site_cvr_pct":3.07,"aov":50.24,
+    "revenue_per_outbound_click":1.54,"margin_per_click":0.27,"implied_roas":1.21
+  },
+  "KEY_FINDING_kill_threshold": {
+    "spend_per_test":15,"outbound_clicks_bought":11.8,
+    "prob_zero_sales_for_an_AVERAGE_ad":0.686,
+    "statement":"At the $15 kill threshold you buy ~12 outbound clicks. At the account's own 3.07% CVR, an ad performing exactly at average shows ZERO sales 69% of the time. The kill rule has been discarding roughly two thirds of average ads as failures.",
+    "clicks_for_90pct_confidence":75,"spend_for_90pct_confidence":95
+  },
+  "page_structure": {
+    "bracelet":{"bytes":41971,"first_any_cta_pct":43,"first_buy_link_pct":61,"images":29},
+    "rosary-necklace":{"bytes":34404,"first_any_cta_pct":60,"first_buy_link_pct":69,"images":34},
+    "necklace":{"bytes":60877,"first_any_cta_pct":37,"first_buy_link_pct":67,"images":19},
+    "guard":{"bytes":61889,"first_any_cta_pct":36,"first_buy_link_pct":66,"images":26},
+    "note":"On all four pages the first actual checkout link sits 61-69% down the document. No above-the-fold purchase path anywhere."
+  },
+  "CORRECTION": "My repeated conclusion across 8 checks that 'the page is broken, CTR is fine' was WRONG on both halves. Reported CTR was inflated (only 31-51% of counted clicks were outbound), and site CVR at 3.07% is normal ecommerce, not broken."
+}

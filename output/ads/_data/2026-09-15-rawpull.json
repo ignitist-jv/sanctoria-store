@@ -1,0 +1,22 @@
+{
+  "pulled": "2026-09-15",
+  "account": "462874384767571",
+  "note": "Meta rolling windows EXCLUDE today. TOTAL = 28d + today. ClickBank still unreconciled.",
+  "changes_since_2026-09-14": {
+    "DaughterPack": "budget raised $7 -> $9 (TS executed)",
+    "Couch": "reduce to $4 NOT executed, still $5",
+    "gifting_4_adsets": "PAUSED by TS (KeptOne, MyDadWearsIt, MenWhoPray-labelled, ForMySonLeavingHome)",
+    "renames": "NOT done, naming mismatch persists"
+  },
+  "active_adsets": [
+    {"id":"120256241056110051","label":"T1_MF_35-65+_StoppedHidingIt_UGC_ParkingLot","actual_angle":"SistersThreePack","ad":"01_SistersThreeStates","NAMING_MISMATCH":true,"budget":5,"spend_28d":12.82,"spend_today":3.09,"spend_total":15.91,"rev_total":33.06,"sales":1,"roas_7d":2.58,"roas_14d":2.58,"roas_28d":2.58,"roas_3d":2.58,"roas_total":2.08,"ctr":7.31,"freq":1.10,"verdict":"SCALE_5_to_6"},
+    {"id":"120256178585970051","label":"T1_MF_35-65+_UGCEveryday_UGC_DaughterPack","budget":9,"spend_28d":44.21,"spend_today":11.94,"spend_total":56.15,"rev_total":152.99,"sales":2,"roas_7d":3.46,"roas_14d":3.46,"roas_28d":3.46,"roas_3d":0,"sales_3d":0,"roas_total":2.72,"ctr":13.77,"freq":1.23,"verdict":"WATCH_post_scale_dry"},
+    {"id":"120256150053270051","label":"T1_MF_35-65+_AQuietDevotion_UGC_Couch","budget":5,"spend_28d":36.33,"spend_today":4.21,"spend_total":40.54,"rev_total":42.23,"sales":1,"roas_7d":1.16,"roas_14d":1.16,"roas_28d":1.16,"roas_3d":0,"sales_3d":0,"roas_total":1.04,"ctr":14.52,"freq":1.18,"verdict":"KILL_below_line_14d_and_28d"},
+    {"id":"120256150053250051","label":"T1_MF_35-65+_AQuietDevotion_UGC_Kitchen","budget":5,"spend_28d":35.95,"spend_today":4.05,"spend_total":40.00,"rev_total":51.43,"sales":1,"roas_7d":1.43,"roas_14d":1.43,"roas_28d":1.43,"roas_3d":0,"sales_3d":0,"roas_total":1.29,"ctr":11.14,"freq":1.09,"verdict":"WATCH"},
+    {"id":"120256150053240051","label":"T1_MF_35-65+_AQuietDevotion_UGC_Cardigan","budget":5,"spend_28d":35.30,"spend_today":5.01,"spend_total":40.31,"rev_total":46.72,"sales":1,"roas_7d":1.32,"roas_14d":1.32,"roas_28d":1.32,"roas_3d":0,"sales_3d":0,"roas_total":1.16,"ctr":12.56,"freq":1.15,"verdict":"REDUCE_5_to_4"},
+    {"id":"120256136639870051","label":"T1_MF_35-65+_AQuietDevotion_PHOTO_Quiet","budget":5,"spend_28d":47.64,"spend_today":3.73,"spend_total":51.37,"rev_total":98.30,"sales":2,"roas_7d":0.92,"roas_14d":2.06,"roas_28d":2.06,"roas_3d":2.37,"roas_total":1.91,"ctr":5.10,"freq":1.44,"verdict":"WATCH_override_rule_protects"}
+  ],
+  "portfolio": {"spend_total":244.28,"spend_today":32.03,"revenue_total":424.73,"revenue_today":0,"blended_roas":1.74},
+  "recent_run_rate": {"window":"last_3d_plus_today","spend":123.90,"revenue":66.04,"roas":0.53,"sales":2},
+  "reconciliation_gap": "ClickBank cb_get_orders unavailable (only wealthapa account configured, returns 401). karmacc actuals NOT reconciled."
+}

@@ -1,0 +1,33 @@
+AD: 01_FifteenCenturies   (angle: SacredHeritage)
+Image: 1_SacredHeritage.png
+Destination: https://sanctoriastore.com/bracelet/
+CTA button: Learn More
+
+=== HEADLINE ===
+Worn By Catholics For 1,500 Years
+
+=== PRIMARY TEXT ===
+For more than 1,500 years, Catholics have worn the medal of Saint Benedict.
+
+Long before any of us, monks wore it. Mothers wore it. Grandmothers pressed it into the hands of their children.
+
+The St Benedict Marian Bracelet carries that same medal, the one the Church has kept close for centuries.
+
+To wear it is to stand in a very old line of faith.
+
+The same devotion, passed hand to hand, all the way to yours.
+
+Some things are worth belonging to.
+
+See it here.
+
+=== DESCRIPTION (link description) ===
+An ancient devotion
+
+=== META NAMING ===
+Campaign: SacredHeritage_2026-07-20
+Ad Set:   T1_MF_45-65+_SacredHeritage
+Ad:       01_FifteenCenturies
+
+=== URL PARAMETERS (paste into "URL parameters" field) ===
+utm_source={{site_source_name}}&utm_medium={{placement}}&utm_campaign={{campaign.name}}&utm_content={{ad.name}}&utm_term={{adset.name}}&cmc_adid=fb_{{ad.id}}

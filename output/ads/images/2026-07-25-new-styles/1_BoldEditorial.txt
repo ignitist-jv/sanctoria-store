@@ -1,0 +1,31 @@
+AD: 01_FaithWornClose   (new visual style set)
+Image: 1_BoldEditorial.png
+Destination: https://sanctoriastore.com/bracelet/
+CTA button: Shop Now
+
+=== HEADLINE ===
+Faith You Can Wear
+
+=== PRIMARY TEXT ===
+Faith is not only something you keep. It is something you can wear.
+
+The St Benedict Marian Bracelet puts your devotion where you can see it. Real ebony beads. The antique bronze medal of Saint Benedict. A small crucifix. The Miraculous Medal of Our Lady.
+
+Not costume jewelry. A piece of the faith, worn close to you all day.
+
+On your wrist at work, in the pew, at the kitchen table.
+
+A quiet way of carrying what you believe.
+
+See it here.
+
+=== DESCRIPTION (link description) ===
+The St Benedict Marian Bracelet
+
+=== META NAMING ===
+Campaign: BraceletStyleTest_2026-07-25
+Ad Set:   T1_MF_35-65+_BoldEditorial
+Ad:       01_FaithWornClose
+
+=== URL PARAMETERS ===
+utm_source={{site_source_name}}&utm_medium={{placement}}&utm_campaign={{campaign.name}}&utm_content={{ad.name}}&utm_term={{adset.name}}&cmc_adid=fb_{{ad.id}}

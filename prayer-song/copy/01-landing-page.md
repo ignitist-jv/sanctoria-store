@@ -5,7 +5,6 @@ SUB: Give a husband, a son, a mother or a grandchild an original prayer song wit
 CTA: Begin My Prayer Song
 MICRO: A short form first, about a minute. $39, one time, at checkout.
 TRUST: Sent within 24 hours | 30 day full refund | Built on a verse of Scripture
-FILM_NOTE: The scenes are illustrations made by Sanctoria and do not show customers.
 TOPBAR: Sung by name, sent with care within 24 hours.
 NAV_CTA: Begin My Song
 LISTEN: Hear A Sample
@@ -29,6 +28,7 @@ STEP: It arrives within 24 hours | A private page comes by email, with the song 
 CTA: Begin My Prayer Song
 
 ## SECTION: mechanism
+HIDE: yes
 H2: A spoken prayer is said once. A sung one stays.
 P: Most prayers for a child, a husband or a mother are said at the kitchen table before the day begins. They are meant with a whole heart. Then the words are gone, and the day takes over.
 P: A song does not go anywhere. It plays in the car on the drive to school. At a bedside. In a hospital corridor with one earphone in. At a graveside, years on.
@@ -40,7 +40,7 @@ P: So it is not really music that is being made here. It is a prayer set down, s
 
 ## SECTION: for
 H2: Who it can be for
-P: A song carries one first name, or two, such as a husband and wife. These are the people most often carried in prayer.
+P: These are the people most often carried in prayer.
 CHIP: A husband
 CHIP: A son who has drifted
 CHIP: A daughter far from home
@@ -68,12 +68,14 @@ ITEM: The Nine Day Prayer Companion | Nine days of prayer to keep alongside the 
 ITEM: The Daily Prayer Card | A printable card for the fridge door or the bedside table.
 
 ## SECTION: proof
+HIDE: yes
 H2: There are no reviews on this page yet
 P: The prayer song is new. Nobody has lived with one long enough to say anything worth reading, and quotes are the easiest thing in the world to write. So there are none here. When real ones exist, they will go on this page, with permission.
 P: Here is what can be checked instead. The samples above are the true sound, and they can be heard before a cent is spent. The song arrives within 24 hours. If the name is sung wrongly, we remake it.
 P: And for 30 days, a full refund is one email away. The only review that counts is the one made in the kitchen, the first time the name is sung.
 
 ## SECTION: offer
+HIDE: yes
 H2: One prayer song, sung by name
 P: The song, its private page, the full lyrics, and the verse it is built on. With it come the Keepsake Lyric Sheet, the Nine Day Prayer Companion and the Daily Prayer Card.
 P: Commissioning a songwriter to do this would cost many times more.
@@ -86,6 +88,7 @@ MICRO: Sent by email within 24 hours. 30 day full refund.
 RISK: Nothing to lose. 30 day full refund.
 
 ## SECTION: guarantee
+HIDE: yes
 H2: Thirty days to decide
 P: Play it. Send it to the family. Pray along with it for a month. If it is not right, for any reason, one email to support@sanctoriastore.com returns every cent of the $39.
 P: The refund is handled through ClickBank, the retailer that processes the order. There are no forms to fill in and no questions to answer.
@@ -95,10 +98,8 @@ Q: What makes these songs special?
 A: Each prayer song is written from the answers given in the form. It is a one of a kind gift, rooted in prayer and genuine care.
 Q: When does the song arrive?
 A: Within 24 hours of the order, by email and on a private page.
-Q: Is there a quicker option?
-A: None is needed. Every song already arrives within 24 hours. There is no slower standard service, and nothing extra is charged to hurry it.
 Q: Who and what can the prayer be for?
-A: A husband, wife, son, daughter, grandchild, mother, father or friend, the one ordering it, or someone who has passed. One song can carry one first name or two, such as a husband and wife or two children, and never more than two. The prayer can be for healing, protection, strength, peace, a return to the faith, a marriage, comfort in grief, or thanksgiving. It is a prayer for those things, and no song can promise an outcome.
+A: A husband, wife, son, daughter, grandchild, mother, father or friend, the one ordering it, or someone who has passed. The prayer can be for healing, protection, strength, peace, a return to the faith, a marriage, comfort in grief, or thanksgiving. It is a prayer for those things, and no song can promise an outcome.
 Q: How is the finished song delivered?
 A: An email arrives with a link to a private page. The song plays there, beside the full lyrics and a button to download the MP3 to keep.
 Q: May it be played at church or at a gathering?
@@ -109,7 +110,6 @@ H2: The prayer is already being said. This keeps it.
 P: Many mothers and grandmothers have carried the same name in prayer for years. One song sets that name down, so the prayer can be played and prayed again, by her and by everyone she shares it with.
 P: A short form of four steps begins it, and it takes about a minute. The song arrives within 24 hours, and 30 days stand behind it.
 CTA: Begin My Prayer Song
-MICRO: $39, one time. 30 day full refund.
 
 ## SECTION: footer
 MISSION: We believe a prayer that is sung keeps being prayed. So Sanctoria sets a loved one's name and a verse of Scripture into a song, to be kept and prayed again.

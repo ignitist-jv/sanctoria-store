@@ -1,0 +1,29 @@
+AD: 08_HeldToTheHeart   (AQuietDevotion MULTIPLY, points at V2 page)
+Image: 08_HeldToTheHeart.png
+Destination: https://sanctoriastore.com/bracelet-v2/   (V2 = /bracelet-v2/)
+CTA button: Shop Now
+
+=== HEADLINE ===
+Held Close, Eyes Closed
+
+=== PRIMARY TEXT ===
+Some prayers you feel more than say.
+
+The bracelet pressed between both hands, held close, eyes shut, just for a moment.
+
+The St Benedict Marian Bracelet was made to be held like that. Real ebony beads, warm from your hands. The medal of Saint Benedict, close to your heart.
+
+No words needed. Just the beads, and the quiet, and you.
+
+Bring one home.
+
+=== DESCRIPTION (link description) ===
+Some prayers you feel
+
+=== META NAMING ===
+Campaign: AQuietDevotion_2026-08-04
+Ad Set:   T1_MF_35-65+_AQuietDevotion_V2   (or run inside the winner 120255189519530051)
+Ad:       08_HeldToTheHeart
+
+=== URL PARAMETERS ===
+utm_source={{site_source_name}}&utm_medium={{placement}}&utm_campaign={{campaign.name}}&utm_content={{ad.name}}&utm_term={{adset.name}}&cmc_adid=fb_{{ad.id}}

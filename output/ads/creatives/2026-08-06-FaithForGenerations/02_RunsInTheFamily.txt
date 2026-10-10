@@ -1,0 +1,18 @@
+=== AD 02: The Faith That Runs In The Family (indigo pedestal) ===
+
+PRIMARY TEXT:
+Some things run in the family. The nose. The stubbornness. And, if you are lucky, the faith.
+
+The St Benedict Marian Bracelet is a simple way to keep that faith close and living, worn on your wrist through every ordinary day.
+
+Real ebony beads. A real bronze Saint Benedict medal. A devotion your children will remember.
+
+See it here.
+
+HEADLINE: The Faith That Runs In The Family
+
+NAMING:
+Campaign: FaithForGenerations_2026-08-06
+Ad Set:   T1_MF_35-65+_FaithForGenerations_Indigo
+Ad:       02_RunsInTheFamily
+Destination: /bracelet-v2/

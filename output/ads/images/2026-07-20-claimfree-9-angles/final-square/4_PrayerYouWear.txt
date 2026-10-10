@@ -1,0 +1,33 @@
+AD: 01_KeepItClose   (angle: PrayerYouWear)
+Image: 4_PrayerYouWear.png
+Destination: https://sanctoriastore.com/bracelet/
+CTA button: Shop Now
+
+=== HEADLINE ===
+Keep Your Devotion Close
+
+=== PRIMARY TEXT ===
+A rosary lives in a drawer. This lives on your wrist.
+
+Many of us mean to pray more. Then the day gets loud, and the hours slip.
+
+The St Benedict Marian Bracelet keeps the beads close, all day long.
+
+A glance at your wrist in the grocery line. In the waiting room. At the kitchen sink.
+
+A small reminder to pause. To say a Hail Mary. To hold your faith for a moment.
+
+Your devotion, worn where you can reach for it.
+
+See it here.
+
+=== DESCRIPTION (link description) ===
+A reminder on your wrist
+
+=== META NAMING ===
+Campaign: PrayerYouWear_2026-07-20
+Ad Set:   T1_MF_45-65+_PrayerYouWear
+Ad:       01_KeepItClose
+
+=== URL PARAMETERS (paste into "URL parameters" field) ===
+utm_source={{site_source_name}}&utm_medium={{placement}}&utm_campaign={{campaign.name}}&utm_content={{ad.name}}&utm_term={{adset.name}}&cmc_adid=fb_{{ad.id}}

@@ -1,0 +1,31 @@
+AD: 01_KeptClose   (new visual style set)
+Image: 3_Minimalist.png
+Destination: https://sanctoriastore.com/bracelet/
+CTA button: Shop Now
+
+=== HEADLINE ===
+A Simple Daily Devotion
+
+=== PRIMARY TEXT ===
+Devotion does not need to be complicated.
+
+One bracelet. Real ebony beads. The medal of Saint Benedict and Our Lady, close on your wrist.
+
+The St Benedict Marian Bracelet is a simple, quiet way to keep your faith with you through an ordinary day.
+
+Nothing loud. Nothing fussy. Just something to hold, and a reminder to pray.
+
+Kept simple. Kept close.
+
+Bring one home.
+
+=== DESCRIPTION (link description) ===
+Kept simple, kept close
+
+=== META NAMING ===
+Campaign: BraceletStyleTest_2026-07-25
+Ad Set:   T1_MF_35-65+_Minimalist
+Ad:       01_KeptClose
+
+=== URL PARAMETERS ===
+utm_source={{site_source_name}}&utm_medium={{placement}}&utm_campaign={{campaign.name}}&utm_content={{ad.name}}&utm_term={{adset.name}}&cmc_adid=fb_{{ad.id}}

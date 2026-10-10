@@ -1,0 +1,85 @@
+[
+  {
+    "slug": "01_BeforeTheHouseWakes",
+    "duration": 75,
+    "still": "output/ads/2026-10-08-prayer-song-batch1/assets/01_WakesNoText.png",
+    "song": "prayer-song/demo-data/songs/4e076f8a5f6d6e07cd766084dac7ae82.mp3",
+    "song_start": 0,
+    "hook": [
+      "Up first. Kettle on. House dark.",
+      "One earbud in, a prayer song on.",
+      "A son's name sung in it."
+    ],
+    "disclosure": [
+      "An illustration made by Sanctoria. Not a customer.",
+      "A sample prayer song. Not a customer's song."
+    ],
+    "captions": [
+      { "in": 6,  "out": 13, "text": "He carried the candle down Saint Brigid's aisle" },
+      { "in": 13, "out": 20, "text": "A boy in white with a careful smile" },
+      { "in": 20, "out": 27, "text": "Now grown and gone his own long way" },
+      { "in": 27, "out": 34, "text": "He's wandered far from where we pray" },
+      { "in": 35, "out": 38, "text": "Daniel", "namecard": true },
+      { "in": 39, "out": 46, "text": "Lord, call Daniel home to You", "name": "Daniel" },
+      { "in": 46, "out": 53, "text": "Keep the door of mercy wide" },
+      { "in": 53, "out": 60, "text": "Father, hear a mother's plea" },
+      { "in": 61, "out": 68, "text": "I cannot walk his road for him" },
+      { "in": 68, "out": 74, "text": "So into Your hands I let him go" }
+    ]
+  },
+  {
+    "slug": "02_SchoolCarPark",
+    "duration": 75,
+    "still": "output/ads/2026-10-08-prayer-song-batch1/assets/carpark-1080.png",
+    "song": "prayer-song/demo-data/songs/4e076f8a5f6d6e07cd766084dac7ae82.mp3",
+    "song_start": 62,
+    "hook": [
+      "Parked outside, engine off.",
+      "The same song again.",
+      "His name is in every chorus."
+    ],
+    "disclosure": [
+      "An illustration made by Sanctoria. Not a customer.",
+      "A sample prayer song. Not a customer's song."
+    ],
+    "captions": [
+      { "in": 5,  "out": 12, "text": "Still every Sunday the telephone rings" },
+      { "in": 12, "out": 19, "text": "He asks how I am and tells me small things" },
+      { "in": 19, "out": 26, "text": "I hold the phone and hear his voice" },
+      { "in": 26, "out": 33, "text": "And ask You, Lord, to guide his choice" },
+      { "in": 34, "out": 37, "text": "Daniel", "namecard": true },
+      { "in": 38, "out": 45, "text": "Lord, call Daniel home to You", "name": "Daniel" },
+      { "in": 45, "out": 52, "text": "Father, hear a mother's plea" },
+      { "in": 52, "out": 60, "text": "Hold my Daniel close to Thee", "name": "Daniel" },
+      { "in": 61, "out": 68, "text": "Mary, pray for him tonight" },
+      { "in": 68, "out": 74, "text": "Keep him ever in your sight" }
+    ]
+  },
+  {
+    "slug": "03_TwoCupsGoneCold",
+    "duration": 75,
+    "still": "output/ads/2026-10-08-prayer-song-batch1/assets/cups-1080.png",
+    "song": "prayer-song/demo-data/songs/fcb8ec99564aef8f8407f85dea8b8c8c.mp3",
+    "song_start": 0,
+    "hook": [
+      "Last thing at night, lamp still on.",
+      "A prayer song playing low.",
+      "Two names in it, prayed once more."
+    ],
+    "disclosure": [
+      "An illustration made by Sanctoria. Not a customer.",
+      "A sample prayer song. Not a customer's song."
+    ],
+    "captions": [
+      { "in": 6,  "out": 13, "text": "I watched my Anna walk in white", "name": "Anna" },
+      { "in": 13, "out": 20, "text": "They knelt together, made their vow" },
+      { "in": 21, "out": 28, "text": "A little boy asleep upstairs" },
+      { "in": 28, "out": 35, "text": "Two cups gone cold beside the chairs" },
+      { "in": 35, "out": 42, "text": "It's been a hard year, Lord, you've seen" },
+      { "in": 42, "out": 49, "text": "The quiet nights, the space between" },
+      { "in": 50, "out": 57, "text": "Soften the words that are hard to hear" },
+      { "in": 57, "out": 64, "text": "Our Lady, pray for these two I love" },
+      { "in": 65, "out": 74, "text": "I cannot mend what is not mine" }
+    ]
+  }
+]

@@ -1,0 +1,33 @@
+AD: 01_OutlastsEverything   (angle: PassItDown)
+Image: 2_PassItDown.png
+Destination: https://sanctoriastore.com/bracelet/
+CTA button: Shop Now
+
+=== HEADLINE ===
+A Faith You Can Hand Down
+
+=== PRIMARY TEXT ===
+The faith a mother hands down outlasts everything else she leaves behind.
+
+Houses are sold. Savings are spent. Photographs fade in a drawer.
+
+But a devotion, once given, gets carried.
+
+The St Benedict Marian Bracelet is made to be worn now and handed down later.
+
+Mother to daughter. Daughter to granddaughter.
+
+A quiet way of saying: this is who we are, and this is what we hold onto.
+
+Bring one home.
+
+=== DESCRIPTION (link description) ===
+Made to be passed on
+
+=== META NAMING ===
+Campaign: PassItDown_2026-07-20
+Ad Set:   T1_MF_45-65+_PassItDown
+Ad:       01_OutlastsEverything
+
+=== URL PARAMETERS (paste into "URL parameters" field) ===
+utm_source={{site_source_name}}&utm_medium={{placement}}&utm_campaign={{campaign.name}}&utm_content={{ad.name}}&utm_term={{adset.name}}&cmc_adid=fb_{{ad.id}}

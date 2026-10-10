@@ -1,0 +1,37 @@
+{
+  "pulled": "2026-09-17",
+  "account": "462874384767571",
+  "note": "Meta rolling windows EXCLUDE today. TOTAL = 28d + today. 14d == 28d for all four active ad sets (none older than 14 days of delivery). ClickBank still unreconciled.",
+  "executed_by_TS_since_2026-09-16": [
+    "KILLED Couch 120256150053270051 (was my recommendation)",
+    "KILLED Cardigan 120256150053240051 (was my recommendation)",
+    "PAUSED whole AQuietDevotion_UGC campaign, taking Kitchen 120256150053250051 with it (I had recommended reduce to $4)",
+    "PAUSED whole Triptych campaign (3 ad sets, all past $15 with 0 sales)",
+    "PAUSED Rosary GloveBox 120256276845650051 and LostMyPlace 120256276845660051 (both past $15 with 0 sales)",
+    "NOT executed: Sisters scale $5 to $6.50, DaughterPack reduce, duplicate campaign archive, rename"
+  ],
+  "active": [
+    {"id":"120256241056110051","label":"T1_MF_35-65+_StoppedHidingIt_UGC_ParkingLot","actual_angle":"SistersThreePack","NAMING_MISMATCH":true,"budget":5,"spend_28d":23.96,"spend_today":3.00,"spend_total":26.96,"rev_total":84.52,"sales":2,"roas_14d":3.53,"roas_28d":3.53,"roas_total":3.13,"ctr_28d":9.85,"ctr_today":1.19,"freq":1.13,"verdict":"SCALE_5_to_6.50"},
+    {"id":"120256178585970051","label":"T1_MF_35-65+_UGCEveryday_UGC_DaughterPack","budget":9,"spend_28d":70.07,"spend_today":9.57,"spend_total":79.64,"rev_28d":152.99,"rev_today":33.04,"rev_total":186.03,"sales":3,"roas_14d":2.18,"roas_28d":2.18,"roas_today":3.45,"roas_total":2.34,"ctr":15.51,"freq":1.25,"verdict":"HOLD_9_dry_streak_broken"},
+    {"id":"120256276845670051","label":"T1_MF_35-65+_ThreeGenerations_UGC_ThreePouches","funnel":"Rosary","budget":5,"spend_28d":12.97,"spend_today":4.41,"spend_total":17.38,"rev_today":33.06,"rev_total":33.06,"sales":1,"roas_today":7.50,"roas_total":1.90,"ctr":8.63,"freq":1.25,"verdict":"WATCH_passed_test_with_sale"},
+    {"id":"120256136639870051","label":"T1_MF_35-65+_AQuietDevotion_PHOTO_Quiet","budget":5,"spend_28d":57.78,"spend_today":3.14,"spend_total":60.92,"rev_total":98.30,"sales":2,"roas_14d":1.70,"roas_28d":1.70,"roas_total":1.61,"ctr":5.38,"freq":1.45,"verdict":"WATCH_override_protects"}
+  ],
+  "killed_today_validated": [
+    {"id":"120256276845770051","label":"TheDrawerOne_UGC_DrawerDish","funnel":"Triptych","spend_total":16.86,"sales":0,"ctr":14.98,"reason":"audience/offer"},
+    {"id":"120256276845780051","label":"MenWhoWearIt_UGC_EngineGrease","funnel":"Triptych","spend_total":16.70,"sales":0,"ctr":12.88,"reason":"audience/offer"},
+    {"id":"120256276845790051","label":"KeepOneGiveOne_UGC_TwoWrists","funnel":"Triptych","spend_total":16.49,"sales":0,"ctr":10.90,"reason":"audience/offer"},
+    {"id":"120256276845650051","label":"InheritedByDaughters_UGC_GloveBox","funnel":"Rosary","spend_total":17.53,"sales":0,"ctr":15.55,"reason":"audience/offer"},
+    {"id":"120256276845660051","label":"NeverLearnedItProperly_UGC_LostMyPlace","funnel":"Rosary","spend_total":17.72,"sales":0,"ctr":16.26,"reason":"audience/offer"},
+    {"id":"120256150053270051","label":"AQuietDevotion_UGC_Couch","spend_total":48.74,"sales":1,"rev":42.23,"roas":0.87,"ctr":14.58,"reason":"audience/offer"},
+    {"id":"120256150053240051","label":"AQuietDevotion_UGC_Cardigan","spend_total":50.55,"sales":1,"rev":46.72,"roas":0.92,"ctr":12.81,"reason":"audience/offer"},
+    {"id":"120256150053250051","label":"AQuietDevotion_UGC_Kitchen","spend_total":47.90,"sales":1,"rev":51.43,"roas":1.07,"ctr":11.61,"reason":"campaign paused with the trio"}
+  ],
+  "funnel_level_signal": {
+    "triptych_guard": {"adsets":3,"spend":50.05,"sales":0,"ctr_range":"10.9 to 15.0"},
+    "rosary": {"adsets":3,"spend":52.63,"sales":1,"rev":33.06},
+    "necklace": {"adsets":3,"spend":15.10,"sales":0,"status":"stopped mid-test"},
+    "bracelet": {"note":"all account revenue to date comes from bracelet ad sets"}
+  },
+  "portfolio": {"spend_total":432.49,"spend_today":51.95,"revenue_total":542.29,"revenue_today":66.10,"blended_roas":1.25,"today_roas":1.27},
+  "reconciliation_gap": "ClickBank cb_get_orders still unavailable (only wealthapa configured, 401). Fourth day."
+}

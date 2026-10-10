@@ -1,0 +1,29 @@
+AD: 06_QuietInTheCar   (AQuietDevotion MULTIPLY, points at V2 page)
+Image: 06_QuietInTheCar.png
+Destination: https://sanctoriastore.com/bracelet-v2/   (V2 = /bracelet-v2/)
+CTA button: Shop Now
+
+=== HEADLINE ===
+A Minute That Belongs To You
+
+=== PRIMARY TEXT ===
+Sometimes the only quiet you get all day is in the car.
+
+Before you go in. After you drop them off. A few still minutes that belong to you.
+
+The St Benedict Marian Bracelet is right there on your wrist for moments like that. The beads under your fingers, the medal in your palm, a quick prayer while the world waits.
+
+You do not need a chapel. You just need a minute, and something to hold.
+
+See it here.
+
+=== DESCRIPTION (link description) ===
+A quiet moment, anywhere
+
+=== META NAMING ===
+Campaign: AQuietDevotion_2026-08-04
+Ad Set:   T1_MF_35-65+_AQuietDevotion_V2   (or run inside the winner 120255189519530051)
+Ad:       06_QuietInTheCar
+
+=== URL PARAMETERS ===
+utm_source={{site_source_name}}&utm_medium={{placement}}&utm_campaign={{campaign.name}}&utm_content={{ad.name}}&utm_term={{adset.name}}&cmc_adid=fb_{{ad.id}}

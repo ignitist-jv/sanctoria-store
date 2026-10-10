@@ -1,0 +1,35 @@
+{
+  "pulled": "2026-09-30",
+  "account": "462874384767571",
+  "HEADLINE": "TS launched 8 more ad sets today. Account went from 5 active at ~$23/day to 13 active at $79.96/day. Today returned ZERO sales.",
+  "active_count": 13,
+  "established": [
+    {"id":"120256136639870051","label":"AQuietDevotion_PHOTO_Quiet","budget":5,"spend_28d":118.11,"spend_today":5.89,"spend_total":124.00,"rev_total":173.46,"sales":4,"roas_28d":1.47,"roas_total":1.40,"outbound_28d":112,"cvr_pct":3.6,"ctr":6.26,"freq":1.67,"outbound_ctr_today":2.21,"verdict":"WATCH"},
+    {"id":"120256381145120051","label":"AQuietDevotion_UGC_BeforeTheHouseWakes","budget":6.50,"spend_28d":48.81,"spend_today":6.42,"spend_total":55.23,"rev_total":84.33,"sales":2,"roas_14d":1.73,"roas_28d":1.73,"roas_total":1.53,"outbound_28d":48,"cvr_pct":4.2,"dry_days":5,"dry_spend":32.25,"impressions_today":64,"verdict":"REDUCE_6.50_to_5_third_request"}
+  ],
+  "day2_nonugc": [
+    {"id":"120256502344690051","label":"NovemberNames_PHOTO_TheList","spend_total":13.65,"outbound":7,"sales":1,"rev":32.99,"roas":2.42,"verdict":"WATCH"},
+    {"id":"120256502344670051","label":"WhatIsOnIt_IG_Callouts","spend_total":12.32,"outbound":13,"sales":0,"verdict":"TOO_EARLY_recheck_at_15"},
+    {"id":"120256502344710051","label":"TheOneThingIPrayFor_POSTER_OneLine","spend_total":11.74,"outbound":17,"sales":0,"outbound_ctr_day1":0.81,"outbound_ctr_day2":5.10,"verdict":"TOO_EARLY_CTR_recovered_no_early_kill"}
+  ],
+  "day1_launched_today": [
+    {"id":"120256490331150051","label":"AQuietDevotion_UGC_Driveway","spend":7.34,"impressions":113,"outbound":10,"outbound_ctr":8.85},
+    {"id":"120256493204960051","label":"UnderTheWatch_UGC_OtherWrist","funnel":"guard","spend":6.60,"impressions":158,"outbound":10,"outbound_ctr":6.33},
+    {"id":"120256490330980051","label":"AQuietDevotion_UGC_EarlyToMass","spend":6.37,"impressions":142,"outbound":8,"outbound_ctr":5.63},
+    {"id":"120256490331100051","label":"AQuietDevotion_UGC_RosaryDawn","funnel":"rosary","spend":6.52,"impressions":188,"outbound":10,"outbound_ctr":5.32},
+    {"id":"120256490331110051","label":"AQuietDevotion_UGC_RosaryPickup","funnel":"rosary","spend":6.81,"impressions":189,"outbound":8,"outbound_ctr":4.23},
+    {"id":"120256493204970051","label":"ThreeForThree_UGC_OneEach","funnel":"guard","spend":5.83,"impressions":225,"outbound":5,"outbound_ctr":2.22},
+    {"id":"120256493204980051","label":"WhyThree_UGC_LookedItUp","funnel":"guard","spend":5.46,"impressions":196,"outbound":4,"outbound_ctr":2.04},
+    {"id":"120256490331160051","label":"AQuietDevotion_UGC_LastOneAwake","spend":6.74,"impressions":140,"outbound":2,"outbound_ctr":1.43}
+  ],
+  "portfolio": {"spend_total":268.61,"spend_today":79.96,"revenue_total":290.78,"revenue_today":0,"blended_roas":1.08},
+  "dilution_math": {
+    "adsets":13,"daily_spend":79.96,"spend_per_adset":6.15,"outbound_clicks_per_adset_per_day":4.8,
+    "clicks_needed_for_90pct_confidence":75,
+    "days_to_verdict_per_adset":15.6,
+    "cost_to_verdict_all_13":1248,
+    "alternative":"5 ad sets at the same $80/day reaches a verdict per ad set in about 6 days for roughly $480 total"
+  },
+  "self_competition": "BeforeTheHouseWakes got 64 impressions today against 225 for a day-1 ad set. 13 ad sets on identical T1_MF_35-65+ targeting and the same pixel are bidding against each other.",
+  "reconciliation_gap": "ClickBank karmacc still unavailable."
+}

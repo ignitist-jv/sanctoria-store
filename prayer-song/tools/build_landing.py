@@ -212,7 +212,11 @@ def render(sid, sec):
             if one(sec, "FILM_NOTE"):
                 film_note = f'<p class="filmnote">{e(one(sec, "FILM_NOTE"))}</p>'
             else:
-                problems.append("the hero film is on the page but the hero block has no FILM_NOTE saying the scenes are illustrations")
+                # TS took the line under the film off (2026-10-09). The page must still say it once: the sample section does.
+                said = " ".join(v for k, v in PAGE_COPY.get("sample", []) if k == "P")
+                if "illustrations" not in said or one(PAGE_COPY.get("sample", []), "HIDE"):
+                    problems.append("the hero film is on the page but nothing says the scenes are illustrations "
+                                    "(hero FILM_NOTE, or a P in the sample section)")
         return "\n".join([
             f'<div class="topbar">{e(one(sec, "TOPBAR"))}</div>',
             '<div class="head">',
@@ -366,7 +370,7 @@ def survey_data(c):
     sound["options"] = opts(g("sound"), "OPTION", STYLES, "style")
     sound["voices"] = opts(g("sound"), "VOICE", VOICES, "voice")
     send = need("send", g("send"), ["H", "SUB", "LABEL_EMAIL", "PLACEHOLDER_EMAIL", "LABEL_BUYER", "PLACEHOLDER_BUYER",
-                                    "MICRO", "ERROR", "SUMMARY_TITLE", "SUMMARY_LINE", "BUTTON", "MICRO2"])
+                                    "MICRO", "ERROR", "SUMMARY_TITLE", "SUMMARY_LINE", "BUTTON"])
     if len(send["button"]) > BUTTON_MAX:
         problems.append(f'checkout button "{send["button"]}" is {len(send["button"])} characters, max {BUTTON_MAX}')
     basics["tip"] = one(g("basics"), "TIP")

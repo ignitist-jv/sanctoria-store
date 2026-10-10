@@ -1,0 +1,33 @@
+AD: 02_ThumbOnTheMedal   (refresh MULTIPLY of AQuietDevotion, 9.14x winner)
+Image: 02_ThumbOnTheMedal.png
+Destination: https://sanctoriastore.com/bracelet/
+CTA button: Learn More
+
+=== HEADLINE ===
+Just The Beads And A Breath
+
+=== PRIMARY TEXT ===
+Some prayers do not need words.
+
+Just your thumb finding the medal, and a slow breath out.
+
+Many of us pray this way without even meaning to. A quiet minute, the bracelet on the wrist, the thumb resting on Saint Benedict.
+
+The St Benedict Marian Bracelet keeps that small gesture within reach.
+
+One touch. One breath. One prayer.
+
+Right there on your wrist, whenever the moment comes.
+
+Come look.
+
+=== DESCRIPTION (link description) ===
+A wordless daily prayer
+
+=== META NAMING ===
+Campaign: AQuietDevotion_2026-07-25
+Ad Set:   T1_MF_35-65+_AQuietDevotion   (existing winner id 120255189519530051)
+Ad:       02_ThumbOnTheMedal
+
+=== URL PARAMETERS (paste into "URL parameters" field) ===
+utm_source={{site_source_name}}&utm_medium={{placement}}&utm_campaign={{campaign.name}}&utm_content={{ad.name}}&utm_term={{adset.name}}&cmc_adid=fb_{{ad.id}}

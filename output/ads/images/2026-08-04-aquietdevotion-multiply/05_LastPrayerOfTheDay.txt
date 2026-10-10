@@ -1,0 +1,31 @@
+AD: 05_LastPrayerOfTheDay   (AQuietDevotion MULTIPLY, points at V2 page)
+Image: 05_LastPrayerOfTheDay.png
+Destination: https://sanctoriastore.com/bracelet-v2/   (V2 = /bracelet-v2/)
+CTA button: Shop Now
+
+=== HEADLINE ===
+The Last Prayer Of The Day
+
+=== PRIMARY TEXT ===
+The last thing she does each night is pray.
+
+Not a long prayer. Just a few beads, in the quiet, before the lamp goes off.
+
+The St Benedict Marian Bracelet sits on the nightstand, ready for that moment. Real ebony beads you can find in the dark. The medal of Saint Benedict resting under your thumb.
+
+One bead. Then the next. Then sleep.
+
+A small, steady way to end the day with God.
+
+Bring one home.
+
+=== DESCRIPTION (link description) ===
+End your day with God
+
+=== META NAMING ===
+Campaign: AQuietDevotion_2026-08-04
+Ad Set:   T1_MF_35-65+_AQuietDevotion_V2   (or run inside the winner 120255189519530051)
+Ad:       05_LastPrayerOfTheDay
+
+=== URL PARAMETERS ===
+utm_source={{site_source_name}}&utm_medium={{placement}}&utm_campaign={{campaign.name}}&utm_content={{ad.name}}&utm_term={{adset.name}}&cmc_adid=fb_{{ad.id}}

@@ -1,0 +1,18 @@
+=== AD 07: It Goes Where You Go (on a walk) ===
+
+PRIMARY TEXT:
+A rosary stays on the nightstand. This comes with you out the door.
+
+On the morning walk. To the mailbox. Down the garden path. The St Benedict Marian Bracelet is on your wrist for all of it, a prayer you can reach for without breaking stride.
+
+Your faith, out in the fresh air, right there where you can hold it.
+
+Come look.
+
+HEADLINE: It Goes Where You Go
+
+NAMING:
+Campaign: PrayerYouWear_2026-08-06
+Ad Set:   T1_MF_35-65+_PrayerYouWear_Walk
+Ad:       07_OnAWalk
+Destination: /bracelet-v2/

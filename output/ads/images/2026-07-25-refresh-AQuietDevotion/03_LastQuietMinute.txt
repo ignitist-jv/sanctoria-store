@@ -1,0 +1,31 @@
+AD: 03_LastQuietMinute   (refresh MULTIPLY of AQuietDevotion, 9.14x winner)
+Image: 03_LastQuietMinute.png
+Destination: https://sanctoriastore.com/bracelet/
+CTA button: Shop Now
+
+=== HEADLINE ===
+The Last Quiet Minute Of The Day
+
+=== PRIMARY TEXT ===
+At the end of a long day, there is one small thing left to do.
+
+Sit down. Let the house go quiet. And pray.
+
+For many of us that is the last minute of the day that still belongs to God.
+
+The St Benedict Marian Bracelet is on the wrist, ready for it. The beads under your fingers, one at a time.
+
+No hurry. No noise. Just the quiet, and the prayer, and you.
+
+Bring one home.
+
+=== DESCRIPTION (link description) ===
+An end-of-day devotion
+
+=== META NAMING ===
+Campaign: AQuietDevotion_2026-07-25
+Ad Set:   T1_MF_35-65+_AQuietDevotion   (existing winner id 120255189519530051)
+Ad:       03_LastQuietMinute
+
+=== URL PARAMETERS (paste into "URL parameters" field) ===
+utm_source={{site_source_name}}&utm_medium={{placement}}&utm_campaign={{campaign.name}}&utm_content={{ad.name}}&utm_term={{adset.name}}&cmc_adid=fb_{{ad.id}}

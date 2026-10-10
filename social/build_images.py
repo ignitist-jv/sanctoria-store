@@ -15,7 +15,8 @@ import numpy as np
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
 
 ROOT   = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-OUT    = os.path.join(ROOT, 'social', 'images')
+OUT    = os.path.join(ROOT, 'site', 'social')   # inside site/ so the existing FTPS deploy
+                                               # publishes them and Instagram gets a public URL
 FONTS  = os.path.join(ROOT, 'social', 'fonts')
 FR     = os.path.join(FONTS, 'Fraunces.ttf')
 IN     = os.path.join(FONTS, 'Inter.ttf')

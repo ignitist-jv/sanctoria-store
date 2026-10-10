@@ -1,0 +1,29 @@
+AD: 09_QuietCorner   (AQuietDevotion MULTIPLY, points at V2 page)
+Image: 09_QuietCorner.png
+Destination: https://sanctoriastore.com/bracelet-v2/   (V2 = /bracelet-v2/)
+CTA button: Shop Now
+
+=== HEADLINE ===
+Your Quiet Corner
+
+=== PRIMARY TEXT ===
+Every home needs one quiet corner.
+
+A small table. A candle. A place to sit at the end of the day and pray.
+
+The St Benedict Marian Bracelet belongs there, beside your rosary, ready when you are. Real ebony beads, a real bronze Saint Benedict medal, worn smooth by daily prayer.
+
+You do not have to be anywhere. You just have to sit, and hold the beads, and begin.
+
+See it here.
+
+=== DESCRIPTION (link description) ===
+A place to sit and pray
+
+=== META NAMING ===
+Campaign: AQuietDevotion_2026-08-04
+Ad Set:   T1_MF_35-65+_AQuietDevotion_V2   (or run inside the winner 120255189519530051)
+Ad:       09_QuietCorner
+
+=== URL PARAMETERS ===
+utm_source={{site_source_name}}&utm_medium={{placement}}&utm_campaign={{campaign.name}}&utm_content={{ad.name}}&utm_term={{adset.name}}&cmc_adid=fb_{{ad.id}}

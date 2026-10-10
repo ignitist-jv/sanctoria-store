@@ -1,0 +1,29 @@
+AD: 04_PutItOnEachMorning   (PrayerYouWear MULTIPLY, points at V2 page)
+Image: 04_PutItOnEachMorning.png
+Destination: https://sanctoriastore.com/bracelet-v2/   (V2 = /bracelet-v2/)
+CTA button: Shop Now
+
+=== HEADLINE ===
+You Put It On, You Keep It Close
+
+=== PRIMARY TEXT ===
+Some people put on a watch. She puts on a prayer.
+
+Every morning, before the day starts, the St Benedict Marian Bracelet goes on her wrist and stays there.
+
+Real ebony beads. A real bronze Saint Benedict medal. Something to hold at the sink, in the car, in the quiet before sleep.
+
+You do not have to remember to pray. You just glance at your wrist, and there it is.
+
+Bring one home.
+
+=== DESCRIPTION (link description) ===
+Worn every day
+
+=== META NAMING ===
+Campaign: PrayerYouWear_2026-08-05
+Ad Set:   T1_MF_35-65+_PrayerYouWear_V2   (or run inside the winner 120255440341600051)
+Ad:       04_PutItOnEachMorning
+
+=== URL PARAMETERS ===
+utm_source={{site_source_name}}&utm_medium={{placement}}&utm_campaign={{campaign.name}}&utm_content={{ad.name}}&utm_term={{adset.name}}&cmc_adid=fb_{{ad.id}}

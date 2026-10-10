@@ -1,0 +1,21 @@
+=== AD 18: Before The House Wakes (Dark Cinematic Candlelit) ===
+
+PRIMARY TEXT:
+Before the house wakes, there is a moment that is only yours.
+
+One shaft of early light. The beads on your wrist. A quiet word before the day asks anything of you.
+
+The St Benedict Marian Bracelet is there for that first still minute. Real ebony beads, a real bronze Saint Benedict medal, waiting where you left it.
+
+Begin the day with Him.
+
+Come look.
+
+HEADLINE: Before The House Wakes
+
+NAMING:
+Campaign: AQuietDevotion_2026-08-06
+Ad Set:   T1_MF_35-65+_AQuietDevotion_V2
+Ad:       18_TheDawnShaft
+
+Destination: /bracelet-v2/

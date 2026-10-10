@@ -1,0 +1,19 @@
+=== AD 13: Sunday Hat & Gloves (Vintage Film) ===
+
+PRIMARY TEXT:
+Some things you only wear to church. This, you wear everywhere.
+
+The hat and gloves come out on Sunday. The St Benedict Marian Bracelet stays on your wrist all week.
+
+Real ebony beads. A real bronze medal. A little of Sunday, carried into every ordinary day.
+
+Bring one home.
+
+HEADLINE: A Little Of Sunday, All Week
+
+NAMING:
+Campaign: AQuietDevotion_2026-08-06
+Ad Set:   T1_MF_35-65+_AQuietDevotion_V2
+Ad:       13_SundayHatGloves
+
+Destination: /bracelet-v2/

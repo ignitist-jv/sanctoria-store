@@ -1,0 +1,29 @@
+AD: 01_WeightOfDevotion   (new visual style set)
+Image: 2_Chiaroscuro.png
+Destination: https://sanctoriastore.com/bracelet/
+CTA button: Learn More
+
+=== HEADLINE ===
+Made To Be Held
+
+=== PRIMARY TEXT ===
+You feel it the moment it is in your hand.
+
+Real ebony beads, smooth and solid. Antique bronze, aged like something passed down. The medal of Saint Benedict, worn by the Church for centuries.
+
+The St Benedict Marian Bracelet has a real weight to it. The weight of something made to matter.
+
+This is not a trinket that ends up in a drawer. It is a piece of devotion you will reach for again and again.
+
+Come look.
+
+=== DESCRIPTION (link description) ===
+Real ebony and antique bronze
+
+=== META NAMING ===
+Campaign: BraceletStyleTest_2026-07-25
+Ad Set:   T1_MF_35-65+_Chiaroscuro
+Ad:       01_WeightOfDevotion
+
+=== URL PARAMETERS ===
+utm_source={{site_source_name}}&utm_medium={{placement}}&utm_campaign={{campaign.name}}&utm_content={{ad.name}}&utm_term={{adset.name}}&cmc_adid=fb_{{ad.id}}

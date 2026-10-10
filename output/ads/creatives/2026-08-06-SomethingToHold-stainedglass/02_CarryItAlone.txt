@@ -1,0 +1,19 @@
+=== AD 02: You Don't Have To Carry It Alone (stained-glass hand) ===
+
+PRIMARY TEXT:
+When your mind will not rest, your hands still can.
+
+The St Benedict Marian Bracelet gives them something to do. Bead by bead, a little slower, a little quieter, until the worry loosens its grip and the prayer takes over.
+
+Real ebony beads. A real bronze Saint Benedict medal. Something steady to hold when everything else feels unsteady.
+
+See it here.
+
+HEADLINE: You Don't Have To Carry It Alone
+Overlay: WHEN YOU'RE WORRIED / You don't have to carry it alone.
+
+NAMING:
+Campaign: SomethingToHold_2026-08-06
+Ad Set:   T1_MF_35-65+_SomethingToHold_InHand
+Ad:       02_CarryItAlone
+Destination: /bracelet-v2/

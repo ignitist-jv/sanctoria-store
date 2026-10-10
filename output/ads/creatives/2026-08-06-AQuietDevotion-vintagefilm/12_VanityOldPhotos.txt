@@ -1,0 +1,19 @@
+=== AD 12: Vanity & Old Photos (Vintage Film) ===
+
+PRIMARY TEXT:
+It belongs beside the people you pray for.
+
+The photographs. The faces you hold before God every day, the children, the grandchildren, the ones far away.
+
+The St Benedict Marian Bracelet sits there with them. And when you pick it up, you carry every one of them into your prayer.
+
+See it here.
+
+HEADLINE: Beside The Ones You Pray For
+
+NAMING:
+Campaign: AQuietDevotion_2026-08-06
+Ad Set:   T1_MF_35-65+_AQuietDevotion_V2
+Ad:       12_VanityOldPhotos
+
+Destination: /bracelet-v2/

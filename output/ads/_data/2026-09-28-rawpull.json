@@ -1,0 +1,15 @@
+{
+  "pulled": "2026-09-28",
+  "account": "462874384767571",
+  "note": "Windows exclude today. TOTAL = 28d + today. CVR computed on outbound clicks.",
+  "executed_by_TS": ["Sisters 120256241056110051 KILLED, confirmed PAUSED at $76.55 / 2 sales / 1.10x final", "BeforeTheHouseWakes scaled $5 to $6.50"],
+  "not_executed": ["UGCEveryday reduce $9 to $7 (recommended twice)"],
+  "active": [
+    {"id":"120256381145120051","label":"T1_MF_35-65+_AQuietDevotion_UGC_BeforeTheHouseWakes","budget":6.50,"spend_28d":29.78,"spend_today":8.80,"spend_total":38.58,"rev_total":84.33,"sales":2,"roas_14d":2.83,"roas_28d":2.83,"roas_total":2.19,"spend_3d":14.95,"sales_3d":0,"outbound_28d":33,"cvr_pct":6.1,"ctr":14.75,"freq":1.20,"verdict":"WATCH_hold_post_scale_dry"},
+    {"id":"120256136639870051","label":"T1_MF_35-65+_AQuietDevotion_PHOTO_Quiet","budget":5,"spend_28d":108.17,"spend_today":3.75,"spend_total":111.92,"rev_total":173.46,"sales":4,"roas_14d":1.14,"roas_28d":1.60,"roas_3d":7.06,"roas_total":1.55,"outbound_28d":103,"cvr_pct":3.9,"ctr":6.17,"freq":1.64,"verdict":"WATCH_most_sales_in_account"},
+    {"id":"120256381144990051","label":"T1_MF_35-65+_DaughterPack_UGC_SheAskedFirst","budget":5,"spend_28d":26.67,"spend_today":4.00,"spend_total":30.67,"rev_total":33.06,"sales":1,"roas_14d":1.24,"roas_28d":1.24,"roas_total":1.08,"spend_3d":12.78,"sales_3d":0,"outbound_28d":31,"cvr_pct":3.2,"ctr":19.48,"freq":1.21,"verdict":"WATCH_protected_but_marginal"},
+    {"id":"120256178585970051","label":"T1_MF_35-65+_UGCEveryday_UGC_DaughterPack","budget":9,"spend_28d":161.71,"spend_today":10.52,"spend_total":172.23,"rev_total":186.03,"sales":3,"roas_14d":0.26,"roas_28d":1.15,"roas_total":1.08,"spend_3d":18.81,"sales_3d":0,"outbound_28d":88,"cvr_pct":3.4,"cpc_outbound":1.96,"ctr":16.46,"freq":1.36,"verdict":"KILL_below_line_14d_and_28d","diagnosis":"CVR 3.4 pct is ABOVE account average 3.07. The failure is CPC at $1.96 per outbound click vs $1.27 account blend, caused by the see-more click leak on long copy. Not a CVR or angle failure."}
+  ],
+  "portfolio": {"spend_total":353.40,"spend_today":27.07,"revenue_total":476.88,"revenue_today":0,"blended_roas":1.35},
+  "reconciliation_gap": "ClickBank karmacc still unavailable."
+}
