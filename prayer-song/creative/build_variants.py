@@ -18,8 +18,8 @@ def scrim_png(path, alpha=165):
     Image.new("RGBA", (W, H), (18, 14, 11, alpha)).save(path)
 
 
-DISC = ["An illustration made by Sanctoria. Not a customer.",
-        "A sample prayer song. Not a customer's song."]
+# Removed 2026-10-10 at TS's direction. See the note in build_ad_v2.py.
+DISC = []
 
 VARIANTS = [
     {
@@ -94,7 +94,8 @@ def build(v):
                     "-i", lst, "-c", "copy", spine], check=True)
 
     disc_p = os.path.join(WORK, f"{slug}_disc.png")
-    disc_h = disclosure_png(disc_p, DISC)
+    disc_h = disclosure_png(disc_p, DISC) if DISC else 0
+    bottom = disc_h + 50 if DISC else 150
 
     inputs = ["-i", spine]
     chain, last, idx = [], "0:v", 1
@@ -113,15 +114,16 @@ def build(v):
             y = int(H * 0.40)
         else:
             ch = caption_png(p, text, kind)
-            y = H - disc_h - 50 - ch
+            y = H - bottom - ch
         inputs += ["-i", p]
         chain.append(f"[{last}][{idx}:v]overlay=0:{y}:enable='between(t,{tin},{tout})'[v{idx}]")
         last = f"v{idx}"
         idx += 1
-    inputs += ["-i", disc_p]
-    chain.append(f"[{last}][{idx}:v]overlay=0:{H-disc_h}[v{idx}]")
-    last = f"v{idx}"
-    idx += 1
+    if DISC:
+        inputs += ["-i", disc_p]
+        chain.append(f"[{last}][{idx}:v]overlay=0:{H-disc_h}[v{idx}]")
+        last = f"v{idx}"
+        idx += 1
 
     inputs += ["-ss", str(v["song_start"]), "-i", SONG]
     chain.append(f"[{idx}:a]atrim=0:{total},afade=t=out:st={total-1.5}:d=1.5[a]")

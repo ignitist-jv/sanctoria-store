@@ -39,8 +39,12 @@ CAPTIONS = [
     (13.5, 18.0, "Lord, call Daniel home to You", "Daniel"),
     (18.5, 23.5, "I cannot walk his road for him", None),
 ]
-DISCLOSURE = ["An illustration made by Sanctoria. Not a customer.",
-              "A sample prayer song. Not a customer's song."]
+# The burned-in "not a customer" label was removed at TS's direction on
+# 2026-10-10. Nothing in these films claims a testimonial: nobody looks at the
+# camera and no mouth is open. Keep the primary text clear of anything that
+# implies these people bought the product. Put the lines back by filling this
+# list in again; BOTTOM below keeps the captions in the same place either way.
+DISCLOSURE = []
 
 
 def font(name, size, weight=None):
@@ -141,7 +145,8 @@ def main():
                     "-i", lst, "-c", "copy", spine], check=True)
 
     # 2. overlays
-    disc_h = disclosure_png(os.path.join(WORK, "disc.png"), DISCLOSURE)
+    disc_h = disclosure_png(os.path.join(WORK, "disc.png"), DISCLOSURE) if DISCLOSURE else 0
+    bottom = disc_h + 50 if DISCLOSURE else 150
     inputs = ["-i", spine]
     chain, last, idx = [], "0:v", 1
     for i, (tin, tout, text, kind) in enumerate(CAPTIONS):
@@ -151,15 +156,16 @@ def main():
             y = int(H * 0.40)
         else:
             ch = caption_png(p, text, kind)
-            y = H - disc_h - 50 - ch
+            y = H - bottom - ch
         inputs += ["-i", p]
         chain.append(f"[{last}][{idx}:v]overlay=0:{y}:enable='between(t,{tin},{tout})'[v{idx}]")
         last = f"v{idx}"
         idx += 1
-    inputs += ["-i", os.path.join(WORK, "disc.png")]
-    chain.append(f"[{last}][{idx}:v]overlay=0:{H-disc_h}[v{idx}]")
-    last = f"v{idx}"
-    idx += 1
+    if DISCLOSURE:
+        inputs += ["-i", os.path.join(WORK, "disc.png")]
+        chain.append(f"[{last}][{idx}:v]overlay=0:{H-disc_h}[v{idx}]")
+        last = f"v{idx}"
+        idx += 1
 
     inputs += ["-i", SONG]
     chain.append(f"[{idx}:a]atrim=0:{total},afade=t=out:st={total-1.5}:d=1.5[a]")
