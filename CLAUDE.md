@@ -69,7 +69,30 @@ AD:        [NN]_[CreativeName]
 - Example: Campaign `WornInFaith_IG_2026-08-15` / Ad Set `T1_MF_35-65+_WornInFaith_IG_Bento` / Ad `01_Bento`.
 
 ## Ads Rules (inherited, non-negotiable)
-Create campaigns PAUSED with ad set + ads active underneath ($5/day default, start_time = creation + 2 days 03:00 SGT). NEVER publish, activate, or un-pause a campaign; that is always TS's action. Mandatory url_tags on every ad:
+Create campaigns PAUSED with ad set + ads active underneath ($5/day default, start_time = creation + 2 days 03:00 SGT). NEVER publish, activate, or un-pause a campaign; that is always TS's action.
+
+**LANGUAGE: every ad set targets English only.** In Ads Manager set
+Audience > Languages to **English (All)**. This applies to every campaign on
+this account without exception; the offers are English-only and the landing
+pages have no translations, so an unrestricted ad set buys impressions that
+cannot convert.
+
+Checking and setting it:
+- Ads Manager is the source of truth. The field is `locales` in the API.
+- **Do not hardcode a locale ID from memory.** Meta's own documentation example
+  maps id `6` to "English (US)", while the Ads Manager UI offers a separate
+  "English (All)" option, and this MCP exposes no targeting-search tool to
+  resolve the two. Set the language in the UI, then read `targeting.locales`
+  back with `ads_get_ad_entities` and reuse the id you actually observe.
+- Observed on this account 2026-10-12: the SungForTheHolySouls ad sets carry
+  `locales: [6, 24]`. The three live SungByName ad sets carry no `locales` at
+  all, so they are currently unrestricted.
+- Changing `locales` on a LIVE ad set is a targeting edit and resets the
+  learning phase. On an ad set still gathering its first read, that throws the
+  data away. Prefer setting it at build time; retrofit a live ad set only when
+  TS accepts the reset.
+
+Mandatory url_tags on every ad:
 ```
 utm_source={{site_source_name}}&utm_medium={{placement}}&utm_campaign={{campaign.name}}&utm_content={{ad.name}}&utm_term={{adset.name}}&cmc_adid=fb_{{ad.id}}
 ```
