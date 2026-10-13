@@ -27,6 +27,10 @@
         t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "ydd7lw8hiu");
+    /* Where visitors stop (TS, 2026-10-13). Each name is sent to Clarity once per visit as a custom event:
+       ps_see_<section> when a section scrolls into view, ps_form_open, ps_step_<who|prayer|sound|send>, ps_checkout, ps_sample_play.
+       Names only: nothing she types is ever sent. */
+    window.psTrack = (function(){ var seen={}; return function(n){ if(seen[n]) return; seen[n]=1; try{ window.clarity('event', n); }catch(e){} }; })();
 </script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -654,6 +658,7 @@ var CFG = {{CFG_JSON}};
   function render(){
     var id=STEPS[at], d=SV[id], body=$('sbody'); body.innerHTML='';
     body.setAttribute('data-step', id);
+    psTrack('ps_step_'+id);
     tracker();
     $('sstep').textContent=SV.ui.step_of.replace('{n}',at+1).replace('{total}',STEPS.length);
     body.appendChild(el('h2','',fill(d.h)));
@@ -807,6 +812,7 @@ var CFG = {{CFG_JSON}};
     /* Carry her email to ClickBank so the order form is already filled in.
        Verified 2026-10-08: ClickBank's order form reads &email= and populates
        the field; name parameters (fullName, cardHolderName) are ignored. */
+    psTrack('ps_checkout');
     location.href = link.href
       + (S.lead ? '&lid=' + encodeURIComponent(S.lead) : '')
       + (S.email ? '&email=' + encodeURIComponent(S.email) : '');
@@ -831,7 +837,19 @@ var CFG = {{CFG_JSON}};
     }).catch(function(){});
   })();
   var app=document.querySelector('.app');
-  function openSurvey(){ $('landing').hidden=true; $('survey').hidden=false; app.classList.add('forming'); render(); window.scrollTo(0,0); }
+  function openSurvey(){ psTrack('ps_form_open'); $('landing').hidden=true; $('survey').hidden=false; app.classList.add('forming'); render(); window.scrollTo(0,0); }
+  /* a section counts as seen once its top passes the middle of the screen */
+  var seeLeft = Array.prototype.slice.call(document.querySelectorAll('section[data-s]')), seeAt = 0;
+  function seeCheck(){
+    var now = Date.now(); if(now - seeAt < 150 || $('landing').hidden) return; seeAt = now;
+    seeLeft = seeLeft.filter(function(n){
+      if(n.getBoundingClientRect().top < window.innerHeight * 0.55){ psTrack('ps_see_'+n.getAttribute('data-s')); return false; }
+      return true;
+    });
+    if(!seeLeft.length) window.removeEventListener('scroll', seeCheck);
+  }
+  window.addEventListener('scroll', seeCheck, {passive:true});
+  seeCheck();
   function closeSurvey(){ $('survey').hidden=true; $('landing').hidden=false; app.classList.remove('forming'); window.scrollTo(0,0); }
   $('sclose').textContent = SV.ui.close || 'Close';
   $('sclose').addEventListener('click', closeSurvey);
@@ -863,7 +881,7 @@ var TRACKS = {{TRACKS_JSON}};
   function play(i){
     if(i === cur && loaded === i && !A.paused){ A.pause(); return; }
     if(loaded !== i){ A.src = TRACKS[i].src; loaded = i; }
-    cur = i; A.play().catch(function(){}); paint();
+    cur = i; A.play().catch(function(){}); paint(); psTrack('ps_sample_play');
   }
   A.addEventListener('play', paint); A.addEventListener('pause', paint);
   A.addEventListener('ended', function(){ A.currentTime = 0; paint(); });
