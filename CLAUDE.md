@@ -79,14 +79,20 @@ cannot convert.
 
 Checking and setting it:
 - Ads Manager is the source of truth. The field is `locales` in the API.
-- **Do not hardcode a locale ID from memory.** Meta's own documentation example
-  maps id `6` to "English (US)", while the Ads Manager UI offers a separate
-  "English (All)" option, and this MCP exposes no targeting-search tool to
-  resolve the two. Set the language in the UI, then read `targeting.locales`
-  back with `ads_get_ad_entities` and reuse the id you actually observe.
-- Observed on this account 2026-10-12: the SungForTheHolySouls ad sets carry
-  `locales: [6, 24]`. The three live SungByName ad sets carry no `locales` at
-  all, so they are currently unrestricted.
+- **CONFIRMED on this account 2026-10-13, from the account activity log:
+  `6` = English (US) and `24` = English (UK).** An ad set carrying
+  `locales: [6, 24]` reads in the change log as "English (US) or English (UK)".
+  This is NOT the same as "English (All)", which is a separate and broader
+  option in the Ads Manager UI whose id is still unknown.
+- **Do not hardcode any other locale ID from memory.** This MCP exposes no
+  targeting-search tool, so the only reliable method is to set the language in
+  Ads Manager, then read `targeting.locales` back with `ads_get_ad_entities`
+  and reuse the id observed. `ads_account_get_activity_logs` with
+  `event_category: targeting` prints the human-readable language name, which is
+  how the mapping above was settled.
+- State as of 2026-10-13: the three SungForTheHolySouls ad sets carry
+  `locales: [6, 24]`, so English (US) or English (UK), not English (All). The
+  three live SungByName ad sets carry no `locales` at all and are unrestricted.
 - Changing `locales` on a LIVE ad set is a targeting edit and resets the
   learning phase. On an ad set still gathering its first read, that throws the
   data away. Prefer setting it at build time; retrofit a live ad set only when
