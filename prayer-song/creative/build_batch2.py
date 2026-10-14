@@ -1,80 +1,120 @@
 #!/usr/bin/env python3
-"""Batch 2: four 30 second films, each opening on a recipient we have never used.
+"""Batch 2, rebuilt 2026-10-13 after TS's review.
 
-Built from four new b-roll clips plus the three from batch 1, reused and
-reordered the way build_variants.py does. The thing being tested is the
-recipient and the occasion, so each film opens on its own scene and its own
-name card.
+Three things changed from the first cut:
+  1. NO CLIP REPEATS INSIDE A FILM. Each 25s film is five DISTINCT clips from
+     the seven-clip pool. The first cut reused one scene three times in 30s.
+  2. Nicer captions: a soft bottom scrim so white type sits on something, a
+     lighter shadow, better leading, and the name in gold.
+  3. Captions now read as four consecutive lines of one sung prayer instead of
+     disconnected lines. Film C uses four VERBATIM lines from the real sample
+     song "Hold Anna and Tomasz Near".
 
     python3 prayer-song/creative/build_batch2.py
 """
 import os, subprocess, sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from build_ad_v2 import caption_png, namecard_png, A, WORK, W, H, SONG
+from build_ad_v2 import font, wrap, namecard_png, A, WORK, W, H, SONG, WHITE, GOLD
+from PIL import Image, ImageDraw
 
 B = "broll/"
+SCRIM_H = 430          # height of the bottom gradient
+CAP_SIZE = 56
+
+
+def scrim_png(path):
+    """Soft bottom gradient so white type always has something to sit on."""
+    img = Image.new("RGBA", (W, SCRIM_H), (0, 0, 0, 0))
+    px = img.load()
+    for y in range(SCRIM_H):
+        t = y / (SCRIM_H - 1)
+        a = int(205 * (t ** 1.7))        # eased, so the top edge is invisible
+        for x in range(W):
+            px[x, y] = (12, 9, 7, a)
+    img.save(path)
+    return SCRIM_H
+
+
+def caption_png(path, text, name=None, size=CAP_SIZE):
+    fnt = font("Inter-Bold.ttf", size, 700)
+    probe = ImageDraw.Draw(Image.new("RGBA", (10, 10)))
+    lines = wrap(probe, text, fnt, W - 180)
+    lead = int(size * 1.34)
+    img = Image.new("RGBA", (W, lead * len(lines) + 36), (0, 0, 0, 0))
+    d = ImageDraw.Draw(img)
+    y = 18
+    for ln in lines:
+        # softer, tighter shadow than the first cut; the scrim does the heavy lifting
+        for dx, dy in ((0, 3), (2, 2), (-2, 2)):
+            d.text((W / 2 + dx, y + dy), ln, font=fnt, fill=(0, 0, 0, 120), anchor="ma")
+        if name and name in ln:
+            b, _, a2 = ln.partition(name)
+            wb, wn, wa = (d.textlength(x, font=fnt) for x in (b, name, a2))
+            x = W / 2 - (wb + wn + wa) / 2
+            d.text((x, y), b, font=fnt, fill=WHITE)
+            d.text((x + wb, y), name, font=fnt, fill=GOLD)
+            d.text((x + wb + wn, y), a2, font=fnt, fill=WHITE)
+        else:
+            d.text((W / 2, y), ln, font=fnt, fill=WHITE, anchor="ma")
+        y += lead
+    img.save(path)
+    return img.height
+
+
+# five beats across 25s; beat 3 is the name card
+BEATS = [(1.5, 6.0), (6.5, 11.0), (11.5, 14.5), (15.0, 19.5), (20.0, 24.6)]
 
 VARIANTS = [
     {
-        "slug": "V7_FontAndTheName_30s",
+        "slug": "V7_FontAndTheName_25s",
         "song_start": 0,
-        "shots": [(B+"clip_christening_gown.mp4", 5), (B+"clip_confirmation.mp4", 5),
-                  (B+"clip_christening_gown.mp4", 5), (B+"clip_vow_renewal.mp4", 5),
-                  (B+"clip_christening_gown.mp4", 5), (B+"clip_confirmation.mp4", 5)],
-        "captions": [
-            (2.0, 7.0,   "Water on his head, a name said twice", None),
-            (7.5, 12.0,  "The whole church heard it, Lord, and so did You", None),
-            (12.5, 16.0, "Michael", "NAME"),
-            (16.5, 22.0, "Keep Michael in Your hand", "Michael"),
-            (22.5, 27.0, "Guard the name You gave him", None),
-            (27.5, 29.8, "All his life, and after", None),
-        ],
+        "shots": [B+"clip_christening_gown.mp4", B+"clip_mother_daughter.mp4",
+                  B+"clip_confirmation.mp4", B+"clip_older_couple.mp4",
+                  B+"clip_elderly_mother.mp4"],
+        "lines": [("I fold the christening gown away,", None),
+                  ("Water and a name, one spring day,", None),
+                  ("Michael", "NAME"),
+                  ("Lord, keep Michael in that grace,", "Michael"),
+                  ("I cannot hold him, so I pray.", None)],
     },
     {
-        "slug": "V8_NobodySaysHers_30s",
+        "slug": "V8_NobodySaysHers_25s",
         "song_start": 62,
-        "shots": [(B+"clip_elderly_mother.mp4", 5), (B+"clip_mother_daughter.mp4", 5),
-                  (B+"clip_elderly_mother.mp4", 5), (B+"clip_older_couple.mp4", 5),
-                  (B+"clip_elderly_mother.mp4", 5), (B+"clip_mother_daughter.mp4", 5)],
-        "captions": [
-            (2.0, 7.0,   "She says our names before she sleeps", None),
-            (7.5, 12.0,  "Every one of us, out loud, to You", None),
-            (12.5, 16.0, "Nora", "NAME"),
-            (16.5, 22.0, "Tonight, Lord, hear hers", None),
-            (22.5, 27.0, "Bless Nora, who has prayed for all of us", "Nora"),
-            (27.5, 29.8, "Give her peace, and rest", None),
-        ],
+        "shots": [B+"clip_elderly_mother.mp4", B+"clip_mother_daughter.mp4",
+                  B+"clip_christening_gown.mp4", B+"clip_vow_renewal.mp4",
+                  B+"clip_mother_son.mp4"],
+        "lines": [("She prays for all of us by name,", None),
+                  ("And no one prays for her by name,", None),
+                  ("Nora", "NAME"),
+                  ("Lord, look at Nora in that chair,", "Nora"),
+                  ("Hold the hands that held us there.", None)],
     },
     {
-        "slug": "V9_FiftyYearsTwoNames_30s",
+        # four VERBATIM consecutive chorus lines from the real sample song
+        # "Hold Anna and Tomasz Near" (1 Corinthians 13:7).
+        "slug": "V9_HoldThemNear_25s",
         "song_start": 100,
-        "shots": [(B+"clip_vow_renewal.mp4", 5), (B+"clip_older_couple.mp4", 5),
-                  (B+"clip_vow_renewal.mp4", 5), (B+"clip_elderly_mother.mp4", 5),
-                  (B+"clip_vow_renewal.mp4", 5), (B+"clip_older_couple.mp4", 5)],
-        "captions": [
-            (2.0, 7.0,   "Fifty years since the vow was made", None),
-            (7.5, 12.0,  "The same church, the same two hands", None),
-            (12.5, 16.0, "John and Eileen", "NAME"),
-            (16.5, 22.0, "Lord, bless John and Eileen", None),
-            (22.5, 27.0, "What You joined, keep joined", None),
-            (27.5, 29.8, "All the years still to come", None),
-        ],
+        "shots": [B+"clip_vow_renewal.mp4", B+"clip_older_couple.mp4",
+                  B+"clip_mother_daughter.mp4", B+"clip_christening_gown.mp4",
+                  B+"clip_elderly_mother.mp4"],
+        "lines": [("Father, hold Anna and Tomasz near,", None),
+                  ("Give them grace when the road is long,", None),
+                  ("Anna and Tomasz", "NAME"),
+                  ("Soften the words that are hard to hear,", None),
+                  ("Let their love be kind and strong.", None)],
     },
     {
-        "slug": "V10_GodmothersPromise_30s",
+        "slug": "V10_GodmothersPromise_25s",
         "song_start": 150,
-        "shots": [(B+"clip_confirmation.mp4", 5), (B+"clip_mother_daughter.mp4", 5),
-                  (B+"clip_confirmation.mp4", 5), (B+"clip_christening_gown.mp4", 5),
-                  (B+"clip_confirmation.mp4", 5), (B+"clip_older_couple.mp4", 5)],
-        "captions": [
-            (2.0, 7.0,   "I held her at the font and promised", None),
-            (7.5, 12.0,  "To bring her up in the faith, Lord", None),
-            (12.5, 16.0, "Clare", "NAME"),
-            (16.5, 22.0, "Seal Clare with Your Spirit", "Clare"),
-            (22.5, 27.0, "Keep the promise I made for her", None),
-            (27.5, 29.8, "Hold her, all her life", None),
-        ],
+        "shots": [B+"clip_confirmation.mp4", B+"clip_christening_gown.mp4",
+                  B+"clip_mother_son.mp4", B+"clip_older_couple.mp4",
+                  B+"clip_vow_renewal.mp4"],
+        "lines": [("I answered for her at the font,", None),
+                  ("Today she answers for herself,", None),
+                  ("Clare", "NAME"),
+                  ("Our Lady, keep Clare in her word,", "Clare"),
+                  ("I lift my hand, Lord. She is Yours.", None)],
     },
 ]
 
@@ -82,10 +122,13 @@ VARIANTS = [
 def build(v):
     os.makedirs(WORK, exist_ok=True)
     slug = v["slug"]
-    total = sum(s for _, s in v["shots"])
+    shots = v["shots"]
+    assert len(shots) == len(set(shots)), f"{slug}: a clip repeats inside the film"
+    secs = 5
+    total = secs * len(shots)
 
     parts = []
-    for i, (clip, secs) in enumerate(v["shots"]):
+    for i, clip in enumerate(shots):
         src = os.path.join(A, clip)
         if not os.path.exists(src):
             raise SystemExit(f"missing clip: {src}")
@@ -101,19 +144,22 @@ def build(v):
     subprocess.run(["ffmpeg", "-v", "error", "-y", "-f", "concat", "-safe", "0",
                     "-i", lst, "-c", "copy", spine], check=True)
 
-    bottom = 150
-    inputs = ["-i", spine]
-    chain, last, idx = [], "0:v", 1
-    for i, (tin, tout, text, kind) in enumerate(v["captions"]):
+    sp = os.path.join(WORK, f"{slug}_scrim.png")
+    scrim_png(sp)
+
+    inputs = ["-i", spine, "-i", sp]
+    chain = [f"[0:v][1:v]overlay=0:{H-SCRIM_H}[v1]"]
+    last, idx = "v1", 2
+
+    for i, ((tin, tout), (text, kind)) in enumerate(zip(BEATS, v["lines"])):
         p = os.path.join(WORK, f"{slug}_c{i}.png")
         if kind == "NAME":
-            # two names need a smaller face so the card still fits the frame
-            size = 110 if len(text) > 8 else 170
+            size = 108 if len(text) > 8 else 162
             ch = namecard_png(p, text, size=size)
             y = int(H * 0.40)
         else:
             ch = caption_png(p, text, kind)
-            y = H - bottom - ch
+            y = H - 150 - ch
         inputs += ["-i", p]
         chain.append(f"[{last}][{idx}:v]overlay=0:{y}:enable='between(t,{tin},{tout})'[v{idx}]")
         last = f"v{idx}"
@@ -129,7 +175,7 @@ def build(v):
                     "-c:v", "libx264", "-profile:v", "high", "-pix_fmt", "yuv420p",
                     "-r", "30", "-b:v", "5M", "-c:a", "aac", "-b:a", "128k",
                     "-movflags", "+faststart", "-t", str(total), out], check=True)
-    print(f"built {slug}.mp4  ({total}s, opens on {v['shots'][0][0].split('/')[-1]})")
+    print(f"built {slug}.mp4  {total}s, {len(shots)} distinct clips, opens on {shots[0].split('/')[-1]}")
 
 
 if __name__ == "__main__":
