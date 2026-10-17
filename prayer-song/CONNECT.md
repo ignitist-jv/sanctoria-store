@@ -147,7 +147,7 @@ TS chose Stripe instead of ClickBank for this product only. Stripe account: Igni
 - Stripe buyers get both Kit tags at delivery: sanctoria-prayersong-1 and sanctoria-buyer.
 - Not yet proven live: a real purchase and refund (TS to do one), and that ClickMagick forwards the ref=sale conversions to Meta.
 
-### Unfinished order reminders (on since 2026-10-17 19:35 SGT)
+### Unfinished order reminders in Kit (OFF since 2026-10-17 22:05 SGT; Drip sends them now)
 - Someone who reaches the Pay step and does not pay gets up to three emails: 1 hour, 1 day, 3 days after. The worker sends each by adding her to a single-email Kit sequence (2932904, 2932905, 2932907) only while she still has no order; a newer form for the same email replaces the old one. Copy: `copy/07-abandoned-checkout.md`.
 - Kit: tag `sanctoria-prayersong-lead` (24734384) marks who was reminded; field `prayer_song_resume_link` holds `https://sanctoriastore.com/prayer-song/?resume=<lead id>`, which reopens her saved answers at the Pay step (`api/resume.php`), or her song page if she has bought.
 - On/off: `kit.abandon.since` in the server's config.php (0 = off). Only forms filled in after that time are reminded.
@@ -156,4 +156,9 @@ TS chose Stripe instead of ClickBank for this product only. Stripe account: Igni
 - Drip account 4334334 "Sanctoria store". The token is only in the server's config.php (`drip.token`) and `.env` (DRIP_API_TOKEN).
 - Every new lead (form reaches the Pay step) is copied to Drip with tag `prayer-song-lead` and fields prayer_song_for, prayer_song_intention, prayer_song_resume_link. Every Stripe buyer gets tag `prayer-song-buyer` and field prayer_song_link. Non-buyers = tag prayer-song-lead without prayer-song-buyer.
 - Done by the worker each minute from marker files (idx/drip-lead-*, idx/drip-buyer-*); retried until Drip accepts, dropped after a day.
-- The Kit reminder emails stay on. If reminders are later built in Drip, switch Kit's off first (kit.abandon.since = 0), or people get two sets.
+- Two workflows, both ON since 2026-10-17 22:05 SGT, emails A1 to B5 from `emails/drip/` (built by `tools/build_drip_emails.py` from `copy/08-drip-series.md`), From "Sanctoria" <admin@sanctoriastore.com>:
+  - "Prayer Song: buyers follow-up" (138913844): tag prayer-song-buyer, A1 to A5 on days 1, 3, 7, 14, 30 at 2 pm UTC.
+  - "Prayer Song: unfinished order follow-up" (616463631): tag prayer-song-lead, B1 after 1 hour (TS: keep it at 1 hour), B2 at 1 day, B3 to B5 on days 3, 7, 14 at 2 pm UTC. A Goal on tag prayer-song-buyer pulls a buyer out at any step.
+- Kit reminders are OFF (kit.abandon.since = 0) so nobody gets two sets. Do not switch them back on while the Drip workflow runs.
+- Proven live 2026-10-17 with two test leads: a lead reached Drip in about 15 seconds with every field, entered the workflow, and B1 rendered with the names and the resume link; a lead given the buyer tag exited at once.
+- Leads from before 2026-10-17 were never copied to Drip; TS decided not to backfill them (only new people need to go through).
