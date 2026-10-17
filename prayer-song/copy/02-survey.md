@@ -73,6 +73,10 @@ ROW_DELIVERY: Delivery
 ROW_DELIVERY_VALUE: Within 24 hours
 GUAR_TITLE: 100% money back guarantee
 GUAR_BODY: Love it, or every cent comes back. Covered for 30 days, no questions asked.
+EXPRESS_LABEL: Add Express Song Delivery, +$9.95
+EXPRESS_NOTE: For when the song is needed today: sent within 1 hour of the order.
+ROW_DELIVERY_EXPRESS: Within 1 hour, express
+PRICE_TOTAL_LABEL: Total today
 LABEL_EMAIL: Send the song to
 PLACEHOLDER_EMAIL: name@example.com
 LABEL_BUYER: Your own first name
@@ -82,15 +86,25 @@ ERROR: That address does not look right. Please check for a small typo.
 SUMMARY_TITLE: The prayer song
 SUMMARY_LINE: For {name}. A prayer for {intention_phrase}, sung as {style_phrase}.
 SUMMARY_LINE_TWO: For {name}, both by name. A prayer for {intention_phrase}, sung as {style_phrase}.
-BUTTON: Continue To Checkout
+BUTTON: Continue To Payment
 PRICE_BADGE: 70% off today
 PRICE_WAS: $129
 PRICE_NOW: $39
 
+## STEP: pay
+H: Last step: payment
+SUB: Once this is done, the prayer song for {name} is on its way.
+DIVIDER: Or pay by card
+BUTTON: Pay {price}
+BUTTON_BUSY: Processing payment...
+SECURE: Secure payment by Stripe. One-time charge, no subscription. Full refund within 30 days.
+ERROR: The payment did not go through, and nothing was charged. Please check the card details or try another card.
+ERROR_LOAD: The payment form did not load. Please refresh the page, or email support@sanctoriastore.com for help.
+
 ## UI
 BACK: Back
 NEXT: Continue
-STEP_NAMES: Who | Prayer | Sound | Send
+STEP_NAMES: Who | Prayer | Sound | Send | Pay
 STEP_OF: Step {n} of {total}
 COMPLETE: {pct}% Complete
 AGREE: By continuing, you agree to the Terms and Privacy Policy.
@@ -160,3 +174,28 @@ choir: a sacred choir hymn
    Checked and left alone: in this file {name} is never the subject of a verb. "The prayer for {name}" (prayer H), "The prayer song for {name} is sent" (send SUB, where the song is the subject) and "For {name}." (SUMMARY_LINE) all read correctly with "Daniel and Mary". "Choose the one intention the song will carry" still holds: two names share one intention. LABEL_NAME, TIP, ERROR and the pronunciation lines speak of the first name box and stay singular on purpose.
    SUMMARY_LINE in this file has no {who} token ("For {name}. A prayer for {intention_phrase}, sung as {style_phrase}."). If the built form adds {who} itself, nothing here needs to change; if the string in the build differs from this file, the file should be brought into line.
    Open points for the build: the pronunciation box covers only the first name, so a second name that is not said as spelled has no field (see the report to TS). The Myself and Someone who has passed branches need a rule for whether the second name link is shown.
+
+14. 2026-10-16, Stripe switch. Four new keys in the send step, after GUAR_BODY, for an optional express tick box on the order summary:
+   EXPRESS_LABEL: Add Express Song Delivery, +$9.95 (33 characters, limit 45)
+   EXPRESS_NOTE: For when the song is needed today: sent within 1 hour of the order. (67 characters, limit 70)
+   ROW_DELIVERY_EXPRESS: Within 1 hour, express (22 characters, limit 24). Replaces ROW_DELIVERY_VALUE in the Delivery row while the box is ticked.
+   PRICE_TOTAL_LABEL: Total today (11 characters, limit 16). Shown beside the $48.95 total when the box is ticked.
+   The note names a use, a song needed today, and says nothing against the standard promise; DELIVERY_PILL and ROW_DELIVERY_VALUE still say within 24 hours. No countdown, no stock and no "most people add this". Plainer fallback for EXPRESS_NOTE if TS wants it: "The finished song is sent within 1 hour of the order." (53 characters).
+   The box must start unticked. "Total today" sits near PRICE_BADGE "70% off today"; if the two read as a repeated "today" on screen, "Your total" (10 characters) is the alternative.
+   No existing line in this file changed. MICRO and AGREE name no payment company, so nothing else here needed the switch.
+
+15. 2026-10-17, embedded payment step. Payment moves from the separate hosted checkout page into the form as a fifth step, Pay, in the same panel. A new "## STEP: pay" block follows the send step, with eight keys:
+   H: Last step: payment (18 characters, limit 32)
+   SUB: Once this is done, the prayer song for {name} is on its way. (60 characters before the name is filled, limit 80; a 12 letter name gives 66. With two names it reads "the prayer song for Daniel and Mary", where the song is still the subject.)
+   DIVIDER: Or pay by card (14 characters, limit 24)
+   BUTTON: Pay {price} (11 characters with the token, limit 28; "Pay $48.95" is 10 once filled)
+   BUTTON_BUSY: Processing payment... (21 characters, limit 24)
+   SECURE: Secure payment by Stripe. One-time charge, no subscription. Full refund within 30 days. (87 characters, limit 110)
+   ERROR: The payment did not go through, and nothing was charged. Please check the card details or try another card. (107 characters, limit 120)
+   ERROR_LOAD: The payment form did not load. Please refresh the page, or email support@sanctoriastore.com for help. (101 characters, limit 120)
+   Changed lines, with the old wording to restore:
+   BUTTON (send): Continue To Checkout
+   STEP_NAMES: Who | Prayer | Sound | Send
+   The new send BUTTON reads "Continue To Payment" (19 characters, limit 26), since pressing it now opens the Pay step inside the form instead of leaving the site.
+   The express keys (EXPRESS_LABEL, EXPRESS_NOTE, ROW_DELIVERY_EXPRESS, PRICE_TOTAL_LABEL) stay in the send block of this file so no key moves under the parser; the build shows them on the Pay step's price summary. If the parser reads keys by step, move those four lines into the pay block unchanged. The box must still start unticked.
+   SUB says the song "is on its way" and promises nothing about what the song will do; the delivery times stay with DELIVERY_PILL, ROW_DELIVERY_VALUE and ROW_DELIVERY_EXPRESS. SECURE names Stripe and does not claim Sanctoria never sees card details; that is true and may be added if room allows, but the line is kept short. No line names a person who makes or sings the song.

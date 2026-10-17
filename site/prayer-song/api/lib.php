@@ -47,11 +47,22 @@ function ps_config(): array
         'send_after'         => 7200,      // seconds after the order, standard
         'send_after_express' => 3600,      // seconds after the order when she added Express Song Delivery
         'express_items'      => ['express-1'],   // ClickBank item numbers of the express order bump
+        // Stripe (TS, 2026-10-16): Payment Links send the buyer to Stripe, Stripe sends her back to api/paid.php
+        // and notifies api/stripe.php. Keys live only in config.php on the server. A Stripe order is filed under
+        // the ClickBank item "prayersong-1" so everything after payment is the same for both.
+        'stripe'         => ['secret_key' => '', 'webhook_secret' => '', 'api_version' => '2024-06-20',
+                             'links' => [],            // payment link id => 'song' | 'express'
+                             'item' => 'prayersong-1',
+                             'price_song' => 3900, 'price_express' => 995],   // US cents, for the payment step inside the form (api/pay.php)
         'mail'           => ['driver' => 'log', 'api_key' => '', 'from' => 'Sanctoria <songs@sanctoriastore.com>',
                              'reply_to' => 'support@sanctoriastore.com'],
         'admin_email'    => '',
         'admin_hash'     => '',            // password_hash() of the admin page password. Empty = the admin page does not exist
+        // ClickMagick: each Stripe sale is reported server to server with the buyer's visitor id, so ClickMagick (and the
+        // Meta conversions it sends) know which ad made it. ClickBank sales reach ClickMagick by ClickBank's own feed instead.
+        'clickmagick'    => ['postback' => 'https://www.clkmg.com/api/s/post/', 'uid' => '92654', 'ref' => 'sale'],
         'kit'            => ['api_key' => null, 'tag_lead' => null, 'tag_buyer' => 24391266,   // Kit tag sanctoria-prayersong-1
+                             'tag_all_buyers' => 22564421,                                     // Kit tag sanctoria-buyer, shared by every Sanctoria offer
                              'seq_ready' => 2917156, 'seq_delay' => 2917157,
                              'from_email' => 'admin@sanctoriastore.com',        // the address the Kit emails are sent from: shown to the buyer so she can look for it          // Kit sequence ids, used when mail driver is "kit"
                              'fields' => ['url' => 'prayer_song_link', 'title' => 'prayer_song_title',
@@ -69,6 +80,10 @@ function ps_config(): array
     if (($v = getenv('PS_ELEVENLABS_KEY')) !== false && $v !== '') { $c['elevenlabs_key'] = $v; }
     if (($v = getenv('PS_ANTHROPIC_KEY')) !== false && $v !== '') { $c['anthropic_key'] = $v; }
     if (($v = getenv('PS_ADMIN_HASH')) !== false && $v !== '') { $c['admin_hash'] = $v; }
+    if (($v = getenv('PS_CM_POSTBACK')) !== false && $v !== '') { $c['clickmagick']['postback'] = $v; }
+    if (($v = getenv('PS_STRIPE_SK')) !== false && $v !== '') { $c['stripe']['secret_key'] = $v; }
+    if (($v = getenv('PS_STRIPE_WHSEC')) !== false && $v !== '') { $c['stripe']['webhook_secret'] = $v; }
+    if (($v = getenv('PS_STRIPE_LINKS')) !== false && $v !== '') { $c['stripe']['links'] = (array) json_decode($v, true); }
     if (($v = getenv('PS_SEND_AFTER')) !== false && $v !== '') { $c['send_after'] = (int) $v; $c['send_after_express'] = (int) ((int) $v / 2); }
 
     if ($c['cb_secret_key'] === null || $c['kit']['api_key'] === null) {
@@ -224,12 +239,13 @@ function ps_email_key(string $email): string
     return sha1(strtolower(trim($email)));
 }
 
-function ps_save_lead(array $answers, string $email, string $buyer): string
+function ps_save_lead(array $answers, string $email, string $buyer, string $vid = ''): string
 {
     $lid = ps_token();
     ps_write(ps_data("leads/$lid.json"), [
         'lid' => $lid, 'created' => time(), 'email' => strtolower(trim($email)),
         'buyer' => ps_clean($buyer, 40), 'answers' => $answers,
+        'vid' => preg_match('/^cmc[A-Za-z0-9]{1,40}$/', $vid) ? $vid : null,     // ClickMagick visitor id, for sale attribution
     ]);
     if ($email !== '') {
         file_put_contents(ps_data('idx/email-' . ps_email_key($email)), $lid, LOCK_EX);   // latest lead for this address
@@ -314,6 +330,7 @@ function ps_order_for_receipt(string $receipt, string $item, string $email, stri
             'email' => strtolower(trim($email ?: ($lead['email'] ?? ''))),
             'buyer' => ps_clean($lead['buyer'] ?? '' ?: explode(' ', trim($buyer))[0], 40),
             'lid' => $lead['lid'] ?? null,
+            'vid' => $lead['vid'] ?? null,
             'answers' => $lead['answers'] ?? null,
             'status' => $lead ? 'queued' : 'needs_answers',
             'created' => time(), 'attempts' => 0, 'lyrics' => null, 'title' => null,
@@ -330,6 +347,136 @@ function ps_order_for_receipt(string $receipt, string $item, string $email, stri
         ps_log("order $token receipt=$receipt item=$item status={$o['status']} via=$via");
         return $token;
     });
+}
+
+/** A refund is recorded on the order. The song link is left working. */
+function ps_mark_refunded(string $receipt, string $item, string $why): void
+{
+    $idx = ps_data('idx/receipt-' . sha1($receipt . '|' . $item));
+    $token = is_file($idx) ? trim((string) file_get_contents($idx)) : '';
+    if ($token !== '') {
+        ps_locked("order-$token", function () use ($token, $why) {
+            if ($o = ps_order($token)) {
+                $o['refunded'] = true;
+                ps_note($o, $why);
+                ps_save_order($o);
+            }
+        });
+    }
+    ps_log("refund receipt=$receipt item=$item: $why");
+}
+
+// ---------------------------------------------------------------- Stripe
+
+/** Call the Stripe API. Returns the decoded body, or null on any failure. */
+function ps_stripe(string $method, string $path, array $data = []): ?array
+{
+    $s = ps_config()['stripe'];
+    if ($s['secret_key'] === '') {
+        return null;
+    }
+    $url = 'https://api.stripe.com/v1/' . $path;
+    $body = null;
+    if ($method === 'GET' && $data) { $url .= '?' . http_build_query($data); } elseif ($data) { $body = http_build_query($data); }
+    $r = ps_http($method, $url, ['Authorization: Bearer ' . $s['secret_key'], 'Stripe-Version: ' . $s['api_version'],
+                                 'Content-Type: application/x-www-form-urlencoded'], $body, 30);
+    [$code, $resp] = $r;
+    $j = json_decode((string) $resp, true);
+    return $code === 200 && is_array($j) ? $j : null;
+}
+
+/** Check a webhook's Stripe-Signature header (t=...,v1=...) against the endpoint secret, within five minutes. */
+function ps_stripe_signed(string $payload, string $header): bool
+{
+    $secret = ps_config()['stripe']['webhook_secret'];
+    if ($secret === '' || $header === '') {
+        return false;
+    }
+    $t = null; $sigs = [];
+    foreach (explode(',', $header) as $part) {
+        [$k, $v] = array_pad(explode('=', trim($part), 2), 2, '');
+        if ($k === 't') { $t = $v; } elseif ($k === 'v1') { $sigs[] = $v; }
+    }
+    if (!ctype_digit((string) $t) || abs(time() - (int) $t) > 300) {
+        return false;
+    }
+    $want = hash_hmac('sha256', "$t.$payload", $secret);
+    foreach ($sigs as $s) {
+        if (hash_equals($want, $s)) {
+            return true;
+        }
+    }
+    return false;
+}
+
+/**
+ * Tell ClickMagick about a Stripe sale, once per order: GET <postback>?uid=..&s1=<visitor id>&amt=<dollars>&ref=sale.
+ * Without a visitor id (no tracker, blocked cookies) there is nothing to attribute it to, and that is noted on the order.
+ */
+function ps_report_sale(string $token, int $cents): void
+{
+    ps_locked("order-$token", function () use ($token, $cents) {
+        $o = ps_order($token);
+        if (!$o || !empty($o['cm_reported'])) {
+            return;
+        }
+        $cm = ps_config()['clickmagick'];
+        $vid = (string) ($o['vid'] ?? '');
+        if ($vid === '') {
+            $o['cm_reported'] = 'no visitor id';
+            ps_note($o, 'ClickMagick: not reported, no visitor id');
+        } else {
+            $url = $cm['postback'] . (strpos($cm['postback'], '?') === false ? '?' : '&')
+                 . http_build_query(['uid' => $cm['uid'], 's1' => $vid, 'amt' => number_format($cents / 100, 2, '.', ''), 'ref' => $cm['ref']]);
+            [$code] = ps_http('GET', $url, [], null, 15);
+            $o['cm_reported'] = $code >= 200 && $code < 300 ? 'yes' : "failed ($code)";
+            ps_note($o, "ClickMagick sale report: {$o['cm_reported']}, " . number_format($cents / 100, 2));
+        }
+        ps_save_order($o);
+    });
+}
+
+/**
+ * A paid Stripe Checkout session becomes an order, or finds the one it already made. Both the return page and the
+ * webhook call this, in either order. Returns the token, or null if the session is not a paid Prayer Song purchase.
+ */
+function ps_order_for_stripe_session(array $cs, string $via): ?string
+{
+    $s = ps_config()['stripe'];
+    $kind = $s['links'][(string) ($cs['payment_link'] ?? '')] ?? null;
+    if ($kind === null || ($cs['payment_status'] ?? '') !== 'paid' || empty($cs['payment_intent'])) {
+        return null;
+    }
+    $receipt = (string) (is_array($cs['payment_intent']) ? ($cs['payment_intent']['id'] ?? '') : $cs['payment_intent']);
+    if ($kind === 'express') {
+        ps_mark_express($receipt);
+    }
+    $lid = (string) ($cs['client_reference_id'] ?? '');
+    $email = (string) ($cs['customer_details']['email'] ?? ($cs['customer_email'] ?? ''));
+    $name = (string) ($cs['customer_details']['name'] ?? '');
+    $token = ps_order_for_receipt($receipt, $s['item'], $email, $name, $lid !== '' ? $lid : null, $via);
+    ps_report_sale($token, (int) ($cs['amount_total'] ?? 0));
+    return $token;
+}
+
+/**
+ * A succeeded PaymentIntent from the payment step inside the form (api/pay.php made it) becomes an order, or finds the
+ * one it already made. Called by the return page and by the webhook. Returns the token, or null if it is not ours.
+ */
+function ps_order_for_stripe_pi(array $pi, string $via): ?string
+{
+    $m = $pi['metadata'] ?? [];
+    if (($m['offer'] ?? '') !== 'prayersong' || ($m['flow'] ?? '') !== 'embed' || ($pi['status'] ?? '') !== 'succeeded' || empty($pi['id'])) {
+        return null;
+    }
+    if (($m['express'] ?? '') === '1') {
+        ps_mark_express((string) $pi['id']);
+    }
+    $lid = (string) ($m['lid'] ?? '');
+    $token = ps_order_for_receipt((string) $pi['id'], ps_config()['stripe']['item'], (string) ($pi['receipt_email'] ?? ''), '',
+        $lid !== '' ? $lid : null, $via);
+    ps_report_sale($token, (int) ($pi['amount_received'] ?? ($pi['amount'] ?? 0)));
+    return $token;
 }
 
 /** When this order's song may be shown and emailed: so long after the order, sooner with express delivery. */

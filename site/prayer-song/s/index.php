@@ -354,7 +354,8 @@ $audio = '../api/audio.php?k=' . $e($token);
 <?php elseif ($state === 'thanks'):
     $from = (string) (ps_config()['kit']['from_email'] ?? 'support@sanctoriastore.com');
     $rc = $copy['receipt'] ?? [];
-    $ref = preg_replace('/[^A-Za-z0-9-]/', '', (string) ($_GET['r'] ?? '')); ?>
+    $ref = preg_replace('/[^A-Za-z0-9-]/', '', (string) ($_GET['r'] ?? ''));
+    $byCb = ($_GET['via'] ?? '') !== 'stripe';      // paid.php adds via=stripe; ClickBank's thank you sends r=<receipt> ?>
   <div class="top">
     <div class="arch"><?= $record() ?></div>
     <div class="eyebrow"><?= $t('eyebrow') ?></div>
@@ -366,8 +367,8 @@ $audio = '../api/audio.php?k=' . $e($token);
   </div>
   <div class="rcpt">
     <?php if ($ref !== ''): ?><p><?= $e(str_replace('{receipt}', $ref, (string) ($rc['order'] ?? ''))) ?></p><?php endif; ?>
-    <p><?= $e($rc['statement'] ?? '') ?></p>
-    <p class="cb">ClickBank is the retailer of products on this site. CLICKBANK&reg; is a registered trademark of Click Sales Inc., a Delaware corporation located at 1444 S. Entertainment Ave., Suite 410 Boise, ID 83709, USA and used by permission. ClickBank's role as retailer does not constitute an endorsement, approval or review of these products or any claim, statement or opinion used in promotion of these products.</p>
+    <p><?= $e(($byCb ? ($rc['statement_clickbank'] ?? null) : null) ?? ($rc['statement'] ?? '')) ?></p>
+    <?php if ($byCb): ?><p class="cb">ClickBank is the retailer of products on this site. CLICKBANK&reg; is a registered trademark of Click Sales Inc., a Delaware corporation located at 1444 S. Entertainment Ave., Suite 410 Boise, ID 83709, USA and used by permission. ClickBank's role as retailer does not constitute an endorsement, approval or review of these products or any claim, statement or opinion used in promotion of these products.</p><?php endif; ?>
   </div>
 
 <?php else: /* review, notfound */ ?>
@@ -380,12 +381,13 @@ $audio = '../api/audio.php?k=' . $e($token);
   </div>
   <?php if ($state === 'review'): ?><div class="body"><?php $lyrics($e(ps_fill((string) ($copy['making']['lyrics_h'] ?? ''), $o))); ?></div><?php endif; ?>
 <?php endif; ?>
-<?php $rc = $copy['receipt'] ?? null; if ($rc && !empty($o['receipt']) && in_array($state, ['making', 'ready', 'review', 'needs'], true)): ?>
+<?php $rc = $copy['receipt'] ?? null; if ($rc && !empty($o['receipt']) && in_array($state, ['making', 'ready', 'review', 'needs'], true)):
+    $byCb = strpos((string) $o['receipt'], 'pi_') !== 0;      // Stripe orders are filed under their PaymentIntent id (pi_...) ?>
   <div class="rcpt">
     <p><?= $e(str_replace('{receipt}', (string) $o['receipt'], (string) ($rc['order'] ?? ''))) ?></p>
-    <p><?= $e($rc['statement'] ?? '') ?></p>
+    <p><?= $e(($byCb ? ($rc['statement_clickbank'] ?? null) : null) ?? ($rc['statement'] ?? '')) ?></p>
     <p><?= str_replace('support@sanctoriastore.com', '<a href="mailto:support@sanctoriastore.com">support@sanctoriastore.com</a>', $e($rc['help'] ?? '')) ?></p>
-    <p class="cb">ClickBank is the retailer of products on this site. CLICKBANK&reg; is a registered trademark of Click Sales Inc., a Delaware corporation located at 1444 S. Entertainment Ave., Suite 410 Boise, ID 83709, USA and used by permission. ClickBank's role as retailer does not constitute an endorsement, approval or review of these products or any claim, statement or opinion used in promotion of these products.</p>
+    <?php if ($byCb): ?><p class="cb">ClickBank is the retailer of products on this site. CLICKBANK&reg; is a registered trademark of Click Sales Inc., a Delaware corporation located at 1444 S. Entertainment Ave., Suite 410 Boise, ID 83709, USA and used by permission. ClickBank's role as retailer does not constitute an endorsement, approval or review of these products or any claim, statement or opinion used in promotion of these products.</p><?php endif; ?>
   </div>
 <?php endif; ?>
 </div>

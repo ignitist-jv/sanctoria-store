@@ -18,7 +18,7 @@
    "eyebrow": "Your order is received",
    "h": "Thank you. Your prayer song is on its way.",
    "p": [
-    "Your payment went through ClickBank, our retailer, and your prayer song is being prepared. This page cannot show your order details just yet.",
+    "Your payment went through, and your prayer song is being prepared. This page cannot show your order details just yet.",
     "Your private link is emailed to the address used at checkout, within 24 hours, from {from}. The subject ends with \"prayer song is ready\". Not in the inbox? Look in spam or promotions.",
     "If we still need the name and the prayer, that email or page asks in a short form. If nothing arrives within 24 hours, write to support@sanctoriastore.com with the email address used to order."
    ],
@@ -75,7 +75,8 @@
   },
   "receipt": {
    "order": "Order {receipt}",
-   "statement": "This purchase will appear on your card or bank statement as CLKBANK*COM.",
+   "statement": "This purchase will appear on your card or bank statement as SANCTORIA PRAYER.",
+   "statement_clickbank": "This purchase will appear on your card or bank statement as CLKBANK*COM.",
    "help": "Questions about your order: support@sanctoriastore.com"
   },
   "review": {

@@ -127,3 +127,22 @@ Alerts go to `admin_email`: a song held for review, a delivery email that failed
 - Admin page: a waiting order shows its send time and a "Send now" button.
 - Kit buyer tag `sanctoria-prayersong-1` (id 24391266) is applied when the ready email goes out; it is the default in `lib.php`, so the server's `config.php` needs no change.
 - A name typed all in small letters or all in capitals is given normal capitals.
+
+## Stripe switch (in progress, started 2026-10-16)
+TS chose Stripe instead of ClickBank for this product only. Stripe account: Ignitist Pte Ltd (shared with the old astrology site; statement descriptor changed to SANCTORIA PRAYER by TS). The account's default API version is 2019-12-03, so every call pins `Stripe-Version: 2024-06-20`.
+- Test mode objects: `prayer-song/stripe-test.json` (products, prices, two payment links: song $39, song + express $48.95). Live ones will go in `stripe-live.json`.
+- Flow: form step 4 (express tick box) -> payment link with `client_reference_id=<lead id>` and `prefilled_email` -> Stripe -> `api/paid.php?session_id=` reads the session back with the secret key, makes the order, sends her to her song page. `api/stripe.php` (webhook, signature checked) makes the same order if she never comes back, and records refunds. Order receipt = the PaymentIntent id, item `prayersong-1`, so everything after payment is unchanged.
+- The ClickMagick visitor id is read from a hidden `vtid=[cmc_vid]` link and stored on the lead and the order (`vid`), for attribution.
+- Builder: ClickBank stays the default until go-live. `--stripe` builds the Stripe version; a live build refuses Stripe TEST links unless `--test-payments` is given. Delivery copy has STATEMENT (Stripe) and STATEMENT_CLICKBANK; the builder picks by payment mode.
+- Legal pages: the Stripe versions are parked in `prayer-song/legal-stripe/`; the live ClickBank versions stay in `site/prayer-song/` until the switch (then run `tools/build_legal.py`).
+- Server config still needs a `stripe` block: secret_key, webhook_secret, links (payment link id => song | express). Not placed yet.
+- Open points from the copywriter: terms name US governing law but the seller is now a Singapore company (needs a decision); whether a refund includes the $9.95 express fee; express-specific wording on the making, thanks and delay pages.
+
+### Live on Stripe (2026-10-17)
+- TS said ship; the server config now holds the LIVE secret key and live webhook secret (`links` empty: no payment links are used live). Backups of the server config before each change are in `prayer-song/demo-data/server-config-before-*.php`.
+- The checkout is the Pay step inside the form (PAYMENT = "embed", STRIPE_MODE = "live" are the builder defaults). `--clickbank` rebuilds the old ClickBank checkout; `--stripe-test` builds with test keys (a live build refuses that unless `--test-payments`).
+- Live webhook: same address, events checkout.session.completed, checkout.session.async_payment_succeeded, payment_intent.succeeded, charge.refunded. Live payment method domain sanctoriastore.com active for Apple Pay and Google Pay.
+- Terms (Singapore law, express fee refunded too) and privacy (Stripe) are live; the hidden test page was removed.
+- ClickMagick: each Stripe sale is posted to `https://www.clkmg.com/api/s/post/?uid=92654&s1=<cmc visitor id>&amt=<dollars>&ref=sale` once per order (`cm_reported` on the order). ClickMagick's own Stripe integration only covers subscriptions. Refunds are not reported to ClickMagick (no documented refund postback found).
+- Stripe buyers get both Kit tags at delivery: sanctoria-prayersong-1 and sanctoria-buyer.
+- Not yet proven live: a real purchase and refund (TS to do one), and that ClickMagick forwards the ref=sale conversions to Meta.

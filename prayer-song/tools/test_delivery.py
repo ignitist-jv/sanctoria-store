@@ -11,6 +11,7 @@ What it proves is the plumbing: every buyer gets their own token, and only their
 """
 
 import hashlib
+import hmac
 import html
 import json
 import os
@@ -28,7 +29,23 @@ PORT = 4176
 BASE = f"http://localhost:{PORT}/prayer-song"
 SECRET = "TESTSECRETKEY123"
 DATA = Path(tempfile.mkdtemp(prefix="ps-test-data-"))
-ENV = {**os.environ, "PS_DATA_DIR": str(DATA), "PS_MOCK": "1", "PS_BASE_URL": BASE, "PS_CB_SECRET": SECRET, "PS_SEND_AFTER": "0"}   # 0: the rest of the run does not sit out the send delay
+ENV = {**os.environ, "PS_DATA_DIR": str(DATA), "PS_MOCK": "1", "PS_BASE_URL": BASE, "PS_CB_SECRET": SECRET, "PS_SEND_AFTER": "0"}
+WHSEC = "whsec_test_not_a_real_secret"
+# the ClickMagick report is pointed back at this test server, which needs a second worker to answer while it waits
+ENV.update({"PHP_CLI_SERVER_WORKERS": "4", "PS_CM_POSTBACK": BASE + "/api/status.php?health=1", "PS_STRIPE_WHSEC": WHSEC, "PS_STRIPE_LINKS": json.dumps({"plink_song": "song", "plink_express": "express"})})
+
+
+def stripe_event(etype, obj, secret=WHSEC, age=0):
+    """POST a webhook signed the way Stripe signs it: HMAC-SHA256 of "<t>.<payload>" with the endpoint secret."""
+    payload = json.dumps({"id": "evt_" + str(time.time_ns()), "type": etype, "data": {"object": obj}})
+    t = str(int(time.time()) - age)
+    sig = hmac.new(secret.encode(), f"{t}.{payload}".encode(), hashlib.sha256).hexdigest()
+    return requests.post(f"{BASE}/api/stripe.php", data=payload, headers={"Stripe-Signature": f"t={t},v1={sig}", "Content-Type": "application/json"})
+
+
+def paid_session(sid, pi, lid, email, link="plink_song", status="paid"):
+    return {"id": sid, "object": "checkout.session", "payment_link": link, "payment_status": status, "payment_intent": pi,
+            "client_reference_id": lid, "customer_details": {"email": email, "name": "Mary Stripe"}}   # 0: the rest of the run does not sit out the send delay
 ADMIN_PW = "test-password-not-used-anywhere-real"
 ENV["PS_ADMIN_HASH"] = subprocess.run(["php", "-r", "echo password_hash($argv[1], PASSWORD_DEFAULT);", ADMIN_PW], capture_output=True, text=True).stdout
 
@@ -105,8 +122,8 @@ def main():
         check("worker made the song", f"{tok_a} ready" in out, out)
         page = requests.get(f"{BASE}/s/", params={"k": tok_a})
         check("song page now has the player and the name", "<audio" in page.text and "Siobhan" in page.text)
-        check("her page states how the charge appears and where to get help (a ClickBank requirement)",
-              "CLKBANK*COM" in page.text and "RCPT1001" in page.text and "support@sanctoriastore.com" in page.text)
+        check("her page states how the charge appears and where to get help (statement name and help)",
+              "bank statement as" in page.text and "RCPT1001" in page.text and "support@sanctoriastore.com" in page.text)
         check("song page shows the lyrics", "Hold Siobhan close" in page.text)
         au = requests.get(f"{BASE}/api/audio.php", params={"k": tok_a})
         check("song plays (audio served)", au.status_code == 200 and au.headers["Content-Type"] == "audio/mpeg" and len(au.content) > 500)
@@ -177,7 +194,7 @@ def main():
         r = requests.get(f"{BASE}/api/thanks.php", params={"cbreceipt": "RCPT9999", "item": "prayersong-1", "time": "1", "cbpop": "BADBAD00", "cemail": "x@example.com"}, allow_redirects=True)
         tx = html.unescape(r.text)
         check("she is thanked and told to watch for the email, never shown 'not found'",
-              "Your prayer song is on its way" in tx and "prayer song is ready" in tx and "could not find" not in tx and "CLKBANK*COM" in tx and "RCPT9999" in tx)
+              "Your prayer song is on its way" in tx and "prayer song is ready" in tx and "could not find" not in tx and "bank statement as" in tx and "RCPT9999" in tx)
         check("no order is created from an unconfirmed purchase", not any("RCPT9999" in f.read_text() for f in (DATA / "orders").glob("*.json")))
         check("a stray visit to the thank you address goes to 'send my link again'",
               "Send the song link again" in html.unescape(requests.get(f"{BASE}/api/thanks.php", allow_redirects=True).text))
@@ -372,6 +389,59 @@ def main():
         one = S.get(adm, params={"o": t3})
         S.post(adm, data={"act": "sendnow", "o": t3, "csrf": csrf_of(one.text)})
         check("the owner can send a waiting song now from the admin page", "Send now" in one.text and od(t3)["status"] == "ready" and od(t3)["emailed"] is True)
+
+        print("\n14. Stripe: payment links, webhook, express and refunds")
+        od = lambda t: json.loads((DATA / "orders" / f"{t}.json").read_text())
+        tok_of = lambda pi: (DATA / "idx" / ("receipt-" + hashlib.sha1(f"{pi}|prayersong-1".encode()).hexdigest())).read_text().strip()
+        s1 = lead("stripe1@example.com", "Bernadette")
+        r = stripe_event("checkout.session.completed", paid_session("cs_test_aaa111", "pi_test_111", s1["lead"], "stripe1@example.com"))
+        check("a signed paid session is accepted", r.status_code == 200 and r.text == "ok", r.text)
+        t1 = tok_of("pi_test_111")
+        check("it becomes an order with her form answers, queued to be made", od(t1)["status"] == "queued"
+              and od(t1)["answers"]["name"] == "Bernadette" and od(t1)["email"] == "stripe1@example.com" and not od(t1).get("express"))
+        stripe_event("checkout.session.completed", paid_session("cs_test_aaa111", "pi_test_111", s1["lead"], "stripe1@example.com"))
+        check("the same payment sent twice makes one order", tok_of("pi_test_111") == t1
+              and len([f for f in (DATA / "orders").glob("*.json") if json.loads(f.read_text()).get("receipt") == "pi_test_111"]) == 1)
+        bad = stripe_event("checkout.session.completed", paid_session("cs_test_bad", "pi_test_bad", s1["lead"], "x@example.com"), secret="whsec_wrong")
+        old = stripe_event("checkout.session.completed", paid_session("cs_test_old", "pi_test_old", s1["lead"], "x@example.com"), age=900)
+        check("a forged or stale signature is refused and makes nothing", bad.status_code == 400 and old.status_code == 400
+              and not (DATA / "idx" / ("receipt-" + hashlib.sha1(b"pi_test_bad|prayersong-1").hexdigest())).exists())
+        stripe_event("checkout.session.completed", paid_session("cs_test_ccc", "pi_test_other", s1["lead"], "x@example.com", link="plink_someone_else"))
+        stripe_event("checkout.session.completed", paid_session("cs_test_ddd", "pi_test_unpaid", s1["lead"], "x@example.com", status="unpaid"))
+        check("a session from another payment link, or not paid yet, makes no order",
+              not (DATA / "idx" / ("receipt-" + hashlib.sha1(b"pi_test_other|prayersong-1").hexdigest())).exists()
+              and not (DATA / "idx" / ("receipt-" + hashlib.sha1(b"pi_test_unpaid|prayersong-1").hexdigest())).exists())
+        s2 = lead("stripe2@example.com", "Kateri")
+        stripe_event("checkout.session.completed", paid_session("cs_test_eee", "pi_test_222", s2["lead"], "stripe2@example.com", link="plink_express"))
+        check("the express payment link marks the order express", od(tok_of("pi_test_222")).get("express") is True)
+        sp = html.unescape(requests.get(f"{BASE}/s/", params={"k": t1}).text)
+        cp = html.unescape(requests.get(f"{BASE}/s/", params={"k": tok_a}).text)
+        check("a Stripe order's page names SANCTORIA PRAYER and no ClickBank; a ClickBank order's page keeps CLKBANK*COM and its notice",
+              "SANCTORIA PRAYER" in sp and "ClickBank" not in sp and "CLKBANK*COM" in cp and "ClickBank is the retailer" in cp)
+        stripe_event("charge.refunded", {"object": "charge", "payment_intent": "pi_test_111", "refunded": True})
+        check("a refund in Stripe is recorded on the order, and the song link keeps working", od(t1).get("refunded") is True
+              and requests.get(f"{BASE}/s/", params={"k": t1}).status_code == 200)
+        s3 = lead("stripe3@example.com", "Jude", vid="cmc1234567890")
+        stripe_event("checkout.session.completed", paid_session("cs_test_fff", "pi_test_333", "", "stripe3@example.com"))
+        check("with no lead id her answers are found by email, and the ClickMagick visitor id travels with them",
+              od(tok_of("pi_test_333"))["answers"]["name"] == "Jude" and od(tok_of("pi_test_333")).get("vid") == "cmc1234567890")
+        s4 = lead("stripe4@example.com", "Monica")
+        pi = {"id": "pi_test_embed444", "object": "payment_intent", "status": "succeeded", "receipt_email": "stripe4@example.com",
+              "metadata": {"offer": "prayersong", "flow": "embed", "lid": s4["lead"], "express": "1", "vid": ""}}
+        stripe_event("payment_intent.succeeded", pi)
+        check("each Stripe sale is reported to ClickMagick once when there is a visitor id, and noted when there is none",
+              od(tok_of("pi_test_333")).get("cm_reported") == "yes" and od(tok_of("pi_test_111")).get("cm_reported") == "no visitor id")
+        check("a payment made in the form's own Pay step becomes an express order with her answers",
+              od(tok_of("pi_test_embed444"))["answers"]["name"] == "Monica" and od(tok_of("pi_test_embed444")).get("express") is True)
+        stripe_event("payment_intent.succeeded", {**pi, "id": "pi_test_link555", "metadata": {"offer": "prayersong"}})
+        check("a payment-link payment is not handled twice through its PaymentIntent",
+              not (DATA / "idx" / ("receipt-" + hashlib.sha1(b"pi_test_link555|prayersong-1").hexdigest())).exists())
+        bad_pay = requests.post(f"{BASE}/api/pay.php", json={"lid": "0" * 32, "express": True})
+        check("the Pay step refuses to prepare a payment without saved answers", bad_pay.status_code == 422)
+        pr = requests.get(f"{BASE}/api/paid.php", params={"session_id": "cs_test_notreal1234567"}, allow_redirects=False)
+        junk = requests.get(f"{BASE}/api/paid.php", params={"session_id": "nonsense"}, allow_redirects=False)
+        check("back from Stripe with a session that cannot be confirmed: a thank you page, never 'not found'",
+              pr.status_code == 302 and "/s/?thanks=1" in pr.headers.get("Location", "") and "find=1" in junk.headers.get("Location", ""))
 
         held = S.get(adm, params={"o": tok_a})
 

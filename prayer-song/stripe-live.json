@@ -1,0 +1,9 @@
+{
+  "mode": "live",
+  "api_version": "2024-06-20",
+  "amounts": {
+    "song": 3900,
+    "express": 995
+  },
+  "note": "The live checkout is the Pay step inside the form (PaymentIntents from api/pay.php). No payment links are used live."
+}

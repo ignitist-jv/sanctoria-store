@@ -319,6 +319,10 @@ function ps_send_via_kit(array $o, string $kind): array
     if ($kind === 'ready' && !empty($k['tag_buyer'])) {
         ps_http('POST', "https://api.kit.com/v4/tags/{$k['tag_buyer']}/subscribers", $h, json_encode(['email_address' => $o['email']]), 20);
     }
+    if ($kind === 'ready' && !empty($k['tag_all_buyers']) && strpos((string) ($o['receipt'] ?? ''), 'pi_') === 0) {
+        // ClickBank buyers get sanctoria-buyer from /ins/clickbank.php; Stripe buyers get it here
+        ps_http('POST', "https://api.kit.com/v4/tags/{$k['tag_all_buyers']}/subscribers", $h, json_encode(['email_address' => $o['email']]), 20);
+    }
     [$c3, $b3] = ps_http('POST', "https://api.kit.com/v4/sequences/$seq/subscribers", $h, json_encode(['email_address' => $o['email']]), 20);
     return [$c3 >= 200 && $c3 < 300, "kit sequence $seq $c3 " . substr($b3, 0, 120)];
 }

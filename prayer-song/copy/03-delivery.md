@@ -13,7 +13,7 @@ LYRICS_H: The words of {name}'s prayer
 ## PAGE: thanks
 EYEBROW: Your order is received
 H: Thank you. Your prayer song is on its way.
-P: Your payment went through ClickBank, our retailer, and your prayer song is being prepared. This page cannot show your order details just yet.
+P: Your payment went through, and your prayer song is being prepared. This page cannot show your order details just yet.
 P: Your private link is emailed to the address used at checkout, within 24 hours, from {from}. The subject ends with "prayer song is ready". Not in the inbox? Look in spam or promotions.
 P: If we still need the name and the prayer, that email or page asks in a short form. If nothing arrives within 24 hours, write to support@sanctoriastore.com with the email address used to order.
 FIND: Send my link again
@@ -68,9 +68,10 @@ CTA: Begin My Prayer Song
 DATE_PREFIX: Shared
 
 ## PAGE: receipt
-(Shown small at the foot of the buyer's page in every state. Required by ClickBank on the page a buyer reaches after paying: how the charge appears, and where to get help. Plain notices, not selling copy.)
+(Shown small at the foot of the buyer's page in every state. Kept on the page a buyer reaches after paying so she can match the charge on her statement and knows where to get help. Plain notices, not selling copy.)
 ORDER: Order {receipt}
-STATEMENT: This purchase will appear on your card or bank statement as CLKBANK*COM.
+STATEMENT: This purchase will appear on your card or bank statement as SANCTORIA PRAYER.
+STATEMENT_CLICKBANK: This purchase will appear on your card or bank statement as CLKBANK*COM.
 HELP: Questions about your order: support@sanctoriastore.com
 
 ## PAGE: review
@@ -160,3 +161,13 @@ TWO NAMES REVISION (2026-10-07)
 3. FLAGS 2 and 5 above quote the old sentence "{name} is prayed for again"; the sense is unchanged and the sentence is now "the prayer for {name} is prayed again". Alternative subject line 2 ("{name}'s name, sung in prayer") does not work with two names and should not be used while two name songs are sold.
 4. Not changed, for TS to decide: four lines without {name} say "the name" in the singular (REMAKE_H, the first P of PAGE: review, the last P_AFTER of the ready email, and the second P of the delay email). They are true of a two name song as written, only less exact. If wanted, "the name" can become "a name" in each with no other change.
 5. Added 2026-10-08: EMAIL_H, EMAIL_P and KEEP on PAGE: making, and the new fallback PAGE: thanks. Build dependencies in the wording: {subject} must be filled from the SUBJECT of EMAIL: ready with the name already in it, so the page and the inbox always match, and {from} must be the real sending address. PAGE: thanks quotes the fixed ending "prayer song is ready", so if one of the alternative subject lines is ever adopted, both this line and EMAIL_P's source must change with it; the delay email has a different subject and is not announced on either page. {name} appears in none of the new lines, so one name or two reads the same. For TS to confirm: the first P of PAGE: thanks says the song "is being prepared" although the page cannot tell whether her answers have arrived (the third P covers that case), and the third P of PAGE: making already mentions the email, so the box repeats it on purpose. The second and third P of PAGE: thanks sit at 33 and 34 words against a limit of 34, so any edit must cut before it adds.
+
+STRIPE SWITCH (2026-10-16)
+1. Payment moved from ClickBank to Stripe. Three lines changed. Old wording, to restore:
+   (PAGE: receipt note) (Shown small at the foot of the buyer's page in every state. Required by ClickBank on the page a buyer reaches after paying: how the charge appears, and where to get help. Plain notices, not selling copy.)
+   STATEMENT (PAGE: receipt): This purchase will appear on your card or bank statement as CLKBANK*COM.
+   P (PAGE: thanks, first paragraph): Your payment went through ClickBank, our retailer, and your prayer song is being prepared. This page cannot show your order details just yet.
+2. ORDER and HELP on PAGE: receipt are unchanged. {receipt} must now be filled with the order number the buyer can quote to support (for example the Stripe payment or checkout id, or our own order id), not a ClickBank receipt.
+3. The second and third P of PAGE: thanks were not touched and stay at 33 and 34 words. Neither names a retailer.
+4. For TS to decide, not changed: with Express Song Delivery ($9.95, sent within 1 hour of the order) the pages and emails that say "within 24 hours of your order" (PAGE: making third P, PAGE: thanks second and third P, PAGE: review second P, EMAIL: delay third P) stay true for an express buyer but undersell what she paid for. If the build knows the order is express, an express variant of each line is needed; say so and I will write them. Flag 7 above (the needs page clock runs from the finished form) applies to express too: a 1 hour promise cannot be kept for an order whose answers are not in yet.
+5. Flag 7 above still names ClickBank's 24 hour digital delivery rule. It is history; the ClickBank rule no longer applies, but the public promise of 24 hours from the order still does, so the decision it asks for still stands.

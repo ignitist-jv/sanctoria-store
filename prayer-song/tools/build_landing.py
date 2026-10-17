@@ -30,6 +30,11 @@ COPY_BONUS = ROOT / "copy" / "04-bonuses.md"
 TEMPLATE = ROOT / "tools" / "landing-template.html"
 
 # ---- live settings. Filled in during phase 8 (wiring). None means "not connected yet". ----
+# How she pays (TS, 2026-10-16). "stripe": two Stripe payment links (song, song + express) from prayer-song/stripe-<STRIPE_MODE>.json.
+# "clickbank": CHECKOUT_URL below, unchanged, kept so switching back is this one line.
+# "embed" = Stripe's card and wallet fields inside the form's own Pay step (api/pay.php), the way TS chose on 2026-10-17.
+PAYMENT = "clickbank" if "--clickbank" in sys.argv else ("stripe" if "--stripe" in sys.argv else "embed")   # live on Stripe since 2026-10-17
+STRIPE_MODE = "test" if "--stripe-test" in sys.argv else "live"     # which keys and prayer-song/stripe-<mode>.json the build uses
 CHECKOUT_URL = "https://karmacc.pay.clickbank.net/?cbitems=prayersong-1&template=songform&vtid=[cmc_vid]"      # e.g. "https://karmacc.pay.clickbank.net/?cbitems=prayersong-1&template=...&cbfid=...&vtid=[cmc_vid]"
 LEAD_ENDPOINT = "api/lead.php"   # relative to /prayer-song/. Stores the answers under a lead id.
 HERO_IMAGE = None        # e.g. "img/hero.webp" (relative to site/prayer-song/)
@@ -379,13 +384,24 @@ def survey_data(c):
         send[k.lower()] = one(g("send"), k)
     for k in ("PRICE_BADGE", "PRICE_WAS", "PRICE_NOW"):      # the price block on the last step
         send[k.lower()] = one(g("send"), k)
+    for k in ("EXPRESS_LABEL", "EXPRESS_NOTE", "ROW_DELIVERY_EXPRESS", "PRICE_TOTAL_LABEL"):   # the express tick box (Stripe)
+        send[k.lower()] = one(g("send"), k)
+    if PAYMENT == "stripe" and not send["express_label"]:
+        problems.append("survey step send needs EXPRESS_LABEL for the express tick box")
     send["summary_line_two"] = one(g("send"), "SUMMARY_LINE_TWO") or send["summary_line"]
     if basics["label_name2"] and not one(g("send"), "SUMMARY_LINE_TWO"):
         problems.append("survey step send needs SUMMARY_LINE_TWO now that a second name can be given")
     ui = need("ui", g("ui"), ["BACK", "NEXT", "STEP_OF", "AGREE"])
     ui["step_names"] = [x.strip() for x in one(g("ui"), "STEP_NAMES").split("|") if x.strip()]
-    if len(ui["step_names"]) != 4:
-        problems.append("survey UI STEP_NAMES must list exactly four names")
+    if len(ui["step_names"]) not in (4, 5):
+        problems.append("survey UI STEP_NAMES must list four names (five with the Pay step)")
+    pay = {k.lower(): one(g("pay"), k) for k in ("H", "SUB", "DIVIDER", "BUTTON", "BUTTON_BUSY", "SECURE", "ERROR", "ERROR_LOAD", "SAMPLE_LABEL")}
+    if PAYMENT == "embed":
+        pay = need("pay", g("pay"), ["H", "SUB", "DIVIDER", "BUTTON", "BUTTON_BUSY", "SECURE", "ERROR", "ERROR_LOAD"])
+        if "{price}" not in pay["button"]:
+            problems.append("survey step pay BUTTON must contain {price}")
+        if len(ui["step_names"]) != 5:
+            problems.append("the Pay step needs a fifth name in STEP_NAMES")
     if len(ui["next"]) > BUTTON_MAX:
         problems.append(f'form continue button "{ui["next"]}" is over {BUTTON_MAX} characters')
     for word in ("Terms", "Privacy Policy"):
@@ -398,7 +414,8 @@ def survey_data(c):
     for k in RELATIONS + INTENTIONS + STYLES:
         if k not in phrases:
             problems.append(f"survey PHRASES missing: {k}")
-    return {"basics": basics, "prayer": prayer, "sound": sound, "send": send, "ui": ui, "phrases": phrases}
+    return {"basics": basics, "prayer": prayer, "sound": sound, "send": send, "pay": pay, "ui": ui, "phrases": phrases,
+            "sample_tag": one(PAGE_COPY.get("sample", []), "TAG")}
 
 
 def delivery_copy(d, phrases):
@@ -413,6 +430,7 @@ def delivery_copy(d, phrases):
         return out
 
     pages = {k: block(v) for k, v in d.items() if not k.startswith("email:")}
+    # The receipt carries both statement names (STATEMENT for Stripe, STATEMENT_CLICKBANK); the song page picks by the order.
     emails = {k.split(":", 1)[1].strip(): block(v) for k, v in d.items() if k.startswith("email:")}
     for name in ("making", "ready", "review", "needs", "notfound"):
         if name not in pages:
@@ -528,7 +546,39 @@ def main():
     sections = "\n\n".join(re.sub(r"<section(?=[ >])", f'<section data-s="{sid}"', render(sid, page[sid]), count=1)
                            for sid in SECTION_ORDER if sid in page and sid not in hidden)
 
-    if CHECKOUT_URL:
+    stripe_cfg = {}
+    if PAYMENT == "embed":
+        sj = ROOT / f"stripe-{STRIPE_MODE}.json"
+        st = json.loads(sj.read_text()) if sj.exists() else {}
+        envf = ROOT.parent / ".env"
+        envv = dict(l.split("=", 1) for l in envf.read_text().splitlines() if "=" in l and not l.startswith("#")) if envf.exists() else {}
+        pk = envv.get(f"STRIPE_PK_{STRIPE_MODE.upper()}", "").strip().strip('"\'')
+        if not pk.startswith(f"pk_{STRIPE_MODE}_"):
+            problems.append(f"PAYMENT is embed but .env has no STRIPE_PK_{STRIPE_MODE.upper()} (a pk_{STRIPE_MODE}_ key)")
+        if LIVE and STRIPE_MODE != "live" and "--test-payments" not in sys.argv:
+            problems.append("PAYMENT is embed with the TEST key; a live build needs STRIPE_MODE = \"live\" (or --test-payments for a deliberate test on the live site)")
+        cents = st.get("amounts", {"song": 3900, "express": 995})
+        stripe_cfg = {"pk": pk, "price_song": cents["song"], "price_express": cents["express"],
+                      "name_song": "Your Prayer Song", "name_express": "Express Song Delivery", "pay_endpoint": "api/pay.php",
+}     # the Stripe product names
+        link = '<a id="lnk-checkout" href="#pay">checkout</a><a id="lnk-vid" href="https://sanctoriastore.com/prayer-song/?vtid=[cmc_vid]">v</a>'
+    elif PAYMENT == "stripe":
+        sj = ROOT / f"stripe-{STRIPE_MODE}.json"
+        st = json.loads(sj.read_text()) if sj.exists() else {}
+        links = st.get("links", {})
+        if not (links.get("song") and links.get("song_express")):
+            problems.append(f"PAYMENT is stripe but {sj.name} has no song and song_express payment links")
+        if LIVE and STRIPE_MODE != "live" and "--test-payments" not in sys.argv:
+            # a live page that takes test payments takes no money at all: refuse unless asked for on purpose
+            problems.append("PAYMENT is stripe with TEST payment links; a live build needs STRIPE_MODE = \"live\" (or --test-payments for a deliberate test on the live site)")
+        cents = st.get("amounts", {"song": 3900, "express": 995})
+        money = lambda c: f"${c // 100}" if c % 100 == 0 else f"${c / 100:.2f}"
+        stripe_cfg = {"express_price": money(cents["express"]), "total_express": money(cents["song"] + cents["express"])}
+        # the vid link is only there so ClickMagick's cmc.js fills in the visitor id, which the form passes on with her answers
+        link = (f'<a id="lnk-checkout" href="{html.escape(links.get("song", {}).get("url", ""))}">checkout</a>'
+                f'<a id="lnk-checkout-express" href="{html.escape(links.get("song_express", {}).get("url", ""))}">checkout</a>'
+                '<a id="lnk-vid" href="https://sanctoriastore.com/prayer-song/?vtid=[cmc_vid]">v</a>')
+    elif CHECKOUT_URL:
         link = f'<a id="lnk-checkout" href="{html.escape(CHECKOUT_URL)}">checkout</a>'
     else:
         link = ""
@@ -564,7 +614,7 @@ def main():
         "{{FOOTER_MISSION}}": e(one(page.get("footer", []), "MISSION")),
         "{{FOOTER_FIND}}": f'<a href="s/?find">{e(nav_labels.get("nav_track", ""))}</a>' if nav_labels.get("nav_track") else "",
         "{{FOOTER_REVIEWS}}": f'<a href="reviews/" data-reviews hidden>{e(nav_labels.get("nav_reviews", ""))}</a>' if nav_labels.get("nav_reviews") else "",
-        "{{CFG_JSON}}": json.dumps({"lead_endpoint": LEAD_ENDPOINT, "soft": SOFT}),
+        "{{CFG_JSON}}": json.dumps({"lead_endpoint": LEAD_ENDPOINT, "soft": SOFT, "pay": PAYMENT, **stripe_cfg}),
         "{{TRACKS_JSON}}": json.dumps(TRACKS, ensure_ascii=False),
     }.items():
         out = out.replace(token, value)

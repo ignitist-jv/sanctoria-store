@@ -1,0 +1,26 @@
+{
+  "mode": "test",
+  "api_version": "2024-06-20",
+  "products": {
+    "song": "prod_VS5DseArUwDaRy",
+    "express": "prod_VS5DnK1ZIHqZSm"
+  },
+  "prices": {
+    "song": "price_1URB31IjmSX1UuRUeHaRC70z",
+    "express": "price_1URB31IjmSX1UuRUiSQhdtsa"
+  },
+  "links": {
+    "song": {
+      "id": "plink_1URB32IjmSX1UuRU8q7XEjB3",
+      "url": "https://buy.stripe.com/test_aFa9AT8uG7er8QK0jFgnK00"
+    },
+    "song_express": {
+      "id": "plink_1URB33IjmSX1UuRUAY9Wj6V7",
+      "url": "https://buy.stripe.com/test_4gMfZh4eq56jc2W6I3gnK01"
+    }
+  },
+  "amounts": {
+    "song": 3900,
+    "express": 995
+  }
+}

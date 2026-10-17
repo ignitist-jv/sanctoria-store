@@ -1,6 +1,6 @@
 ## SECTION: hero
 EYEBROW: Custom prayer songs, made by name
-H1: Their Name And God's Word, Sung As One Prayer!
+H1: God Wants You To Have His Songs
 SUB: Give a husband, a son, a mother or a grandchild an original prayer song with their first name in every chorus, built on a verse of Scripture. It arrives by email within 24 hours.
 CTA: Begin My Prayer Song
 MICRO: A short form first, about a minute. $39, one time, at checkout.
@@ -91,7 +91,7 @@ RISK: Nothing to lose. 30 day full refund.
 HIDE: yes
 H2: Thirty days to decide
 P: Play it. Send it to the family. Pray along with it for a month. If it is not right, for any reason, one email to support@sanctoriastore.com returns every cent of the $39.
-P: The refund is handled through ClickBank, the retailer that processes the order. There are no forms to fill in and no questions to answer.
+P: That one email is all it takes. The refund goes back to the original payment method, with no forms to fill in and no questions to answer.
 
 ## SECTION: faq
 Q: What makes these songs special?
@@ -168,7 +168,7 @@ COMPLIANCE NOTES AND THINGS I WAS UNSURE OF
 4. How it is made. The FAQ answer "How is each song made?" says the lyrics are written from the form answers and that the words, the music and the singing voice are produced with AI assisted tools, then checked, including that the name is sung. This is wider than the first brief asked for and is now TS's stated wording.
 5. "Checked before it is sent" is true of the automated check in the delivery plan (name sung, lyrics intact). The copy does not say a person listens to each one.
 6. The remake promise. "If the name is sung wrongly, we remake it" is now stated only in the proof block; the FAQ no longer carries it. No limit on remakes is stated. TS should confirm the back end supports a remake request from a reply to the delivery email.
-7. Guarantee. 30 days, full refund through ClickBank (set by TS 2026-10-06; it was drafted as 60). "No questions to answer" is a promise about how support replies. The page does not say the buyer keeps the song after a refund, although the flow doc plans to leave the link alive. Left out on purpose.
+7. Guarantee. 30 days, full refund by one email to support@sanctoriastore.com (set by TS 2026-10-06; it was drafted as 60). "No questions to answer" is a promise about how support replies. The page does not say the buyer keeps the song after a refund, although the flow doc plans to leave the link alive. Left out on purpose.
 8. Bonuses are marked DRAFT in the bible. The page says they are "on the same page" as the song (FAQ, how it arrives). Confirm delivery location. The Keepsake Lyric Sheet also appears in PRODUCT-FLOW as a $9 order bump. It cannot be both a free bonus and a paid bump; one of them has to change.
 9. Song length. The page says "about four minutes". Changed from three on 2026-10-05 at TS's direction after the render test; the bible now says 3.5 to 4 minutes.
 10. The songwriter anchor is one sentence with no figure, as the bible allows.
@@ -229,3 +229,8 @@ COMPLIANCE NOTES AND THINGS I WAS UNSURE OF
       34 words. Leads with tradition instead of the mechanism line. "So a prayer can be prayed again" is about the praying, not a result of it.
    b. We believe a prayer set to music can be prayed again and again. Sanctoria exists to put the names families carry in prayer into song.
       25 words. Shortest and plainest; restates the mechanism without the exact line, and leaves Scripture out.
+
+25. 2026-10-16, Stripe switch. Payment moved from ClickBank to Stripe. One page line and one note changed. Old wording, to restore:
+   P (guarantee section, second paragraph, HIDE: yes): The refund is handled through ClickBank, the retailer that processes the order. There are no forms to fill in and no questions to answer.
+   Note 7: "30 days, full refund through ClickBank" became "30 days, full refund by one email to support@sanctoriastore.com"; the rest of note 7 is unchanged.
+   The new line names no payment company, so it will not need changing again if the processor changes. Nothing on the visible page named ClickBank. The Express Song Delivery add-on is offered only on the order summary (02-survey.md) and is not mentioned on this page; every "within 24 hours" line here stays true.

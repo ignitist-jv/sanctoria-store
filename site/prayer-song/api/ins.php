@@ -40,15 +40,7 @@ foreach (($n['lineItems'] ?? []) as $li) {
     if (in_array($type, ['SALE', 'TEST_SALE', 'TEST'], true)) {
         ps_order_for_receipt($receipt, $item, $email, $name, $lid ?: null, 'ins');
     } elseif (in_array($type, ['RFND', 'CGBK', 'TEST_RFND'], true)) {
-        // A refund is recorded. The song link is left working.
-        $idx = ps_data('idx/receipt-' . sha1(explode('-', $receipt)[0] . '|' . $item));
-        $token = is_file($idx) ? trim((string) file_get_contents($idx)) : '';
-        if ($o = ps_order($token)) {
-            $o['refunded'] = true;
-            ps_note($o, "refund notification $type");
-            ps_save_order($o);
-        }
-        ps_log("refund type=$type receipt=$receipt item=$item");
+        ps_mark_refunded(explode('-', $receipt)[0], $item, "refund notification $type");
     }
 }
 echo 'ok';

@@ -216,6 +216,27 @@
   #sbody[data-step="send"] .spill{display:flex;width:fit-content;margin-left:auto;margin-right:auto;margin-bottom:22px}
   /* last step: order summary, delivery pill, guarantee */
   .spill{display:inline-flex;align-items:center;gap:7px;background:var(--cream-2);border:1px solid var(--hair);color:var(--bronze-deep);font-size:12px;font-weight:700;letter-spacing:.04em;border-radius:999px;padding:6px 13px;margin:0 0 4px}
+  .spsample{display:flex;align-items:center;gap:12px;margin:0 0 16px;padding:10px;border:1px solid var(--hair);border-radius:14px;background:var(--paper)}
+  .spsample .rec{flex:none;width:64px;height:64px;border-radius:10px;background:var(--deep);padding:5px;box-sizing:border-box}
+  .spsample .tag{display:block;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--bronze);margin-bottom:2px}
+  .spsample > div{flex:1;min-width:0}
+  .spsample b{display:block;font-family:var(--serif);font-size:16px;font-weight:600;line-height:1.25}
+  .spsample .ln{display:block;font-size:12.5px;color:var(--muted);line-height:1.4;margin-top:2px}
+  .spsample .lab{display:block;font-size:11px;color:var(--muted);line-height:1.35;margin-top:4px;font-style:italic}
+  .spsample .play{width:42px;height:42px}
+  .spaywallet{margin:18px 0 0;min-height:48px}
+  .spaydiv{display:flex;align-items:center;gap:12px;margin:16px 0 4px;font-size:13px;color:var(--muted)}
+  .spaydiv::before,.spaydiv::after{content:"";flex:1;height:1px;background:var(--hair)}
+  .spaycard{margin:12px 0 0;min-height:120px}
+  .spaysafe{margin:14px 0 0;font-size:13px;line-height:1.5;color:var(--ink-soft);text-align:center}
+  .sorow.stot{border-top:1px solid var(--hair);margin-top:4px;padding-top:9px}
+  .sorow.stot .v{font-size:17px;font-weight:700}
+  .sexpress{display:flex;gap:12px;align-items:flex-start;margin:16px 0 0;padding:14px 15px;border:1.5px dashed #D9A415;border-radius:12px;background:#FFF9E8;cursor:pointer}
+  .sexpress input{flex:none;width:20px;height:20px;margin:2px 0 0;accent-color:#2E9E4F}
+  .sexpress b{display:block;font-size:15px;color:var(--ink)}
+  .sexpress span span{display:block;font-size:13.5px;line-height:1.45;color:var(--ink-soft);margin-top:3px}
+  .stotal{display:flex;justify-content:space-between;align-items:baseline;margin:12px 2px 0;font-size:14px;color:var(--ink-soft)}
+  .stotal b{font-size:18px;color:var(--ink)}
   .sorder{border:1px solid var(--hair);border-left:2px solid var(--bronze);background:var(--paper);border-radius:0 12px 12px 0;padding:15px 16px;margin:22px 0 0}
   .sorder > b{display:block;font-size:10.5px;letter-spacing:.17em;text-transform:uppercase;color:var(--bronze);margin-bottom:10px}
   .sorow{display:flex;align-items:baseline;justify-content:space-between;gap:14px;padding:7px 0;border-top:1px solid #F0E8D8}
@@ -594,8 +615,8 @@ var CFG = {{CFG_JSON}};
 (function(){
   function $(id){ return document.getElementById(id); }
   function el(tag, cls, text){ var n=document.createElement(tag); if(cls) n.className=cls; if(text!=null) n.textContent=text; return n; }
-  var STEPS = ['basics','prayer','sound','send'];
-  var S = { who:'', name:'', phon:'', name2:'', who2:'', intention:'', note:'', style:'', voice:'', email:'', buyer:'', lead:'' };
+  var STEPS = CFG.pay==='embed' ? ['basics','prayer','sound','send','pay'] : ['basics','prayer','sound','send'];
+  var S = { who:'', name:'', phon:'', name2:'', who2:'', intention:'', note:'', style:'', voice:'', email:'', buyer:'', lead:'', express:false };
   try{ var saved=JSON.parse(sessionStorage.getItem('ps_answers')||'null'); if(saved){ for(var k in S){ if(saved[k]) S[k]=saved[k]; } } }catch(e){}
   var at = 0;
   var ORDER = (location.search.match(/[?&]order=([a-f0-9]{32})/)||[])[1] || '';   /* set when she paid before filling this in */
@@ -648,7 +669,7 @@ var CFG = {{CFG_JSON}};
   }
   function tracker(){
     var t=$('stepper'); t.innerHTML='';
-    (SV.ui.step_names||[]).forEach(function(n, i){
+    (SV.ui.step_names||[]).slice(0, STEPS.length).forEach(function(n, i){
       var li=el('li', i<at ? 'done' : (i===at ? 'now' : ''), n);
       if(i===at) li.setAttribute('aria-current','step');
       t.appendChild(li);
@@ -740,10 +761,11 @@ var CFG = {{CFG_JSON}};
       orow(d.row_for, names());
       orow(d.row_prayer, SV.phrases[S.intention] || '');
       orow(d.row_sound, SV.phrases[S.style] || '');
-      orow(d.row_delivery, d.row_delivery_value);
+      orow(d.row_delivery, S.express && d.row_delivery_express ? d.row_delivery_express : d.row_delivery_value);
       body.appendChild(card);
       check=function(){ var ok=/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(S.email); if(!ok) $('f-email').classList.add('bad'); return ok; };
     }
+    if(id==='pay'){ payStep(body, d, err); check=function(){ return true; }; }
     body.appendChild(err);
 
     function fail(){ err.textContent=d.error; err.hidden=false; err.scrollIntoView({block:'nearest'}); }
@@ -757,6 +779,22 @@ var CFG = {{CFG_JSON}};
         row.appendChild(el('span','snow',d.price_now));
         pc.appendChild(row);
         body.appendChild(pc);
+        /* Express Song Delivery: a second Stripe payment link, so the tick box only chooses which link she goes to */
+        if(CFG.pay==='stripe' && d.express_label && document.getElementById('lnk-checkout-express')){
+          var xb=el('label','sexpress'), xc=document.createElement('input');
+          xc.type='checkbox'; xc.checked=!!S.express;
+          xc.onchange=function(){ S.express=xc.checked; save(); if(xc.checked) psTrack('ps_express_on'); render(); };
+          xb.appendChild(xc);
+          var xt=document.createElement('span');
+          xt.appendChild(el('b','',d.express_label));
+          if(d.express_note) xt.appendChild(el('span','',d.express_note));
+          xb.appendChild(xt);
+          body.appendChild(xb);
+          if(S.express && CFG.total_express){
+            var tl=el('p','stotal'); tl.appendChild(el('span','',d.price_total_label||'Total'));
+            tl.appendChild(el('b','',CFG.total_express)); body.appendChild(tl);
+          }
+        }
         if(d.guar_title){
           var gb=el('div','sguar');
           gb.appendChild(el('span','gi','\u2713'));
@@ -780,9 +818,16 @@ var CFG = {{CFG_JSON}};
     var back=el('button','sback','\u2190 '+SV.ui.back); back.type='button';
     back.onclick=function(){ if(at===0){ closeSurvey(); } else { at--; render(); } };
     foot.appendChild(back);
-    var go=el('button','btn', id==='send' ? d.button : SV.ui.next); go.type='button';
+    var go=el('button','btn', id==='send' ? d.button : (id==='pay' ? d.button.replace('{price}', money(payTotal())) : SV.ui.next)); go.type='button';
+    if(id==='pay'){ go.id='paybtn'; }
     go.onclick=function(){
+      if(id==='pay'){ payNow(false); return; }
       if(!check()){ fail(); return; }
+      if(id==='send' && CFG.pay==='embed'){
+        go.disabled=true;
+        sendLead(function(){ go.disabled=false; if(!S.lead){ fail(); err.textContent=SV.pay.error_load; return; } at++; render(); });
+        return;
+      }
       if(id==='send'){ sendLead(function(){ goCheckout(); }); return; }
       at++; render();
     };
@@ -794,17 +839,124 @@ var CFG = {{CFG_JSON}};
     save();
     if(!CFG.lead_endpoint){ done(); return; }          /* not wired yet: phase 8 */
     var finished=false; function fin(){ if(!finished){ finished=true; done(); } }
-    setTimeout(fin, 2500);                              /* a list error must never cost her the checkout */
+    setTimeout(fin, CFG.pay==='clickbank' ? 2500 : 8000);   /* a slow answer must never cost her the checkout; Stripe waits longer for the lead id */
     try{
       fetch(CFG.lead_endpoint, {method:'POST', headers:{'Content-Type':'application/json'}, keepalive:true,
         body:JSON.stringify({email:S.email, buyer:(S.buyer && S.buyer.indexOf('@')>-1) ? '' : S.buyer, who:S.who, name:S.name, name_phonetic:S.phon,
                              name2:twoAllowed() ? S.name2 : '', who2:twoAllowed() && S.name2 ? S.who2 : '', intention:S.intention,
-                             note:S.note, style:S.style, voice:S.voice, order:ORDER})})
+                             note:S.note, style:S.style, voice:S.voice, order:ORDER, vid:visitorId()})})
         .then(function(r){ return r.json(); }).then(function(j){
           if(j && j.song){ finished=true; try{ sessionStorage.removeItem('ps_answers'); }catch(e){} location.href=j.song; return; }  /* already paid: straight to her song page */
           if(j && j.lead){ S.lead=j.lead; save(); } fin(); })
         .catch(fin);
     }catch(e){ fin(); }
+  }
+  /* ---- the Pay step: Stripe's own card and wallet fields inside the form (CFG.pay === 'embed') ---- */
+  function money(c){ return '$' + (c % 100 ? (c / 100).toFixed(2) : String(c / 100)); }
+  function payTotal(){ return CFG.price_song + (S.express ? CFG.price_express : 0); }
+  var PAY = { stripe:null, elements:null, busy:false };
+  function loadStripe(cb, bad){
+    if(window.Stripe) return cb();
+    var s=document.createElement('script'); s.src='https://js.stripe.com/v3/'; s.onload=cb; s.onerror=bad; document.head.appendChild(s);
+  }
+  function payStep(body, d, err){
+    var sd=SV.send;
+    function showErr(m){ err.textContent=m; err.hidden=false; err.scrollIntoView({block:'nearest'}); }
+    paySample(body, d);
+    /* what she is paying for, itemised */
+    var card=el('div','sorder');
+    card.appendChild(el('b','',sd.order_title||''));
+    function row(k,v){ var r=el('div','sorow'); r.appendChild(el('span','k',k)); var vv=el('span','v',v); r.appendChild(vv); card.appendChild(r); return [r,vv]; }
+    row(CFG.name_song+(names() ? ', '+names() : ''), money(CFG.price_song));
+    var ex=row(CFG.name_express, money(CFG.price_express));
+    var tot=row(sd.price_total_label||'Total', '');
+    tot[0].classList.add('stot');
+    body.appendChild(card);
+    /* the express tick box */
+    if(sd.express_label){
+      var xb=el('label','sexpress'), xc=document.createElement('input');
+      xc.type='checkbox'; xc.checked=!!S.express;
+      xb.appendChild(xc);
+      var xt=document.createElement('span'); xt.appendChild(el('b','',sd.express_label)); if(sd.express_note) xt.appendChild(el('span','',sd.express_note));
+      xb.appendChild(xt); body.appendChild(xb);
+      xc.onchange=function(){ S.express=xc.checked; save(); if(xc.checked) psTrack('ps_express_on'); upd(); };
+    }
+    var xw=el('div','spaywallet'); xw.id='ps-xc'; body.appendChild(xw);
+    var dv=el('p','spaydiv',d.divider); dv.hidden=true; body.appendChild(dv);
+    var pw=el('div','spaycard'); pw.id='ps-pe'; body.appendChild(pw);
+    body.appendChild(el('p','spaysafe','\uD83D\uDD12 '+d.secure));
+    function upd(){
+      ex[0].hidden=!S.express; tot[1].textContent=money(payTotal());
+      var b=document.getElementById('paybtn'); if(b && !PAY.busy) b.textContent=d.button.replace('{price}', money(payTotal()));
+      if(PAY.elements) PAY.elements.update({amount: payTotal()});
+    }
+    upd();
+    setTimeout(function(){ var b=document.getElementById('paybtn'); if(b) b.disabled=true; upd(); }, 0);
+    loadStripe(function(){
+      try{
+        PAY.stripe = PAY.stripe || Stripe(CFG.pk);
+        PAY.elements = PAY.stripe.elements({mode:'payment', amount:payTotal(), currency:'usd', paymentMethodTypes:['card'],
+          fonts:[{cssSrc:'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap'}],
+          appearance:{theme:'stripe', variables:{colorPrimary:'#9A7B4F', colorBackground:'#FFFDF9', colorText:'#2A1F1A',
+            colorDanger:'#B3261E', fontFamily:'Inter, system-ui, sans-serif', borderRadius:'10px', spacingUnit:'4px'}}});
+        var pe=PAY.elements.create('payment', {layout:'tabs', wallets:{applePay:'never', googlePay:'never', link:'never'}});
+        pe.on('ready', function(){ var b=document.getElementById('paybtn'); if(b) b.disabled=false; });
+        pe.mount('#ps-pe');
+        var xe=PAY.elements.create('expressCheckout', {buttonHeight:48});
+        xe.on('ready', function(e){ var any=e.availablePaymentMethods && Object.keys(e.availablePaymentMethods).some(function(k){ return e.availablePaymentMethods[k]; });
+          if(any){ dv.hidden=false; } else { xw.hidden=true; } });
+        xe.on('confirm', function(){ payNow(true); });
+        xe.mount('#ps-xc');
+      }catch(e){ showErr(d.error_load); }
+    }, function(){ showErr(d.error_load); });
+    PAY.showErr=showErr;
+  }
+  /* One sample, matched to who the song is for. Sound only when she presses play. The picture is the record, not a clip:
+     the clips show generated people and would need their illustration label here (TS removed the label, 2026-10-17). */
+  function paySample(body, d){
+    if(!window.psPlay || !TRACKS.length) return;
+    var i = {son:0, husband:0, father:0, grandchild:2}[S.who];
+    if(i === undefined) i = 1;
+    if(i >= TRACKS.length) i = 0;
+    var t=TRACKS[i];
+    var c=el('div','spsample');
+    var im=document.createElement('img'); im.src='img/record.webp'; im.alt=''; im.className='rec'; c.appendChild(im);
+    var tx=el('div','');
+    if(SV.sample_tag) tx.appendChild(el('span','tag',SV.sample_tag));
+    tx.appendChild(el('b','',t.title)); tx.appendChild(el('span','ln',t.line));
+    c.appendChild(tx);
+    var pb=document.querySelector('.scard .play');
+    var b=pb ? pb.cloneNode(true) : el('button','play','\u25B6');
+    b.type='button'; b.setAttribute('data-play', String(i)); b.onclick=function(){ window.psPlay(i); };
+    c.appendChild(b);
+    body.appendChild(c);
+  }
+  function payNow(wallet){
+    if(window.psPause) window.psPause();
+    var d=SV.pay, b=document.getElementById('paybtn');
+    if(PAY.busy || !PAY.elements) return;
+    PAY.busy=true; if(b){ b.disabled=true; b.textContent=d.button_busy; }
+    function stop(m){ PAY.busy=false; if(b){ b.disabled=false; b.textContent=d.button.replace('{price}', money(payTotal())); } PAY.showErr(m); }
+    PAY.elements.submit().then(function(r){
+      if(r.error) throw {shown:r.error.message};
+      return fetch(CFG.pay_endpoint, {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({lid:S.lead, express:!!S.express})})
+        .then(function(x){ return x.json(); });
+    }).then(function(j){
+      if(!j || !j.client_secret) throw {shown:d.error_load};
+      var back=location.href.split('#')[0].split('?')[0].replace(/[^\/]*$/, '')+'api/paid.php';
+      return PAY.stripe.confirmPayment({elements:PAY.elements, clientSecret:j.client_secret, redirect:'if_required',
+        confirmParams:{return_url:back, receipt_email:S.email}});
+    }).then(function(r){
+      if(r.error) throw {shown:r.error.message || d.error};
+      psTrack('ps_paid'); try{ sessionStorage.removeItem('ps_answers'); }catch(e){}
+      location.href='api/paid.php?payment_intent='+encodeURIComponent(r.paymentIntent.id);
+    }).catch(function(e){ stop((e && e.shown) || d.error); });
+  }
+
+  /* ClickMagick's visitor id, once cmc.js has filled it into the hidden link; '' when it has not */
+  function visitorId(){
+    var v=document.getElementById('lnk-vid'); if(!v) return '';
+    var m=/[?&]vtid=(cmc[A-Za-z0-9]+)/.exec(v.href); return m ? m[1] : '';
   }
   function goCheckout(){
     var link=document.getElementById('lnk-checkout');
@@ -813,6 +965,14 @@ var CFG = {{CFG_JSON}};
        Verified 2026-10-08: ClickBank's order form reads &email= and populates
        the field; name parameters (fullName, cardHolderName) are ignored. */
     psTrack('ps_checkout');
+    if(CFG.pay==='stripe'){
+      /* Stripe payment link: her lead id comes back on the paid session as client_reference_id, and her email is filled in */
+      var xl=document.getElementById('lnk-checkout-express');
+      if(S.express && xl){ psTrack('ps_checkout_express'); link=xl; }
+      location.href = link.href + '?' + [S.lead ? 'client_reference_id=' + encodeURIComponent(S.lead) : '',
+                                         S.email ? 'prefilled_email=' + encodeURIComponent(S.email) : ''].filter(Boolean).join('&');
+      return;
+    }
     location.href = link.href
       + (S.lead ? '&lid=' + encodeURIComponent(S.lead) : '')
       + (S.email ? '&email=' + encodeURIComponent(S.email) : '');
@@ -883,6 +1043,7 @@ var TRACKS = {{TRACKS_JSON}};
     if(loaded !== i){ A.src = TRACKS[i].src; loaded = i; }
     cur = i; A.play().catch(function(){}); paint(); psTrack('ps_sample_play');
   }
+  window.psPlay = play; window.psPause = function(){ A.pause(); };     /* for the sample on the form's Pay step */
   A.addEventListener('play', paint); A.addEventListener('pause', paint);
   A.addEventListener('ended', function(){ A.currentTime = 0; paint(); });
   A.addEventListener('timeupdate', function(){

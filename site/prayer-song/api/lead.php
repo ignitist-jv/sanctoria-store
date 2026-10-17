@@ -33,7 +33,7 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     ps_json_out(['ok' => false, 'error' => 'email'], 422);
 }
 $buyer = (string) ($in['buyer'] ?? '');
-$lid = ps_save_lead($answers, $email, $buyer);
+$lid = ps_save_lead($answers, $email, $buyer, (string) ($in['vid'] ?? ''));
 
 // Completing an order that was paid for before the survey was filled in.
 $order = (string) ($in['order'] ?? '');
