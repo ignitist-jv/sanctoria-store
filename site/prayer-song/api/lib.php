@@ -60,6 +60,10 @@ function ps_config(): array
         'admin_hash'     => '',            // password_hash() of the admin page password. Empty = the admin page does not exist
         // ClickMagick: each Stripe sale is reported server to server with the buyer's visitor id, so ClickMagick (and the
         // Meta conversions it sends) know which ad made it. ClickBank sales reach ClickMagick by ClickBank's own feed instead.
+        // Drip (TS, 2026-10-17): every lead who reaches the Pay step, and every buyer, is copied to Drip by the worker, in the
+        // background. The token lives only in config.php on the server. Tags and field names are created by Drip on first use.
+        'drip'           => ['token' => '', 'account' => '4334334', 'url' => 'https://api.getdrip.com/v2/{account}/subscribers',
+                             'tag_lead' => 'prayer-song-lead', 'tag_buyer' => 'prayer-song-buyer'],
         // The Sales Endpoint URL from ClickMagick, Tools, Webhooks, Incoming (confirmed by TS's screenshot 2026-10-17).
         'clickmagick'    => ['postback' => 'https://www.clkmg.com/api/s/post/', 'uid' => '92654', 'ref' => 'sale', 'project' => 'Sanctoria Store'],
         'kit'            => ['api_key' => null, 'tag_lead' => null, 'tag_buyer' => 24391266,   // Kit tag sanctoria-prayersong-1
@@ -89,6 +93,8 @@ function ps_config(): array
     if (($v = getenv('PS_ADMIN_HASH')) !== false && $v !== '') { $c['admin_hash'] = $v; }
     if (($v = getenv('PS_ABANDON_SINCE')) !== false && $v !== '') { $c['kit']['abandon']['since'] = (int) $v; }
     if (($v = getenv('PS_ABANDON_AFTER')) !== false && $v !== '') { $c['kit']['abandon']['after'] = array_map('intval', explode(',', $v)); }
+    if (($v = getenv('PS_DRIP_TOKEN')) !== false && $v !== '') { $c['drip']['token'] = $v; }
+    if (($v = getenv('PS_DRIP_URL')) !== false && $v !== '') { $c['drip']['url'] = $v; }
     if (($v = getenv('PS_CM_POSTBACK')) !== false && $v !== '') { $c['clickmagick']['postback'] = $v; }
     if (($v = getenv('PS_STRIPE_SK')) !== false && $v !== '') { $c['stripe']['secret_key'] = $v; }
     if (($v = getenv('PS_STRIPE_WHSEC')) !== false && $v !== '') { $c['stripe']['webhook_secret'] = $v; }
@@ -259,6 +265,7 @@ function ps_save_lead(array $answers, string $email, string $buyer, string $vid 
     if ($email !== '') {
         file_put_contents(ps_data('idx/email-' . ps_email_key($email)), $lid, LOCK_EX);   // latest lead for this address
     }
+    @touch(ps_data("idx/drip-lead-$lid"));          // the worker copies it to Drip (ps_drip_pass)
     return $lid;
 }
 
@@ -469,6 +476,7 @@ function ps_order_for_stripe_session(array $cs, string $via): ?string
     $name = (string) ($cs['customer_details']['name'] ?? '');
     $token = ps_order_for_receipt($receipt, $s['item'], $email, $name, $lid !== '' ? $lid : null, $via);
     ps_report_sale($token, (int) ($cs['amount_total'] ?? 0));
+    @touch(ps_data("idx/drip-buyer-$token"));
     return $token;
 }
 
@@ -489,6 +497,7 @@ function ps_order_for_stripe_pi(array $pi, string $via): ?string
     $token = ps_order_for_receipt((string) $pi['id'], ps_config()['stripe']['item'], (string) ($pi['receipt_email'] ?? ''), '',
         $lid !== '' ? $lid : null, $via);
     ps_report_sale($token, (int) ($pi['amount_received'] ?? ($pi['amount'] ?? 0)));
+    @touch(ps_data("idx/drip-buyer-$token"));
     return $token;
 }
 

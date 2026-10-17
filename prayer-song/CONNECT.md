@@ -151,3 +151,9 @@ TS chose Stripe instead of ClickBank for this product only. Stripe account: Igni
 - Someone who reaches the Pay step and does not pay gets up to three emails: 1 hour, 1 day, 3 days after. The worker sends each by adding her to a single-email Kit sequence (2932904, 2932905, 2932907) only while she still has no order; a newer form for the same email replaces the old one. Copy: `copy/07-abandoned-checkout.md`.
 - Kit: tag `sanctoria-prayersong-lead` (24734384) marks who was reminded; field `prayer_song_resume_link` holds `https://sanctoriastore.com/prayer-song/?resume=<lead id>`, which reopens her saved answers at the Pay step (`api/resume.php`), or her song page if she has bought.
 - On/off: `kit.abandon.since` in the server's config.php (0 = off). Only forms filled in after that time are reminded.
+
+### Drip (from 2026-10-17)
+- Drip account 4334334 "Sanctoria store". The token is only in the server's config.php (`drip.token`) and `.env` (DRIP_API_TOKEN).
+- Every new lead (form reaches the Pay step) is copied to Drip with tag `prayer-song-lead` and fields prayer_song_for, prayer_song_intention, prayer_song_resume_link. Every Stripe buyer gets tag `prayer-song-buyer` and field prayer_song_link. Non-buyers = tag prayer-song-lead without prayer-song-buyer.
+- Done by the worker each minute from marker files (idx/drip-lead-*, idx/drip-buyer-*); retried until Drip accepts, dropped after a day.
+- The Kit reminder emails stay on. If reminders are later built in Drip, switch Kit's off first (kit.abandon.since = 0), or people get two sets.

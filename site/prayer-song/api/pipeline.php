@@ -578,6 +578,45 @@ function ps_send_reminder(array $l, int $stage): array
     return [$c3 >= 200 && $c3 < 300, "kit sequence $c3"];
 }
 
+/** Copy new leads and new buyers to Drip. Each waits as a marker file until Drip accepts it; give up after a day. */
+function ps_drip_pass(): void
+{
+    $d = ps_config()['drip'];
+    if ($d['token'] === '') {
+        return;
+    }
+    $phr = ps_copy()['phrases'] ?? [];
+    foreach (glob(ps_data('idx/drip-lead-*')) as $m) {
+        $l = ps_read(ps_data('leads/' . substr(basename($m), 10) . '.json'));
+        if (!$l || empty($l['email'])) { @unlink($m); continue; }
+        $ok = ps_drip_send($l['email'], ($l['answers']['who'] ?? '') === 'myself' ? '' : (string) ($l['buyer'] ?? ''), [$d['tag_lead']], [
+            'prayer_song_for' => ps_names_text($l['answers'] ?? []),
+            'prayer_song_intention' => (string) ($phr[$l['answers']['intention'] ?? ''] ?? ''),
+            'prayer_song_resume_link' => ps_resume_url($l['lid']),
+        ]);
+        if ($ok || time() - filemtime($m) > 86400) { @unlink($m); }
+        if (!$ok) { ps_log('drip lead ' . $l['lid'] . ': not accepted yet'); }
+    }
+    foreach (glob(ps_data('idx/drip-buyer-*')) as $m) {
+        $o = ps_order(substr(basename($m), 11));
+        if (!$o || empty($o['email'])) { @unlink($m); continue; }
+        $ok = ps_drip_send($o['email'], '', [$d['tag_buyer']], ['prayer_song_link' => ps_song_url($o['token'])]);
+        if ($ok || time() - filemtime($m) > 86400) { @unlink($m); }
+        if (!$ok) { ps_log('drip buyer ' . $o['token'] . ': not accepted yet'); }
+    }
+}
+
+/** Create or update one Drip subscriber with tags and fields. */
+function ps_drip_send(string $email, string $first, array $tags, array $fields): bool
+{
+    $d = ps_config()['drip'];
+    $url = str_replace('{account}', rawurlencode($d['account']), $d['url']);
+    $sub = array_filter(['email' => $email, 'first_name' => $first, 'tags' => $tags, 'custom_fields' => $fields]);
+    [$code] = ps_http('POST', $url, ['Content-Type: application/json', 'Accept: application/json', 'User-Agent: Sanctoria (sanctoriastore.com)',
+        'Authorization: Basic ' . base64_encode($d['token'] . ':')], json_encode(['subscribers' => [$sub]]), 20);
+    return $code >= 200 && $code < 300;
+}
+
 /** Send a made song now instead of waiting for its time. */
 function ps_admin_send_now(array $o): array
 {

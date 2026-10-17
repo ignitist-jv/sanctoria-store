@@ -32,7 +32,8 @@ DATA = Path(tempfile.mkdtemp(prefix="ps-test-data-"))
 ENV = {**os.environ, "PS_DATA_DIR": str(DATA), "PS_MOCK": "1", "PS_BASE_URL": BASE, "PS_CB_SECRET": SECRET, "PS_SEND_AFTER": "0"}
 WHSEC = "whsec_test_not_a_real_secret"
 # the ClickMagick report is pointed back at this test server, which needs a second worker to answer while it waits
-ENV.update({"PHP_CLI_SERVER_WORKERS": "4", "PS_CM_POSTBACK": BASE + "/api/status.php?health=1", "PS_STRIPE_WHSEC": WHSEC, "PS_STRIPE_LINKS": json.dumps({"plink_song": "song", "plink_express": "express"})})
+ENV.update({"PHP_CLI_SERVER_WORKERS": "4", "PS_CM_POSTBACK": BASE + "/api/status.php?health=1",
+            "PS_DRIP_TOKEN": "drip-test-token", "PS_DRIP_URL": BASE + "/api/status.php?health=1&a={account}", "PS_STRIPE_WHSEC": WHSEC, "PS_STRIPE_LINKS": json.dumps({"plink_song": "song", "plink_express": "express"})})
 
 
 def stripe_event(etype, obj, secret=WHSEC, age=0):
@@ -463,6 +464,14 @@ def main():
               "receipt_email": "unfinished2@example.com", "metadata": {"offer": "prayersong", "flow": "embed", "lid": a2["lead"], "express": "0", "vid": ""}})
         wk2()
         check("once she buys, no reminder is sent", ld(a2["lead"]).get("reminded") == 3)
+        wk()                                                   # clear anything already waiting
+        dlead = lead("drip-check@example.com", "Agnes")
+        stripe_event("payment_intent.succeeded", {"id": "pi_test_drip888", "object": "payment_intent", "status": "succeeded",
+              "receipt_email": "drip-buyer@example.com", "metadata": {"offer": "prayersong", "flow": "embed", "lid": "", "express": "0", "vid": ""}})
+        dl = (DATA / "idx" / f"drip-lead-{dlead['lead']}"); db = list((DATA / "idx").glob("drip-buyer-*"))
+        wk()
+        check("every new lead and every buyer is queued for Drip, and the worker sends them",
+              len(db) == 1 and not dl.exists() and not list((DATA / "idx").glob("drip-buyer-*")) and dl.parent.exists())
         r1 = requests.get(f"{BASE}/api/resume.php", params={"l": a1["lead"]}).json()
         r2 = requests.get(f"{BASE}/api/resume.php", params={"l": a2["lead"]}).json()
         check("the reminder link gives back her answers, or her song page if she has bought",
