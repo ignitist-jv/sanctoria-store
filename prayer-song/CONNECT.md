@@ -146,3 +146,8 @@ TS chose Stripe instead of ClickBank for this product only. Stripe account: Igni
 - ClickMagick: each Stripe sale is posted to `https://www.clkmg.com/api/s/post/?uid=92654&s1=<cmc visitor id>&amt=<dollars>&ref=sale` once per order (`cm_reported` on the order). ClickMagick's own Stripe integration only covers subscriptions. Refunds are not reported to ClickMagick (no documented refund postback found).
 - Stripe buyers get both Kit tags at delivery: sanctoria-prayersong-1 and sanctoria-buyer.
 - Not yet proven live: a real purchase and refund (TS to do one), and that ClickMagick forwards the ref=sale conversions to Meta.
+
+### Unfinished order reminders (on since 2026-10-17 19:35 SGT)
+- Someone who reaches the Pay step and does not pay gets up to three emails: 1 hour, 1 day, 3 days after. The worker sends each by adding her to a single-email Kit sequence (2932904, 2932905, 2932907) only while she still has no order; a newer form for the same email replaces the old one. Copy: `copy/07-abandoned-checkout.md`.
+- Kit: tag `sanctoria-prayersong-lead` (24734384) marks who was reminded; field `prayer_song_resume_link` holds `https://sanctoriastore.com/prayer-song/?resume=<lead id>`, which reopens her saved answers at the Pay step (`api/resume.php`), or her song page if she has bought.
+- On/off: `kit.abandon.since` in the server's config.php (0 = off). Only forms filled in after that time are reminded.
