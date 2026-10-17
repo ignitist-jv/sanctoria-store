@@ -95,7 +95,8 @@ def lead(email, name, **kw):
 
 
 def main():
-    server = subprocess.Popen(["php", "-S", f"localhost:{PORT}", "-t", str(REPO / "site")], env=ENV,
+    # its own process group, so the extra PHP workers are stopped with it (a leftover worker would answer the next run)
+    server = subprocess.Popen(["php", "-S", f"localhost:{PORT}", "-t", str(REPO / "site")], env=ENV, start_new_session=True,
                               stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     try:
         for _ in range(40):
@@ -429,8 +430,8 @@ def main():
         pi = {"id": "pi_test_embed444", "object": "payment_intent", "status": "succeeded", "receipt_email": "stripe4@example.com",
               "metadata": {"offer": "prayersong", "flow": "embed", "lid": s4["lead"], "express": "1", "vid": ""}}
         stripe_event("payment_intent.succeeded", pi)
-        check("each Stripe sale is reported to ClickMagick once when there is a visitor id, and noted when there is none",
-              od(tok_of("pi_test_333")).get("cm_reported") == "yes" and od(tok_of("pi_test_111")).get("cm_reported") == "no visitor id")
+        check("each Stripe sale is reported to ClickMagick once, by visitor id, or by email when there is none",
+              od(tok_of("pi_test_333")).get("cm_reported") == "yes" and od(tok_of("pi_test_111")).get("cm_reported") == "yes, by email")
         check("a payment made in the form's own Pay step becomes an express order with her answers",
               od(tok_of("pi_test_embed444"))["answers"]["name"] == "Monica" and od(tok_of("pi_test_embed444")).get("express") is True)
         stripe_event("payment_intent.succeeded", {**pi, "id": "pi_test_link555", "metadata": {"offer": "prayersong"}})
@@ -456,7 +457,10 @@ def main():
             print(f"\nServer left running. Song page: {BASE}/s/?k={tok_a}\nData: {DATA}\nCtrl+C to stop.")
             server.wait()
     finally:
-        server.terminate()
+        try:
+            os.killpg(server.pid, 15)
+        except ProcessLookupError:
+            pass
         if "--keep" not in sys.argv:
             subprocess.run(["rm", "-rf", str(DATA)])
     sys.exit(0 if all(results) else 1)

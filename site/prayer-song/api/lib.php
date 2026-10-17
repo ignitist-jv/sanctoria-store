@@ -60,7 +60,8 @@ function ps_config(): array
         'admin_hash'     => '',            // password_hash() of the admin page password. Empty = the admin page does not exist
         // ClickMagick: each Stripe sale is reported server to server with the buyer's visitor id, so ClickMagick (and the
         // Meta conversions it sends) know which ad made it. ClickBank sales reach ClickMagick by ClickBank's own feed instead.
-        'clickmagick'    => ['postback' => 'https://www.clkmg.com/api/s/post/', 'uid' => '92654', 'ref' => 'sale'],
+        // The Sales Endpoint URL from ClickMagick, Tools, Webhooks, Incoming (confirmed by TS's screenshot 2026-10-17).
+        'clickmagick'    => ['postback' => 'https://www.clkmg.com/api/s/post/', 'uid' => '92654', 'ref' => 'sale', 'project' => 'Sanctoria Store'],
         'kit'            => ['api_key' => null, 'tag_lead' => null, 'tag_buyer' => 24391266,   // Kit tag sanctoria-prayersong-1
                              'tag_all_buyers' => 22564421,                                     // Kit tag sanctoria-buyer, shared by every Sanctoria offer
                              'seq_ready' => 2917156, 'seq_delay' => 2917157,
@@ -421,15 +422,19 @@ function ps_report_sale(string $token, int $cents): void
             return;
         }
         $cm = ps_config()['clickmagick'];
+        // s1 is the visitor id, or her email when there is none; cmc_project files an unmatched sale as organic
+        // instead of dropping it (ClickMagick KB 793).
         $vid = (string) ($o['vid'] ?? '');
-        if ($vid === '') {
-            $o['cm_reported'] = 'no visitor id';
-            ps_note($o, 'ClickMagick: not reported, no visitor id');
+        $s1 = $vid !== '' ? $vid : (string) ($o['email'] ?? '');
+        if ($s1 === '') {
+            $o['cm_reported'] = 'no visitor id or email';
+            ps_note($o, 'ClickMagick: not reported, no visitor id or email');
         } else {
             $url = $cm['postback'] . (strpos($cm['postback'], '?') === false ? '?' : '&')
-                 . http_build_query(['uid' => $cm['uid'], 's1' => $vid, 'amt' => number_format($cents / 100, 2, '.', ''), 'ref' => $cm['ref']]);
+                 . http_build_query(['uid' => $cm['uid'], 's1' => $s1, 'ref' => $cm['ref'], 'amt' => number_format($cents / 100, 2, '.', ''),
+                                     'cmc_currency' => 'USD', 'cmc_project' => $cm['project']]);
             [$code] = ps_http('GET', $url, [], null, 15);
-            $o['cm_reported'] = $code >= 200 && $code < 300 ? 'yes' : "failed ($code)";
+            $o['cm_reported'] = ($code >= 200 && $code < 300 ? 'yes' : "failed ($code)") . ($vid === '' ? ', by email' : '');
             ps_note($o, "ClickMagick sale report: {$o['cm_reported']}, " . number_format($cents / 100, 2));
         }
         ps_save_order($o);
