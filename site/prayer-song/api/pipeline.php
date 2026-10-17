@@ -507,6 +507,77 @@ function ps_admin_review_public(array $o, bool $show): array
     return [true, ($show ? 'now on the reviews page' : 'taken off the reviews page') . " ($n showing)"];
 }
 
+/**
+ * Send the reminders that are due. Only the latest form per email counts, a lead with any order is skipped, and each
+ * reminder is sent once (its number is kept on the lead). Never sends anything older than 'max_age'.
+ */
+function ps_abandon_pass(): void
+{
+    $k = ps_config()['kit'];
+    $a = $k['abandon'] ?? null;
+    if (!$a || empty($a['since']) || (!ps_config()['mock'] && (empty($k['api_key']) || ps_config()['mail']['driver'] !== 'kit'))) {
+        return;
+    }
+    $now = time();
+    foreach (glob(ps_data('leads/*.json')) as $f) {
+        if ($now - filemtime($f) > $a['max_age'] + 86400) {
+            continue;                                   // untouched for days: cheap skip without reading it
+        }
+        $lid = basename($f, '.json');
+        ps_locked("lead-$lid", function () use ($f, $lid, $a, $now) {
+            $l = ps_read($f);
+            if (!$l || empty($l['email']) || $now - (int) $l['created'] > $a['max_age'] || (int) $l['created'] < (int) $a['since']) {
+                return;
+            }
+            $stage = (int) ($l['reminded'] ?? 0);
+            if ($stage >= count($a['seqs']) || $now - (int) $l['created'] < (int) $a['after'][$stage]) {
+                return;
+            }
+            $latest = trim((string) @file_get_contents(ps_data('idx/email-' . ps_email_key($l['email']))));
+            if ($latest !== $lid || ps_lead_order($l)) {
+                $l['reminded'] = count($a['seqs']);      // a newer form, or she bought: no more reminders for this one
+                ps_write($f, $l);
+                return;
+            }
+            [$ok, $why] = ps_send_reminder($l, $stage);
+            ps_log("reminder " . ($stage + 1) . " lead=$lid: " . ($ok ? 'sent' : "NOT sent ($why)"));
+            if ($ok) {
+                $l['reminded'] = $stage + 1;
+                ps_write($f, $l);
+            }
+        });
+    }
+}
+
+/** One reminder through Kit: her fields (who the song is for, the resume link), the tag, then the reminder's sequence. */
+function ps_send_reminder(array $l, int $stage): array
+{
+    $k = ps_config()['kit'];
+    $a = $k['abandon'];
+    if (ps_config()['mock']) {
+        return [true, 'mock'];
+    }
+    $h = ['Content-Type: application/json', 'Accept: application/json', 'X-Kit-Api-Key: ' . $k['api_key']];
+    $buyer = ($l['answers']['who'] ?? '') === 'myself' ? '' : (string) ($l['buyer'] ?? '');
+    [$c1, $b1] = ps_http('POST', 'https://api.kit.com/v4/subscribers', $h,
+        json_encode(array_filter(['email_address' => $l['email'], 'first_name' => $buyer])), 20);
+    $id = json_decode($b1, true)['subscriber']['id'] ?? null;
+    if (!$id) {
+        return [false, "kit subscriber $c1"];
+    }
+    $url = ps_resume_url($l['lid']);
+    $fields = [($k['fields']['name'] ?? 'prayer_song_for') => ps_names_text($l['answers'] ?? []), $a['field_resume'] => $url];
+    [$c2, $b2] = ps_http('PUT', "https://api.kit.com/v4/subscribers/$id", $h, json_encode(['fields' => $fields]), 20);
+    if (($c2 < 200 || $c2 >= 300) || (json_decode($b2, true)['subscriber']['fields'][$a['field_resume']] ?? null) !== $url) {
+        return [false, "kit fields $c2, link not stored"];                // never send a reminder with an empty link
+    }
+    if (!empty($a['tag'])) {
+        ps_http('POST', "https://api.kit.com/v4/tags/{$a['tag']}/subscribers", $h, json_encode(['email_address' => $l['email']]), 20);
+    }
+    [$c3, $b3] = ps_http('POST', "https://api.kit.com/v4/sequences/{$a['seqs'][$stage]}/subscribers", $h, json_encode(['email_address' => $l['email']]), 20);
+    return [$c3 >= 200 && $c3 < 300, "kit sequence $c3"];
+}
+
 /** Send a made song now instead of waiting for its time. */
 function ps_admin_send_now(array $o): array
 {

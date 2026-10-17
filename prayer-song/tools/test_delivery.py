@@ -444,6 +444,31 @@ def main():
         check("back from Stripe with a session that cannot be confirmed: a thank you page, never 'not found'",
               pr.status_code == 302 and "/s/?thanks=1" in pr.headers.get("Location", "") and "find=1" in junk.headers.get("Location", ""))
 
+        print("\n15. Unfinished orders: reminders and the resume link")
+        off = subprocess.run(["php", str(REPO / "site/prayer-song/api/worker.php")], env={**ENV, "PS_ABANDON_AFTER": "0,0,0"}, capture_output=True, text=True)
+        due = {**ENV, "PS_ABANDON_AFTER": "0,0,0", "PS_ABANDON_SINCE": str(int(time.time()) - 600)}
+        wk2 = lambda: subprocess.run(["php", str(REPO / "site/prayer-song/api/worker.php")], env=due, capture_output=True, text=True).stdout
+        ld = lambda lid: json.loads((DATA / "leads" / f"{lid}.json").read_text())
+        a1 = lead("unfinished@example.com", "Teresa")
+        b1 = lead("stripe2@example.com", "Kateri")             # this address already bought (pi_test_222 above)
+        subprocess.run(["php", str(REPO / "site/prayer-song/api/worker.php")], env={**ENV, "PS_ABANDON_AFTER": "0,0,0"}, capture_output=True)
+        check("reminders are off until a start time is set", "reminded" not in ld(a1["lead"]))
+        wk2()
+        check("someone who stopped at payment gets the first reminder, and a buyer gets none",
+              ld(a1["lead"]).get("reminded") == 1 and ld(b1["lead"]).get("reminded") == 3)
+        wk2(); wk2(); wk2()
+        check("the three reminders go one at a time and stop after the third", ld(a1["lead"]).get("reminded") == 3)
+        a2 = lead("unfinished2@example.com", "Gemma")
+        stripe_event("payment_intent.succeeded", {"id": "pi_test_after777", "object": "payment_intent", "status": "succeeded",
+              "receipt_email": "unfinished2@example.com", "metadata": {"offer": "prayersong", "flow": "embed", "lid": a2["lead"], "express": "0", "vid": ""}})
+        wk2()
+        check("once she buys, no reminder is sent", ld(a2["lead"]).get("reminded") == 3)
+        r1 = requests.get(f"{BASE}/api/resume.php", params={"l": a1["lead"]}).json()
+        r2 = requests.get(f"{BASE}/api/resume.php", params={"l": a2["lead"]}).json()
+        check("the reminder link gives back her answers, or her song page if she has bought",
+              r1.get("name") == "Teresa" and r1.get("email") == "unfinished@example.com" and "/s/?k=" in (r2.get("song") or "")
+              and requests.get(f"{BASE}/api/resume.php", params={"l": "0" * 32}).status_code == 404)
+
         held = S.get(adm, params={"o": tok_a})
 
         S.post(adm, data={"act": "logout", "csrf": csrf_of(held.text)})

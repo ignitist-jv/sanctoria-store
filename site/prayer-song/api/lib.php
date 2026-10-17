@@ -64,6 +64,12 @@ function ps_config(): array
         'clickmagick'    => ['postback' => 'https://www.clkmg.com/api/s/post/', 'uid' => '92654', 'ref' => 'sale', 'project' => 'Sanctoria Store'],
         'kit'            => ['api_key' => null, 'tag_lead' => null, 'tag_buyer' => 24391266,   // Kit tag sanctoria-prayersong-1
                              'tag_all_buyers' => 22564421,                                     // Kit tag sanctoria-buyer, shared by every Sanctoria offer
+                             // Unfinished orders (TS, 2026-10-17): someone who reached the Pay step and did not pay gets up to three
+                             // reminders. The worker sends each one only while she still has no order, so a buyer never gets a later one.
+                             // One single-email sequence per reminder; the tag marks who has been reminded.
+                             'abandon' => ['after' => [3600, 86400, 259200], 'seqs' => [2932904, 2932905, 2932907],
+                                           'tag' => 24734384, 'field_resume' => 'prayer_song_resume_link', 'max_age' => 345600,
+                                           'since' => 0],     // 0 = off. Set to a time (in config.php) to remind only forms filled in after it
                              'seq_ready' => 2917156, 'seq_delay' => 2917157,
                              'from_email' => 'admin@sanctoriastore.com',        // the address the Kit emails are sent from: shown to the buyer so she can look for it          // Kit sequence ids, used when mail driver is "kit"
                              'fields' => ['url' => 'prayer_song_link', 'title' => 'prayer_song_title',
@@ -81,6 +87,8 @@ function ps_config(): array
     if (($v = getenv('PS_ELEVENLABS_KEY')) !== false && $v !== '') { $c['elevenlabs_key'] = $v; }
     if (($v = getenv('PS_ANTHROPIC_KEY')) !== false && $v !== '') { $c['anthropic_key'] = $v; }
     if (($v = getenv('PS_ADMIN_HASH')) !== false && $v !== '') { $c['admin_hash'] = $v; }
+    if (($v = getenv('PS_ABANDON_SINCE')) !== false && $v !== '') { $c['kit']['abandon']['since'] = (int) $v; }
+    if (($v = getenv('PS_ABANDON_AFTER')) !== false && $v !== '') { $c['kit']['abandon']['after'] = array_map('intval', explode(',', $v)); }
     if (($v = getenv('PS_CM_POSTBACK')) !== false && $v !== '') { $c['clickmagick']['postback'] = $v; }
     if (($v = getenv('PS_STRIPE_SK')) !== false && $v !== '') { $c['stripe']['secret_key'] = $v; }
     if (($v = getenv('PS_STRIPE_WHSEC')) !== false && $v !== '') { $c['stripe']['webhook_secret'] = $v; }
@@ -525,6 +533,23 @@ function ps_mark_express(string $receipt): void
             });
         }
     }
+}
+
+/** The order made from this lead, or any order for her email since she filled the form in. Null if she has not bought. */
+function ps_lead_order(array $lead): ?array
+{
+    foreach (ps_orders_for_email((string) ($lead['email'] ?? '')) as $o) {
+        if (($o['lid'] ?? '') === ($lead['lid'] ?? '-') || (int) $o['created'] >= (int) $lead['created'] - 86400) {
+            return $o;
+        }
+    }
+    return null;
+}
+
+/** The link in the reminder emails: opens the form with her saved answers, straight at the Pay step. */
+function ps_resume_url(string $lid): string
+{
+    return ps_config()['base_url'] . '/?resume=' . $lid;
 }
 
 /** List an order under its buyer's email, so "find my song" can resend her links. */

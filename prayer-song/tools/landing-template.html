@@ -997,6 +997,18 @@ var CFG = {{CFG_JSON}};
     }).catch(function(){});
   })();
   var app=document.querySelector('.app');
+  /* From a reminder email: ?resume=<lead id> reopens her saved answers at the Pay step (or her song page if she has bought). */
+  (function(){
+    var m=/[?&]resume=([a-f0-9]{32})/.exec(location.search); if(!m) return;
+    fetch('api/resume.php?l='+m[1], {cache:'no-store'}).then(function(r){ return r.json(); }).then(function(j){
+      if(!j || !j.ok) return;
+      if(j.song){ location.href=j.song; return; }
+      ['who','name','phon','name2','who2','intention','note','style','voice','email','buyer','lead'].forEach(function(k){ if(j[k]!==undefined) S[k]=j[k]; });
+      save(); psTrack('ps_resume');
+      var last=STEPS.indexOf('pay'); at = last>-1 ? last : STEPS.length-1;
+      openSurvey();
+    }).catch(function(){});
+  })();
   function openSurvey(){ psTrack('ps_form_open'); $('landing').hidden=true; $('survey').hidden=false; app.classList.add('forming'); render(); window.scrollTo(0,0); }
   /* a section counts as seen once its top passes the middle of the screen */
   var seeLeft = Array.prototype.slice.call(document.querySelectorAll('section[data-s]')), seeAt = 0;

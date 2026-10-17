@@ -83,6 +83,9 @@ foreach (glob(ps_data('wait/*')) as $w) {
     });
 }
 
+// Unfinished orders: reminders for people who reached the Pay step and did not pay (see 'abandon' in lib.php).
+ps_abandon_pass();
+
 touch(ps_data('idx/worker-ran'));          // lets doctor.php see that cron is calling us
 
 // Take a slot, or leave if all are busy.
