@@ -1,6 +1,6 @@
 ## STEP: basics
-H: First, the name
-SUB: Each prayer song is sung by first name. Whose will this one carry?
+H: The name and the prayer
+SUB: Who the song is for, the first name to be sung, and the one intention it will carry.
 LABEL_WHO: The one being prayed for
 OPTION: Husband | husband
 OPTION: Wife | wife
@@ -43,8 +43,10 @@ TIP_NOTE: A line or two is plenty. No private or medical details are needed.
 ERROR: Please choose what the prayer is for.
 
 ## STEP: sound
-H: How it should sound
-SUB: Choose the music that suits them. Every style is prayerful and unhurried.
+H: The sound, and where to send it
+SUB: The music for {name} is already chosen. All that is left is the email address for the song.
+SOUND_DEFAULT: A traditional hymn, with the voice chosen to suit it.
+CHANGE_SOUND: Choose different music or voice (optional)
 LABEL_STYLE: The music
 OPTION: Traditional hymn | hymn
 OPTION: Gentle guitar | acoustic
@@ -87,13 +89,11 @@ SUMMARY_TITLE: The prayer song
 SUMMARY_LINE: For {name}. A prayer for {intention_phrase}, sung as {style_phrase}.
 SUMMARY_LINE_TWO: For {name}, both by name. A prayer for {intention_phrase}, sung as {style_phrase}.
 BUTTON: Continue To Payment
-PRICE_BADGE: 70% off today
-PRICE_WAS: $129
 PRICE_NOW: $39
 
 ## STEP: pay
 H: Last step: payment
-SUB: Once this is done, the prayer song for {name} is on its way.
+SUB: Once this is done, the song for {name} is on its way, within 24 hours.
 DIVIDER: Or pay by card
 BUTTON: Pay {price}
 BUTTON_BUSY: Processing payment...
@@ -103,8 +103,8 @@ ERROR_LOAD: The payment form did not load. Please refresh the page, or email sup
 
 ## UI
 BACK: Back
-NEXT: Continue
-STEP_NAMES: Who | Prayer | Sound | Send | Pay
+NEXT: Continue To The Music
+STEP_NAMES: Name | Song | Pay
 STEP_OF: Step {n} of {total}
 COMPLETE: {pct}% Complete
 AGREE: By continuing, you agree to the Terms and Privacy Policy.
@@ -199,3 +199,23 @@ choir: a sacred choir hymn
    The new send BUTTON reads "Continue To Payment" (19 characters, limit 26), since pressing it now opens the Pay step inside the form instead of leaving the site.
    The express keys (EXPRESS_LABEL, EXPRESS_NOTE, ROW_DELIVERY_EXPRESS, PRICE_TOTAL_LABEL) stay in the send block of this file so no key moves under the parser; the build shows them on the Pay step's price summary. If the parser reads keys by step, move those four lines into the pay block unchanged. The box must still start unticked.
    SUB says the song "is on its way" and promises nothing about what the song will do; the delivery times stay with DELIVERY_PILL, ROW_DELIVERY_VALUE and ROW_DELIVERY_EXPRESS. SECURE names Stripe and does not claim Sanctoria never sees card details; that is true and may be added if room allows, but the line is kept short. No line names a person who makes or sings the song.
+
+16. 2026-10-18, three screen form (TS approved, conversion revision alongside the landing page rewrite). Five screens become three:
+   Screen 1 shows the basics and prayer fields together under the basics H and SUB. The prayer step's H and SUB are no longer shown and were left in place so the parser still finds them.
+   Screen 2 shows the sound step, with the music already chosen by default, then the send step's email and first name fields. Two new keys in the sound step: SOUND_DEFAULT (52 characters, limit 80) and CHANGE_SOUND (the fold-away link, 42 characters). The sound TIP is unchanged word for word, because it carries the statement that the voice is synthetic. The send step's H ("Almost there") and SUB are not on screen 2 under this layout; they are kept in case the builder shows them above the email fields.
+   Screen 3 is the pay step.
+   send PRICE_BADGE and PRICE_WAS deleted: the $129 was never charged, it was an invented reference price and must never be restored. PRICE_NOW stays. The note 14 worry about "Total today" sitting near "70% off today" no longer applies.
+   send BUTTON kept as "Continue To Payment" (19 characters); it already names the next thing plainly.
+   pay SUB now repeats the delivery promise, "within 24 hours". With the express box ticked that stays true (one hour is within 24). The song, not {name}, is the subject; the same holds in the sound SUB, where the music is the subject.
+   NEXT is now "Continue To The Music" (21 characters), naming what screen 2 opens with.
+   Character counts: basics H 23, sound H 32 (under the 34 of note 1).
+   Changed lines, with the old wording to restore:
+   H (basics): First, the name
+   SUB (basics): Each prayer song is sung by first name. Whose will this one carry?
+   H (sound): How it should sound
+   SUB (sound): Choose the music that suits them. Every style is prayerful and unhurried.
+   SUB (pay): Once this is done, the prayer song for {name} is on its way.
+   NEXT: Continue
+   STEP_NAMES: Who | Prayer | Sound | Send | Pay
+   Deleted for good, recorded only so the history is complete: PRICE_BADGE: 70% off today, PRICE_WAS: $129 (send step).
+   Note 7 said the old sound SUB promised every style is "prayerful and unhurried". That line is gone from the form, so the slow render requirement for gospel and country is no longer a stated promise, though it is still the right standard.

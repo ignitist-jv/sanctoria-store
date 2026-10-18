@@ -1,15 +1,37 @@
 ## SECTION: hero
-EYEBROW: Custom prayer songs, made by name
-H1: God Wants You To Have His Songs
-SUB: Give a husband, a son, a mother or a grandchild an original prayer song with their first name in every chorus, built on a verse of Scripture. It arrives by email within 24 hours.
-CTA: Begin My Prayer Song
-MICRO: A short form first, about a minute. $39, one time, at checkout.
+EYEBROW: Your Prayer Song, from Sanctoria
+H1: A Prayer Song With A Loved One's Name In Every Chorus
+SUB: An original song of about four minutes, for a husband, a son, a mother or a grandchild, with the prayer built on one verse of Scripture. Sent by email within 24 hours.
+CTA: Have Their Name Sung
+MICRO: Three short steps, about a minute. Then $39, one time.
 TRUST: Sent within 24 hours | 30 day full refund | Built on a verse of Scripture
 TOPBAR: Sung by name, sent with care within 24 hours.
 NAV_CTA: Begin My Song
 LISTEN: Hear A Sample
 GUARANTEE_SEAL: 100% | Guaranteed
 GUARANTEE_CARD: Love it, or every cent comes back. | 30 day full refund. One email is all it takes.
+
+## SECTION: devotion
+H2: Some names are prayed for years. That is not a failure.
+P: Many women have carried one name in prayer for years: a son, a husband, a mother. Some quietly wonder whether asking again, after so long, shows too little faith.
+P: It does not. Saint Monica prayed for her son for many years, and the Church honours her for the praying. Long prayer is the usual way of it, not a sign that something went wrong.
+P: A prayer song is that same returning, in a form that keeps. It can be played again tomorrow morning, and the morning after, with the name sung each time.
+PULL: Coming back to the same name is the devotion.
+
+## SECTION: promise
+H2: We cannot promise what God will do. We promise the song.
+P: Nobody can honestly promise a healing, a return or an answer. What can be promised is something to hear and to keep, made exactly as described below.
+EXCERPT: Lead Daniel home, Lord, lead him home
+EXCERPT: Down whatever road he's on
+EXCERPT: When he was yet a great way off
+EXCERPT: His father saw him, and was moved
+EXCERPT: And running to him, fell upon his neck
+EXCERPT: Lord, be that Father to my son
+EXCERPT_CAPTION: From the chorus and the bridge of Lead Daniel Home, a sample song made by Sanctoria. It is not a customer's song.
+FACT: In every chorus | Each name is sung in all three choruses. A song for one name carries it at least six times.
+FACT: One verse of Scripture | The bridge is built on a single verse from the Douay-Rheims Bible, chosen for the intention.
+FACT: About four minutes | One original song, its lyrics written around the name, the intention and the one optional line given in the form.
+FACT: Within 24 hours | Sent by email to a private page, to play, download and keep.
 
 ## SECTION: sample
 H2: Hear what one sounds like
@@ -22,10 +44,10 @@ TAG: A Sample Prayer Song
 
 ## SECTION: how
 H2: How it works
-STEP: Say who it is for | Fill in a short form of four steps: who the song is for, their first name, what the prayer is for, and how it should sound.
-STEP: The prayer is set to music | The lyrics are written around that name and that intention, built on a verse of Scripture, then the song is produced and checked.
-STEP: It arrives within 24 hours | A private page comes by email, with the song to play, download and share, and every word of the lyrics.
-CTA: Begin My Prayer Song
+STEP: The name and the prayer | Who the song is for, the first name to be sung, and what the prayer is for, with one line to include if wanted.
+STEP: The sound and where to send it | A traditional hymn is already chosen, and it can be changed. Then the email address the song should go to.
+STEP: Payment, then the song | $39, one time. The song is written around that name on a verse of Scripture, and a private page with it arrives by email within 24 hours.
+CTA: Have Their Name Sung
 
 ## SECTION: mechanism
 HIDE: yes
@@ -79,11 +101,9 @@ HIDE: yes
 H2: One prayer song, sung by name
 P: The song, its private page, the full lyrics, and the verse it is built on. With it come the Keepsake Lyric Sheet, the Nine Day Prayer Companion and the Daily Prayer Card.
 P: Commissioning a songwriter to do this would cost many times more.
-PRICE_BADGE: 70% off today
-PRICE_WAS: $129
 PRICE: $39
 PRICE_NOTE: One time. No subscription, nothing to cancel.
-CTA: Begin My Prayer Song
+CTA: Have Their Name Sung
 MICRO: Sent by email within 24 hours. 30 day full refund.
 RISK: Nothing to lose. 30 day full refund.
 
@@ -108,8 +128,8 @@ A: Yes. It may be shared with family and played at church, at a funeral or memor
 ## SECTION: final
 H2: The prayer is already being said. This keeps it.
 P: Many mothers and grandmothers have carried the same name in prayer for years. One song sets that name down, so the prayer can be played and prayed again, by her and by everyone she shares it with.
-P: A short form of four steps begins it, and it takes about a minute. The song arrives within 24 hours, and 30 days stand behind it.
-CTA: Begin My Prayer Song
+P: Three short steps begin it, and they take about a minute. The song arrives within 24 hours, and 30 days stand behind it.
+CTA: Have Their Name Sung
 
 ## SECTION: footer
 MISSION: We believe a prayer that is sung keeps being prayed. So Sanctoria sets a loved one's name and a verse of Scripture into a song, to be kept and prayed again.
@@ -234,3 +254,29 @@ COMPLIANCE NOTES AND THINGS I WAS UNSURE OF
    P (guarantee section, second paragraph, HIDE: yes): The refund is handled through ClickBank, the retailer that processes the order. There are no forms to fill in and no questions to answer.
    Note 7: "30 days, full refund through ClickBank" became "30 days, full refund by one email to support@sanctoriastore.com"; the rest of note 7 is unchanged.
    The new line names no payment company, so it will not need changing again if the processor changes. Nothing on the visible page named ClickBank. The Express Song Delivery add-on is offered only on the order summary (02-survey.md) and is not mentioned on this page; every "within 24 hours" line here stays true.
+
+26. 2026-10-18, conversion revision (TS approved, after about 105 ad clicks at 8 to 26% click-through and no sale). A funnel audit against Votive Society found the headline never said what the product is, the strongest emotional lever was buried, the page sold abstractions, the button described a process, and the form was five screens. Changes:
+   Hero rewritten so a cold visitor from a video ad knows in seven seconds what is sold: a song, a loved one's first name in it, a prayer built on Scripture, sent by email within 24 hours. The H1 carries song and name; the SUB carries Scripture, length and delivery. It is written to read as the next line after each live ad ("The Saint Who Sang To God Alone", "Nine Mornings, One Prayer, One Name", "Sung Every Day For Centuries", "She Prayed For Years", "Whoever Sings Prays Twice"). "In every chorus" is true with two names, since each name is sung at least once per chorus. The H1 is 53 characters.
+   New section "devotion" after the hero: the absolution (Votive mechanic 5). Many women carry one name for years and wonder if asking again is too little faith; Saint Monica answers it; a song is that returning in a form that keeps. Third person throughout. It does not say Monica's prayer was answered or that anyone's will be.
+   New section "promise" after devotion: the refusal to promise as the selling line (mechanic 3) plus physical specifics (mechanic 4). EXCERPT lines are verbatim from the sample song Lead Daniel Home: the first two chorus lines, then the whole Luke 15:20 bridge, so the excerpt shows both the name and the Scripture. FACT lines carry only true, checkable specifics. The first FACT is phrased so it holds for one name (at least six times, two per chorus) and for two (each name in all three choruses).
+   how steps rewritten for the three screen form. The old step 2 phrase "then the song is produced and checked" is gone; nothing new is claimed about how it is made.
+   One new button label on hero, how, offer and final CTAs: "Have Their Name Sung" (20 characters). NAV_CTA ("Begin My Song") was not in scope and is unchanged.
+   final P now says three steps. The final H2 and first P were kept; they agree with the new hero.
+   offer: PRICE_BADGE and PRICE_WAS deleted. The $129 was never charged; it was an invented reference price and must not come back anywhere, including as a restore.
+   Replaced lines, to restore (except the two price lines):
+   EYEBROW: Custom prayer songs, made by name
+   H1: God Wants You To Have His Songs
+   SUB: Give a husband, a son, a mother or a grandchild an original prayer song with their first name in every chorus, built on a verse of Scripture. It arrives by email within 24 hours.
+   CTA (hero, how, offer, final): Begin My Prayer Song
+   MICRO (hero): A short form first, about a minute. $39, one time, at checkout.
+   STEP: Say who it is for | Fill in a short form of four steps: who the song is for, their first name, what the prayer is for, and how it should sound.
+   STEP: The prayer is set to music | The lyrics are written around that name and that intention, built on a verse of Scripture, then the song is produced and checked.
+   STEP: It arrives within 24 hours | A private page comes by email, with the song to play, download and share, and every word of the lyrics.
+   P (final, second paragraph): A short form of four steps begins it, and it takes about a minute. The song arrives within 24 hours, and 30 days stand behind it.
+   Deleted for good, recorded only so the history is complete: PRICE_BADGE: 70% off today, PRICE_WAS: $129 (offer section).
+   Alternative H1s:
+   a. Their Name, Sung In A Prayer Built On Scripture (47 characters). Puts Scripture in the headline; relies on the SUB to say "song" and the delivery.
+   b. One Name, One Verse Of Scripture, One Song For Them (51). Rhythm of the "Nine Mornings, One Prayer, One Name" ad, so it reads as its direct sequel.
+   c. The Name Prayed For Years, Sung In A Song Of Its Own (52). Picks up "She Prayed For Years" and leads straight into the devotion section.
+   Alternative button labels: "Get My Prayer Song" (18 characters, closest to the old one), "Put A Name In A Song" (20, avoids "their" for buyers ordering for themselves).
+   Open point for the build: the hero MICRO and how step 3 both state $39 plainly, so the price is visible before the form. The "Myself" branch makes "Their" in the button slightly off; alternative b avoids it if TS minds.

@@ -170,6 +170,22 @@
   .pull{font-family:var(--serif);font-style:italic;font-size:22px;line-height:1.4;color:var(--bronze-deep);margin:24px 0;
         padding:4px 0 4px 18px;border-left:2px solid var(--bronze);text-wrap:balance}
 
+  /* ---------- the promise: a lyric excerpt, the name picked out, then plain facts (2026-10-18) ---------- */
+  .lyric{margin:24px 0 0;background:var(--paper);border:1px solid var(--hair);border-radius:16px;padding:22px 20px 16px;box-shadow:0 8px 24px rgba(42,31,26,.06)}
+  .lyric blockquote{margin:0;font-family:var(--serif);font-style:italic;font-size:19px;line-height:1.6;color:var(--ink)}
+  .lyric blockquote span{display:block}
+  .lyric mark{background:none;color:var(--bronze-deep);font-style:normal;font-weight:700;box-shadow:inset 0 -.32em 0 rgba(242,194,48,.45)}
+  .lyric figcaption{font-size:13px;line-height:1.5;color:var(--muted);margin-top:14px}
+  .facts{list-style:none;padding:0;margin:26px 0 0;display:flex;flex-direction:column;gap:16px}
+  .facts li{padding-left:22px;position:relative}
+  .facts li::before{content:"";position:absolute;left:1px;top:.55em;width:8px;height:8px;border-radius:1px;background:var(--gold);transform:rotate(45deg)}
+  .facts b{display:block;font-family:var(--serif);font-size:18px;font-weight:600;color:var(--ink);margin-bottom:3px}
+  .facts span{font-size:15.5px;line-height:1.6;color:var(--ink-soft)}
+  /* the sound, pre-chosen on screen 2 of the form */
+  .sgroup{margin-top:20px}
+  #sbody .stip + .flabel{margin-top:20px}
+  .sdeftext{font-size:15.5px;line-height:1.5;color:var(--ink);background:var(--paper);border:1px solid var(--hair);border-radius:12px;padding:12px 14px;margin:4px 0 10px}
+
   /* ---------- who it can be for: arched pictures, the name underneath ---------- */
   .tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:18px 12px;margin:24px 0 30px}
   .tile{margin:0;text-align:center}
@@ -213,7 +229,7 @@
   /* the last step reads as an order page, so its heading is centred */
   #sbody[data-step="send"] h2{text-align:center}
   #sbody[data-step="send"] .ssub{text-align:center;margin-bottom:14px}
-  #sbody[data-step="send"] .spill{display:flex;width:fit-content;margin-left:auto;margin-right:auto;margin-bottom:22px}
+  #sbody[data-step="send"] .spill,#sbody[data-step="pay"] .spill{display:flex;width:fit-content;margin-left:auto;margin-right:auto;margin-bottom:22px}
   /* last step: order summary, delivery pill, guarantee */
   .spill{display:inline-flex;align-items:center;gap:7px;background:var(--cream-2);border:1px solid var(--hair);color:var(--bronze-deep);font-size:12px;font-weight:700;letter-spacing:.04em;border-radius:999px;padding:6px 13px;margin:0 0 4px}
   .spsample{display:flex;align-items:center;gap:12px;margin:0 0 16px;padding:10px;border:1px solid var(--hair);border-radius:14px;background:var(--paper)}
@@ -615,7 +631,10 @@ var CFG = {{CFG_JSON}};
 (function(){
   function $(id){ return document.getElementById(id); }
   function el(tag, cls, text){ var n=document.createElement(tag); if(cls) n.className=cls; if(text!=null) n.textContent=text; return n; }
-  var STEPS = CFG.pay==='embed' ? ['basics','prayer','sound','send','pay'] : ['basics','prayer','sound','send'];
+  /* Embedded payment: three screens since 2026-10-18 (TS): the name and the prayer | the sound and where to send it | pay.
+     The answers are saved (and the follow-up emails start) when screen 2 is done, before any payment. */
+  var THREE = CFG.pay==='embed';
+  var STEPS = THREE ? ['basics','sound','pay'] : ['basics','prayer','sound','send'];
   var S = { who:'', name:'', phon:'', name2:'', who2:'', intention:'', note:'', style:'', voice:'', email:'', buyer:'', lead:'', express:false };
   try{ var saved=JSON.parse(sessionStorage.getItem('ps_answers')||'null'); if(saved){ for(var k in S){ if(saved[k]) S[k]=saved[k]; } } }catch(e){}
   var at = 0;
@@ -721,6 +740,31 @@ var CFG = {{CFG_JSON}};
       }
       body.appendChild(second); setSecond();
       check=function(){ if(!S.name) $('f-name').classList.add('bad'); return S.who && S.name; };
+      if(THREE){
+        var pr=SV.prayer, ih=el('div','sgroup');
+        function setIntent(){
+          ih.innerHTML='';
+          var opts=pr.options;
+          if(S.who==='passed'){ opts=opts.filter(function(o){ return ['grief','peace','thanksgiving'].indexOf(o.key)>=0; });
+            if(['grief','peace','thanksgiving'].indexOf(S.intention)<0) S.intention=''; }
+          ih.appendChild(label(fill(pr.label_intention)));
+          ih.appendChild(options(opts,'intention'));
+        }
+        body.appendChild(ih); setIntent();
+        var whoChips=body.querySelector('.chips');
+        if(whoChips) whoChips.addEventListener('click', function(){ setIntent(); });
+        var nh=el('div',''); body.appendChild(nh);
+        optional(nh, pr.label_note, function(h){
+          h.appendChild(label(pr.label_note,'f-note'));
+          h.appendChild(input('f-note','note',pr.placeholder_note,'area',400));
+          h.appendChild(el('p','stip',pr.tip_note));
+        }, !!S.note);
+        check=function(){
+          if(!S.name) $('f-name').classList.add('bad');
+          if(S.who && S.name && !S.intention){ d=Object.assign({}, d, {error: pr.error}); }
+          return S.who && S.name && S.intention;
+        };
+      }
     }
     if(id==='prayer'){
       var opts=d.options;
@@ -737,12 +781,41 @@ var CFG = {{CFG_JSON}};
       check=function(){ return !!S.intention; };
     }
     if(id==='sound'){
-      body.appendChild(label(d.label_style));
-      body.appendChild(options(d.options,'style'));
-      body.appendChild(label(d.label_voice));
-      body.appendChild(options(d.voices,'voice'));
-      body.appendChild(el('p','stip',d.tip));
-      check=function(){ return S.style && S.voice; };
+      if(THREE){
+        if(!S.style) S.style='hymn';
+        if(!S.voice) S.voice='either';
+        save();
+        var changed = S.style!=='hymn' || S.voice!=='either';
+        var sh=el('div','sdefault');
+        if(!changed && d.sound_default) sh.appendChild(el('p','sdeftext','\u266A '+d.sound_default));
+        body.appendChild(sh);
+        optional(sh, d.change_sound || d.label_style, function(h){
+          var dt=h.querySelector('.sdeftext'); if(dt) h.removeChild(dt);
+          h.appendChild(label(d.label_style));
+          h.appendChild(options(d.options,'style'));
+          h.appendChild(label(d.label_voice));
+          h.appendChild(options(d.voices,'voice'));
+        }, changed);
+        body.appendChild(el('p','stip',d.tip));
+        var sd=SV.send;
+        body.appendChild(label(sd.label_email,'f-email'));
+        body.appendChild(input('f-email','email',sd.placeholder_email,'email',120));
+        body.appendChild(el('p','stip',sd.micro));
+        body.appendChild(label(sd.label_buyer,'f-buyer'));
+        if(S.buyer && S.buyer.indexOf('@') > -1){ S.buyer=''; save(); }   /* autofill put the address here */
+        var bi2=input('f-buyer','buyer',sd.placeholder_buyer,'text',40);
+        bi2.addEventListener('blur', function(){ if(bi2.value.indexOf('@') > -1){ bi2.value=''; S.buyer=''; save(); } });
+        body.appendChild(bi2);
+        d=Object.assign({}, d, {error: sd.error});
+        check=function(){ var ok=/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(S.email); if(!ok) $('f-email').classList.add('bad'); return ok && S.style && S.voice; };
+      } else {
+        body.appendChild(label(d.label_style));
+        body.appendChild(options(d.options,'style'));
+        body.appendChild(label(d.label_voice));
+        body.appendChild(options(d.voices,'voice'));
+        body.appendChild(el('p','stip',d.tip));
+        check=function(){ return S.style && S.voice; };
+      }
     }
     if(id==='send'){
       if(d.delivery_pill) body.appendChild(el('p','spill','\u2713 '+d.delivery_pill));
@@ -806,7 +879,7 @@ var CFG = {{CFG_JSON}};
         }
       }
     }
-    if(at===0 || id==='send'){
+    if(THREE ? id==='sound' : (at===0 || id==='send')){
       var ag=el('p','sagree');
       ag.innerHTML=SV.ui.agree.replace(/&/g,'&amp;').replace(/</g,'&lt;')
         .replace('Terms','<a href="terms.html" target="_blank" rel="noopener">Terms</a>')
@@ -818,12 +891,13 @@ var CFG = {{CFG_JSON}};
     var back=el('button','sback','\u2190 '+SV.ui.back); back.type='button';
     back.onclick=function(){ if(at===0){ closeSurvey(); } else { at--; render(); } };
     foot.appendChild(back);
-    var go=el('button','btn', id==='send' ? d.button : (id==='pay' ? d.button.replace('{price}', money(payTotal())) : SV.ui.next)); go.type='button';
+    var leadStep = THREE ? 'sound' : 'send';      /* the screen whose button saves the answers */
+    var go=el('button','btn', id===leadStep ? SV.send.button : (id==='pay' ? d.button.replace('{price}', money(payTotal())) : SV.ui.next)); go.type='button';
     if(id==='pay'){ go.id='paybtn'; }
     go.onclick=function(){
       if(id==='pay'){ payNow(false); return; }
       if(!check()){ fail(); return; }
-      if(id==='send' && CFG.pay==='embed'){
+      if(id===leadStep && CFG.pay==='embed'){
         go.disabled=true;
         sendLead(function(){ go.disabled=false; if(!S.lead){ fail(); err.textContent=SV.pay.error_load; return; } at++; render(); });
         return;
@@ -862,6 +936,7 @@ var CFG = {{CFG_JSON}};
   function payStep(body, d, err){
     var sd=SV.send;
     function showErr(m){ err.textContent=m; err.hidden=false; err.scrollIntoView({block:'nearest'}); }
+    if(sd.delivery_pill) body.appendChild(el('p','spill','\u2713 '+sd.delivery_pill));
     paySample(body, d);
     /* what she is paying for, itemised */
     var card=el('div','sorder');
@@ -885,6 +960,11 @@ var CFG = {{CFG_JSON}};
     var dv=el('p','spaydiv',d.divider); dv.hidden=true; body.appendChild(dv);
     var pw=el('div','spaycard'); pw.id='ps-pe'; body.appendChild(pw);
     body.appendChild(el('p','spaysafe','\uD83D\uDD12 '+d.secure));
+    if(sd.guar_title){
+      var gb=el('div','sguar'); gb.appendChild(el('span','gi','\u2713'));
+      var gt=document.createElement('div'); gt.appendChild(el('b','',sd.guar_title)); gt.appendChild(el('span','',sd.guar_body||''));
+      gb.appendChild(gt); body.appendChild(gb);
+    }
     function upd(){
       ex[0].hidden=!S.express; tot[1].textContent=money(payTotal());
       var b=document.getElementById('paybtn'); if(b && !PAY.busy) b.textContent=d.button.replace('{price}', money(payTotal()));

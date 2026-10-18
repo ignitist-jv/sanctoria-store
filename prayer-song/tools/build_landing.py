@@ -44,9 +44,9 @@ SAMPLE_FILES = ["sample-1.mp3", "sample-2.mp3", "sample-3.mp3"]   # under site/p
 CLIP_SLUGS = ["son", "mother", "grandchild"]    # video/sample-<slug>.mp4 (+ .webp first frame), in the order of the SAMPLE lines. Optional
 TILE_SLUGS = ["husband", "son", "daughter", "grandchild", "mother", "father", "marriage", "friend", "passed", "herself"]   # img/for-<slug>.webp, in CHIP order
 CTA_DEFAULT = ""         # set from the hero CTA at build time, for sections that have no CTA line of their own
-BUTTON_MAX = 22
+BUTTON_MAX = 26
 # Order follows the reference page (prayersong.com): hero, how it works, samples, who it is for, what you get.
-SECTION_ORDER = ["hero", "how", "sample", "for", "get", "mechanism", "bonuses", "proof", "offer", "guarantee", "faq", "final"]
+SECTION_ORDER = ["hero", "devotion", "promise", "how", "sample", "for", "get", "mechanism", "bonuses", "proof", "offer", "guarantee", "faq", "final"]
 RELATIONS = ["husband", "wife", "son", "daughter", "grandchild", "mother", "father", "friend", "myself", "passed"]
 INTENTIONS = ["healing", "protection", "strength", "peace", "return", "marriage", "grief", "thanksgiving"]
 STYLES = ["hymn", "acoustic", "gospel", "country", "lullaby", "piano", "folk", "choir"]
@@ -194,14 +194,6 @@ def render(sid, sec):
         # the opening phrase of the card's heading, up to its first comma, is set in italic
         head, comma, tail = g1.partition(",")
         g1_html = f"<em>{e(head)},</em> {e(tail)}" if comma and tail.strip() else e(g1)
-        nav = one(sec, "NAV_CTA")
-        rp = {k.lower(): v for k, v in parse(COPY_DELIVERY, "PAGE").get("reviews_public", [])}
-        navlinks = ""
-        if rp.get("nav_track"):
-            # Small links beside the header button. "Find my song" is always there. The reviews link is in the page but
-            # hidden, and the page script shows it only once at least one real, approved review exists (TS, 2026-10-07).
-            reviews = f'<a href="reviews/" data-reviews hidden>{e(rp["nav_reviews"])}</a>' if rp.get("nav_reviews") else ""
-            navlinks = f'<nav class="navlinks" aria-label="Your order and reviews"><a href="s/?find">{e(rp["nav_track"])}</a>{reviews}</nav>'
         listen = ""
         if TRACKS:
             listen = (f'<button class="listen" type="button" data-play="0"><span class="dot">{ICO_PLAY}</span>'
@@ -226,7 +218,8 @@ def render(sid, sec):
             f'<div class="topbar">{e(one(sec, "TOPBAR"))}</div>',
             '<div class="head">',
             '  <img src="/images/logo.png" alt="Sanctoria, Blessed Devotionals" height="34">',
-            f'  {navlinks}<button class="navbtn" type="button" data-start>{e(nav)}</button>',
+            # TS 2026-10-18: no nav links and no second button in the header, so each screen has one button.
+            # "Find my song" stays in the footer for buyers.
             '</div>',
             '<section class="hero">',
             f'  <div class="hmedia{" wide" if film else ""}"><div class="arch{film}">{photo}{listen if film else ""}</div>{"" if film else listen}{film_note}</div>',
@@ -272,6 +265,18 @@ def render(sid, sec):
         dots = "".join(f'<i{" class=\"on\"" if i == 0 else ""}></i>' for i in range(len(TRACKS)))
         return (f'<section class="alt" id="samples">{h2}{paras(sec, "lead")}<div class="cards" id="cards">{"".join(cards)}</div>'
                 f'<div class="dots" id="dots">{dots}</div>' + (f'<p class="note">{e(one(sec, "SAMPLE_NOTE"))}</p>' if one(sec, "SAMPLE_NOTE") else "") + '</section>')
+    if sid == "devotion":
+        return f'<section class="devo">{h2}<div class="mt left">{paras(sec)}</div></section>'
+    if sid == "promise":
+        # the lyric excerpt is quoted word for word from the first sample; its name is picked out in gold
+        nm = TRACKS[0]["title"].split()[1] if TRACKS and len(TRACKS[0]["title"].split()) > 1 else "Daniel"
+        lines = "".join(f"<span>{e(l).replace(e(nm), f'<mark>{e(nm)}</mark>')}</span>" for l in many(sec, "EXCERPT"))
+        lyric = (f'<figure class="lyric"><blockquote>{lines}</blockquote>'
+                 + (f'<figcaption>{e(one(sec, "EXCERPT_CAPTION"))}</figcaption>' if one(sec, "EXCERPT_CAPTION") else "")
+                 + "</figure>") if lines else ""
+        facts = "".join(f'<li><b>{e(a)}</b><span>{e(b)}</span></li>' for a, b in map(pair, many(sec, "FACT")))
+        return (f'<section class="promise">{h2}<div class="mt left">{paras(sec)}</div>{lyric}'
+                + (f'<ul class="facts">{facts}</ul>' if facts else "") + '</section>')
     if sid == "mechanism":
         return f'<section>{h2}<div class="mt left">{paras(sec)}</div></section>'
     if sid == "for":
@@ -374,6 +379,8 @@ def survey_data(c):
     sound = need("sound", g("sound"), ["H", "SUB", "LABEL_STYLE", "LABEL_VOICE", "TIP", "ERROR"])
     sound["options"] = opts(g("sound"), "OPTION", STYLES, "style")
     sound["voices"] = opts(g("sound"), "VOICE", VOICES, "voice")
+    for k in ("SOUND_DEFAULT", "CHANGE_SOUND"):      # the sound comes pre-chosen on screen 2, with a link to change it
+        sound[k.lower()] = one(g("sound"), k)
     send = need("send", g("send"), ["H", "SUB", "LABEL_EMAIL", "PLACEHOLDER_EMAIL", "LABEL_BUYER", "PLACEHOLDER_BUYER",
                                     "MICRO", "ERROR", "SUMMARY_TITLE", "SUMMARY_LINE", "BUTTON"])
     if len(send["button"]) > BUTTON_MAX:
@@ -393,15 +400,19 @@ def survey_data(c):
         problems.append("survey step send needs SUMMARY_LINE_TWO now that a second name can be given")
     ui = need("ui", g("ui"), ["BACK", "NEXT", "STEP_OF", "AGREE"])
     ui["step_names"] = [x.strip() for x in one(g("ui"), "STEP_NAMES").split("|") if x.strip()]
-    if len(ui["step_names"]) not in (4, 5):
+    if len(ui["step_names"]) not in (3, 4, 5):
         problems.append("survey UI STEP_NAMES must list four names (five with the Pay step)")
     pay = {k.lower(): one(g("pay"), k) for k in ("H", "SUB", "DIVIDER", "BUTTON", "BUTTON_BUSY", "SECURE", "ERROR", "ERROR_LOAD", "SAMPLE_LABEL")}
     if PAYMENT == "embed":
         pay = need("pay", g("pay"), ["H", "SUB", "DIVIDER", "BUTTON", "BUTTON_BUSY", "SECURE", "ERROR", "ERROR_LOAD"])
         if "{price}" not in pay["button"]:
             problems.append("survey step pay BUTTON must contain {price}")
-        if len(ui["step_names"]) != 5:
-            problems.append("the Pay step needs a fifth name in STEP_NAMES")
+        # three screens since 2026-10-18: name and prayer | sound and email | pay
+        if len(ui["step_names"]) != 3:
+            problems.append("the embedded form has three screens: STEP_NAMES needs three names")
+        for k in ("SOUND_DEFAULT", "CHANGE_SOUND"):
+            if not sound[k.lower()]:
+                problems.append(f"survey step sound is missing {k} (screen 2 shows the default sound)")
     if len(ui["next"]) > BUTTON_MAX:
         problems.append(f'form continue button "{ui["next"]}" is over {BUTTON_MAX} characters')
     for word in ("Terms", "Privacy Policy"):
