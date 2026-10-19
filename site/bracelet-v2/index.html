@@ -256,7 +256,7 @@
 <body>
 
 <div class="strip">
-  Blessed Batch · <strong>23 Reservations Remaining</strong> · Ships Fast
+  Blessed Batch · <strong>Prayed Over Before It Ships</strong> · Ships Fast
 </div>
 
 <!-- HERO (compact) -->
@@ -313,15 +313,15 @@
       <p class="batch-desc">Reserve your St Benedict Marian Bracelet before we sell out again. Save up to 55% today.</p>
       <div class="batch-row past">
         <span id="batch-date-past">May 7</span>
-        <span class="batch-status">Sold Out</span>
+        <span class="batch-status">Closed</span>
       </div>
       <div class="batch-row now">
         <span id="batch-date-now">May 27</span>
-        <span class="batch-status" id="batch-reserve-pct">94% Reserved</span>
+        <span class="batch-status">Now Reserving</span>
       </div>
       <div class="batch-row next">
         <span id="batch-date-next">June 16</span>
-        <span class="batch-status">Upcoming</span>
+        <span class="batch-status">Opens Next</span>
       </div>
     </div>
   </div>
@@ -638,14 +638,6 @@
     if (pastEl) pastEl.textContent = fmt(past);
     if (nowEl) nowEl.textContent = fmt(now);
     if (nextEl) nextEl.textContent = fmt(next);
-
-    // Reservation % ticks slowly upward each day (88 to 96%) for "alive" feel
-    const pctEl = document.getElementById('batch-reserve-pct');
-    if (pctEl) {
-      const baseSeed = today.getDate() + (today.getMonth() * 31);
-      const pct = 88 + (baseSeed % 9);
-      pctEl.textContent = pct + '% Reserved';
-    }
   })();
 
   /* ===================== REVIEWS PAGINATION ===================== */
@@ -699,7 +691,7 @@
         <div class="review-card">
           <div class="review-head">
             <div class="review-stars">★ ★ ★ ★ ★</div>
-            <div class="review-date">${escapeHtml(r.d)}</div>
+            
           </div>
           ${r.img ? `<img loading="lazy" decoding="async" class="review-img" src="${escapeHtml(r.img)}" alt="Customer photo">` : ''}
           <div class="review-title">${escapeHtml(r.t)}</div>
