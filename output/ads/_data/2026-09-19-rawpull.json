@@ -1,0 +1,16 @@
+{
+  "pulled": "2026-09-19",
+  "account": "462874384767571",
+  "note": "No check ran on 2026-09-18. Windows exclude today. TOTAL = 28d + today. 14d == 28d for all four. Today is early (only $6.40 spent account-wide so far).",
+  "sales_check": "Sale counts unchanged since 2026-09-17 (2/3/1/2). 2026-09-18 was a zero-sale day across all four.",
+  "active": [
+    {"id":"120256241056110051","label":"T1_MF_35-65+_StoppedHidingIt_UGC_ParkingLot","actual_angle":"SistersThreePack","NAMING_MISMATCH":true,"budget":5,"spend_28d":33.50,"spend_today":3.28,"spend_total":36.78,"rev_total":84.52,"sales":2,"roas_3d":3.44,"roas_14d":2.52,"roas_28d":2.52,"roas_total":2.30,"ctr":7.60,"freq":1.18,"verdict":"SCALE_5_to_6.50"},
+    {"id":"120256178585970051","label":"T1_MF_35-65+_UGCEveryday_UGC_DaughterPack","budget":9,"spend_28d":88.12,"spend_today":0.25,"spend_total":88.37,"rev_total":186.03,"sales":3,"roas_3d":1.09,"roas_14d":2.11,"roas_28d":2.11,"roas_total":2.11,"ctr":14.55,"freq":1.25,"verdict":"WATCH_hold_9"},
+    {"id":"120256276845670051","label":"T1_MF_35-65+_ThreeGenerations_UGC_ThreePouches","funnel":"Rosary","budget":5,"spend_28d":23.11,"spend_today":0.86,"spend_total":23.97,"rev_total":33.06,"sales":1,"roas_3d":2.03,"roas_14d":1.43,"roas_28d":1.43,"roas_total":1.38,"ctr":9.24,"freq":1.30,"verdict":"WATCH_diluting"},
+    {"id":"120256136639870051","label":"T1_MF_35-65+_AQuietDevotion_PHOTO_Quiet","budget":5,"spend_28d":67.89,"spend_today":2.01,"spend_total":69.90,"rev_total":98.30,"sales":2,"roas_3d":0,"sales_3d":0,"roas_14d":1.45,"roas_28d":1.45,"roas_total":1.41,"ctr":5.30,"freq":1.49,"verdict":"REDUCE_5_to_4"}
+  ],
+  "roas_drift_quiet_photo": ["2.15x 09-13","1.91x 09-15","1.75x 09-16","1.61x 09-17","1.41x 09-19"],
+  "portfolio": {"spend_total":219.02,"spend_today":6.40,"revenue_total":401.91,"revenue_today":0,"blended_roas":1.84},
+  "outstanding_unexecuted": ["Sisters scale 5 to 6.50 (recommended 09-15, 09-16, 09-17)","archive 3 duplicate paused campaigns"],
+  "reconciliation_gap": "ClickBank cb_get_orders still unavailable (only wealthapa configured, 401). Sixth day."
+}

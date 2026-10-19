@@ -1,0 +1,29 @@
+AD: 03_APrayerWithinReach   (PrayerYouWear MULTIPLY, points at V2 page)
+Image: 03_APrayerWithinReach.png
+Destination: https://sanctoriastore.com/bracelet-v2/   (V2 = /bracelet-v2/)
+CTA button: Shop Now
+
+=== HEADLINE ===
+A Prayer Within Reach
+
+=== PRIMARY TEXT ===
+A rosary stays home in a drawer. This comes with you.
+
+To the shops. To the school run. To the hundred small errands that fill a day.
+
+The St Benedict Marian Bracelet is on your wrist through all of it. A glance down, a bead between your fingers, a quick word to God in the middle of an ordinary errand.
+
+Your faith, close enough to reach without looking.
+
+Come look.
+
+=== DESCRIPTION (link description) ===
+Faith you carry with you
+
+=== META NAMING ===
+Campaign: PrayerYouWear_2026-08-05
+Ad Set:   T1_MF_35-65+_PrayerYouWear_V2   (or run inside the winner 120255440341600051)
+Ad:       03_APrayerWithinReach
+
+=== URL PARAMETERS ===
+utm_source={{site_source_name}}&utm_medium={{placement}}&utm_campaign={{campaign.name}}&utm_content={{ad.name}}&utm_term={{adset.name}}&cmc_adid=fb_{{ad.id}}

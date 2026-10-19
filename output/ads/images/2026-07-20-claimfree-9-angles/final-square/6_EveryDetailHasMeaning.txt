@@ -1,0 +1,35 @@
+AD: 01_EveryPartMeans   (angle: EveryDetailHasMeaning)
+Image: 6_EveryDetailHasMeaning.png
+Destination: https://sanctoriastore.com/bracelet/
+CTA button: Learn More
+
+=== HEADLINE ===
+Every Detail Has A Meaning
+
+=== PRIMARY TEXT ===
+Every part of this bracelet means something.
+
+The ebony wood beads, dark and smooth, one for every prayer.
+
+The medal of Saint Benedict, worn by the Church for centuries.
+
+The crucifix, at the center of it all.
+
+And the Miraculous Medal of Our Lady, the Mother so many of us turn to.
+
+Nothing on it is decoration. Every piece is a part of the faith.
+
+That is what makes it worth wearing.
+
+See it here.
+
+=== DESCRIPTION (link description) ===
+St Benedict, Our Lady, the Cross
+
+=== META NAMING ===
+Campaign: EveryDetailHasMeaning_2026-07-20
+Ad Set:   T1_MF_45-65+_EveryDetailHasMeaning
+Ad:       01_EveryPartMeans
+
+=== URL PARAMETERS (paste into "URL parameters" field) ===
+utm_source={{site_source_name}}&utm_medium={{placement}}&utm_campaign={{campaign.name}}&utm_content={{ad.name}}&utm_term={{adset.name}}&cmc_adid=fb_{{ad.id}}

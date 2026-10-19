@@ -56,3 +56,38 @@ rosary images/
 # AI-generated ad creative images (regeneratable, large)
 output/ads/higgsfield/
 output/ads/higgsfield-v2/
+
+# ClickBank INS bridge secrets (server config, never commit)
+site/ins/config.php
+site/ins/log.txt
+
+# Prayer Song back end: server config and any buyer data (never commit, never upload from here)
+site/prayer-song/api/config.php
+site/prayer-song/api/data/
+
+# ============================
+# Generated ad creative (large, regeneratable)
+# The PROMPTS (.md/.json) and the BUILD SCRIPTS (.py) are committed;
+# the renders they produce are not. Rebuild from the prompts if needed.
+# ============================
+output/ads/**/*.png
+output/ads/**/*.jpg
+output/ads/**/*.jpeg
+output/ads/**/*.webp
+output/ads/**/*.mp4
+output/images/
+output/guard-candidates/
+output/shopify-theme/
+
+# Prayer Song full-res creative sources (the web-sized copies live in site/)
+prayer-song/creative/sample-clips/
+prayer-song/creative/test-songs/
+prayer-song/creative/tiles/
+prayer-song/creative/vinyl/
+prayer-song/creative/how-bg/
+prayer-song/creative/order-form-header/
+prayer-song/creative/style-samples/
+
+# ffmpeg scratch (concat lists, intermediate shots)
+output/ads/**/_v2/
+output/ads/**/_work/

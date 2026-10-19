@@ -1,0 +1,7 @@
+{"model": "gpt_image_2_5", "aspect_ratio": "4:5", "quality": "high", "resolution": "1k", "generated": "2026-10-05",
+ "prompts": "../tile-image-prompts.json",
+ "jobs": {"husband": "1ac9de34-fac5-431c-bd00-db3253acca1b", "son": "4611f5b4-f53a-4a29-b41d-dfa9ec1f7c28",
+          "daughter": "69b1225d-6ca2-4725-a46c-cc7c2b0fcb14", "grandchild": "bc6e9c3f-f83d-4b9b-857d-656bf9e602fa",
+          "mother": "c175df29-5a3e-4bc1-a995-bac3f19ac5bc", "father": "c4bab6fb-7d41-41f2-8d1d-efdc5f42c79e",
+          "marriage": "d8465d20-f27b-4220-90f1-d78995d64f12", "friend": "6772a8a0-bc7d-4607-8345-bc3869f0c23f",
+          "passed": "3bd84f7e-b7df-49a4-ab05-ec68e1573656", "herself": "fb9a0f9e-9923-4b37-93ae-2723952fb65f"}}

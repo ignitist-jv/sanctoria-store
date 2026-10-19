@@ -1,0 +1,33 @@
+AD: 01_OldLine   (heritage/meaning batch)
+Image: 5_WhereThisMedalHasBeen.png
+Destination (V1): https://sanctoriastore.com/bracelet/
+Destination (V2): https://sanctoriastore.com/bracelet-v2/
+PAGE SPLIT TEST: run this ad set twice, one per page, and tag the ad set name _V1 / _V2 (see naming below) so Meta + ClickBank attribute each page cleanly.
+CTA button: Learn More
+
+=== HEADLINE ===
+1,500 Years, Now On Your Wrist
+
+=== PRIMARY TEXT ===
+This medal has been almost everywhere a prayer has been needed.
+
+At the doors of monasteries. In the pockets of pilgrims. Pressed into the hands of the sick, the traveling, the newly baptized. For 1,500 years, across every country the Church has reached.
+
+Now it reaches your wrist.
+
+The St Benedict Marian Bracelet carries that same medal, real bronze on real ebony beads, so you can carry a little of that long history with you.
+
+You are not the first to hold it. You are the newest in a very old line.
+
+See it here.
+
+=== DESCRIPTION (link description) ===
+A very old line of faith
+
+=== META NAMING ===
+Campaign: WhereThisMedalHasBeen_2026-08-01
+Ad Set:   T1_MF_35-65+_WhereThisMedalHasBeen_V1   (V1 -> /bracelet/)   |   Ad Set:   T1_MF_35-65+_WhereThisMedalHasBeen_V2   (V2 -> /bracelet-v2/)
+Ad:       01_OldLine
+
+=== URL PARAMETERS ===
+utm_source={{site_source_name}}&utm_medium={{placement}}&utm_campaign={{campaign.name}}&utm_content={{ad.name}}&utm_term={{adset.name}}&cmc_adid=fb_{{ad.id}}

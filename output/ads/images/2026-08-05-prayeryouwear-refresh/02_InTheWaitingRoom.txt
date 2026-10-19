@@ -1,0 +1,29 @@
+AD: 02_InTheWaitingRoom   (PrayerYouWear MULTIPLY, points at V2 page)
+Image: 02_InTheWaitingRoom.png
+Destination: https://sanctoriastore.com/bracelet-v2/   (V2 = /bracelet-v2/)
+CTA button: Shop Now
+
+=== HEADLINE ===
+Right There When You Need It
+
+=== PRIMARY TEXT ===
+You do not always get to choose when you need to pray.
+
+Sometimes it is in a waiting room, watching the clock, hoping for good news.
+
+That is when it helps to have something on your wrist. The St Benedict Marian Bracelet is right there. The beads under your fingers, the medal in your palm, a quiet prayer while you wait.
+
+You do not have to reach for anything. It is already with you.
+
+See it here.
+
+=== DESCRIPTION (link description) ===
+A prayer within reach
+
+=== META NAMING ===
+Campaign: PrayerYouWear_2026-08-05
+Ad Set:   T1_MF_35-65+_PrayerYouWear_V2   (or run inside the winner 120255440341600051)
+Ad:       02_InTheWaitingRoom
+
+=== URL PARAMETERS ===
+utm_source={{site_source_name}}&utm_medium={{placement}}&utm_campaign={{campaign.name}}&utm_content={{ad.name}}&utm_term={{adset.name}}&cmc_adid=fb_{{ad.id}}

@@ -1,0 +1,31 @@
+AD: 01_RealEbony   (angle: HandcraftedWithDevotion)
+Image: 9_HandcraftedWithDevotion.png
+Destination: https://sanctoriastore.com/bracelet/
+CTA button: Learn More
+
+=== HEADLINE ===
+Handcrafted, Blessed In Rome
+
+=== PRIMARY TEXT ===
+Real ebony wood. Antique bronze. The medal of Saint Benedict.
+
+The St Benedict Marian Bracelet is made from real materials, the kind you can feel the moment it is in your hand.
+
+The ebony beads are smooth and warm. The bronze has the look of something old and cared for.
+
+Each one is handcrafted, and blessed in Rome before it ever reaches you.
+
+This is not costume jewelry. It is a piece of devotion, made to last.
+
+Come look.
+
+=== DESCRIPTION (link description) ===
+Real ebony and antique bronze
+
+=== META NAMING ===
+Campaign: HandcraftedWithDevotion_2026-07-20
+Ad Set:   T1_MF_45-65+_HandcraftedWithDevotion
+Ad:       01_RealEbony
+
+=== URL PARAMETERS (paste into "URL parameters" field) ===
+utm_source={{site_source_name}}&utm_medium={{placement}}&utm_campaign={{campaign.name}}&utm_content={{ad.name}}&utm_term={{adset.name}}&cmc_adid=fb_{{ad.id}}

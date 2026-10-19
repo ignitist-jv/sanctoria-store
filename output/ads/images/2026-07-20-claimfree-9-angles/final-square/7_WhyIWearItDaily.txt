@@ -1,0 +1,33 @@
+AD: 01_EveryMorning   (angle: WhyIWearItDaily)
+Image: 7_WhyIWearItDaily.png
+Destination: https://sanctoriastore.com/bracelet/
+CTA button: Shop Now
+
+=== HEADLINE ===
+Why I Wear It Every Day
+
+=== PRIMARY TEXT ===
+I reach for it every morning, before I even pour the coffee.
+
+The St Benedict Marian Bracelet goes on first.
+
+I like the small weight of the beads. I like that Our Lady is right there on my wrist.
+
+Through the whole day it reminds me to pray, even when I am busy, even when I forget to slow down.
+
+It is a small thing. But it has become part of who I am.
+
+If you have been meaning to keep your faith a little closer, maybe this is your morning too.
+
+Bring one home.
+
+=== DESCRIPTION (link description) ===
+A small daily devotion
+
+=== META NAMING ===
+Campaign: WhyIWearItDaily_2026-07-20
+Ad Set:   T1_MF_45-65+_WhyIWearItDaily
+Ad:       01_EveryMorning
+
+=== URL PARAMETERS (paste into "URL parameters" field) ===
+utm_source={{site_source_name}}&utm_medium={{placement}}&utm_campaign={{campaign.name}}&utm_content={{ad.name}}&utm_term={{adset.name}}&cmc_adid=fb_{{ad.id}}

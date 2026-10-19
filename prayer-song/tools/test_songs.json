@@ -1,0 +1,520 @@
+[
+  {
+    "id": "01_healing_mother",
+    "name": "Siobhan",
+    "name_phonetic": "Shiv-awn",
+    "relationship": "Mother",
+    "intention": "Healing",
+    "verse": "Jeremiah 30:17 KJV",
+    "styles": [
+      "soulful gospel ballad",
+      "warm female lead vocalist, clear diction, every word easy to understand",
+      "piano led",
+      "soft hammond organ",
+      "gentle choir backing on the chorus",
+      "72 BPM",
+      "Ab major",
+      "reverent and hopeful",
+      "polished radio quality production"
+    ],
+    "negative": [
+      "rap",
+      "electronic",
+      "aggressive",
+      "distorted",
+      "mumbled vocals",
+      "heavy drums"
+    ],
+    "sections": [
+      [
+        "[Intro]",
+        8000,
+        [
+          "solo piano",
+          "soft organ swell"
+        ]
+      ],
+      [
+        "[Verse 1]\nLord, I'm coming to You on my knees tonight\nFor the one who held my hand and raised me right\nSiobhan, my mother, she's been tired and weak\nSo I bring her to You, the Healer that we seek",
+        24000,
+        [
+          "intimate vocal",
+          "piano only"
+        ]
+      ],
+      [
+        "[Chorus]\nLay Your hand on Siobhan\nLift her up and make her strong\nYou said You would restore her health\nLord, I'm holding to Your word alone\nSiobhan, You know her name\nHeal her body, ease her pain",
+        26000,
+        [
+          "choir joins",
+          "fuller arrangement",
+          "emotional lift"
+        ]
+      ],
+      [
+        "[Verse 2]\nShe sang over my cradle when the nights were long\nNow I'm singing over her, Lord, keep her carrying on\nEvery morning that she wakes, let her feel You near\nEvery breath she takes, Lord, let her know You're here",
+        24000,
+        [
+          "warm vocal",
+          "piano and organ",
+          "light percussion"
+        ]
+      ],
+      [
+        "[Chorus]\nLay Your hand on Siobhan\nLift her up and make her strong\nYou said You would restore her health\nLord, I'm holding to Your word alone\nSiobhan, You know her name\nHeal her body, ease her pain",
+        26000,
+        [
+          "full choir",
+          "soaring lead vocal"
+        ]
+      ],
+      [
+        "[Bridge]\nFor I will restore health unto thee\nAnd I will heal thee of thy wounds\nThat's Your promise, Lord, I believe\nSiobhan is safe in Your hands",
+        22000,
+        [
+          "stripped back",
+          "piano and voice",
+          "prayerful"
+        ]
+      ],
+      [
+        "[Final Chorus]\nLay Your hand on Siobhan\nLift her up and make her strong\nSiobhan, You know her name\nHeal her body, ease her pain",
+        20000,
+        [
+          "key lift",
+          "choir and lead together",
+          "peak emotion"
+        ]
+      ],
+      [
+        "[Outro]\n(amen, amen)",
+        10000,
+        [
+          "soft hum",
+          "piano fade",
+          "gentle ending"
+        ]
+      ]
+    ]
+  },
+  {
+    "id": "02_protection_grandchild",
+    "name": "Nevaeh",
+    "name_phonetic": "Neh-vay-uh",
+    "relationship": "Grandchild",
+    "intention": "Protection",
+    "verse": "Psalm 91:11 KJV",
+    "styles": [
+      "gentle christian lullaby",
+      "soft tender female vocal, grandmotherly warmth, clear diction",
+      "fingerpicked acoustic guitar",
+      "delicate music box accents",
+      "light strings",
+      "66 BPM",
+      "G major",
+      "peaceful and comforting",
+      "polished intimate production"
+    ],
+    "negative": [
+      "drums",
+      "electronic",
+      "loud",
+      "aggressive",
+      "rap",
+      "mumbled vocals"
+    ],
+    "sections": [
+      [
+        "[Intro]",
+        7000,
+        [
+          "music box melody",
+          "soft guitar"
+        ]
+      ],
+      [
+        "[Verse 1]\nClose your eyes, my sweet Nevaeh\nGrandma's here to pray\nThe stars are out, the night is soft\nThe Lord will light your way",
+        22000,
+        [
+          "whisper soft vocal",
+          "guitar only"
+        ]
+      ],
+      [
+        "[Chorus]\nAngels watching over you, Nevaeh\nKeeping you in all your ways\nOn the road and in the schoolyard\nThrough your nights and through your days\nNevaeh, little one\nYou are covered by the Son",
+        26000,
+        [
+          "strings join",
+          "warm and full",
+          "still gentle"
+        ]
+      ],
+      [
+        "[Verse 2]\nWhen you're grown and far from home\nAnd I am not around\nRemember Grandma's lullaby\nAnd the love that you have found",
+        22000,
+        [
+          "tender vocal",
+          "guitar and music box"
+        ]
+      ],
+      [
+        "[Chorus]\nAngels watching over you, Nevaeh\nKeeping you in all your ways\nOn the road and in the schoolyard\nThrough your nights and through your days\nNevaeh, little one\nYou are covered by the Son",
+        26000,
+        [
+          "strings",
+          "soft harmony vocal"
+        ]
+      ],
+      [
+        "[Bridge]\nFor He shall give His angels charge over thee\nTo keep thee in all thy ways\nEvery step, Nevaeh, every dream\nHe will hold you all your days",
+        22000,
+        [
+          "hushed",
+          "prayerful",
+          "sparse"
+        ]
+      ],
+      [
+        "[Outro]\nSleep now, Nevaeh\n(hmm, hmm)",
+        12000,
+        [
+          "music box fade",
+          "gentle ending"
+        ]
+      ]
+    ]
+  },
+  {
+    "id": "03_memorial_father",
+    "name": "Joaquin",
+    "name_phonetic": "Wah-keen",
+    "relationship": "Father in heaven",
+    "intention": "Grief",
+    "verse": "Revelation 21:4 KJV",
+    "styles": [
+      "heartfelt country gospel",
+      "warm male baritone lead vocal, clear diction, every word easy to understand",
+      "acoustic guitar strumming",
+      "pedal steel guitar",
+      "soft piano",
+      "76 BPM",
+      "D major",
+      "bittersweet and hopeful",
+      "polished radio quality production"
+    ],
+    "negative": [
+      "rap",
+      "electronic",
+      "aggressive",
+      "rock",
+      "mumbled vocals",
+      "upbeat dance"
+    ],
+    "sections": [
+      [
+        "[Intro]",
+        8000,
+        [
+          "pedal steel melody",
+          "acoustic guitar"
+        ]
+      ],
+      [
+        "[Verse 1]\nThere's an empty chair at the table, Lord\nAnd his coat still on the hook\nJoaquin, our daddy, went home to You\nWith his worn old Bible book",
+        24000,
+        [
+          "intimate vocal",
+          "acoustic guitar only"
+        ]
+      ],
+      [
+        "[Chorus]\nHold Joaquin in Your arms tonight\nTell him we're doing fine\nHe walked with You on this dusty road\nNow he's walking in the light\nJoaquin, we'll see you again\nWhere there's no more goodbye",
+        26000,
+        [
+          "full band",
+          "pedal steel",
+          "emotional lift"
+        ]
+      ],
+      [
+        "[Verse 2]\nHe worked those hands from dawn to dark\nHe never once complained\nHe taught us how to bow our heads\nAnd thank You through the rain",
+        24000,
+        [
+          "warm vocal",
+          "guitar and piano"
+        ]
+      ],
+      [
+        "[Chorus]\nHold Joaquin in Your arms tonight\nTell him we're doing fine\nHe walked with You on this dusty road\nNow he's walking in the light\nJoaquin, we'll see you again\nWhere there's no more goodbye",
+        26000,
+        [
+          "full band",
+          "harmony vocal"
+        ]
+      ],
+      [
+        "[Bridge]\nAnd God shall wipe away all tears\nAnd there shall be no more death\nJoaquin, you're in His house now\nAnd we're holding to that rest",
+        22000,
+        [
+          "stripped back",
+          "piano and voice",
+          "reverent"
+        ]
+      ],
+      [
+        "[Outro]\nWe'll see you again, Joaquin\n(amen)",
+        12000,
+        [
+          "pedal steel fade",
+          "gentle ending"
+        ]
+      ]
+    ]
+  },
+  {
+    "id": "04_hymn_style",
+    "name": "Siobhan",
+    "name_phonetic": "Shiv-awn",
+    "relationship": "Mother",
+    "intention": "Healing",
+    "verse": "Jeremiah 30:17 KJV",
+    "styles": [
+      "traditional Catholic hymn",
+      "warm male baritone lead vocalist, clear diction, every word easy to understand",
+      "pipe organ",
+      "soft church choir",
+      "reverent",
+      "66 BPM",
+      "prayerful and unhurried",
+      "polished radio quality production"
+    ],
+    "negative": [
+      "rap",
+      "electronic",
+      "aggressive",
+      "distorted",
+      "mumbled vocals",
+      "heavy drums"
+    ],
+    "sections": [
+      [
+        "[Intro]",
+        8000,
+        []
+      ],
+      [
+        "[Verse 1]\nLord, I'm coming to You on my knees tonight\nFor the one who held my hand and raised me right\nSiobhan, my mother, she's been tired and weak\nSo I bring her to You, the Healer that we seek",
+        24000,
+        []
+      ],
+      [
+        "[Chorus]\nLay Your hand on Siobhan\nLift her up and make her strong\nYou said You would restore her health\nLord, I'm holding to Your word alone\nSiobhan, You know her name\nHeal her body, ease her pain",
+        26000,
+        []
+      ],
+      [
+        "[Verse 2]\nShe sang over my cradle when the nights were long\nNow I'm singing over her, Lord, keep her carrying on\nEvery morning that she wakes, let her feel You near\nEvery breath she takes, Lord, let her know You're here",
+        24000,
+        []
+      ],
+      [
+        "[Chorus]\nLay Your hand on Siobhan\nLift her up and make her strong\nYou said You would restore her health\nLord, I'm holding to Your word alone\nSiobhan, You know her name\nHeal her body, ease her pain",
+        26000,
+        []
+      ],
+      [
+        "[Bridge]\nFor I will restore health unto thee\nAnd I will heal thee of thy wounds\nThat's Your promise, Lord, I believe\nSiobhan is safe in Your hands",
+        22000,
+        []
+      ],
+      [
+        "[Final Chorus]\nLay Your hand on Siobhan\nLift her up and make her strong\nSiobhan, You know her name\nHeal her body, ease her pain",
+        20000,
+        []
+      ],
+      [
+        "[Outro]\n(amen, amen)",
+        10000,
+        []
+      ]
+    ]
+  },
+  {
+    "id": "05_gentle_guitar_style",
+    "name": "Nevaeh",
+    "name_phonetic": "Neh-vay-uh",
+    "relationship": "Grandchild",
+    "intention": "Protection",
+    "verse": "Psalm 91:11 KJV",
+    "styles": [
+      "gentle acoustic worship ballad",
+      "warm female lead vocalist, clear diction, every word easy to understand",
+      "fingerpicked acoustic guitar",
+      "light strings",
+      "intimate",
+      "72 BPM",
+      "prayerful and unhurried",
+      "polished radio quality production"
+    ],
+    "negative": [
+      "drums",
+      "electronic",
+      "loud",
+      "aggressive",
+      "rap",
+      "mumbled vocals"
+    ],
+    "sections": [
+      [
+        "[Intro]",
+        7000,
+        []
+      ],
+      [
+        "[Verse 1]\nClose your eyes, my sweet Nevaeh\nGrandma's here to pray\nThe stars are out, the night is soft\nThe Lord will light your way",
+        22000,
+        []
+      ],
+      [
+        "[Chorus]\nAngels watching over you, Nevaeh\nKeeping you in all your ways\nOn the road and in the schoolyard\nThrough your nights and through your days\nNevaeh, little one\nYou are covered by the Son",
+        26000,
+        []
+      ],
+      [
+        "[Verse 2]\nWhen you're grown and far from home\nAnd I am not around\nRemember Grandma's lullaby\nAnd the love that you have found",
+        22000,
+        []
+      ],
+      [
+        "[Chorus]\nAngels watching over you, Nevaeh\nKeeping you in all your ways\nOn the road and in the schoolyard\nThrough your nights and through your days\nNevaeh, little one\nYou are covered by the Son",
+        26000,
+        []
+      ],
+      [
+        "[Bridge]\nFor He shall give His angels charge over thee\nTo keep thee in all thy ways\nEvery step, Nevaeh, every dream\nHe will hold you all your days",
+        22000,
+        []
+      ],
+      [
+        "[Outro]\nSleep now, Nevaeh\n(hmm, hmm)",
+        12000,
+        []
+      ]
+    ]
+  },
+  {
+    "id": "06_four_minute",
+    "name": "Siobhan",
+    "name_phonetic": "Shiv-awn",
+    "relationship": "Mother",
+    "intention": "Healing",
+    "verse": "Jeremiah 30:17 KJV",
+    "styles": [
+      "soulful gospel ballad",
+      "warm female lead vocalist, clear diction, every word easy to understand",
+      "piano led",
+      "soft hammond organ",
+      "gentle choir backing on the chorus",
+      "72 BPM",
+      "Ab major",
+      "reverent and hopeful",
+      "polished radio quality production"
+    ],
+    "negative": [
+      "rap",
+      "electronic",
+      "aggressive",
+      "distorted",
+      "mumbled vocals",
+      "heavy drums"
+    ],
+    "sections": [
+      [
+        "[Intro]",
+        10000,
+        [
+          "solo piano",
+          "soft organ swell"
+        ]
+      ],
+      [
+        "[Verse 1]\nLord, I'm coming to You on my knees tonight\nFor the one who held my hand and raised me right\nSiobhan, my mother, she's been tired and weak\nSo I bring her to You, the Healer that we seek",
+        26000,
+        [
+          "intimate vocal",
+          "piano only"
+        ]
+      ],
+      [
+        "[Chorus]\nLay Your hand on Siobhan\nLift her up and make her strong\nYou said You would restore her health\nLord, I'm holding to Your word alone\nSiobhan, You know her name\nHeal her body, ease her pain",
+        28000,
+        [
+          "choir joins",
+          "fuller arrangement",
+          "emotional lift"
+        ]
+      ],
+      [
+        "[Verse 2]\nShe sang over my cradle when the nights were long\nNow I'm singing over her, Lord, keep her carrying on\nEvery morning that she wakes, let her feel You near\nEvery breath she takes, Lord, let her know You're here",
+        26000,
+        [
+          "warm vocal",
+          "piano and organ",
+          "light percussion"
+        ]
+      ],
+      [
+        "[Chorus]\nLay Your hand on Siobhan\nLift her up and make her strong\nYou said You would restore her health\nLord, I'm holding to Your word alone\nSiobhan, You know her name\nHeal her body, ease her pain",
+        28000,
+        [
+          "full choir",
+          "soaring lead vocal"
+        ]
+      ],
+      [
+        "[Interlude]\n{instrumental break}",
+        12000,
+        [
+          "piano and organ instrumental",
+          "no vocals",
+          "reflective"
+        ]
+      ],
+      [
+        "[Bridge]\nFor I will restore health unto thee\nAnd I will heal thee of thy wounds\nThat's Your promise, Lord, I believe\nSiobhan is safe in Your hands",
+        24000,
+        [
+          "stripped back",
+          "piano and voice",
+          "prayerful"
+        ]
+      ],
+      [
+        "[Verse 3]\nWhen the waiting room is quiet and the hours are slow\nSit beside her, Lord, and never let her go\nGive the doctors steady hands and give her peaceful rest\nLet her wake up knowing she is held and she is blessed",
+        26000,
+        [
+          "building gently",
+          "piano, organ and soft choir"
+        ]
+      ],
+      [
+        "[Final Chorus]\nLay Your hand on Siobhan\nLift her up and make her strong\nYou said You would restore her health\nLord, I'm holding to Your word alone\nSiobhan, You know her name\nHeal her body, ease her pain\nLay Your hand on Siobhan\nLord, we leave her in Your care",
+        40000,
+        [
+          "key lift",
+          "choir and lead together",
+          "peak emotion"
+        ]
+      ],
+      [
+        "[Outro]\n(amen, amen)",
+        14000,
+        [
+          "soft hum",
+          "piano fade",
+          "gentle ending"
+        ]
+      ]
+    ]
+  }
+]

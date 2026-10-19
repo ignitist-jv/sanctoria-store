@@ -1,0 +1,33 @@
+AD: 01_UnderTheHabit   (heritage/meaning batch)
+Image: 3_WhyTheMonksNeverTookItOff.png
+Destination (V1): https://sanctoriastore.com/bracelet/
+Destination (V2): https://sanctoriastore.com/bracelet-v2/
+PAGE SPLIT TEST: run this ad set twice, one per page, and tag the ad set name _V1 / _V2 (see naming below) so Meta + ClickBank attribute each page cleanly.
+CTA button: Learn More
+
+=== HEADLINE ===
+Worn By The Monks For 1,500 Years
+
+=== PRIMARY TEXT ===
+In Benedictine monasteries, some things never change.
+
+The bells. The hours of prayer. And the medal the monks have worn for fifteen centuries, tucked under the habit, close to the heart.
+
+They did not wear it for luck. They wore it because it held their prayer, and because the ones who came before them wore it too.
+
+The St Benedict Marian Bracelet carries that same medal, the real one, in bronze, on ebony beads you can feel the weight of.
+
+An unbroken line of devotion, 1,500 years long. Now it reaches you.
+
+See it here.
+
+=== DESCRIPTION (link description) ===
+An unbroken devotion
+
+=== META NAMING ===
+Campaign: WhyTheMonksNeverTookItOff_2026-08-01
+Ad Set:   T1_MF_35-65+_WhyTheMonksNeverTookItOff_V1   (V1 -> /bracelet/)   |   Ad Set:   T1_MF_35-65+_WhyTheMonksNeverTookItOff_V2   (V2 -> /bracelet-v2/)
+Ad:       01_UnderTheHabit
+
+=== URL PARAMETERS ===
+utm_source={{site_source_name}}&utm_medium={{placement}}&utm_campaign={{campaign.name}}&utm_content={{ad.name}}&utm_term={{adset.name}}&cmc_adid=fb_{{ad.id}}

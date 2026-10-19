@@ -1,0 +1,21 @@
+=== AD 16: Just You, In The Quiet (Dark Cinematic Candlelit) ===
+
+PRIMARY TEXT:
+Some prayers are just you, in the dark, holding on.
+
+No words. No lights. The bracelet cupped in both hands, the beads warm against your fingers, the medal close.
+
+The St Benedict Marian Bracelet was made to be held like that. Real ebony beads. A real bronze Saint Benedict medal, worn smooth by prayer.
+
+You do not have to say anything. You just have to hold on.
+
+Bring one home.
+
+HEADLINE: Just You, In The Quiet
+
+NAMING:
+Campaign: AQuietDevotion_2026-08-06
+Ad Set:   T1_MF_35-65+_AQuietDevotion_V2
+Ad:       16_CuppedInCandlelight
+
+Destination: /bracelet-v2/

@@ -1,0 +1,19 @@
+=== AD 03: A Little Steadiness, Close By (stained-glass prayer book) ===
+
+PRIMARY TEXT:
+Faith does not always feel like fireworks. Sometimes it is just holding on, quietly, until morning.
+
+The St Benedict Marian Bracelet is for exactly that. Kept close, ready in your hand, through the long waits and the sleepless nights.
+
+Real ebony beads, the blessed medal of Saint Benedict, and the quiet reminder that you are not carrying any of it by yourself.
+
+Come look.
+
+HEADLINE: A Little Steadiness, Close By
+Overlay: ON THE WAITING DAYS / A little steadiness, close by.
+
+NAMING:
+Campaign: SomethingToHold_2026-08-06
+Ad Set:   T1_MF_35-65+_SomethingToHold_PrayerBook
+Ad:       03_WaitingDays
+Destination: /bracelet-v2/

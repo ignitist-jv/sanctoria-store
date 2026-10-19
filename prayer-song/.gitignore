@@ -1,0 +1,6 @@
+orders/
+creative/test-songs/*.mp3
+demo-data/
+
+# raw Higgsfield renders of the sample clips (the web versions live in site/prayer-song/video/)
+creative/sample-clips/raw-*.mp4

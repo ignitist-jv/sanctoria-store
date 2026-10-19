@@ -1,0 +1,31 @@
+AD: 04_BeforeTheFirstWord   (refresh MULTIPLY of AQuietDevotion, 9.14x winner)
+Image: 04_BeforeTheFirstWord.png
+Destination: https://sanctoriastore.com/bracelet/
+CTA button: Learn More
+
+=== HEADLINE ===
+Before The First Word
+
+=== PRIMARY TEXT ===
+Before the first word of the prayer, there is the feel of the beads.
+
+You settle into the pew. The church goes quiet. You wind the bracelet through your fingers, and begin.
+
+The St Benedict Marian Bracelet was made to be held like this. Real ebony beads, smooth and warm, the medal of Saint Benedict resting in your palm.
+
+One bead. Then the next. Then the next.
+
+A quiet devotion you can carry into any church, on any ordinary day.
+
+See it here.
+
+=== DESCRIPTION (link description) ===
+Held, one bead at a time
+
+=== META NAMING ===
+Campaign: AQuietDevotion_2026-07-25
+Ad Set:   T1_MF_35-65+_AQuietDevotion   (existing winner id 120255189519530051)
+Ad:       04_BeforeTheFirstWord
+
+=== URL PARAMETERS (paste into "URL parameters" field) ===
+utm_source={{site_source_name}}&utm_medium={{placement}}&utm_campaign={{campaign.name}}&utm_content={{ad.name}}&utm_term={{adset.name}}&cmc_adid=fb_{{ad.id}}

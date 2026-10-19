@@ -1,0 +1,19 @@
+=== AD 11: Porch Rocking Chair (Vintage Film) ===
+
+PRIMARY TEXT:
+The best praying happens slowly.
+
+In an old chair. On a quiet evening. One bead, then the next, while the day winds down.
+
+The St Benedict Marian Bracelet is made for that kind of prayer. No hurry. No noise. Just the beads on your wrist and the quiet coming in.
+
+Come look.
+
+HEADLINE: No Hurry, Just The Beads
+
+NAMING:
+Campaign: AQuietDevotion_2026-08-06
+Ad Set:   T1_MF_35-65+_AQuietDevotion_V2
+Ad:       11_PorchRockingChair
+
+Destination: /bracelet-v2/

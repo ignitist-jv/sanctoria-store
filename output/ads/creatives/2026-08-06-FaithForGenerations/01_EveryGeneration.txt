@@ -1,0 +1,18 @@
+=== AD 01: A Faith For Every Generation (purple pedestal) ===
+
+PRIMARY TEXT:
+The faith you grew up with was handed to you by someone who loved you. Now it is yours to pass on.
+
+The St Benedict Marian Bracelet carries the devotion your family has kept for generations. Real ebony beads, the blessed medal of Saint Benedict, worn close in daily prayer.
+
+Keep your faith close. Guard your family in prayer. Hand it down.
+
+Come look.
+
+HEADLINE: A Faith For Every Generation
+
+NAMING:
+Campaign: FaithForGenerations_2026-08-06
+Ad Set:   T1_MF_35-65+_FaithForGenerations_Purple
+Ad:       01_EveryGeneration
+Destination: /bracelet-v2/

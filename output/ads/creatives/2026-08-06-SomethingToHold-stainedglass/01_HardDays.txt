@@ -1,0 +1,21 @@
+=== AD 01: Something To Hold On To (stained-glass windowsill) ===
+
+PRIMARY TEXT:
+Some days are heavier than others.
+
+The waiting. The worry. The news you did not want. On days like that, it helps to have something in your hand.
+
+The St Benedict Marian Bracelet is made to be held. Real ebony beads to move through your fingers, the medal of Saint Benedict resting in your palm, while you say the prayer you cannot find words for.
+
+You do not have to hold it together alone.
+
+Come look.
+
+HEADLINE: Something To Hold On To
+Overlay: FOR THE HARD DAYS / Something to hold on to.
+
+NAMING:
+Campaign: SomethingToHold_2026-08-06
+Ad Set:   T1_MF_35-65+_SomethingToHold_Windowsill
+Ad:       01_HardDays
+Destination: /bracelet-v2/

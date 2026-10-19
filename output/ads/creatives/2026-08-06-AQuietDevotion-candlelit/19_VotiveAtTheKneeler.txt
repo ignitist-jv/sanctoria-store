@@ -1,0 +1,21 @@
+=== AD 19: No Words Needed (Dark Cinematic Candlelit) ===
+
+PRIMARY TEXT:
+There is a kind of prayer that needs no words at all.
+
+A small flame. A quiet place to kneel. The beads moving slowly through your fingers, one at a time.
+
+The St Benedict Marian Bracelet belongs in that moment. Real ebony beads, the medal of Saint Benedict resting in your palm, worn smooth by daily prayer.
+
+Light one. Kneel. Begin.
+
+See it here.
+
+HEADLINE: No Words Needed
+
+NAMING:
+Campaign: AQuietDevotion_2026-08-06
+Ad Set:   T1_MF_35-65+_AQuietDevotion_V2
+Ad:       19_VotiveAtTheKneeler
+
+Destination: /bracelet-v2/

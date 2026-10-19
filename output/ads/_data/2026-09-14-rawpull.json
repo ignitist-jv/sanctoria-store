@@ -1,0 +1,20 @@
+{
+  "pulled": "2026-09-14",
+  "account": "462874384767571",
+  "source": "claude_ai_Meta_Ads MCP (media-buyer MCP misconfigured; ClickBank unreachable)",
+  "note": "Meta last_3d/last_7d/last_14d/last_28d EXCLUDE today. TOTAL = 28d + today.",
+  "active_adsets": [
+    {"id":"120256241056110051","label_name":"T1_MF_35-65+_StoppedHidingIt_UGC_ParkingLot","actual_ad":"01_SistersThreeStates","ad_id":"120256241056050051","NAMING_MISMATCH":true,"budget":5,"spend_28d":6.88,"spend_today":4.08,"spend_total":10.96,"rev_total":33.06,"sales_total":1,"roas_total":3.02,"ctr_7d":8.82,"verdict":"WATCH"},
+    {"id":"120256241056150051","label_name":"T1_MF_35-65+_BoughtOneForMyself_UGC_KeptOne","actual_ad":"05_KeptOneForMyself","budget":5,"spend_28d":5.62,"spend_today":3.33,"spend_total":8.95,"rev_total":0,"sales_total":0,"ctr_7d":7.23,"verdict":"TOO_EARLY"},
+    {"id":"120256241056140051","label_name":"T1_MF_35-65+_MyDadWearsIt_UGC_MugAndPaper","actual_ad":"04_DadStillWearsIt","budget":5,"spend_28d":6.01,"spend_today":3.25,"spend_total":9.26,"rev_total":0,"sales_total":0,"ctr_7d":10.68,"verdict":"TOO_EARLY"},
+    {"id":"120256241056130051","label_name":"T1_MF_35-65+_MenWhoPray_UGC_WeddingRingOnly","actual_ad":"03_GodmotherHandover","ad_id":"120256241056070051","NAMING_MISMATCH":true,"budget":5,"spend_28d":6.12,"spend_today":3.63,"spend_total":9.75,"rev_total":0,"sales_total":0,"ctr_7d":5.63,"verdict":"TOO_EARLY"},
+    {"id":"120256241056120051","label_name":"T1_MF_35-65+_ForMySonLeavingHome_UGC_DuffelBag","actual_ad":"02_PackedWithTheCharger","budget":5,"spend_28d":5.21,"spend_today":2.83,"spend_total":8.04,"rev_total":0,"sales_total":0,"ctr_7d":14.77,"verdict":"TOO_EARLY"},
+    {"id":"120256178585970051","label_name":"T1_MF_35-65+_UGCEveryday_UGC_DaughterPack","actual_ad":"04_DaughterTwoPack","budget":7,"spend_28d":33.37,"spend_today":8.90,"spend_total":42.27,"rev_total":152.99,"sales_total":2,"roas_total":3.62,"roas_3d":5.76,"sales_today":0,"ctr_7d":12.79,"freq":1.21,"verdict":"SCALE_7_to_9"},
+    {"id":"120256150053270051","label_name":"T1_MF_35-65+_AQuietDevotion_UGC_Couch","actual_ad":"01_CouchMorning","budget":5,"spend_28d":31.72,"spend_today":3.21,"spend_total":34.93,"rev_total":42.23,"sales_total":1,"roas_total":1.21,"spend_3d":13.61,"sales_3d":0,"ctr_7d":14.96,"verdict":"REDUCE_5_to_4"},
+    {"id":"120256150053250051","label_name":"T1_MF_35-65+_AQuietDevotion_UGC_Kitchen","actual_ad":"01_KitchenMorning","budget":5,"spend_28d":31.22,"spend_today":4.48,"spend_total":35.70,"rev_total":51.43,"sales_total":1,"roas_total":1.44,"spend_3d":9.31,"sales_3d":0,"ctr_7d":10.95,"verdict":"WATCH"},
+    {"id":"120256150053240051","label_name":"T1_MF_35-65+_AQuietDevotion_UGC_Cardigan","actual_ad":"01_CardiganMorning","budget":5,"spend_28d":29.83,"spend_today":5.19,"spend_total":35.02,"rev_total":46.72,"sales_total":1,"roas_total":1.33,"spend_3d":11.41,"sales_3d":0,"ctr_7d":12.64,"verdict":"WATCH"},
+    {"id":"120256136639870051","label_name":"T1_MF_35-65+_AQuietDevotion_PHOTO_Quiet","actual_ad":"02_QuietMinute","budget":5,"spend_28d":42.43,"spend_today":3.23,"spend_total":45.66,"rev_total":98.30,"sales_total":2,"roas_7d":0.90,"roas_14d":2.32,"roas_28d":2.32,"roas_3d":2.58,"roas_total":2.15,"ctr_7d":4.95,"freq":1.43,"verdict":"WATCH_override_rule"}
+  ],
+  "portfolio": {"spend_total":240.54,"spend_today":42.13,"revenue_total":424.73,"revenue_today":33.06,"blended_roas":1.77},
+  "reconciliation_gap": "ClickBank cb_get_orders unavailable: only account 3 (wealthapa) configured and it returns 401. karmacc actuals NOT reconciled this run. Meta CAPI figures only."
+}

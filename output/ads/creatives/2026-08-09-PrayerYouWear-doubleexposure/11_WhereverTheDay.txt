@@ -1,0 +1,18 @@
+=== AD 11: Wherever The Day Takes You (double-exposure: sunrise) ===
+
+PRIMARY TEXT:
+Every day asks something different of you. Your faith can go with you into all of it.
+
+The St Benedict Marian Bracelet stays on your wrist from the first light to the last. Down every road, through every errand, into every hard conversation and quiet victory.
+
+You never have to leave your prayer at home.
+
+Bring one home.
+
+HEADLINE: Wherever The Day Takes You
+
+NAMING:
+Campaign: PrayerYouWear_2026-08-09
+Ad Set:   T1_MF_35-65+_PrayerYouWear_DX_Sunrise
+Ad:       11_WhereverTheDay
+Destination: /bracelet-v2/

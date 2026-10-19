@@ -1,0 +1,25 @@
+{
+  "pulled": "2026-09-29",
+  "account": "462874384767571",
+  "note": "Windows exclude today. The three BraceletNonUGC ad sets launched TODAY so have no window data. Outbound CTR = outbound_clicks / impressions.",
+  "executed_by_TS": [
+    "UGCEveryday 120256178585970051 KILLED, confirmed PAUSED. Final $176.41 / 3 sales / 1.05x",
+    "DaughterPack_SheAskedFirst 120256381144990051 KILLED, confirmed PAUSED. Final $32.75 / 1 sale / 1.01x",
+    "Launched BraceletNonUGC as duplicate campaign with new IDs 12025650234xxxx, and moved NovemberNames start forward from 2026-10-28 to today"
+  ],
+  "day1_nonugc": [
+    {"id":"120256502344690051","label":"T1_MF_35-65+_NovemberNames_PHOTO_TheList","format":"PHOTO","spend":6.39,"impressions":99,"outbound":3,"outbound_ctr_pct":3.03,"sales":1,"rev":32.99,"roas":5.16,"verdict":"TOO_EARLY_1_sale_on_3_clicks_is_noise"},
+    {"id":"120256502344670051","label":"T1_MF_35-65+_WhatIsOnIt_IG_Callouts","format":"IG","spend":5.40,"impressions":150,"outbound":6,"outbound_ctr_pct":4.00,"sales":0,"verdict":"TOO_EARLY"},
+    {"id":"120256502344710051","label":"T1_MF_35-65+_TheOneThingIPrayFor_POSTER_OneLine","format":"POSTER","spend":3.50,"impressions":246,"outbound":2,"outbound_ctr_pct":0.81,"sales":0,"verdict":"TOO_EARLY_but_worst_outbound_CTR_in_account"}
+  ],
+  "established": [
+    {"id":"120256381145120051","label":"T1_MF_35-65+_AQuietDevotion_UGC_BeforeTheHouseWakes","budget":6.50,"spend_28d":39.97,"spend_today":4.94,"spend_total":44.91,"rev_total":84.33,"sales":2,"roas_14d":2.11,"roas_28d":2.11,"roas_total":1.88,"spend_3d":20.89,"sales_3d":0,"dry_since_scale":25.83,"outbound_28d":43,"cvr_pct":4.7,"ctr":15.52,"freq":1.25,"verdict":"REDUCE_6.50_to_5"},
+    {"id":"120256136639870051","label":"T1_MF_35-65+_AQuietDevotion_PHOTO_Quiet","budget":5,"spend_28d":112.45,"spend_today":2.83,"spend_total":115.28,"rev_total":173.46,"sales":4,"roas_14d":1.16,"roas_28d":1.54,"roas_3d":7.88,"roas_total":1.50,"outbound_28d":107,"cvr_pct":3.7,"ctr":6.18,"freq":1.65,"verdict":"WATCH_most_sales_in_account"}
+  ],
+  "format_read_day1": {
+    "POSTER":0.81,"NovemberNames_PHOTO":3.03,"IG":4.00,"UGC_BeforeTheHouseWakes_today":5.26,"UGC_AQD_PHOTO_today":3.57,
+    "note":"POSTER is getting impressions but not clicks. CTR stabilises far faster than CVR, so this is an early but real signal at 246 impressions."
+  },
+  "portfolio": {"spend_total":175.48,"spend_today":23.06,"revenue_total":290.78,"revenue_today":32.99,"blended_roas":1.66,"today_roas":1.43},
+  "reconciliation_gap": "ClickBank karmacc still unavailable."
+}

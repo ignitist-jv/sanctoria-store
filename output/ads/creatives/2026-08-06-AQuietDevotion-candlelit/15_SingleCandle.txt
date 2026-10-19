@@ -1,0 +1,21 @@
+=== AD 15: The Quietest Part Of The Day (Dark Cinematic Candlelit) ===
+
+PRIMARY TEXT:
+The quiet comes after everyone else is asleep.
+
+One small light. A few beads. A few minutes that belong to you and God alone.
+
+The St Benedict Marian Bracelet was made for that hour. Real ebony beads you can find in the dark, the medal of Saint Benedict resting under your thumb.
+
+No noise. No hurry. Just the flame, the beads, and a quiet word.
+
+Come look.
+
+HEADLINE: The Quietest Part Of The Day
+
+NAMING:
+Campaign: AQuietDevotion_2026-08-06
+Ad Set:   T1_MF_35-65+_AQuietDevotion_V2
+Ad:       15_SingleCandle
+
+Destination: /bracelet-v2/

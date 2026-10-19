@@ -1,0 +1,18 @@
+=== AD 05: A Prayer Between The Dishes (kitchen sink) ===
+
+PRIMARY TEXT:
+The dishes do not wait. The washing does not wait. Most days, neither does anything else.
+
+But the St Benedict Marian Bracelet is already on your wrist. A glance down at the sink, a bead between soapy fingers, a quick word to God in the middle of the ordinary.
+
+You do not have to find a quiet room. You just have to look down.
+
+See it here.
+
+HEADLINE: A Prayer Between The Dishes
+
+NAMING:
+Campaign: PrayerYouWear_2026-08-06
+Ad Set:   T1_MF_35-65+_PrayerYouWear_KitchenSink
+Ad:       05_KitchenSink
+Destination: /bracelet-v2/

@@ -1,0 +1,30 @@
+{
+  "pulled": "2026-09-27",
+  "account": "462874384767571",
+  "note": "Windows exclude today. TOTAL = 28d + today. Outbound clicks used for CVR, not raw clicks.",
+  "HEADLINE": "Good day. $22.52 spent, $75.16 returned (3.34x). AQuietDevotion_PHOTO booked 2 delayed sales on ZERO spend today, which lifted it from 1.22x to 1.64x and vindicates not killing it.",
+  "active": [
+    {"id":"120256381145120051","label":"T1_MF_35-65+_AQuietDevotion_UGC_BeforeTheHouseWakes","campaign":"AQuietDevotion_UGC_2026-09-19","budget":5,"spend_28d":19.29,"spend_today":5.10,"spend_total":24.39,"rev_total":84.33,"sales":2,"roas_14d":4.37,"roas_28d":4.37,"roas_3d":7.37,"roas_total":3.46,"outbound_28d":20,"cvr_pct":10.0,"ctr":12.50,"freq":1.20,"verdict":"SCALE_5_to_6.50"},
+    {"id":"120256136639870051","label":"T1_MF_35-65+_AQuietDevotion_PHOTO_Quiet","budget":5,"spend_28d":105.94,"spend_today":0,"spend_total":105.94,"rev_28d":98.30,"rev_today":75.16,"rev_total":173.46,"sales":4,"roas_14d":0.48,"roas_28d":0.93,"roas_total":1.64,"outbound_28d":101,"ctr":6.19,"freq":1.63,"verdict":"WATCH_recovered_on_delayed_sales"},
+    {"id":"120256381144990051","label":"T1_MF_35-65+_DaughterPack_UGC_SheAskedFirst","budget":5,"spend_28d":19.34,"spend_today":5.76,"spend_total":25.10,"rev_total":33.06,"sales":1,"roas_14d":1.71,"roas_28d":1.71,"roas_total":1.32,"outbound_28d":21,"ctr":17.38,"freq":1.21,"verdict":"WATCH"},
+    {"id":"120256178585970051","label":"T1_MF_35-65+_UGCEveryday_UGC_DaughterPack","budget":9,"spend_28d":151.19,"spend_today":7.95,"spend_total":159.14,"rev_total":186.03,"sales":3,"roas_14d":0.26,"roas_28d":1.23,"roas_total":1.17,"spend_3d":16.92,"sales_3d":0,"outbound_28d":81,"ctr":16.01,"freq":1.36,"verdict":"REDUCE_9_to_7"},
+    {"id":"120256241056110051","label":"T1_MF_35-65+_StoppedHidingIt_UGC_ParkingLot","actual_angle":"SistersThreePack","budget":5,"spend_28d":72.75,"spend_today":3.71,"spend_total":76.46,"rev_total":84.52,"sales":2,"roas_14d":1.16,"roas_28d":1.16,"roas_total":1.11,"spend_3d":13.07,"sales_3d":0,"outbound_28d":71,"cvr_pct":2.8,"ctr":8.01,"freq":1.37,"verdict":"KILL_below_line_14d_and_28d","roas_trend":["3.75x 09-16","3.13x 09-17","2.30x 09-19","1.72x 09-21","1.11x 09-27"]}
+  ],
+  "archived_by_TS": [
+    {"label":"SistersThreePack_AfterTheFuneral","id":"120256381144960051","spend":13.41,"outbound":11,"sales":0},
+    {"label":"SistersThreePack_GroupChat","id":"120256381144950051","spend":12.30,"outbound":12,"sales":0},
+    {"label":"SistersThreePack_NotByBlood","id":"120256381144920051","spend":13.87,"outbound":8,"sales":0},
+    {"label":"ThreeGenerations_HerCordWoreThrough","id":"120256381145090051","spend":11.82,"outbound":7,"sales":0},
+    {"label":"ThreeGenerations_KitchenDrawer","id":"120256381145070051","spend":13.62,"outbound":11,"sales":0},
+    {"label":"IAlmostDidntBuyIt_ThreeWeeksLater","id":"120256423440170051","spend":14.24,"outbound":15,"sales":0}
+  ],
+  "kill_statistics": {
+    "total_spend":79.26,"total_outbound":64,"total_sales":0,
+    "per_ad_clicks_range":"7 to 15",
+    "p_zero_sales_individually_at_account_cvr":"0.63 to 0.80",
+    "p_zero_sales_pooled_at_account_cvr":0.135,
+    "reading":"Individually none of the six was a valid verdict, the samples are far too small. Pooled at 64 clicks the group is mildly suggestive of below-average performance but not conclusive."
+  },
+  "portfolio": {"spend_total":391.03,"spend_today":22.52,"revenue_total":561.40,"revenue_today":75.16,"blended_roas":1.44,"today_roas":3.34},
+  "reconciliation_gap": "ClickBank karmacc still unavailable."
+}

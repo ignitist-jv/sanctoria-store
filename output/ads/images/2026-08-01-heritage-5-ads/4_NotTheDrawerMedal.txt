@@ -1,0 +1,35 @@
+AD: 01_TheRealOne   (heritage/meaning batch)
+Image: 4_NotTheDrawerMedal.png
+Destination (V1): https://sanctoriastore.com/bracelet/
+Destination (V2): https://sanctoriastore.com/bracelet-v2/
+PAGE SPLIT TEST: run this ad set twice, one per page, and tag the ad set name _V1 / _V2 (see naming below) so Meta + ClickBank attribute each page cleanly.
+CTA button: Learn More
+
+=== HEADLINE ===
+Not The One In Your Drawer
+
+=== PRIMARY TEXT ===
+Most of us have a Saint Benedict medal somewhere.
+
+A thin one, from a gift shop. In a drawer. Tarnished. Half forgotten.
+
+There is nothing wrong with it. But it is not the same as holding the real thing.
+
+The St Benedict Marian Bracelet is made the old way. Real ebony wood beads with real weight. A solid bronze medal with the full inscription, sharp and readable. Something you wear every day, not something you lose in a drawer.
+
+The difference is in your hand the moment you pick it up.
+
+If you have been meaning to own the real one, this is it.
+
+Come look.
+
+=== DESCRIPTION (link description) ===
+The real St Benedict medal
+
+=== META NAMING ===
+Campaign: NotTheDrawerMedal_2026-08-01
+Ad Set:   T1_MF_35-65+_NotTheDrawerMedal_V1   (V1 -> /bracelet/)   |   Ad Set:   T1_MF_35-65+_NotTheDrawerMedal_V2   (V2 -> /bracelet-v2/)
+Ad:       01_TheRealOne
+
+=== URL PARAMETERS ===
+utm_source={{site_source_name}}&utm_medium={{placement}}&utm_campaign={{campaign.name}}&utm_content={{ad.name}}&utm_term={{adset.name}}&cmc_adid=fb_{{ad.id}}

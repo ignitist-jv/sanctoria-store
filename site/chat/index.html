@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Find Your Devotion | Sanctoria</title>
+<meta name="description" content="A short guided conversation, and we will point you to the one blessed devotion that fits what you are carrying right now.">
+
+<!-- ClickMagick Tracker -->
+<script>
+    window.clickmagick_cmc = {
+        uid: '92654',
+        hid: '1214314307',
+        cmc_project: 'Sanctoria Store',
+        vid_info: 'on',
+        utm_source: 'organic'
+    };
+</script>
+<script src='https://cdn.clkmc.com/cmc.js'></script>
+
+<!-- Microsoft Clarity -->
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "ydd7lw8hiu");
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --bg:#F2ECE1; --paper:#FFFDF9; --paper-soft:#FBF6EC; --paper-warm:#F7F1E6;
+    --ink:#2A1F1A; --ink-soft:#5B4A40; --muted:#9A8B79;
+    --bronze:#9A7B4F; --bronze-deep:#7A5F39; --gold:#F2C230; --gold-edge:#D9A415;
+    --green:#2E9E4F; --green-deep:#257F3F;
+    --hair:#E6DCCA; --hair-bright:#F0E7D6; --dark:#3D2A24; --mine:#F3E7CF;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{margin:0;color:var(--ink);font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased;
+       background:
+         radial-gradient(1100px 520px at 50% -8%, #FBF6EC 0%, rgba(251,246,236,0) 62%),
+         linear-gradient(180deg,#F4EEE4 0%, #EFE8DB 100%);
+       background-attachment:fixed}
+
+  [hidden]{display:none !important}   /* must win over .lander{display:flex} */
+
+  .app{max-width:520px;margin:0 auto;min-height:100dvh;display:flex;flex-direction:column;
+       background:var(--paper);border-left:1px solid var(--hair);border-right:1px solid var(--hair);
+       box-shadow:0 0 60px rgba(42,31,26,.07)}
+
+  /* ---------- header ---------- */
+  .chead{position:sticky;top:0;z-index:6;display:flex;align-items:center;gap:13px;padding:13px 18px 12px;
+         background:linear-gradient(180deg,var(--paper) 0%,var(--paper-soft) 100%);
+         border-bottom:1px solid var(--hair);box-shadow:0 1px 0 rgba(255,255,255,.7) inset}
+  .avatar{position:relative;width:44px;height:44px;border-radius:50%;flex:none;
+          background:radial-gradient(circle at 32% 28%, #FFFFFF 0%, var(--paper-warm) 70%);
+          border:1px solid var(--hair);display:flex;align-items:center;justify-content:center;
+          box-shadow:0 2px 8px rgba(42,31,26,.08)}
+  .avatar::after{content:"";position:absolute;inset:-3px;border-radius:50%;
+                 border:1px solid rgba(154,123,79,.34);pointer-events:none}
+  .avatar img{width:100%;height:100%;border-radius:50%;display:block;
+              object-fit:cover;object-position:50% 20%}
+  .cwho{flex:1;min-width:0}
+  .cname{font-family:'Fraunces',serif;font-weight:600;font-size:16.5px;line-height:1.15;letter-spacing:.1px}
+  .crole{font-size:9.5px;letter-spacing:.17em;text-transform:uppercase;color:var(--bronze);font-weight:700;margin-top:4px}
+  .cnote{font-size:11.5px;color:var(--muted);line-height:1.4;margin-top:3px}
+
+  /* progress hairline that fills as she answers */
+  .pbar{height:2px;background:var(--hair);position:sticky;top:0;z-index:5}
+  .pbar i{display:block;height:100%;width:0%;background:linear-gradient(90deg,var(--bronze),var(--gold));
+          transition:width .5s cubic-bezier(.4,0,.2,1)}
+
+  /* ---------- thread ---------- */
+  .thread{flex:1;padding:20px 16px 6px;display:flex;flex-direction:column;gap:9px}
+  .row{display:flex;animation:rise .32s cubic-bezier(.22,.9,.3,1) both}
+  .row.me{justify-content:flex-end}
+  @keyframes rise{from{opacity:0;transform:translateY(10px) scale(.985)}to{opacity:1;transform:none}}
+
+  .bub{max-width:84%;padding:13px 16px;border-radius:17px;font-size:15.5px;line-height:1.58}
+  .row.them .bub{background:var(--paper-soft);border:1px solid var(--hair);border-bottom-left-radius:6px;
+                 color:var(--ink);box-shadow:0 1px 0 rgba(255,255,255,.9) inset, 0 4px 14px rgba(42,31,26,.045)}
+  .row.me .bub{background:linear-gradient(180deg,#F6EBD6 0%,#F1E3C8 100%);border:1px solid #E6D3AE;
+               border-bottom-right-radius:6px;color:var(--bronze-deep);font-weight:600;
+               box-shadow:0 4px 14px rgba(154,123,79,.14)}
+
+  .typing{display:inline-flex;gap:5px;align-items:center;padding:16px 17px}
+  .typing span{width:6.5px;height:6.5px;border-radius:50%;background:var(--bronze);animation:bounce 1.2s ease-in-out infinite}
+  .typing span:nth-child(2){animation-delay:.18s}
+  .typing span:nth-child(3){animation-delay:.36s}
+  @keyframes bounce{0%,60%,100%{opacity:.22;transform:translateY(0)}30%{opacity:.75;transform:translateY(-3px)}}
+
+  /* ---------- reply dock ---------- */
+  .replies{position:sticky;bottom:0;z-index:4;padding:14px 16px 18px;
+           background:linear-gradient(180deg,rgba(255,253,249,0) 0%,var(--paper) 26%);
+           border-top:1px solid transparent;display:flex;flex-direction:column;gap:8px}
+  .replies:not(:empty){border-top-color:var(--hair)}
+  .chip{position:relative;width:100%;text-align:left;background:var(--paper);border:1px solid rgba(154,123,79,.5);
+        border-radius:26px;padding:14px 42px 14px 19px;font-family:'Inter',sans-serif;font-size:15px;font-weight:500;
+        color:var(--ink);cursor:pointer;box-shadow:0 2px 10px rgba(42,31,26,.05);
+        transition:background .15s,border-color .15s,box-shadow .15s,transform .08s;
+        animation:chipIn .3s cubic-bezier(.22,.9,.3,1) both}
+  .chip::after{content:"→";position:absolute;right:18px;top:50%;transform:translateY(-50%);
+               color:var(--bronze);opacity:.5;font-size:15px;transition:opacity .15s,transform .15s}
+  .chip:hover{background:var(--paper-soft);border-color:var(--bronze);box-shadow:0 6px 18px rgba(154,123,79,.16)}
+  .chip:hover::after{opacity:1;transform:translateY(-50%) translateX(2px)}
+  .chip:active{transform:translateY(1px)}
+  .chip:focus-visible{outline:2px solid var(--bronze);outline-offset:2px}
+  .chip.skip{border-color:var(--hair);color:var(--muted);text-align:center;font-size:13.5px;padding:12px 19px;box-shadow:none}
+  .chip.skip::after{content:""}
+  .chip:nth-child(2){animation-delay:.05s}
+  .chip:nth-child(3){animation-delay:.1s}
+  .chip:nth-child(4){animation-delay:.15s}
+  .chip:nth-child(5){animation-delay:.2s}
+  @keyframes chipIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+  /* ---------- offer card inside the thread ---------- */
+  .card{align-self:flex-start;width:94%;background:linear-gradient(180deg,var(--paper) 0%,var(--paper-soft) 100%);
+        border:1px solid var(--hair-bright);border-radius:18px;padding:18px 16px 16px;margin:4px 0 8px;
+        box-shadow:0 1px 0 rgba(255,255,255,.9) inset, 0 10px 30px rgba(42,31,26,.09);
+        animation:rise .4s cubic-bezier(.22,.9,.3,1) both}
+  .card .ceyebrow{text-align:center;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;
+                  color:var(--bronze);font-weight:700;margin-bottom:10px}
+  .card .frame{position:relative;width:100%;max-width:186px;margin:0 auto 14px;border-radius:12px;overflow:hidden;
+               border:1px solid var(--hair);box-shadow:0 6px 18px rgba(42,31,26,.1)}
+  .card .frame img{width:100%;display:block}
+  .card .pname{font-family:'Fraunces',serif;font-size:19px;font-weight:600;text-align:center;line-height:1.28;
+               margin:0 0 4px}
+  .card .rule{display:flex;align-items:center;gap:9px;margin:12px 2px 14px;color:var(--bronze)}
+  .card .rule::before,.card .rule::after{content:"";height:1px;flex:1;background:var(--hair)}
+  .card .rule span{font-size:11px;opacity:.75}
+
+  .pack{display:flex;align-items:center;gap:12px;border:1px solid var(--hair);border-radius:13px;padding:13px 14px;
+        margin-bottom:9px;text-decoration:none;color:var(--ink);background:var(--paper);
+        transition:border-color .15s,box-shadow .15s,transform .08s}
+  .pack:hover{border-color:var(--bronze);box-shadow:0 8px 20px rgba(154,123,79,.16);transform:translateY(-1px)}
+  .pack:focus-visible{outline:2px solid var(--bronze);outline-offset:2px}
+  .pack.best{border-color:rgba(154,123,79,.65);background:linear-gradient(180deg,#FFFDF7 0%,var(--paper-warm) 100%);
+             box-shadow:0 6px 18px rgba(154,123,79,.14)}
+  .pack-main{flex:1;min-width:0}
+  .pack-name{font-weight:700;font-size:15px;letter-spacing:.1px}
+  .pack-why{font-size:12px;color:var(--muted);line-height:1.45;margin-top:3px}
+  .pack-price{text-align:right;flex:none}
+  .pack-now{font-family:'Fraunces',serif;font-size:20px;font-weight:600;display:block;line-height:1.1}
+  .pack-was{font-size:11.5px;color:var(--muted);text-decoration:line-through;display:block;margin-top:1px}
+  .tag{display:inline-block;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:#6F5526;font-weight:800;
+       background:linear-gradient(180deg,#FBEBC0,#F4DCA3);border:1px solid #E7CF95;border-radius:20px;
+       padding:3px 9px;margin-bottom:5px}
+
+  footer{padding:16px 18px 26px;text-align:center;font-size:11px;color:var(--muted);line-height:1.75}
+  footer a{color:var(--muted)}
+  .hidden-links{display:none}
+
+
+  /* ---------- name and email dock ---------- */
+  .dock{display:flex;flex-direction:column;gap:9px;animation:chipIn .3s cubic-bezier(.22,.9,.3,1) both}
+  .field{width:100%;background:var(--paper);border:1px solid rgba(154,123,79,.5);border-radius:26px;
+         padding:15px 19px;font-family:'Inter',sans-serif;font-size:16px;color:var(--ink);
+         box-shadow:0 2px 10px rgba(42,31,26,.05);transition:border-color .15s,box-shadow .15s}
+  .field::placeholder{color:var(--muted)}
+  .field:focus{outline:none;border-color:var(--bronze);box-shadow:0 6px 18px rgba(154,123,79,.16)}
+  .field.bad{border-color:#C0563F;box-shadow:0 4px 14px rgba(192,86,63,.16)}
+  .send{width:100%;border:1px solid var(--gold-edge);border-radius:26px;padding:15px 18px;cursor:pointer;
+        background:linear-gradient(180deg,#F7CF4B 0%,var(--gold) 100%);color:#2A1F1A;
+        font-family:'Inter',sans-serif;font-size:15.5px;font-weight:800;letter-spacing:.3px;
+        box-shadow:0 6px 18px rgba(217,164,21,.28);transition:background .15s,box-shadow .15s,transform .08s}
+  .send:hover{background:linear-gradient(180deg,var(--green) 0%,var(--green-deep) 100%);color:#FBFDF9;
+              border-color:var(--green-deep);box-shadow:0 10px 24px rgba(37,127,63,.34)}
+  .send:active{transform:translateY(1px)}
+  .send:disabled{opacity:.6;cursor:default;transform:none}
+  .send:focus-visible,.field:focus-visible{outline:2px solid var(--bronze);outline-offset:2px}
+  .err{margin:0;font-size:12.5px;line-height:1.45;color:#A8452F;padding:0 6px}
+  .consent{margin:2px 6px 0;font-size:11px;line-height:1.5;color:var(--muted)}
+  .consent a{color:var(--bronze)}
+  .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+
+
+  /* ---------- lander ---------- */
+  .lander{padding:0 20px 34px;display:flex;flex-direction:column;min-height:100dvh}
+  .lbrand{display:flex;justify-content:center;padding:20px 0 18px}
+  .lbrand img{height:34px;width:auto}
+  .leyebrow{text-align:center;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--bronze);
+            font-weight:700;margin-bottom:12px}
+  .lhead{font-family:'Fraunces',serif;font-size:27px;line-height:1.2;font-weight:600;text-align:center;margin:0 0 20px}
+  .lhead span{display:block}
+  .lnote{margin:0 0 22px}
+  .lnote p{font-size:15.5px;line-height:1.68;color:var(--ink-soft);margin:0 0 13px}
+  .lsig{margin-top:18px;display:flex;align-items:center;gap:13px}
+  .lface{width:54px;height:54px;border-radius:50%;flex:none;object-fit:cover;object-position:50% 20%;
+         border:1px solid var(--hair);box-shadow:0 2px 10px rgba(42,31,26,.10)}
+  .lsig b{display:block;font-family:'Fraunces',serif;font-size:17px;font-weight:600;color:var(--ink)}
+  .lsig span{display:block;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-top:3px}
+  .lbtn{display:block;width:100%;border:1px solid var(--gold-edge);border-radius:28px;padding:18px;cursor:pointer;
+        background:linear-gradient(180deg,#F7CF4B 0%,var(--gold) 100%);color:#2A1F1A;font-family:'Inter',sans-serif;
+        font-size:16px;font-weight:800;letter-spacing:.4px;box-shadow:0 8px 22px rgba(217,164,21,.3);
+        transition:background .15s,box-shadow .15s,transform .08s}
+  .lbtn:hover{background:linear-gradient(180deg,var(--green) 0%,var(--green-deep) 100%);color:#FBFDF9;
+              border-color:var(--green-deep);box-shadow:0 12px 28px rgba(37,127,63,.34)}
+  .lbtn:active{transform:translateY(1px)}
+  .lbtn:focus-visible{outline:2px solid var(--bronze);outline-offset:3px}
+  .lmicro{text-align:center;font-size:12.5px;color:var(--ink-soft);margin:12px 0 0;line-height:1.5}
+  .lreassure{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 14px;margin:14px 0 0;
+             font-size:10.5px;color:var(--muted);text-align:center}
+  .lreassure span{display:inline-flex;align-items:center;gap:5px}
+  .lreassure span::before{content:"";width:3px;height:3px;border-radius:50%;background:var(--bronze);opacity:.6}
+  .closing{padding:22px 20px 0;text-align:center;font-size:12.5px;line-height:1.6;color:var(--muted)}
+
+  @media (prefers-reduced-motion:reduce){
+    .row,.card,.chip{animation:none !important}
+    .typing span{animation-duration:2.4s}
+    .pbar i{transition:none}
+  }
+
+</style>
+</head>
+<body>
+
+<!--
+  PRE-RENDERED CHECKOUT LINKS.
+  Present at page load so ClickMagick's cmc.js rewrites every [cmc_vid] token into the
+  real visitor id. The chat copies these hrefs rather than assembling URLs in JavaScript,
+  which would ship the literal token and lose attribution. Never hardcode a vtid value.
+-->
+<div class="hidden-links" aria-hidden="true">
+  <a id="lnk-bracelet-1" href="https://karmacc.pay.clickbank.net/?cbitems=bracelet-1&template=order-2&cbfid=63684&vtid=[cmc_vid]">1</a>
+  <a id="lnk-bracelet-2" href="https://karmacc.pay.clickbank.net/?cbitems=bracelet-2&template=order-2&cbfid=63684&vtid=[cmc_vid]">2</a>
+  <a id="lnk-bracelet-3" href="https://karmacc.pay.clickbank.net/?cbitems=bracelet-3&template=order-2&cbfid=63684&vtid=[cmc_vid]">3</a>
+  <a id="lnk-triptych-1" href="https://karmacc.pay.clickbank.net/?cbitems=medal-1&template=order-3&cbfid=63893&vtid=[cmc_vid]">1</a>
+  <a id="lnk-triptych-2" href="https://karmacc.pay.clickbank.net/?cbitems=medal-2&template=order-3&cbfid=63893&vtid=[cmc_vid]">2</a>
+  <a id="lnk-triptych-3" href="https://karmacc.pay.clickbank.net/?cbitems=medal-3&template=order-3&cbfid=63893&vtid=[cmc_vid]">3</a>
+  <a id="lnk-necklace-1" href="https://karmacc.pay.clickbank.net/?cbitems=necklace-1&template=order-4&cbfid=63921&vtid=[cmc_vid]">1</a>
+  <a id="lnk-necklace-2" href="https://karmacc.pay.clickbank.net/?cbitems=necklace-2&template=order-4&cbfid=63921&vtid=[cmc_vid]">2</a>
+  <a id="lnk-necklace-3" href="https://karmacc.pay.clickbank.net/?cbitems=necklace-3&template=order-4&cbfid=63921&vtid=[cmc_vid]">3</a>
+  <a id="lnk-rosary-1" href="https://karmacc.pay.clickbank.net/?cbitems=rosary-1&template=order-5&cbfid=63426&vtid=[cmc_vid]">1</a>
+  <a id="lnk-rosary-2" href="https://karmacc.pay.clickbank.net/?cbitems=rosary-2&template=order-5&cbfid=63426&vtid=[cmc_vid]">2</a>
+  <a id="lnk-rosary-3" href="https://karmacc.pay.clickbank.net/?cbitems=rosary-3&template=order-5&cbfid=63426&vtid=[cmc_vid]">3</a>
+</div>
+
+<div class="app">
+
+
+  <!-- LANDER. One job: a tap. The button sits above the image so it clears a 375 x 600 fold. -->
+  <section class="lander" id="lander">
+    <div class="lbrand"><img src="/images/logo.png" alt="Sanctoria, Blessed Devotionals"></div>
+    <div class="leyebrow">A note before we begin</div>
+    <h1 class="lhead"><span>Four blessed devotions.</span><span>One was meant for you.</span></h1>
+    <div class="lnote">
+      <p>I do not think anyone finds a page like this by accident.</p>
+      <p>There are four here, and no two do the same work. So I would rather you were asked three short questions than left to guess.</p>
+      <p>Then you are shown the one that fits you, and what it costs.</p>
+      <div class="lsig"><img class="lface" src="/images/phillip.jpg" alt="Pastor Phillip" width="54" height="54">
+        <div><b>Pastor Phillip</b><span>Sanctoria</span></div></div>
+    </div>
+    <button class="lbtn" id="landerBtn">Show Me The One</button>
+    <p class="lmicro">About a minute. Tap an answer, and you can stop wherever you like.</p>
+    <div class="lreassure">
+      <span>Hand-blessed in the Benedictine tradition before it ships</span>
+      <span>Free US shipping</span>
+      <span>30 day full refund, shipping included</span>
+    </div>
+  </section>
+
+  <div id="chatUI" hidden>
+  <div class="chead">
+    <div class="avatar"><img src="/images/phillip.jpg" alt="Pastor Phillip" width="44" height="44"></div>
+    <div class="cwho">
+      <div class="cname" id="senderName">Pastor Phillip from Sanctoria</div>
+      <div class="crole">Guided conversation</div>
+      <div class="cnote" id="senderNote">Three questions, your email, one devotion.</div>
+    </div>
+  </div>
+  <div class="pbar"><i id="pbar"></i></div>
+
+  <div class="thread" id="thread" aria-live="polite"></div>
+  <div class="replies" id="replies"></div>
+
+  </div><!-- /chatUI -->
+
+  <p class="closing" id="closing">The four are not interchangeable, and a few short questions is the shortest way to the right one.</p>
+
+  <footer>
+    &copy; 2026 Sanctoria &middot; Blessed Devotionals &middot; <a href="mailto:support@sanctoriastore.com">support@sanctoriastore.com</a><br>
+    <a href="/privacy.html">Privacy</a> &middot; <a href="/terms.html">Terms</a> &middot; <a href="/contact.html">Contact</a><br>
+    ClickBank is the retailer of products on this site.
+  </footer>
+</div>
+
+<script>
+/* ============================================================
+   PRODUCT TABLE. Prices verified 2026-10-01 against the live
+   pages and the real ClickBank checkout.
+   ============================================================ */
+var PRODUCTS = {
+  bracelet: { img:'/images/Hero.jpg',          alt:'The St Benedict Marian Bracelet',               prices:[37,47,57], was:[42,84,126]  },
+  triptych: { img:'/images/guard-product.jpg', alt:'The Benedict Triptych, a three-medal bracelet', prices:[37,47,57], was:[42,84,126]  },
+  necklace: { img:'/images/pair-product.jpg',  alt:'The Benedict Double Protection Necklace',       prices:[47,57,67], was:[52,104,156] },
+  rosary:   { img:'/images/rosary-1.jpg',      alt:'The Saint Benedict Cord Rosary',                prices:[37,47,57], was:[57,114,171] }
+};
+
+/* ============================================================
+   COPY. Every line the visitor reads.
+   Voice rules this copy was written to, and the build honours:
+   no line claims a live human, clergy, or that anyone is reading
+   her answers. The dot animation carries no words.
+   ============================================================ */
+var COPY = {
+  sender: { name:'Pastor Phillip from Sanctoria', note:'Three questions, your email, one devotion.' },
+
+  opening: [
+    'Then let us begin, and gently. Whatever brought you this far, it is worth three short answers.',
+    'They are small ones. Who you have in mind. What you would want it to do. How many.',
+    'Your name and your email at the end, and the one that fits is sent to you to keep.'
+  ],
+  bestTag: 'Matches your answer',
+
+  questions: [
+    {
+      ask: 'First, and there is no wrong answer. Who do you have in mind?',
+      options: [
+        { chip:'Mostly myself',                pack:1, ack:'For yourself, then. That is where most devotion starts. Quietly, and before anyone else notices.' },
+        { chip:'A daughter or granddaughter',  pack:2, ack:'A daughter, or a granddaughter. Love reaches down a generation first. It nearly always does.' },
+        { chip:'Someone I name in prayer',     pack:2, ack:'Someone by name, then. That is the kind of asking that goes on a long time.' },
+        { chip:'The whole household',          pack:3, ack:'The whole household. That is the heavier answer, because there are more people inside it.' }
+      ],
+      skip: { chip:'I am not sure yet', ack:'That is a fair answer. Most people arrive with a feeling rather than a name.' }
+    },
+    {
+      ask: 'Now the one that decides it. What would you actually wear, or hold?',
+      options: [
+        { chip:'On my wrist, when I pray',       product:'bracelet', ack:'Your wrist, then, in the minutes you set aside. You already have those. Most of us pass straight through them.' },
+        { chip:'On my wrist, never taken off',   product:'triptych', ack:'Never off, then. I know that one. The prayer gets said, and then the day takes everything after it.' },
+        { chip:'At my collar, where my hand goes', product:'necklace', ack:'At your collar, then. Nobody plans that reflex when news lands. The hand simply goes.' },
+        { chip:'Beads to hold, not to wear',     product:'rosary',   ack:'Beads in the hands, then. Faith rarely travels in a conversation. It travels in an object someone keeps.' }
+      ],
+      skip: { chip:'I honestly do not mind', ack:'Honest, and common. Then let us begin where it is simplest.' }
+    },
+    {
+      ask: 'Last one, and it is the easy one. How many?',
+      options: [
+        { chip:'Just the one',           tier:1, ack:'Just the one. Kept simple, and kept for you.' },
+        { chip:'Two, keep one send one', tier:2, ack:'Two. One kept, one sent. The same blessed medal in two houses.' },
+        { chip:'Three, one for each',    tier:3, ack:'Three. Grandmother, mother, daughter. Or any three women you name in one breath.' }
+      ],
+      skip: { chip:'Show me prices first', ack:'Of course. All three prices are on the next screen. Nothing is hidden behind an answer.' }
+    }
+  ],
+
+
+  /* name and email capture, variant B, hard gate */
+  lead: {
+    buildUp: [
+      'Thank you. That is all three.',
+      'The one that fits is ready. It goes to your email, so it stays yours to keep.',
+      'One short written prayer comes with it each morning for fourteen days. Free, and then it ends.'
+    ],
+    nameAsk:      'Before that. What may I call you?',
+    namePlace:    'First name',
+    nameButton:   'Continue',
+    nameEmpty:    'No name is fine. It will simply arrive without one.',
+    emailAsk:     'And where shall I send it?',
+    emailPlace:   'Your email',
+    emailButton:  'Send it to me',
+    emailBad:     'That one did not take. Most likely a small typo.',
+    consent:      'You will receive your match and one short prayer by email each morning for fourteen days. Unsubscribe any time. <a href="/privacy.html">Privacy policy</a>.',
+    confirmNamed: 'Thank you, {name}. It is sent. And here is the one of the four that fits.',
+    confirmPlain: 'Thank you. It is sent. And here is the one of the four that fits.'
+  },
+
+  results: {
+    bracelet: {
+      name:'The St Benedict Marian Bracelet',
+      shortWhy:'Worn on the wrist, for the minutes you set aside.',
+      lead:[
+        'Of the four, this is the one. The St Benedict Marian Bracelet.',
+        'The ten minutes before the house wakes. The driveway, before you go in. Something for your hands in those minutes.',
+        'Matte black ebony beads, hand-knotted, with an antique bronze Saint Benedict medal and the Miraculous Medal of His Mother together.',
+        'And when the asking has gone on a long time, many Catholic women begin asking through His Mother.'
+      ],
+      packs:[
+        {name:'Reserve One',   why:'For your own wrist, in your own ten minutes.'},
+        {name:'Reserve Two',   why:'Keep one, send one. The same blessed medal on two wrists.'},
+        {name:'Reserve Three', why:'Three generations, or three women you name together.'}
+      ]
+    },
+    triptych: {
+      name:'The Benedict Triptych',
+      shortWhy:'Worn on the wrist all day. No clasp, nothing to remember.',
+      lead:[
+        'Of the four, this is the one. The Benedict Triptych.',
+        'The prayer gets said at the kitchen table. Then keys, the drive, the list, the phone. This one stays on.',
+        'Three gold-tone Saint Benedict medals in tarnish-resistant stainless steel, on a black braided cord. A printed prayer card comes with it.',
+        'The medals sit spaced along the cord. Whichever way your hand falls, one is facing you.'
+      ],
+      packs:[
+        {name:'Reserve One',   why:'On at six in the morning, still on at midnight.'},
+        {name:'Reserve Two',   why:'No clasp and no size to guess, so one can be sent.'},
+        {name:'Reserve Three', why:'Morning, noon and night, on three wrists in three houses.'}
+      ]
+    },
+    necklace: {
+      name:'The Benedict Double Protection Necklace',
+      shortWhy:'Worn at the collar, where a hand goes when news lands.',
+      lead:[
+        'Of the four, this is the one. The Benedict Double Protection Necklace.',
+        'The hand goes flat to the chest before the mind catches up. A wrist is not where it goes. This hangs there.',
+        'A plain gold Latin cross and a round Saint Benedict medal on one fine double-strand chain, 18K gold plated over stainless steel.',
+        'So the palm closes over a blessed cross and a blessed medal, not empty cotton. A prayer card comes with it.'
+      ],
+      packs:[
+        {name:'Reserve One',   why:'One, for the center of your own chest.'},
+        {name:'Reserve Two',   why:'Two, so a daughter has one at her collar too.'},
+        {name:'Reserve Three', why:'Three, for the women who hear the same news you do.'}
+      ]
+    },
+    rosary: {
+      name:'The Saint Benedict Cord Rosary',
+      shortWhy:'Held in the hands, prayed with, then handed down.',
+      lead:[
+        'Of the four, this is the one. The Saint Benedict Cord Rosary.',
+        'Faith is rarely handed down in a conversation. It is handed down in something a daughter keeps.',
+        'Black matte wooden beads knotted on braided cord, silver-tone Saint Benedict medals along the length, and a black wood crucifix, in a drawstring pouch.',
+        'And when the asking has gone on for years, many begin asking through His Mother. One decade at a time.'
+      ],
+      packs:[
+        {name:'Reserve One',   why:'One to pray with now, and one day to hand on.'},
+        {name:'Reserve Two',   why:'Two, so the same beads are prayed in two houses.'},
+        {name:'Reserve Three', why:'Grandmother, mother, daughter. The same rosary in three hands.'}
+      ]
+    }
+  },
+
+  /* Fires when Q2 is skipped. Same product and packs as the bracelet, different lead. */
+  mixedLead: [
+    'Then begin where it is simplest. The St Benedict Marian Bracelet.',
+    'It asks nothing of your day. It goes on in the morning and it is simply there.',
+    'Matte black ebony beads, hand-knotted, with an antique bronze Saint Benedict medal and the Miraculous Medal of His Mother together.',
+    'Which suits praying for more than one person at once. Start here, and the other three are still here.'
+  ],
+
+  closing: [
+    'Hand-blessed in the Benedictine tradition before it ships. Out the door within 24 hours. Free US shipping. 30-day full refund, shipping included.'
+  ],
+
+  othersBubble:      'And if you would rather see the other three, they are here.',
+  othersBubbleMixed: 'Or see all four side by side.',
+  othersChip:        'Show me the other three'
+};
+
+/* ============================================================
+   CHAT ENGINE
+   ============================================================ */
+var answers = [null,null,null], step = 0;
+function $(id){ return document.getElementById(id); }
+function thread(){ return $('thread'); }
+function scrollDown(){ window.scrollTo(0, document.body.scrollHeight); }
+
+function bubble(text, who){
+  var row = document.createElement('div');
+  row.className = 'row ' + (who || 'them');
+  var b = document.createElement('div');
+  b.className = 'bub';
+  b.textContent = text;
+  row.appendChild(b);
+  thread().appendChild(row);
+  scrollDown();
+}
+function typing(){
+  var row = document.createElement('div');
+  row.className = 'row them';
+  row.innerHTML = '<div class="bub typing"><span></span><span></span><span></span></div>';
+  thread().appendChild(row);
+  scrollDown();
+  return row;
+}
+/* say a list of lines in order, with a pause and a wordless dot animation between them */
+function say(lines, done){
+  var i = 0;
+  (function next(){
+    if (i >= lines.length){ if (done) done(); return; }
+    var t = typing(), text = lines[i];
+    var pause = Math.min(900, 300 + text.length * 6);
+    setTimeout(function(){
+      t.parentNode.removeChild(t);
+      bubble(text, 'them');
+      i++;
+      setTimeout(next, 170);
+    }, pause);
+  })();
+}
+function clearReplies(){ $('replies').innerHTML = ''; }
+function addChip(label, onTap, isSkip){
+  var b = document.createElement('button');
+  b.className = 'chip' + (isSkip ? ' skip' : '');
+  b.textContent = label;
+  b.onclick = onTap;
+  $('replies').appendChild(b);
+  scrollDown();
+}
+
+function askQuestion(){
+  var q = COPY.questions[step];
+  clearReplies();
+  say([q.ask], function(){
+    q.options.forEach(function(opt){
+      addChip(opt.chip, function(){ answer(opt); });
+    });
+    if (q.skip) addChip(q.skip.chip, function(){ answer(q.skip, true); }, true);
+  });
+}
+function answer(opt, isSkip){
+  answers[step] = isSkip ? 'skip' : opt;
+  if (isSkip && opt.pack) answers[step] = 'skip';
+  clearReplies();
+  bubble(opt.chip, 'me');
+  say([opt.ack], advance);
+}
+function setProgress(){
+  var pct = Math.round((step / COPY.questions.length) * 100);
+  var el = $('pbar'); if (el) el.style.width = pct + '%';
+}
+function advance(){
+  step++;
+  setProgress();
+  if (step < COPY.questions.length) askQuestion();
+  else finish();
+}
+
+function chosenProduct(){
+  var a = answers[1];
+  return (a && a !== 'skip' && a.product) ? a.product : null;
+}
+function chosenTier(){
+  var a3 = answers[2], a1 = answers[0];
+  if (a3 && a3 !== 'skip' && a3.tier) return a3.tier;   /* Q3 wins when answered */
+  if (a3 === 'skip') return 0;                           /* nothing pre-highlighted */
+  if (a1 && a1 !== 'skip' && a1.pack) return a1.pack;    /* else Q1 sets the highlight */
+  return 0;
+}
+function packLink(product, tier){
+  var a = $('lnk-' + product + '-' + tier);
+  return a ? a.getAttribute('href') : '#';
+}
+
+function productCard(product, best){
+  var c = COPY.results[product], p = PRODUCTS[product];
+  var card = document.createElement('div');
+  card.className = 'card';
+  var html = '<div class="ceyebrow">Chosen for your answers</div>' +
+             '<div class="frame"><img src="' + p.img + '" alt="' + p.alt + '"></div>' +
+             '<div class="pname">' + c.name + '</div>' +
+             '<div class="rule"><span>&#10013;</span></div>';
+  for (var t=1;t<=3;t++){
+    html += '<a class="pack' + (t === best ? ' best' : '') + '" href="' + packLink(product, t) + '">' +
+              '<div class="pack-main">' +
+                (t === best ? '<span class="tag">' + COPY.bestTag + '</span>' : '') +
+                '<div class="pack-name">' + c.packs[t-1].name + '</div>' +
+                '<div class="pack-why">' + c.packs[t-1].why + '</div>' +
+              '</div>' +
+              '<div class="pack-price"><span class="pack-now">$' + p.prices[t-1] + '</span>' +
+              '<span class="pack-was">$' + p.was[t-1] + '</span></div>' +
+            '</a>';
+  }
+  card.innerHTML = html;
+  thread().appendChild(card);
+  scrollDown();
+}
+
+var lead = { first:'', email:'' };
+
+function fieldDock(opts){
+  clearReplies();
+  var form = document.createElement('form');
+  form.className = 'dock';
+  form.setAttribute('novalidate','');
+  form.innerHTML =
+    '<input class="field" id="leadField" type="' + opts.type + '" placeholder="' + opts.placeholder + '" ' +
+      'autocomplete="' + opts.autocomplete + '" ' + (opts.inputmode ? 'inputmode="' + opts.inputmode + '" ' : '') +
+      'enterkeyhint="go" aria-label="' + opts.placeholder + '">' +
+    '<input class="hp" type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true">' +
+    '<p class="err" id="leadErr" hidden></p>' +
+    '<button class="send" type="submit">' + opts.button + '</button>' +
+    (opts.consent ? '<p class="consent">' + opts.consent + '</p>' : '');
+  form.onsubmit = function(e){
+    e.preventDefault();
+    opts.onSubmit(document.getElementById('leadField').value.trim(),
+                  form.querySelector('.hp').value,
+                  form);
+  };
+  document.getElementById('replies').appendChild(form);
+  scrollDown();
+}
+function showErr(form, msg){
+  var e = form.querySelector('.err'), f = form.querySelector('.field');
+  e.textContent = msg; e.hidden = false; f.classList.add('bad'); f.focus();
+}
+
+function askName(){
+  var L = COPY.lead;
+  say([L.nameAsk], function(){
+    fieldDock({
+      type:'text', placeholder:L.namePlace, button:L.nameButton, autocomplete:'given-name',
+      onSubmit:function(value, hp, form){
+        if (hp) return;                               /* honeypot filled, ignore quietly */
+        lead.first = value;
+        clearReplies();
+        if (value) bubble(value, 'me');
+        say(value ? [] : [L.nameEmpty], askEmail);
+      }
+    });
+  });
+}
+function askEmail(){
+  var L = COPY.lead;
+  say([L.emailAsk], function(){
+    fieldDock({
+      type:'email', placeholder:L.emailPlace, button:L.emailButton,
+      autocomplete:'email', inputmode:'email', consent:L.consent,
+      onSubmit:function(value, hp, form){
+        if (hp) return;
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value)) { showErr(form, L.emailBad); return; }
+        lead.email = value;
+        form.querySelector('.send').disabled = true;
+        sendLead(value);                              /* fire and forget, never block her on our server */
+        clearReplies();
+        bubble(value, 'me');
+        var line = lead.first
+          ? L.confirmNamed.replace('{name}', lead.first)
+          : L.confirmPlain;
+        say([line], reveal);
+      }
+    });
+  });
+}
+function sendLead(email){
+  try {
+    var product = chosenProduct() || 'bracelet';
+    fetch('/ins/lead.php', {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({ first_name: lead.first, email: email, match: product, company: '' })
+    }).catch(function(){});
+  } catch (e) {}
+}
+
+function finish(){
+  clearReplies();
+  say(COPY.lead.buildUp, askName);
+}
+
+function reveal(){
+  clearReplies();
+  var product = chosenProduct(), mixed = (product === null);
+  if (mixed) product = 'bracelet';
+  var best = chosenTier();
+  say(mixed ? COPY.mixedLead : COPY.results[product].lead, function(){
+    productCard(product, best);
+    say(COPY.closing.concat([mixed ? COPY.othersBubbleMixed : COPY.othersBubble]), function(){
+      addChip(COPY.othersChip, showAll, true);
+    });
+  });
+}
+
+function showAll(){
+  clearReplies();
+  bubble(COPY.othersChip, 'me');
+  var card = document.createElement('div');
+  card.className = 'card';
+  var html = '';
+  var tier = chosenTier() || 1;          /* carry her pack size across; never drop her to a single */
+  ['bracelet','triptych','necklace','rosary'].forEach(function(k){
+    var c = COPY.results[k], p = PRODUCTS[k];
+    html += '<a class="pack" href="' + packLink(k, tier) + '">' +
+              '<div class="pack-main"><div class="pack-name">' + c.name + '</div>' +
+              '<div class="pack-why">' + c.shortWhy + '</div></div>' +
+              '<div class="pack-price"><span class="pack-now">$' + p.prices[tier - 1] + '</span></div></a>';
+  });
+  card.innerHTML = html;
+  thread().appendChild(card);
+  scrollDown();
+}
+
+function openChat(){
+  $('lander').hidden = true;
+  $('closing').hidden = true;                /* lander support copy, not chat copy */
+  $('chatUI').hidden = false;
+  window.scrollTo(0, 0);
+  step = 0; answers = [null,null,null];
+  setProgress();
+  say(COPY.opening, askQuestion);          /* the lander button replaced the Begin chip */
+}
+
+document.addEventListener('DOMContentLoaded', function(){
+  $('senderName').textContent = COPY.sender.name;
+  $('senderNote').textContent = COPY.sender.note;
+  $('landerBtn').onclick = openChat;
+});
+</script>
+
+</body>
+</html>

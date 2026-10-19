@@ -1,0 +1,90 @@
+{
+ "stills": {
+  "model": "gpt_image_2_5",
+  "aspect_ratio": "3:4",
+  "quality": "high",
+  "resolution": "1k",
+  "generated": "2026-10-06",
+  "prompts": "../sample-clip-prompts.json",
+  "jobs": {
+   "son": "c777cd45-41f6-4381-9e2a-1175980b71c2",
+   "mother": "e76bb465-39ee-4774-8676-0009e5c8a062",
+   "grandchild": "238a8e10-11ff-4fb0-8ab8-fe89c59c3735"
+  }
+ },
+ "videos": {
+  "model": "seedance_2_5",
+  "mode": "omni_reference",
+  "aspect_ratio": "3:4",
+  "duration": 5,
+  "resolution": "720p",
+  "generate_audio": false,
+  "note": "start_image and end_image are both the still, so the clip loops",
+  "generated": "2026-10-06",
+  "jobs": {
+   "son": "85951413-f3d7-4e89-89a3-808430357526",
+   "mother": "1626d017-7789-4ec5-9616-dced3c641616",
+   "grandchild": "7fc4a702-a1af-4699-9fbb-5f64955fec56"
+  }
+ },
+ "hero_stills": {
+  "model": "gpt_image_2_5",
+  "aspect_ratio": "4:3",
+  "quality": "high",
+  "resolution": "1k",
+  "generated": "2026-10-07",
+  "prompts": "../hero-clip-prompts.json",
+  "jobs": {
+   "couple": "63ad955f-ca5a-4b6f-b6c6-2a9cac9c3007",
+   "herself": "a1e79e77-ba90-4b3f-8063-ba7d66637bb7",
+   "father": "6c8d5dca-5b52-4900-9c5b-ebfc7adfe876"
+  }
+ },
+ "hero_videos": {
+  "model": "seedance_2_5",
+  "mode": "omni_reference",
+  "aspect_ratio": "4:3",
+  "duration": 5,
+  "resolution": "720p",
+  "generate_audio": false,
+  "generated": "2026-10-07",
+  "jobs": {
+   "couple": "01277f1d-2f34-433b-a62e-a6e951e9d345",
+   "herself": "23fc8121-7c8c-4008-a7d1-a1685fc29121",
+   "father": "8e6c909d-aaee-407f-8d7a-cae308be200f"
+  }
+ },
+ "hero_stills_2": {
+  "model": "gpt_image_2_5",
+  "aspect_ratio": "4:3",
+  "quality": "high",
+  "resolution": "1k",
+  "generated": "2026-10-07",
+  "prompts": "../hero-clip-prompts-2.json",
+  "jobs": {
+   "car": "aa59c3d6-fba6-4d78-902d-593bb7df6193",
+   "daughter": "24bb3214-240a-4b6f-8005-630ea65c9b7c",
+   "friends": "399ca6ab-afe4-4b6d-bdf8-017e62eaef54",
+   "grandfather": "9e71ff9d-954f-4ce9-b9ed-c930104c4624",
+   "marriage": "ff739222-01d6-45be-a2b6-17fc8e9c4744",
+   "table": "db24e0af-c52c-4e11-a6fb-302d9fc4aa2c"
+  }
+ },
+ "hero_videos_2": {
+  "model": "seedance_2_5",
+  "mode": "omni_reference",
+  "aspect_ratio": "4:3",
+  "duration": 5,
+  "resolution": "720p",
+  "generate_audio": false,
+  "generated": "2026-10-07",
+  "jobs": {
+   "car": "f296a4a4-ac9d-4aab-ae4f-10121f7fec21",
+   "daughter": "de661ccc-569c-4d3a-9b96-dc4ebfb8ce4a",
+   "friends": "71306a45-bb28-457f-bd30-70c32ddc18bb",
+   "grandfather": "7658e4c0-80dd-419e-b455-6b92a5017c31",
+   "marriage": "ee86c4b3-7fca-4778-bf9d-b44d8d432ec0",
+   "table": "98724ed0-5a25-435a-b396-f3b802737842"
+  }
+ }
+}

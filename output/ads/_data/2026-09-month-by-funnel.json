@@ -1,0 +1,20 @@
+{
+  "period": "2026-09-01 to 2026-09-24",
+  "source": "Meta CAPI only. ClickBank karmacc still unreconciled (day 11).",
+  "funnels": {
+    "bracelet": {"spend":1251.65,"sales":15,"revenue":733.44,"roas":0.59,"campaigns_with_spend":19},
+    "guard_triptych": {"spend":174.90,"sales":1,"revenue":32.98,"roas":0.19,"campaigns_with_spend":4},
+    "rosary_necklace": {"spend":96.93,"sales":1,"revenue":33.06,"roas":0.34,"campaigns_with_spend":2},
+    "necklace": {"spend":38.61,"sales":0,"revenue":0,"roas":0,"campaigns_with_spend":1}
+  },
+  "month_total": {"spend":1562.09,"sales":17,"revenue":799.48,"roas":0.51},
+  "top_campaigns_by_roas": [
+    {"name":"AQuietDevotion_UGC_2026-09-19","id":"120256381144930051","funnel":"bracelet","spend":26.95,"sales":2,"revenue":84.33,"roas":3.13},
+    {"name":"Sanctoria- UGCEveryday_UGC","id":"120256178585910051","funnel":"bracelet","spend":172.92,"sales":3,"revenue":186.03,"roas":1.08},
+    {"name":"Sanctoria- AQuietDevotion_UGC","id":"120256150053260051","funnel":"bracelet","spend":152.70,"sales":3,"revenue":140.38,"roas":0.92},
+    {"name":"Sanctoria- GiftingUGC_UGC_Image","id":"120256241056040051","funnel":"bracelet","spend":106.26,"sales":2,"revenue":84.52,"roas":0.80}
+  ],
+  "zero_sale_spend_september": 545.66,
+  "note_refreshed_batch": "TS duplicated the 09-19 paused campaigns into new live IDs. AQuietDevotion refresh is the best performer in the account this month at 3.13x on $26.95.",
+  "mapping_caveat": "Campaigns named 'Sanctoria (medal) - ...' assumed to point at /guard/. link_url is not readable via the API, so funnel mapping is by campaign naming and batch history."
+}

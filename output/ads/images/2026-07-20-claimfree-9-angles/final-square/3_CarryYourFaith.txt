@@ -1,0 +1,33 @@
+AD: 01_CantBeBeside   (angle: CarryYourFaith)
+Image: 3_CarryYourFaith.png
+Destination: https://sanctoriastore.com/bracelet/
+CTA button: Learn More
+
+=== HEADLINE ===
+Something They Can Carry
+
+=== PRIMARY TEXT ===
+When they can't be beside you, they can still carry a piece of your faith.
+
+Many Catholic mothers know the ache of a child who moved far away, or a grandchild growing up faster than the miles allow.
+
+You can't always be in the room. You can't always be at the table.
+
+But the St Benedict Marian Bracelet is something they can wear.
+
+A small piece of home. A small piece of you.
+
+On their wrist, wherever the day takes them.
+
+Come look.
+
+=== DESCRIPTION (link description) ===
+A keepsake for loved ones
+
+=== META NAMING ===
+Campaign: CarryYourFaith_2026-07-20
+Ad Set:   T1_MF_45-65+_CarryYourFaith
+Ad:       01_CantBeBeside
+
+=== URL PARAMETERS (paste into "URL parameters" field) ===
+utm_source={{site_source_name}}&utm_medium={{placement}}&utm_campaign={{campaign.name}}&utm_content={{ad.name}}&utm_term={{adset.name}}&cmc_adid=fb_{{ad.id}}

@@ -1,0 +1,31 @@
+{
+  "pulled": "2026-09-16",
+  "account": "462874384767571",
+  "note": "Meta rolling windows EXCLUDE today. TOTAL = 28d + today. ClickBank still unreconciled.",
+  "changes_since_2026-09-15": {
+    "executed_by_TS": "NONE of the 4 recommended actions (Couch kill, Sisters scale, Cardigan reduce, rename)",
+    "new": "TS launched duplicate three-funnel campaigns: Sanctoria- TriptychUGC (120256276845630051) ACTIVE, Sanctoria- RosaryUGC (120256276845610051) ACTIVE, Sanctoria- NecklaceUGC now CAMPAIGN_PAUSED after spending today",
+    "duplicates": "My original paused campaigns still exist: TriptychUGC 120256272572810051, NecklaceUGC 120256272572900051, RosaryUGC 120256272573410051"
+  },
+  "established": [
+    {"id":"120256241056110051","label":"T1_MF_35-65+_StoppedHidingIt_UGC_ParkingLot","actual_angle":"SistersThreePack","NAMING_MISMATCH":true,"budget":5,"spend_28d":18.54,"spend_today":3.98,"spend_total":22.52,"rev_28d":33.06,"rev_today":51.46,"rev_total":84.52,"sales":2,"roas_7d":1.78,"roas_14d":1.78,"roas_28d":1.78,"roas_today":12.93,"roas_total":3.75,"ctr":7.41,"freq":1.11,"verdict":"SCALE_5_to_6.50"},
+    {"id":"120256178585970051","label":"T1_MF_35-65+_UGCEveryday_UGC_DaughterPack","budget":9,"spend_28d":57.77,"spend_today":9.17,"spend_total":66.94,"rev_total":152.99,"sales":2,"roas_14d":2.65,"roas_28d":2.65,"spend_3d":35.75,"sales_3d":0,"roas_total":2.29,"ctr":14.51,"freq":1.23,"verdict":"REDUCE_9_to_7_third_dry_day"},
+    {"id":"120256150053270051","label":"T1_MF_35-65+_AQuietDevotion_UGC_Couch","budget":5,"spend_28d":41.85,"spend_today":3.74,"spend_total":45.59,"rev_total":42.23,"sales":1,"roas_14d":1.01,"roas_28d":1.01,"spend_3d":17.03,"sales_3d":0,"roas_total":0.93,"ctr":14.58,"verdict":"KILL_below_line_14d_and_28d"},
+    {"id":"120256150053240051","label":"T1_MF_35-65+_AQuietDevotion_UGC_Cardigan","budget":5,"spend_28d":42.23,"spend_today":4.02,"spend_total":46.25,"rev_total":46.72,"sales":1,"roas_14d":1.11,"roas_28d":1.11,"spend_3d":19.39,"sales_3d":0,"roas_total":1.01,"ctr":12.81,"verdict":"KILL_fell_below_line_today"},
+    {"id":"120256150053250051","label":"T1_MF_35-65+_AQuietDevotion_UGC_Kitchen","budget":5,"spend_28d":41.19,"spend_today":3.18,"spend_total":44.37,"rev_total":51.43,"sales":1,"roas_14d":1.25,"roas_28d":1.25,"spend_3d":15.82,"sales_3d":0,"roas_total":1.16,"ctr":11.61,"verdict":"REDUCE_5_to_4_last_survivor"},
+    {"id":"120256136639870051","label":"T1_MF_35-65+_AQuietDevotion_PHOTO_Quiet","budget":5,"spend_28d":52.98,"spend_today":3.19,"spend_total":56.17,"rev_total":98.30,"sales":2,"roas_14d":1.86,"roas_28d":1.86,"roas_3d":2.02,"roas_total":1.75,"ctr":5.28,"freq":1.44,"verdict":"WATCH_override_protects"}
+  ],
+  "launched_today_day1": [
+    {"id":"120256276845770051","label":"T1_MF_35-65+_TheDrawerOne_UGC_DrawerDish","funnel":"Triptych","spend":4.42,"ctr":18.49,"sales":0,"verdict":"TOO_EARLY"},
+    {"id":"120256276845780051","label":"T1_MF_35-65+_MenWhoWearIt_UGC_EngineGrease","funnel":"Triptych","spend":4.00,"ctr":9.89,"sales":0,"verdict":"TOO_EARLY"},
+    {"id":"120256276845790051","label":"T1_MF_35-65+_KeepOneGiveOne_UGC_TwoWrists","funnel":"Triptych","spend":2.27,"ctr":9.21,"sales":0,"verdict":"TOO_EARLY"},
+    {"id":"120256276845650051","label":"T1_MF_35-65+_InheritedByDaughters_UGC_GloveBox","funnel":"Rosary","spend":4.03,"ctr":15.38,"sales":0,"verdict":"TOO_EARLY"},
+    {"id":"120256276845660051","label":"T1_MF_35-65+_NeverLearnedItProperly_UGC_LostMyPlace","funnel":"Rosary","spend":5.26,"ctr":16.51,"sales":0,"verdict":"TOO_EARLY"},
+    {"id":"120256276845670051","label":"T1_MF_35-65+_ThreeGenerations_UGC_ThreePouches","funnel":"Rosary","spend":5.11,"ctr":9.56,"sales":0,"verdict":"TOO_EARLY"},
+    {"id":"120256276845710051","label":"T1_MF_35-65+_HandToHeart_UGC_LateCall","funnel":"Necklace","spend":4.60,"ctr":11.11,"sales":0,"status":"CAMPAIGN_PAUSED","verdict":"STOPPED_MID_TEST"},
+    {"id":"120256276845720051","label":"T1_MF_35-65+_CarryingAName_UGC_InTheCar","funnel":"Necklace","spend":4.45,"ctr":11.11,"sales":0,"status":"CAMPAIGN_PAUSED","verdict":"STOPPED_MID_TEST"},
+    {"id":"120256276845730051","label":"T1_MF_35-65+_KeepOneSendOne_UGC_SecondBox","funnel":"Necklace","spend":6.05,"ctr":13.64,"sales":0,"status":"CAMPAIGN_PAUSED","verdict":"STOPPED_MID_TEST"}
+  ],
+  "portfolio": {"spend_total":322.03,"spend_today":67.47,"revenue_total":476.19,"revenue_today":51.46,"blended_roas":1.48},
+  "reconciliation_gap": "ClickBank cb_get_orders still unavailable (only wealthapa configured, 401)."
+}

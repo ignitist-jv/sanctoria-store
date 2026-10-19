@@ -1,0 +1,31 @@
+=== WornInFaith Infographic Ad (compliant reframe of the competitor claims image) ===
+Applies to all 3 image versions: 01_InfographicAmber, 02_InfographicCream, 03_BoldStatement
+
+PRIMARY TEXT:
+Some things you wear. This one, you pray with.
+
+The St Benedict Marian Bracelet is made to carry with you through the day. Real ebony beads. The blessed medal of Saint Benedict, a crucifix, and the Miraculous Medal, all in antique bronze.
+
+A simple way to keep your faith close, to guard your family in prayer, and to pass a devotion down to the people you love.
+
+Worn in faith. Carried in prayer.
+
+Come look.
+
+HEADLINE: The Prayer You Can Wear
+
+NAMING:
+Campaign: WornInFaith_2026-08-06
+Ad Set:   T1_MF_35-65+_WornInFaith_V2
+Ads:      01_InfographicAmber | 02_InfographicCream | 03_BoldStatement
+
+Destination: /bracelet-v2/
+
+ON-IMAGE COPY (compliant):
+Headline: WORN IN FAITH. CARRIED IN PRAYER.
+Subhead:  The St Benedict Marian Bracelet
+Callouts: GUARD YOUR FAMILY IN PRAYER | KEEP YOUR FAITH CLOSE | THE BLESSED ST BENEDICT MEDAL | A DEVOTION TO PASS DOWN
+Trust:    Free US shipping . 30-day money-back guarantee
+Brand:    SANCTORIA . Blessed Devotionals
+
+REMOVED FROM THE COMPETITOR ORIGINAL (do not use): spiritual attacks gone in 9 days; breaks generational curses; repels dark energy; restores lost faith; the fake "as featured in EWTN / Catholic News / The Tablet / National Catholic Register / Aleteia" press bar.

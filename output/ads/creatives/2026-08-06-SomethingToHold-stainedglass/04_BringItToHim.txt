@@ -1,0 +1,19 @@
+=== AD 04: Bring It To Him (stained-glass rose window) ===
+
+PRIMARY TEXT:
+Whatever you are carrying today, you were never meant to carry it by yourself.
+
+The St Benedict Marian Bracelet is a simple, tangible way to hand it over. Hold the beads, hold the medal, and let the prayer do what worry never could.
+
+Real ebony beads. A real bronze Saint Benedict medal. A quiet place to set it all down.
+
+Bring one home.
+
+HEADLINE: Bring It To Him
+Overlay: WHEN IT'S HEAVY / Bring it to Him.
+
+NAMING:
+Campaign: SomethingToHold_2026-08-06
+Ad Set:   T1_MF_35-65+_SomethingToHold_RoseWindow
+Ad:       04_BringItToHim
+Destination: /bracelet-v2/

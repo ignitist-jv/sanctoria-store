@@ -1,0 +1,33 @@
+AD: 01_YoungManLeftRome   (heritage/meaning batch)
+Image: 1_TheManBehindTheMedal.png
+Destination (V1): https://sanctoriastore.com/bracelet/
+Destination (V2): https://sanctoriastore.com/bracelet-v2/
+PAGE SPLIT TEST: run this ad set twice, one per page, and tag the ad set name _V1 / _V2 (see naming below) so Meta + ClickBank attribute each page cleanly.
+CTA button: Learn More
+
+=== HEADLINE ===
+The Man Behind The Medal
+
+=== PRIMARY TEXT ===
+Fifteen hundred years ago, a young man walked away from Rome.
+
+He was tired of a world that had lost its way. So he went to the hills, to a cave, and he prayed. His name was Benedict.
+
+The medal on this bracelet is his. The same cross, the same letters, the same prayer his monks have carried ever since. Real ebony beads. A real bronze Saint Benedict medal, weighted the way the old ones were made.
+
+When you wear it, you are not wearing a trend. You are wearing 1,500 years of faith, and the quiet strength of the man who started it.
+
+Some things are worth belonging to.
+
+See it here.
+
+=== DESCRIPTION (link description) ===
+1,500 years of Catholic faith
+
+=== META NAMING ===
+Campaign: TheManBehindTheMedal_2026-08-01
+Ad Set:   T1_MF_35-65+_TheManBehindTheMedal_V1   (V1 -> /bracelet/)   |   Ad Set:   T1_MF_35-65+_TheManBehindTheMedal_V2   (V2 -> /bracelet-v2/)
+Ad:       01_YoungManLeftRome
+
+=== URL PARAMETERS ===
+utm_source={{site_source_name}}&utm_medium={{placement}}&utm_campaign={{campaign.name}}&utm_content={{ad.name}}&utm_term={{adset.name}}&cmc_adid=fb_{{ad.id}}
